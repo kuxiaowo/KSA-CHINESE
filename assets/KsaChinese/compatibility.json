@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "version": "2026.10.13.5602",
+  "files": {
+    "KSA.dll": "94f6291754dffe24d18d2eef5cd925a2baa9d72fbdaef1c24182f08065348380",
+    "Brutal.ImGui.dll": "ad97d91c407260c6297e6f2a2a05248f482502c487c645911d57abe56400178b",
+    "Brutal.Localization.dll": "7d6f3a54b06c9e1a1fdca8e112da514dddaf4fd56e3a1754db61125ecb0027bb",
+    "Content/Core/Gauges.xml": "5c9908eafcd5f614e865bd54bdc49044e0dcbc9587a3dca250737515ff03a036"
+  },
+  "loader": "StarMap 0.4.7",
+  "interpretation": "Exact inspected file identities. Target resolution, transformation matches, headless and GUI results are documented separately; hashes are not visual coverage."
+}

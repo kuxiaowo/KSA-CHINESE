@@ -1,0 +1,404 @@
+{
+  "schema": 1,
+  "ledger_rows": 1720,
+  "review_status_counts": {
+    "reviewed": 1645,
+    "defer": 55,
+    "needs-context": 11,
+    "preserve": 9
+  },
+  "active_translation_sections": {
+    "native": 212,
+    "literals": 86,
+    "ui": 192,
+    "tooltips": 150,
+    "editor": 160,
+    "startup": 37,
+    "parts": 51,
+    "controls": 99,
+    "hud": 42,
+    "planning": 244,
+    "utility": 297,
+    "gauges": 73,
+    "scoped": 2
+  },
+  "excluded_entries": [
+    {
+      "id": "controls:Camera Mode",
+      "status": "defer",
+      "notes": "逐条对照动作名称、默认绑定和实际引用；翻译仅用于键位行/捕获弹窗的标题，不改变按键执行。 名称/枚举登记存在，但本轮未完整确认与实际快捷键处理器一一对应；暂缓译文，不能声称功能通过。"
+    },
+    {
+      "id": "controls:Editor Camera Focus",
+      "status": "defer",
+      "notes": "逐条对照动作名称、默认绑定和实际引用；翻译仅用于键位行/捕获弹窗的标题，不改变按键执行。 编辑器动作与飞行器在模拟中的控制分开；模式/步长/物理尺寸未修改。 名称/枚举登记存在，但本轮未完整确认与实际快捷键处理器一一对应；暂缓译文，不能声称功能通过。"
+    },
+    {
+      "id": "controls:Editor Toggle Symmetry",
+      "status": "defer",
+      "notes": "逐条对照动作名称、默认绑定和实际引用；翻译仅用于键位行/捕获弹窗的标题，不改变按键执行。 编辑器动作与飞行器在模拟中的控制分开；模式/步长/物理尺寸未修改。 名称/枚举登记存在，但本轮未完整确认与实际快捷键处理器一一对应；暂缓译文，不能声称功能通过。"
+    },
+    {
+      "id": "controls:I V A Switch To Next Seat",
+      "status": "defer",
+      "notes": "逐条对照动作名称、默认绑定和实际引用；翻译仅用于键位行/捕获弹窗的标题，不改变按键执行。 名称/枚举登记存在，但本轮未完整确认与实际快捷键处理器一一对应；暂缓译文，不能声称功能通过。"
+    },
+    {
+      "id": "controls:Toggle Editor Part Window",
+      "status": "defer",
+      "notes": "逐条对照动作名称、默认绑定和实际引用；翻译仅用于键位行/捕获弹窗的标题，不改变按键执行。 名称/枚举登记存在，但本轮未完整确认与实际快捷键处理器一一对应；暂缓译文，不能声称功能通过。"
+    },
+    {
+      "id": "editor:ALL",
+      "status": "defer",
+      "notes": "5602 中未确认此原文作为当前可替换显示串；已有语义候选，但保留英文回退，不把它计入实际覆盖。"
+    },
+    {
+      "id": "editor:Moon",
+      "status": "needs-context",
+      "notes": "原文 Moon 也用于天体分类（此时应译“卫星”）；尚未证明本键只落在月球显示名入口，不能全局固定译“月球”。"
+    },
+    {
+      "id": "editor:Neptune",
+      "status": "defer",
+      "notes": "5602 中未确认此原文作为当前可替换显示串；已有语义候选，但保留英文回退，不把它计入实际覆盖。"
+    },
+    {
+      "id": "editor:Orthographic",
+      "status": "defer",
+      "notes": "5602 中未确认此原文作为当前可替换显示串；已有语义候选，但保留英文回退，不把它计入实际覆盖。"
+    },
+    {
+      "id": "editor:Perspective",
+      "status": "defer",
+      "notes": "5602 中未确认此原文作为当前可替换显示串；已有语义候选，但保留英文回退，不把它计入实际覆盖。"
+    },
+    {
+      "id": "editor:Rotate",
+      "status": "needs-context",
+      "notes": "该译文只适用于 Select a part to 的组合句；独立控制标签需要“平移/旋转/缩放”。须按方法限定，或用整句模板处理后才能启用。"
+    },
+    {
+      "id": "editor:Scale",
+      "status": "needs-context",
+      "notes": "该译文只适用于 Select a part to 的组合句；独立控制标签需要“平移/旋转/缩放”。须按方法限定，或用整句模板处理后才能启用。"
+    },
+    {
+      "id": "editor:Translate",
+      "status": "needs-context",
+      "notes": "该译文只适用于 Select a part to 的组合句；独立控制标签需要“平移/旋转/缩放”。须按方法限定，或用整句模板处理后才能启用。"
+    },
+    {
+      "id": "gauges:ORBT",
+      "status": "preserve",
+      "notes": "Lvlh参考系的原模式缩写；保留并用中文tooltip解释。"
+    },
+    {
+      "id": "gauges:OVEL",
+      "status": "preserve",
+      "notes": "VlfBody轨道速度参考系缩写；保留并用中文tooltip解释。"
+    },
+    {
+      "id": "gauges:RCS",
+      "status": "preserve",
+      "notes": "反作用控制系统通用缩写，保留。"
+    },
+    {
+      "id": "gauges:RES",
+      "status": "preserve",
+      "notes": "Resources按钮短缩写，保留以避免布局挤压。"
+    },
+    {
+      "id": "gauges:STAR",
+      "status": "preserve",
+      "notes": "EclBody星体/黄道惯性参考系原缩写，保留。"
+    },
+    {
+      "id": "gauges:SURF",
+      "status": "preserve",
+      "notes": "EnuBody地表参考系缩写；保留并用中文tooltip解释。"
+    },
+    {
+      "id": "gauges:TGT",
+      "status": "preserve",
+      "notes": "tooltip目标方向与Navball Dock实现有歧义；保留原缩写，待进一步运行确认。"
+    },
+    {
+      "id": "gauges:TWR",
+      "status": "preserve",
+      "notes": "推重比通用缩写，保留以避免挤压布局。"
+    },
+    {
+      "id": "gauges:UT",
+      "status": "preserve",
+      "notes": "通用宇宙时间缩写，保留。"
+    },
+    {
+      "id": "literals:AMBIENT OCCLUSION",
+      "status": "defer",
+      "notes": "逐条对照所示按钮/区域/说明原文；未改变操作回调，状态提示和玩家内容分开。 当前源文未直接匹配且尚未核实动态生成路径，暂缓。"
+    },
+    {
+      "id": "literals:BLOOMS, THE SUN, AND LENS FLARES",
+      "status": "defer",
+      "notes": "逐条对照所示按钮/区域/说明原文；未改变操作回调，状态提示和玩家内容分开。 当前源文未直接匹配且尚未核实动态生成路径，暂缓。"
+    },
+    {
+      "id": "literals:CAMERA SENSITIVITY",
+      "status": "defer",
+      "notes": "逐条对照所示按钮/区域/说明原文；未改变操作回调，状态提示和玩家内容分开。 当前源文未直接匹配且尚未核实动态生成路径，暂缓。"
+    },
+    {
+      "id": "literals:DEBUG",
+      "status": "defer",
+      "notes": "逐条对照所示按钮/区域/说明原文；未改变操作回调，状态提示和玩家内容分开。 旧硬编码区域暂缓；native Debug另有明确ID。"
+    },
+    {
+      "id": "literals:DISTANT GLINTS",
+      "status": "defer",
+      "notes": "逐条对照所示按钮/区域/说明原文；未改变操作回调，状态提示和玩家内容分开。 当前源文未直接匹配且尚未核实动态生成路径，暂缓。"
+    },
+    {
+      "id": "literals:EDITOR",
+      "status": "defer",
+      "notes": "逐条对照所示按钮/区域/说明原文；未改变操作回调，状态提示和玩家内容分开。 当前源文未直接匹配且尚未核实动态生成路径，暂缓。"
+    },
+    {
+      "id": "literals:FONT",
+      "status": "defer",
+      "notes": "逐条对照所示按钮/区域/说明原文；未改变操作回调，状态提示和玩家内容分开。 当前源文未直接匹配且尚未核实动态生成路径，暂缓。"
+    },
+    {
+      "id": "literals:GAUGES",
+      "status": "defer",
+      "notes": "逐条对照所示按钮/区域/说明原文；未改变操作回调，状态提示和玩家内容分开。 当前源文未直接匹配且尚未核实动态生成路径，暂缓。"
+    },
+    {
+      "id": "literals:GENERAL",
+      "status": "defer",
+      "notes": "逐条对照所示按钮/区域/说明原文；未改变操作回调，状态提示和玩家内容分开。 当前源文未直接匹配且尚未核实动态生成路径，暂缓。"
+    },
+    {
+      "id": "literals:GROUND CLUTTER",
+      "status": "defer",
+      "notes": "逐条对照所示按钮/区域/说明原文；未改变操作回调，状态提示和玩家内容分开。 当前源文未直接匹配且尚未核实动态生成路径，暂缓。"
+    },
+    {
+      "id": "literals:KEY ASSIGNMENTS",
+      "status": "defer",
+      "notes": "逐条对照所示按钮/区域/说明原文；未改变操作回调，状态提示和玩家内容分开。 当前源文未直接匹配且尚未核实动态生成路径，暂缓。"
+    },
+    {
+      "id": "literals:KITTENS",
+      "status": "defer",
+      "notes": "逐条对照所示按钮/区域/说明原文；未改变操作回调，状态提示和玩家内容分开。 当前源文未直接匹配且尚未核实动态生成路径，暂缓。"
+    },
+    {
+      "id": "literals:OCEAN",
+      "status": "defer",
+      "notes": "逐条对照所示按钮/区域/说明原文；未改变操作回调，状态提示和玩家内容分开。 当前源文未直接匹配且尚未核实动态生成路径，暂缓。"
+    },
+    {
+      "id": "literals:ORBIT LINES",
+      "status": "defer",
+      "notes": "逐条对照所示按钮/区域/说明原文；未改变操作回调，状态提示和玩家内容分开。 当前源文未直接匹配且尚未核实动态生成路径，暂缓。"
+    },
+    {
+      "id": "literals:PARTICLES",
+      "status": "defer",
+      "notes": "逐条对照所示按钮/区域/说明原文；未改变操作回调，状态提示和玩家内容分开。 当前源文未直接匹配且尚未核实动态生成路径，暂缓。"
+    },
+    {
+      "id": "literals:PERFORMANCE",
+      "status": "defer",
+      "notes": "逐条对照所示按钮/区域/说明原文；未改变操作回调，状态提示和玩家内容分开。 当前源文未直接匹配且尚未核实动态生成路径，暂缓。"
+    },
+    {
+      "id": "literals:PLANETARY RINGS",
+      "status": "defer",
+      "notes": "逐条对照所示按钮/区域/说明原文；未改变操作回调，状态提示和玩家内容分开。 当前源文未直接匹配且尚未核实动态生成路径，暂缓。"
+    },
+    {
+      "id": "literals:RAYTRACING",
+      "status": "defer",
+      "notes": "逐条对照所示按钮/区域/说明原文；未改变操作回调，状态提示和玩家内容分开。 当前源文未直接匹配且尚未核实动态生成路径，暂缓。"
+    },
+    {
+      "id": "literals:SHADOWS",
+      "status": "defer",
+      "notes": "逐条对照所示按钮/区域/说明原文；未改变操作回调，状态提示和玩家内容分开。 当前源文未直接匹配且尚未核实动态生成路径，暂缓。"
+    },
+    {
+      "id": "literals:SYSTEM",
+      "status": "defer",
+      "notes": "逐条对照所示按钮/区域/说明原文；未改变操作回调，状态提示和玩家内容分开。 当前源文未直接匹配且尚未核实动态生成路径，暂缓。"
+    },
+    {
+      "id": "literals:TEXTURE STREAMING",
+      "status": "defer",
+      "notes": "逐条对照所示按钮/区域/说明原文；未改变操作回调，状态提示和玩家内容分开。 当前源文未直接匹配且尚未核实动态生成路径，暂缓。"
+    },
+    {
+      "id": "literals:TEXTURES",
+      "status": "defer",
+      "notes": "逐条对照所示按钮/区域/说明原文；未改变操作回调，状态提示和玩家内容分开。 当前源文未直接匹配且尚未核实动态生成路径，暂缓。"
+    },
+    {
+      "id": "literals:VESSEL EFFECTS",
+      "status": "defer",
+      "notes": "逐条对照所示按钮/区域/说明原文；未改变操作回调，状态提示和玩家内容分开。 当前源文未直接匹配且尚未核实动态生成路径，暂缓。"
+    },
+    {
+      "id": "literals:VOLUMETRICS",
+      "status": "defer",
+      "notes": "逐条对照所示按钮/区域/说明原文；未改变操作回调，状态提示和玩家内容分开。 当前源文未直接匹配且尚未核实动态生成路径，暂缓。"
+    },
+    {
+      "id": "native:SettingsTabsId",
+      "status": "defer",
+      "notes": "已逐条对照5602文本ID、英文及中文；该设置只改显示名，不改设置键、值或取值范围。 含Id的Tabs定义不作为可见文案启用，避免把潜在控件ID译掉。"
+    },
+    {
+      "id": "parts:CorePropulsionA_Prefab_EngineA2",
+      "status": "needs-context",
+      "notes": "按该 PartGameData 的类别、直径或 Tank 几何核对显示译名；资源键 CorePropulsionA_Prefab_EngineA2 必须保持原样。 5602 已有 DisplayName=LR91 Sea；仅按内部 Id 查译可能无法覆盖当前显示。"
+    },
+    {
+      "id": "planning:EccentricAnomaly",
+      "status": "needs-context",
+      "notes": "椭圆分支5902显示偏近点角，但Orbit.Unbound分支5909同名标签输出trueAnomaly2.Degrees；统一中文会掩盖数据定义差异，暂待分支适配。"
+    },
+    {
+      "id": "startup:Solar System (Dense)",
+      "status": "defer",
+      "notes": "逐条对照启动配置字段及选项；纹理/阴影设置表示渲染分辨率、滤波或槽数，系统名用于显示而非资源ID。 旧版别名未在5602当前显示源文确认，保留原文。"
+    },
+    {
+      "id": "startup:Solar System (Light)",
+      "status": "defer",
+      "notes": "逐条对照启动配置字段及选项；纹理/阴影设置表示渲染分辨率、滤波或槽数，系统名用于显示而非资源ID。 旧版别名未在5602当前显示源文确认，保留原文。"
+    },
+    {
+      "id": "startup:Solar System (Lite)",
+      "status": "defer",
+      "notes": "逐条对照启动配置字段及选项；纹理/阴影设置表示渲染分辨率、滤波或槽数，系统名用于显示而非资源ID。 旧版别名未在5602当前显示源文确认，保留原文。"
+    },
+    {
+      "id": "startup:VeryLow",
+      "status": "defer",
+      "notes": "逐条对照启动配置字段及选项；纹理/阴影设置表示渲染分辨率、滤波或槽数，系统名用于显示而非资源ID。 旧版别名未在5602当前显示源文确认，保留原文。"
+    },
+    {
+      "id": "tooltips:Disable auto trim: attitude inputs pass straight through.",
+      "status": "defer",
+      "notes": "当前5602 XML和反编译材料均未找到此Disable单数别名；相近Disables条存在，故记录为旧版遗留待废弃。"
+    },
+    {
+      "id": "tooltips:Frame of reference fixed to the current target direction.",
+      "status": "needs-context",
+      "notes": "源Tooltip说目标方向，但按钮NavBallMode=Dock，Vehicle.NavBall使用NavigationTarget.Dock2Cci；方向与目标对接姿态不一致，暂不强定中文。"
+    },
+    {
+      "id": "ui:Bilinear",
+      "status": "defer",
+      "notes": "5602 中未确认此原文作为当前可替换显示串；已有语义候选，但保留英文回退，不把它计入实际覆盖。"
+    },
+    {
+      "id": "ui:Camera",
+      "status": "defer",
+      "notes": "5602 中未确认此原文作为当前可替换显示串；已有语义候选，但保留英文回退，不把它计入实际覆盖。"
+    },
+    {
+      "id": "ui:Camera Mode",
+      "status": "defer",
+      "notes": "5602 中未确认此原文作为当前可替换显示串；已有语义候选，但保留英文回退，不把它计入实际覆盖。"
+    },
+    {
+      "id": "ui:Follow",
+      "status": "defer",
+      "notes": "5602 中未确认此原文作为当前可替换显示串；已有语义候选，但保留英文回退，不把它计入实际覆盖。"
+    },
+    {
+      "id": "ui:Gametime",
+      "status": "defer",
+      "notes": "5602 中未确认此原文作为当前可替换显示串；已有语义候选，但保留英文回退，不把它计入实际覆盖。"
+    },
+    {
+      "id": "ui:Hide All Orbits",
+      "status": "defer",
+      "notes": "5602 中未确认此原文作为当前可替换显示串；已有语义候选，但保留英文回退，不把它计入实际覆盖。"
+    },
+    {
+      "id": "ui:Move Camera To",
+      "status": "defer",
+      "notes": "5602 中未确认此原文作为当前可替换显示串；已有语义候选，但保留英文回退，不把它计入实际覆盖。"
+    },
+    {
+      "id": "ui:Nearest",
+      "status": "defer",
+      "notes": "5602 中未确认此原文作为当前可替换显示串；已有语义候选，但保留英文回退，不把它计入实际覆盖。"
+    },
+    {
+      "id": "ui:One Frame",
+      "status": "needs-context",
+      "notes": "KSA 5602 使用 BRUTAL.FrameQueueLimit 枚举生成显示名；本复核只读到 KSA 调用位置，尚未读取 BRUTAL 枚举定义以确认全部项。译文数目语义可接受。"
+    },
+    {
+      "id": "ui:Set Target",
+      "status": "defer",
+      "notes": "5602 中未确认此原文作为当前可替换显示串；已有语义候选，但保留英文回退，不把它计入实际覆盖。"
+    },
+    {
+      "id": "ui:Show All Orbits",
+      "status": "defer",
+      "notes": "5602 中未确认此原文作为当前可替换显示串；已有语义候选，但保留英文回退，不把它计入实际覆盖。"
+    },
+    {
+      "id": "ui:Show Celestial Names",
+      "status": "defer",
+      "notes": "5602 中未确认此原文作为当前可替换显示串；已有语义候选，但保留英文回退，不把它计入实际覆盖。"
+    },
+    {
+      "id": "ui:Show Location Names",
+      "status": "defer",
+      "notes": "5602 中未确认此原文作为当前可替换显示串；已有语义候选，但保留英文回退，不把它计入实际覆盖。"
+    },
+    {
+      "id": "ui:Show Map Grid",
+      "status": "defer",
+      "notes": "5602 中未确认此原文作为当前可替换显示串；已有语义候选，但保留英文回退，不把它计入实际覆盖。"
+    },
+    {
+      "id": "ui:Three Frames",
+      "status": "needs-context",
+      "notes": "KSA 5602 使用 BRUTAL.FrameQueueLimit 枚举生成显示名；本复核只读到 KSA 调用位置，尚未读取 BRUTAL 枚举定义以确认全部项。译文数目语义可接受。"
+    },
+    {
+      "id": "ui:Trilinear",
+      "status": "defer",
+      "notes": "5602 中未确认此原文作为当前可替换显示串；已有语义候选，但保留英文回退，不把它计入实际覆盖。"
+    },
+    {
+      "id": "ui:Two Frames",
+      "status": "needs-context",
+      "notes": "KSA 5602 使用 BRUTAL.FrameQueueLimit 枚举生成显示名；本复核只读到 KSA 调用位置，尚未读取 BRUTAL 枚举定义以确认全部项。译文数目语义可接受。"
+    },
+    {
+      "id": "ui:Very High",
+      "status": "defer",
+      "notes": "5602 中未确认此原文作为当前可替换显示串；已有语义候选，但保留英文回退，不把它计入实际覆盖。"
+    },
+    {
+      "id": "utility:Device Vector Shared Memory",
+      "status": "defer",
+      "notes": "5602 中未确认此原文作为当前可替换显示串；已有语义候选，但保留英文回退，不把它计入实际覆盖。 同名字符串仅发现为 Vulkan 内存资源标签，是否出现在加载界面未确认。"
+    },
+    {
+      "id": "utility:Expansion",
+      "status": "needs-context",
+      "notes": "此处显示 SolidMotorNozzle.AreaRatioMultiplier；同一字面另见尾焰 StartupTransient.ExpansionCurve，专门补丁需按上下文区分。"
+    }
+  ],
+  "placeholder_printf_markup_errors": [],
+  "meaning": "review counts and runtime dictionary size, not full-game coverage or visual verification"
+}

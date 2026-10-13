@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><TargetFramework>net10.0</TargetFramework><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable><KsaDir>F:\系统应用\Kitten Space Agency</KsaDir><LoaderDir>$(MSBuildThisFileDirectory)..\..\.tools\StarMap-0.4.7</LoaderDir></PropertyGroup>
+  <ItemGroup>
+    <Reference Include="KSA"><HintPath>$(KsaDir)\KSA.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Brutal.ImGui"><HintPath>$(KsaDir)\Brutal.ImGui.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Brutal.Core.Numerics"><HintPath>$(KsaDir)\Brutal.Core.Numerics.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="StarMap.API"><HintPath>$(LoaderDir)\StarMap.API.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(LoaderDir)\0Harmony.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+</Project>

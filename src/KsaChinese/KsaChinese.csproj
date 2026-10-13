@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AssemblyName>KsaChinese</AssemblyName>
+    <Version>0.1.0</Version>
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <KsaDir Condition="'$(KsaDir)' == ''">F:\系统应用\Kitten Space Agency</KsaDir>
+    <LoaderDir Condition="'$(LoaderDir)' == ''">$(MSBuildThisFileDirectory)..\..\.tools\StarMap-0.4.7</LoaderDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="*.cs" />
+    <Reference Include="KSA"><HintPath>$(KsaDir)\KSA.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Brutal.Localization"><HintPath>$(KsaDir)\Brutal.Localization.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Brutal.ImGui"><HintPath>$(KsaDir)\Brutal.ImGui.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Brutal.Core.Numerics"><HintPath>$(KsaDir)\Brutal.Core.Numerics.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="StarMap.API"><HintPath>$(LoaderDir)\StarMap.API.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(LoaderDir)\0Harmony.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+</Project>

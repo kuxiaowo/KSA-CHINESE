@@ -1,0 +1,30 @@
+{
+  "save_before": [
+    {
+      "name": "meta.toml",
+      "sha256": "b3d42067a08b72464054e8b6c49787917cd160b363841de16155042f6df23982"
+    },
+    {
+      "name": "universe.xml",
+      "sha256": "1d4098557ecd56b5fa8d6fc51c67f0ea3ceab85f155cfc7195ca40e28af555e1"
+    }
+  ],
+  "uninstall_mod_absent": true,
+  "test_profile": "<WORKSPACE>\\work\\test-profile-installed-final",
+  "launcher_source_sha256": "4ac84c64d736bcf465f688479f18654f52c93c0d1f7f733182480b1f4866db66",
+  "final_chinese_launcher": "passed with quick-completed",
+  "save_after": [
+    {
+      "name": "meta.toml",
+      "sha256": "b3d42067a08b72464054e8b6c49787917cd160b363841de16155042f6df23982"
+    },
+    {
+      "name": "universe.xml",
+      "sha256": "1d4098557ecd56b5fa8d6fc51c67f0ea3ceab85f155cfc7195ca40e28af555e1"
+    }
+  ],
+  "uninstall": "passed on Windows PowerShell 5.1",
+  "original_player_directory_touched": false,
+  "manifest": "[[mods]]\nid = \"Core\"\nenabled = true\n",
+  "installation": "passed on Windows PowerShell 5.1"
+}
