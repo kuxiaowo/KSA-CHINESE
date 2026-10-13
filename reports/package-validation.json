@@ -1,0 +1,16 @@
+{
+  "archive": "<WORKSPACE>\\dist\\KsaChinese-0.1.0-5602.zip",
+  "sha256": "bf39976acda0e90789b0fb5ff8ce00da3d0f877fe91ab7eefde71e51a4f25a47",
+  "bytes": 15285125,
+  "files": 100,
+  "stage": "<WORKSPACE>\\work\\package-20261013-223919-58155026",
+  "allowed_dlls": [
+    "0Harmony.dll",
+    "KsaChinese.dll",
+    "StarMap.API.dll",
+    "StarMap.Core.dll",
+    "StarMap.Types.dll",
+    "StarMap.dll"
+  ],
+  "game_binaries_or_decompiled_source_in_package": false
+}

@@ -1,0 +1,2217 @@
+{
+  "schema": 1,
+  "gameVersion": "2026.10.13.5602",
+  "ksaSha256": "94f6291754dffe24d18d2eef5cd925a2baa9d72fbdaef1c24182f08065348380",
+  "fixture": "<WORKSPACE>\\work\\validation-profile",
+  "checks": [
+    "玩家目录重定向至工作区",
+    "精确版本保护及未知版本拒绝",
+    "游戏及依赖指纹匹配",
+    "缺少或不同游戏文件安全拒绝",
+    "原生213定义中212已核对接入，TabsId暂缓",
+    "数组内无同名字段的原生ID接入",
+    "实际原生 LString 提供器",
+    "技术 ID 保留",
+    "语言切换清除旧仪表字形比例缓存",
+    "原生 ImGui 中英 ID: File seed=0",
+    "原生 ImGui 中英 ID: File seed=1935284499",
+    "原生 ImGui 中英 ID: File##main seed=0",
+    "原生 ImGui 中英 ID: File##main seed=1935284499",
+    "原生 ImGui 中英 ID: File###main seed=0",
+    "原生 ImGui 中英 ID: File###main seed=1935284499",
+    "原生 ImGui 中英 ID: Resources###hud-resources seed=0",
+    "原生 ImGui 中英 ID: Resources###hud-resources seed=1935284499",
+    "原生 ImGui 中英 ID: High##quality seed=0",
+    "原生 ImGui 中英 ID: High##quality seed=1935284499",
+    "原生文本回退英文",
+    "已有 ### ID 保留",
+    "实际LString格式化保留动态名称",
+    "显示导航与垂直同步值的上下文区分",
+    "长自定义布局名保留",
+    "中文长布局的字符容量与原始分配同步扩展",
+    "未知玩家名称回退",
+    "动态对象名称后缀保留",
+    "仪表选择中文字体",
+    "仪表英文恢复原字体",
+    "长中文自定义名跨语言 ID 稳定",
+    "补丁实际安装: ButtonCaptionPatch",
+    "补丁实际安装: ButtonWidthPatch",
+    "补丁实际安装: CelestialCaptionPatch",
+    "补丁实际安装: ComboEndPatch",
+    "补丁实际安装: ComboOptionPatch",
+    "补丁实际安装: ComboPreviewPatch",
+    "补丁实际安装: CommonPopupCaptionPatch",
+    "补丁实际安装: ConsoleTooltipPatch",
+    "补丁实际安装: ControlsKeyCaptionPatch",
+    "补丁实际安装: CrewAssignmentCaptionPatch",
+    "补丁实际安装: CrewAssignmentWindowTitlePatch",
+    "补丁实际安装: CrewPortraitBoneCaptionPatch",
+    "补丁实际安装: DeeperResourceCaptionPatch",
+    "补丁实际安装: DeeperResourceEntryCaptionPatch",
+    "补丁实际安装: DeeperResourceGraphScopePatch",
+    "补丁实际安装: EditorBinPatch",
+    "补丁实际安装: EditorCategoryPatch",
+    "补丁实际安装: EditorDrawScopePatch",
+    "补丁实际安装: EditorFieldCaptionPatch",
+    "补丁实际安装: EditorLiteralPatch",
+    "补丁实际安装: EditorSegmentsPatch",
+    "补丁实际安装: EditorStageCaptionPatch",
+    "补丁实际安装: EditorWindowTitlePatch",
+    "补丁实际安装: ExitPopupCaptionPatch",
+    "补丁实际安装: FlightPlanCallsitePatch",
+    "补丁实际安装: FlightPlanUiScopePatch",
+    "补丁实际安装: FontRegistrationPatch",
+    "补丁实际安装: GalacticGridCaptionPatch",
+    "补丁实际安装: GaugeFontPatch",
+    "补丁实际安装: GaugeWidgetTextPatch",
+    "补丁实际安装: HelperTooltipPatch",
+    "补丁实际安装: HudConfirmPopupCaptionPatch",
+    "补丁实际安装: HudConsoleTitlePatch",
+    "补丁实际安装: HudContextAssignmentDisplayPatch",
+    "补丁实际安装: HudLayoutMenuBufferPatch",
+    "补丁实际安装: HudLayoutPatches",
+    "补丁实际安装: HudSavePopupCaptionPatch",
+    "补丁实际安装: HudSavePopupScopePatch",
+    "补丁实际安装: HudWindowTitlePatch",
+    "补丁实际安装: HudWindowViewMenuPatch",
+    "补丁实际安装: KeyAssignmentPopupPromptPatch",
+    "补丁实际安装: KeyAssignmentPopupTitlePatch",
+    "补丁实际安装: KittenEvaActionCaptionPatch",
+    "补丁实际安装: LanguageMenuPatch",
+    "补丁实际安装: LoadingCaptionPatch",
+    "补丁实际安装: MenuTextPatch",
+    "补丁实际安装: OrbiterHoverTooltipPatch",
+    "补丁实际安装: ParachutePartCaptionPatch",
+    "补丁实际安装: PartContextCaptionPatch",
+    "补丁实际安装: PartContextFieldCaptionPatch",
+    "补丁实际安装: PartContextFieldScopePatch",
+    "补丁实际安装: PartTooltipNamePatch",
+    "补丁实际安装: PartWindowNamePatch",
+    "补丁实际安装: ResourceNamePatch",
+    "补丁实际安装: ResourceUtilityCaptionPatch",
+    "补丁实际安装: RosterCaptionPatch",
+    "补丁实际安装: RosterTabsPatch",
+    "补丁实际安装: RosterTitlePatch",
+    "补丁实际安装: SettingsLiteralPatch",
+    "补丁实际安装: StartupCheckboxPatch",
+    "补丁实际安装: StartupFieldPatch",
+    "补丁实际安装: StartupUiPatch",
+    "补丁实际安装: TrackingCaptionPatch",
+    "补丁实际安装: TrackingWindowTitlePatch",
+    "补丁实际安装: TransferPlannerCaptionPatch",
+    "补丁实际安装: TransferPlannerComboPatch",
+    "补丁实际安装: UtilityWindowPatches",
+    "补丁实际安装: WelcomeCaptionPatch",
+    "卸载恢复原提供器",
+    "卸载回退原生英文"
+  ],
+  "targets": [
+    {
+      "group": "ButtonCaptionPatch",
+      "signature": "Boolean DrawButtonCore(System.ReadOnlySpan`1[System.Char], System.ReadOnlySpan`1[System.Char], Brutal.Numerics.float2, Boolean, UInt32, UInt32, UInt32, UInt32)",
+      "declaringType": "KSA.ConsoleWidgets",
+      "ilSha256": "584482f65671a2edb470a1c25435b63dae49311b6b8e2614fb6b0035ccc150a9",
+      "originalInstructions": 180,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "ButtonWidthPatch",
+      "signature": "Single ButtonWidth(System.ReadOnlySpan`1[System.Char])",
+      "declaringType": "KSA.ConsoleWidgets",
+      "ilSha256": "dd0cc8b39bb39666d6ee9cdc02c2be3520629cf73a60cf5b768bdf8c2ee5f1c0",
+      "originalInstructions": 21,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "CelestialCaptionPatch",
+      "signature": "Void DrawCelestialWindowData()",
+      "declaringType": "KSA.Celestial",
+      "ilSha256": "e20a5aaee169a0f0656c1b28f751ebd25ffa9dce476d021a35c77eeacb033850",
+      "originalInstructions": 56,
+      "transformedInstructions": 62,
+      "pluginCalls": 6
+    },
+    {
+      "group": "CelestialCaptionPatch",
+      "signature": "Void DrawCelestialWindowData(KSA.IOrbiter)",
+      "declaringType": "KSA.IOrbiter",
+      "ilSha256": "5ff3d8e846c42f2ab7488d5121fad233ba79214c4f3dabff81d786cd437d6f9e",
+      "originalInstructions": 604,
+      "transformedInstructions": 640,
+      "pluginCalls": 36
+    },
+    {
+      "group": "ComboEndPatch",
+      "signature": "Void EndComboControl()",
+      "declaringType": "KSA.ConsoleWidgets",
+      "ilSha256": "9ed8375e757c8a297088d9599e54944a4b5e8a209ab45b3cb42ccff3e728723e",
+      "originalInstructions": 3,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "ComboOptionPatch",
+      "signature": "Boolean Selectable(Brutal.ImGuiApi.ImString, Boolean, Brutal.ImGuiApi.ImGuiSelectableFlags, System.Nullable`1[Brutal.Numerics.float2] ByRef)",
+      "declaringType": "Brutal.ImGuiApi.ImGui",
+      "ilSha256": "96da4fe24af56a60e99fa62abee215d61c13480474e545a690ed708aed21bb7f",
+      "originalInstructions": 28,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "ComboOptionPatch",
+      "signature": "Boolean Selectable(Brutal.ImGuiApi.ImString, Boolean ByRef, Brutal.ImGuiApi.ImGuiSelectableFlags, System.Nullable`1[Brutal.Numerics.float2] ByRef)",
+      "declaringType": "Brutal.ImGuiApi.ImGui",
+      "ilSha256": "3d0d8a0b2ae2df53734ddd12d8b794919aab9adc7b48df7d99607b1b2d0e7443",
+      "originalInstructions": 32,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "ComboPreviewPatch",
+      "signature": "Boolean BeginComboControl(System.ReadOnlySpan`1[System.Char], System.ReadOnlySpan`1[System.Char], Boolean)",
+      "declaringType": "KSA.ConsoleWidgets",
+      "ilSha256": "3fd23721abccf689fb66168f97a70e98b92f2c3e42404f875a1d48559d6ff6cd",
+      "originalInstructions": 264,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "CommonPopupCaptionPatch",
+      "signature": "Void OnDrawUi()",
+      "declaringType": "KSA.AbandonPopup",
+      "ilSha256": "1e56aac8671680534fe79194a9e46c11af69c0c8c5487284fb01408216df8a0c",
+      "originalInstructions": 34,
+      "transformedInstructions": 36,
+      "pluginCalls": 2
+    },
+    {
+      "group": "CommonPopupCaptionPatch",
+      "signature": "Void OnDrawUi()",
+      "declaringType": "KSA.RequiresRestartPopup",
+      "ilSha256": "60fdeed7b9e2c1bc514134a18ef4b1bc69cb8c0da088aa9ff6206d6828dbfd10",
+      "originalInstructions": 47,
+      "transformedInstructions": 49,
+      "pluginCalls": 2
+    },
+    {
+      "group": "CommonPopupCaptionPatch",
+      "signature": "Void OnDrawUi()",
+      "declaringType": "KSA.UpdateAvailablePopup",
+      "ilSha256": "521f7b28a1dc91e51db76e59ef975842e289eae1ae3e7a9de3ab06eb60371f0f",
+      "originalInstructions": 72,
+      "transformedInstructions": 76,
+      "pluginCalls": 5
+    },
+    {
+      "group": "CommonPopupCaptionPatch",
+      "signature": "Void OnDrawUi()",
+      "declaringType": "KSA.ConfirmModPopup",
+      "ilSha256": "88b1a587c54bdabf2a79ea3c548c0dcbf5900913669a3c8a7ae2403183987ed4",
+      "originalInstructions": 35,
+      "transformedInstructions": 37,
+      "pluginCalls": 2
+    },
+    {
+      "group": "CommonPopupCaptionPatch",
+      "signature": "Void OnDrawUi()",
+      "declaringType": "KSA.PartTreeSelectionPopup",
+      "ilSha256": "a63d100e387e66770f939a728288474293d757aece5ec14d67d6babb65c0175b",
+      "originalInstructions": 93,
+      "transformedInstructions": 95,
+      "pluginCalls": 2
+    },
+    {
+      "group": "ConsoleTooltipPatch",
+      "signature": "Void Tooltip(System.ReadOnlySpan`1[System.Char])",
+      "declaringType": "KSA.ConsoleWidgets",
+      "ilSha256": "e44dffcdc2516a9260343d67e2071d29472038075b8dd4055c74e2cbc67f3228",
+      "originalInstructions": 49,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "ControlsKeyCaptionPatch",
+      "signature": "Void DrawKeyAssignmentRow(KSA.GameSettings, System.Collections.Generic.KeyValuePair`2[KSA.InputAction,KSA.BindingValue], Int32)",
+      "declaringType": "KSA.GameSettings",
+      "ilSha256": "3225fa1bc88f7790794b4b0956b316633f00ae49b04b213700fc1385305665d6",
+      "originalInstructions": 81,
+      "transformedInstructions": 82,
+      "pluginCalls": 1
+    },
+    {
+      "group": "CrewAssignmentCaptionPatch",
+      "signature": "Void DrawContent(KSA.IViewport)",
+      "declaringType": "KSA.CrewAssignmentWindow+Window",
+      "ilSha256": "335a02eb5beaab7ce1fd5f72a252fac87b77355da8a9d7021ee051f1748f0727",
+      "originalInstructions": 355,
+      "transformedInstructions": 357,
+      "pluginCalls": 2
+    },
+    {
+      "group": "CrewAssignmentWindowTitlePatch",
+      "signature": "Void OnDrawUi(KSA.IGameViewport)",
+      "declaringType": "KSA.ImGuiWindow",
+      "ilSha256": "785cb829dcb3ca226e4f8229a03009409ae2cfa0937f3e162aa2ea73175a79a2",
+      "originalInstructions": 372,
+      "transformedInstructions": 374,
+      "pluginCalls": 1
+    },
+    {
+      "group": "CrewPortraitBoneCaptionPatch",
+      "signature": "Void Draw(KSA.GaugeCanvas, Brutal.Numerics.float2, Brutal.Numerics.float2)",
+      "declaringType": "KSA.CrewPortraitPanel",
+      "ilSha256": "5e58e23ba9b88badcc921fa14b0f68f22ee64787c4bd9a8dbe7f2e47c12a16c9",
+      "originalInstructions": 482,
+      "transformedInstructions": 486,
+      "pluginCalls": 2
+    },
+    {
+      "group": "DeeperResourceCaptionPatch",
+      "signature": "Void DrawStateInfo(KSA.MoleState ByRef)",
+      "declaringType": "KSA.Mole",
+      "ilSha256": "407120d3f9c94a6526d022099fbb20b396b1a156febe1a4132802e2e39173c2d",
+      "originalInstructions": 101,
+      "transformedInstructions": 101,
+      "pluginCalls": 4
+    },
+    {
+      "group": "DeeperResourceCaptionPatch",
+      "signature": "Void DrawStateInfo()",
+      "declaringType": "KSA.BatteryState",
+      "ilSha256": "5daa73d254614b66d690b69b13abf997044fc569a89db16fcb9aa6e13ed6b0f7",
+      "originalInstructions": 32,
+      "transformedInstructions": 32,
+      "pluginCalls": 1
+    },
+    {
+      "group": "DeeperResourceCaptionPatch",
+      "signature": "Void DrawStateInfo()",
+      "declaringType": "KSA.RocketCoreState",
+      "ilSha256": "33dfed3bd2ac5bf1e413e2e686b70c6fd8689f2eb01d226faffa481ed05324ff",
+      "originalInstructions": 126,
+      "transformedInstructions": 126,
+      "pluginCalls": 6
+    },
+    {
+      "group": "DeeperResourceCaptionPatch",
+      "signature": "Void DrawStateInfo()",
+      "declaringType": "KSA.RocketNozzleState",
+      "ilSha256": "bbf1c6c208a41a2765a34c7bf2dfb1fa590c9396aafcfe3882e368fdc55ee6ba",
+      "originalInstructions": 79,
+      "transformedInstructions": 79,
+      "pluginCalls": 3
+    },
+    {
+      "group": "DeeperResourceCaptionPatch",
+      "signature": "Void DrawDesignInfo()",
+      "declaringType": "KSA.RocketCoreConditions",
+      "ilSha256": "a4768a182488c8b31ce2fad487868d5415422eb15412729a5427b0e8b224e6e9",
+      "originalInstructions": 88,
+      "transformedInstructions": 88,
+      "pluginCalls": 4
+    },
+    {
+      "group": "DeeperResourceCaptionPatch",
+      "signature": "Void DrawDesignInfo(KSA.RocketCoreConditions ByRef)",
+      "declaringType": "KSA.RocketNozzle",
+      "ilSha256": "4e4ca4b7bfe553684eedb3d340fdc55c15939f192e41642102581ba93d0dc132",
+      "originalInstructions": 135,
+      "transformedInstructions": 135,
+      "pluginCalls": 5
+    },
+    {
+      "group": "DeeperResourceCaptionPatch",
+      "signature": "Void DrawStateInfo(System.ReadOnlySpan`1[KSA.MoleState])",
+      "declaringType": "KSA.SolidGrainSegment",
+      "ilSha256": "8202d09304078d5ca8b7910b651a4ba0539d8d7cce8857249df7ca1935fa3c21",
+      "originalInstructions": 137,
+      "transformedInstructions": 138,
+      "pluginCalls": 7
+    },
+    {
+      "group": "DeeperResourceEntryCaptionPatch",
+      "signature": "Void DrawEntryInfo(KSA.Tank, System.ReadOnlySpan`1[KSA.MoleState], UInt64, Brutal.ImGuiApi.ImGuiTreeNodeFlags)",
+      "declaringType": "KSA.ResourceManager",
+      "ilSha256": "40c1bdf7fa1df402a02f864f5eee38a7db930a5a5efafd8119c9547baf8869f8",
+      "originalInstructions": 88,
+      "transformedInstructions": 90,
+      "pluginCalls": 2
+    },
+    {
+      "group": "DeeperResourceEntryCaptionPatch",
+      "signature": "Void DrawEntryInfo(KSA.Battery, System.ReadOnlySpan`1[KSA.BatteryState], UInt64, Brutal.ImGuiApi.ImGuiTreeNodeFlags)",
+      "declaringType": "KSA.PowerManager",
+      "ilSha256": "baddbbbc038c218619eebcdf3005674e818604cfdc320be84c7feb0c18040ed1",
+      "originalInstructions": 71,
+      "transformedInstructions": 73,
+      "pluginCalls": 2
+    },
+    {
+      "group": "DeeperResourceGraphScopePatch",
+      "signature": "Void DrawResourceInfo(System.ReadOnlySpan`1[KSA.MoleState])",
+      "declaringType": "KSA.ResourceManagerBase`2[[KSA.Tank, KSA, Version=2026.10.13.5602, Culture=neutral, PublicKeyToken=null],[KSA.MoleState, KSA, Version=2026.10.13.5602, Culture=neutral, PublicKeyToken=null]]",
+      "ilSha256": "88747ce006b4c8ffeda023f64be0f3d2f9495bddbc0e05932ab5d242e9aa9f12",
+      "originalInstructions": 58,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "DeeperResourceGraphScopePatch",
+      "signature": "Void DrawResourceInfo(System.ReadOnlySpan`1[KSA.BatteryState])",
+      "declaringType": "KSA.ResourceManagerBase`2[[KSA.Battery, KSA, Version=2026.10.13.5602, Culture=neutral, PublicKeyToken=null],[KSA.BatteryState, KSA, Version=2026.10.13.5602, Culture=neutral, PublicKeyToken=null]]",
+      "ilSha256": "88747ce006b4c8ffeda023f64be0f3d2f9495bddbc0e05932ab5d242e9aa9f12",
+      "originalInstructions": 58,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "EditorBinPatch",
+      "signature": "Boolean BinZone(System.ReadOnlySpan`1[System.Char], System.ReadOnlySpan`1[System.Char], Boolean, Boolean ByRef)",
+      "declaringType": "KSA.ConsoleWidgets",
+      "ilSha256": "d70683ae4215bb278219da3d901966c36eed8ee2d34d5cf16db37e7e879d3b2e",
+      "originalInstructions": 127,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "EditorCategoryPatch",
+      "signature": "Boolean DrawCategoryRow(System.ReadOnlySpan`1[System.Char], Single, Single, Boolean, Boolean, Boolean ByRef)",
+      "declaringType": "KSA.VehicleEditor",
+      "ilSha256": "dc64c91c9cc072108fe39b58d20a577fa761788b38e7d5f8b9b3095a4b56198c",
+      "originalInstructions": 146,
+      "transformedInstructions": 146,
+      "pluginCalls": 1
+    },
+    {
+      "group": "EditorDrawScopePatch",
+      "signature": "Void OnDrawUi(KSA.IGameViewport)",
+      "declaringType": "KSA.VehicleEditor",
+      "ilSha256": "16deff8b17828405257fc2d5e21ab870049d7dd503ff29666419343f828a71c1",
+      "originalInstructions": 1233,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "EditorDrawScopePatch",
+      "signature": "Void DrawPartUi(Int32, KSA.IGameViewport)",
+      "declaringType": "KSA.VehicleEditor",
+      "ilSha256": "953c536ea17dcd62840accfdf3266d153d0b77540f9aaf461454c5da7c662b4d",
+      "originalInstructions": 2501,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "EditorDrawScopePatch",
+      "signature": "Void DrawSubPartUi(Int32, KSA.IGameViewport)",
+      "declaringType": "KSA.VehicleEditor",
+      "ilSha256": "806ae5fcaa3f3cafc7d30ff1a6cac939ae6e36c3c4138c060eba40583c58a6e5",
+      "originalInstructions": 180,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "EditorDrawScopePatch",
+      "signature": "Void DrawLaunchUi(KSA.IGameViewport)",
+      "declaringType": "KSA.VehicleEditor",
+      "ilSha256": "46f7a123f94a13ee26334d7ebfb907b50569578b48fe5071a531f97e850307c9",
+      "originalInstructions": 191,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "EditorDrawScopePatch",
+      "signature": "Void DrawGizmoToolbarButtons()",
+      "declaringType": "KSA.VehicleEditor",
+      "ilSha256": "a25baacfe7ccf75d84214841c340f3a54609242578e12030984cf8c6cb2eba72",
+      "originalInstructions": 380,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "EditorDrawScopePatch",
+      "signature": "Void DrawSymmetryToolbarButtons()",
+      "declaringType": "KSA.VehicleEditor",
+      "ilSha256": "3b146115b8d510bcd55b6a4ac7ed38ff7c8c122c33354b3bc3988164fe9955a5",
+      "originalInstructions": 383,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "EditorDrawScopePatch",
+      "signature": "Void DrawLaunchUi(KSA.IViewport)",
+      "declaringType": "KSA.VehicleLaunchMenu",
+      "ilSha256": "24e680a12b4978ff32dc455dc41edfbc311229afa3c0c75dd6b9fe4c50172da2",
+      "originalInstructions": 568,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "EditorDrawScopePatch",
+      "signature": "Void OnDrawUi(KSA.IGameViewport)",
+      "declaringType": "KSA.VehicleEditor+PartWindow",
+      "ilSha256": "3afba9b0fa15e1170f290826f9da7acb8c523e73cdb3aa90d7057cefba998f2b",
+      "originalInstructions": 1023,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Boolean DrawInt(Brutal.ImGuiApi.ImString, Int32 ByRef, Boolean, Int32, Int32)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "aeffab63edfe5574a907756840a5f15e3be19c90f5c9164e47bdda59c22344ef",
+      "originalInstructions": 97,
+      "transformedInstructions": 98,
+      "pluginCalls": 1
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Boolean DrawStepInt(Brutal.ImGuiApi.ImString, Int32 ByRef, Boolean, Int32, Int32, Int32, Int32, System.String)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "308c26217cc172bcec15a133d4b5fdc555d7572c3d8537bb37379c9ba5f6b512",
+      "originalInstructions": 106,
+      "transformedInstructions": 107,
+      "pluginCalls": 1
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Boolean DrawFloat(Brutal.ImGuiApi.ImString, Single ByRef, Boolean, Single, Single)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "4fd18eb1067d161ef89a60b99de7eb9122ef416c8f15b7b1be0a22a7580dd969",
+      "originalInstructions": 96,
+      "transformedInstructions": 97,
+      "pluginCalls": 1
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Boolean DrawFloat(Brutal.ImGuiApi.ImString, Brutal.Numerics.float4 ByRef, Boolean, System.Action`1[Brutal.Numerics.float4])",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "05d7ab6203e3fbf4882e996949bf2e0f21061112266a33860ea0f0a2aaa5b69c",
+      "originalInstructions": 103,
+      "transformedInstructions": 104,
+      "pluginCalls": 1
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Boolean DrawFloat(Brutal.ImGuiApi.ImString, Brutal.Numerics.float3 ByRef, Boolean)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "dbcb8711350bf762960005545806e819ab44aa132ded83c09d7e0c3ec072134e",
+      "originalInstructions": 84,
+      "transformedInstructions": 85,
+      "pluginCalls": 1
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Boolean DrawFloat(Brutal.ImGuiApi.ImString, Brutal.Numerics.float2 ByRef, Boolean, System.Action`1[Brutal.Numerics.float2])",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "1b27511adea5095097a17f8e98f72419c5b6a8641732b8a49e970c86a425059a",
+      "originalInstructions": 103,
+      "transformedInstructions": 104,
+      "pluginCalls": 1
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Boolean DrawSliderInt(Brutal.ImGuiApi.ImString, Int32 ByRef, Boolean, Int32, Int32, System.String, System.String, Brutal.ImGuiApi.ImGuiSliderFlags)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "fca15cdea9e6b3fe79190e56e50b75ff5b3f00de0949fd9f21c21a3d9dffe95e",
+      "originalInstructions": 106,
+      "transformedInstructions": 107,
+      "pluginCalls": 1
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Boolean DrawSliderPow2(Brutal.ImGuiApi.ImString, Int32 ByRef, Boolean, Int32, Int32, System.String)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "41f888fcc37045435e2e908b8df9b22603437d8f6e140bc47904d8604ee8ac52",
+      "originalInstructions": 157,
+      "transformedInstructions": 158,
+      "pluginCalls": 1
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Boolean DrawSliderFloat(Brutal.ImGuiApi.ImString, Single ByRef, Boolean, Single, Single, System.String, System.String, Brutal.ImGuiApi.ImGuiSliderFlags)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "dca6b3b56fd85941e0b5b66fb74da59aab364cdc33cd66c4ef86f954f33f6230",
+      "originalInstructions": 106,
+      "transformedInstructions": 107,
+      "pluginCalls": 1
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Boolean DrawButton(Brutal.ImGuiApi.ImString, System.Nullable`1[Brutal.Numerics.byte4], System.Nullable`1[Brutal.Numerics.byte4], System.Nullable`1[Brutal.Numerics.byte4])",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "7f4c962edd33cbe567e1df7210b573325a84a5807f310fd2f6732255d41c3b96",
+      "originalInstructions": 78,
+      "transformedInstructions": 78,
+      "pluginCalls": 0
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Boolean DrawButton(Brutal.ImGuiApi.ImString, Brutal.Numerics.float2, System.Nullable`1[Brutal.Numerics.byte4], System.Nullable`1[Brutal.Numerics.byte4], System.Nullable`1[Brutal.Numerics.byte4])",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "0d41800a354526e1fb9ed003e12ea552751f2cdc062a1d145844af5d2aace338",
+      "originalInstructions": 79,
+      "transformedInstructions": 79,
+      "pluginCalls": 0
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Boolean DrawColor3(Brutal.ImGuiApi.ImString, KSA.TomlColor ByRef, Boolean, System.String)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "9b127554b0d3edd2a6a52b58b54037b167a9c996fef43ddc2be5a6baddb4b04f",
+      "originalInstructions": 141,
+      "transformedInstructions": 142,
+      "pluginCalls": 1
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Boolean DrawColor3(Brutal.ImGuiApi.ImString, Brutal.Numerics.float3 ByRef, Boolean, System.String)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "e2e7227bc3e60f359b82c53142e1287dcaaf66fa4f14cb9a8468620e1e213bff",
+      "originalInstructions": 95,
+      "transformedInstructions": 96,
+      "pluginCalls": 1
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Boolean DrawColor4(Brutal.ImGuiApi.ImString, Brutal.Numerics.float4 ByRef, Boolean, System.String)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "acb39c4c0b568c1f4d44f9720e7bc5d5633df69ce0d2e4537d118106bfa520a4",
+      "originalInstructions": 95,
+      "transformedInstructions": 96,
+      "pluginCalls": 1
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Boolean DrawIndexedColor3(Brutal.ImGuiApi.ImString, Brutal.Numerics.float3 ByRef, KSA.IndexedColor ByRef, Boolean, System.String)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "56a552cadf58e9d36e06f8578b596f050ec3effcb3433f473b842cf02c5163fe",
+      "originalInstructions": 41,
+      "transformedInstructions": 41,
+      "pluginCalls": 0
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Boolean DrawIndexedColor4(Brutal.ImGuiApi.ImString, Brutal.Numerics.float4 ByRef, KSA.IndexedColor ByRef, Boolean, System.String)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "d4c3461754c78cb50e7549797a661a118ae971f0ec5519db72024d3a6818d075",
+      "originalInstructions": 12,
+      "transformedInstructions": 12,
+      "pluginCalls": 0
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Boolean DrawColorRef(Brutal.ImGuiApi.ImString, KSA.ColorRgbReference)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "79f32f1d5eb13da73a09fb1e0ca6731bad1dfd42453d12cc0b8448cc87e46f03",
+      "originalInstructions": 45,
+      "transformedInstructions": 45,
+      "pluginCalls": 0
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Boolean DrawInput(Brutal.ImGuiApi.ImString, System.String ByRef, Boolean, Boolean ByRef, System.String, Int32)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "bf6c77896c92474ae96c246a4c3ff23d4db1c557bb848d7e1b5398075292e31d",
+      "originalInstructions": 105,
+      "transformedInstructions": 106,
+      "pluginCalls": 1
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Boolean DrawInput(Brutal.ImGuiApi.ImString, System.String ByRef, Boolean, System.String, Int32)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "15400ee3cdd880cbc2ca066e9424a7b24f2bfdcaac6b24661c5eacf1dc397a4e",
+      "originalInstructions": 95,
+      "transformedInstructions": 96,
+      "pluginCalls": 1
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Boolean DrawInputMulti(Brutal.ImGuiApi.ImString, System.Collections.Generic.List`1[System.String] ByRef, Boolean, Boolean ByRef, System.String)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "9c7b7d434092771bebc3643742a7a507234c78cdc39f7a5e579d6a4e858db73c",
+      "originalInstructions": 201,
+      "transformedInstructions": 202,
+      "pluginCalls": 1
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Void DrawTextWidget(Brutal.ImGuiApi.ImString, Brutal.ImGuiApi.ImString, Int32)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "bf57eb9a9f5519acfb007a1c55aa4de0695e4e2dfbb0211359724a8941e53ca6",
+      "originalInstructions": 11,
+      "transformedInstructions": 11,
+      "pluginCalls": 0
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Void DrawTextWidget(Brutal.ImGuiApi.ImString, System.String, Int32)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "afbe49e5237531028462ae898893cd071ee5389ac89c3bea981dfe3e46a25290",
+      "originalInstructions": 12,
+      "transformedInstructions": 12,
+      "pluginCalls": 0
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Void Draw2ColumnTextWidget(Brutal.ImGuiApi.ImString, Brutal.ImGuiApi.ImString)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "6a86f7738f117f13fc25a23f89b9d2ca1cd6900b35f6f082673332b4e466e264",
+      "originalInstructions": 9,
+      "transformedInstructions": 9,
+      "pluginCalls": 0
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Void Draw2ColumnTextWidget(Brutal.ImGuiApi.ImString, Brutal.ImGuiApi.ImString, Brutal.Numerics.byte4, Brutal.Numerics.byte4)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "22f5865effa75eec350a89fe795178870e1da085557a297a3d945243142a64d1",
+      "originalInstructions": 28,
+      "transformedInstructions": 29,
+      "pluginCalls": 1
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Boolean DrawSliderWhenNotCheckbox(Brutal.ImGuiApi.ImString, Boolean ByRef, Int32 ByRef, Int32, Int32, System.String, System.String, Boolean, Boolean)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "82226fc2ac11bc9500caa4f737afe89a66367d011c9ef8ed26c6b106a48f774d",
+      "originalInstructions": 158,
+      "transformedInstructions": 159,
+      "pluginCalls": 1
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Boolean DrawCheckbox(Brutal.ImGuiApi.ImString, Boolean ByRef, Boolean)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "813863d5c3200d6531ea4175dfabe0913799681656fe9b40079088b8408d4780",
+      "originalInstructions": 114,
+      "transformedInstructions": 115,
+      "pluginCalls": 1
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Boolean DrawCombo[CelestialObject](Brutal.ImGuiApi.ImString, KSA.CelestialObject ByRef, System.Collections.Generic.List`1[KSA.CelestialObject], Boolean)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "4d33b45cf5c4c0f30057e6f054d61ec9bb4eeeee999d369c47d8fc8727dc7e52",
+      "originalInstructions": 190,
+      "transformedInstructions": 191,
+      "pluginCalls": 3
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Boolean DrawCombo[LocationObject](Brutal.ImGuiApi.ImString, KSA.LocationObject ByRef, System.Collections.Generic.List`1[KSA.LocationObject], Boolean)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "4d33b45cf5c4c0f30057e6f054d61ec9bb4eeeee999d369c47d8fc8727dc7e52",
+      "originalInstructions": 190,
+      "transformedInstructions": 191,
+      "pluginCalls": 3
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Boolean DrawCombo[CelestialObject](Brutal.ImGuiApi.ImString, KSA.CelestialObject ByRef, System.Span`1[KSA.CelestialObject], Boolean)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "f9a9ca6662114e5ea685486e610c2e7bf4a3ef5de39acb03a683b7815651aa57",
+      "originalInstructions": 201,
+      "transformedInstructions": 202,
+      "pluginCalls": 3
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Boolean DrawCombo[LocationObject](Brutal.ImGuiApi.ImString, KSA.LocationObject ByRef, System.Span`1[KSA.LocationObject], Boolean)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "f9a9ca6662114e5ea685486e610c2e7bf4a3ef5de39acb03a683b7815651aa57",
+      "originalInstructions": 201,
+      "transformedInstructions": 202,
+      "pluginCalls": 3
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Boolean DrawMenuItem(Brutal.ImGuiApi.ImString, Boolean ByRef, Boolean)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "0c0662cdbcf44fe3ee0aaaff2677e55a0e03ca05fccafaeec346d7712cd7bde3",
+      "originalInstructions": 193,
+      "transformedInstructions": 193,
+      "pluginCalls": 0
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Boolean DrawMenuItem(Brutal.ImGuiApi.ImString, Boolean, Boolean)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "9866c8d526cca58e304aaddf2215b84cb1f4474627e5bf7da65af2ea818fc50d",
+      "originalInstructions": 184,
+      "transformedInstructions": 184,
+      "pluginCalls": 0
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Void DrawTooltip(Brutal.ImGuiApi.ImString, System.Func`1[System.Boolean])",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "f610d43b84075a939c7b35fd9e47a1023a3d4104a3d36db67b03cb4a9d90124b",
+      "originalInstructions": 56,
+      "transformedInstructions": 57,
+      "pluginCalls": 1
+    },
+    {
+      "group": "EditorFieldCaptionPatch",
+      "signature": "Void DrawTooltip(Brutal.ImGuiApi.ImString, Brutal.ImGuiApi.ImColor8)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "9d5e3727af71c7d173a279b018b1c0d467de47ac92374980191c34f785a68359",
+      "originalInstructions": 50,
+      "transformedInstructions": 51,
+      "pluginCalls": 1
+    },
+    {
+      "group": "EditorLiteralPatch",
+      "signature": "Void OnDrawUi(KSA.IGameViewport)",
+      "declaringType": "KSA.VehicleEditor",
+      "ilSha256": "16deff8b17828405257fc2d5e21ab870049d7dd503ff29666419343f828a71c1",
+      "originalInstructions": 1233,
+      "transformedInstructions": 1243,
+      "pluginCalls": 10
+    },
+    {
+      "group": "EditorLiteralPatch",
+      "signature": "Void DrawGizmoToolbarButtons()",
+      "declaringType": "KSA.VehicleEditor",
+      "ilSha256": "a25baacfe7ccf75d84214841c340f3a54609242578e12030984cf8c6cb2eba72",
+      "originalInstructions": 380,
+      "transformedInstructions": 387,
+      "pluginCalls": 7
+    },
+    {
+      "group": "EditorLiteralPatch",
+      "signature": "Void DrawSymmetryToolbarButtons()",
+      "declaringType": "KSA.VehicleEditor",
+      "ilSha256": "3b146115b8d510bcd55b6a4ac7ed38ff7c8c122c33354b3bc3988164fe9955a5",
+      "originalInstructions": 383,
+      "transformedInstructions": 393,
+      "pluginCalls": 10
+    },
+    {
+      "group": "EditorLiteralPatch",
+      "signature": "Void DrawPartUi(Int32, KSA.IGameViewport)",
+      "declaringType": "KSA.VehicleEditor",
+      "ilSha256": "953c536ea17dcd62840accfdf3266d153d0b77540f9aaf461454c5da7c662b4d",
+      "originalInstructions": 2501,
+      "transformedInstructions": 2532,
+      "pluginCalls": 31
+    },
+    {
+      "group": "EditorLiteralPatch",
+      "signature": "Void DrawSubPartUi(Int32, KSA.IGameViewport)",
+      "declaringType": "KSA.VehicleEditor",
+      "ilSha256": "806ae5fcaa3f3cafc7d30ff1a6cac939ae6e36c3c4138c060eba40583c58a6e5",
+      "originalInstructions": 180,
+      "transformedInstructions": 180,
+      "pluginCalls": 0
+    },
+    {
+      "group": "EditorLiteralPatch",
+      "signature": "Void DrawLaunchUi(KSA.IGameViewport)",
+      "declaringType": "KSA.VehicleEditor",
+      "ilSha256": "46f7a123f94a13ee26334d7ebfb907b50569578b48fe5071a531f97e850307c9",
+      "originalInstructions": 191,
+      "transformedInstructions": 197,
+      "pluginCalls": 6
+    },
+    {
+      "group": "EditorLiteralPatch",
+      "signature": "Void DrawGrainSection(KSA.Part, System.ReadOnlySpan`1[KSA.SolidGrainSegment], KSA.SolidMotor)",
+      "declaringType": "KSA.VehicleEditor",
+      "ilSha256": "da4900f94590d3615285ed6da83243e490acc3de2f9c37ceadeb07dc232919fd",
+      "originalInstructions": 1052,
+      "transformedInstructions": 1084,
+      "pluginCalls": 32
+    },
+    {
+      "group": "EditorLiteralPatch",
+      "signature": "Void DrawNozzleExpansionSection(KSA.PartTree, KSA.SolidMotor)",
+      "declaringType": "KSA.VehicleEditor",
+      "ilSha256": "ffdac6ddd19019ab731ccc706bf26d4e059ccd8300e73845c79668551fc1deb7",
+      "originalInstructions": 172,
+      "transformedInstructions": 176,
+      "pluginCalls": 4
+    },
+    {
+      "group": "EditorLiteralPatch",
+      "signature": "Void DrawParachuteSection(KSA.Part, System.ReadOnlySpan`1[KSA.Parachute])",
+      "declaringType": "KSA.VehicleEditor",
+      "ilSha256": "d6f54c0285d6e64113dac968f3712b3dd1d5baf72a92fb4496462f80148cd816",
+      "originalInstructions": 679,
+      "transformedInstructions": 700,
+      "pluginCalls": 21
+    },
+    {
+      "group": "EditorLiteralPatch",
+      "signature": "Void DrawTankGroupControls(KSA.Part, System.Collections.Generic.List`1[KSA.Tank])",
+      "declaringType": "KSA.VehicleEditor",
+      "ilSha256": "6b70c88a35027d956871c617f4dd15af00f5af66945a52b12404ffe6f40f2942",
+      "originalInstructions": 340,
+      "transformedInstructions": 349,
+      "pluginCalls": 9
+    },
+    {
+      "group": "EditorLiteralPatch",
+      "signature": "Void DrawTankGroupFillSliders(KSA.Part, System.Collections.Generic.List`1[KSA.Tank])",
+      "declaringType": "KSA.VehicleEditor",
+      "ilSha256": "1c713023f99ca335a921f7baea620bdeefd904ae9045ccfc362f826f2c30dff4",
+      "originalInstructions": 141,
+      "transformedInstructions": 142,
+      "pluginCalls": 1
+    },
+    {
+      "group": "EditorLiteralPatch",
+      "signature": "Void DrawLaunchUi(KSA.IViewport)",
+      "declaringType": "KSA.VehicleLaunchMenu",
+      "ilSha256": "24e680a12b4978ff32dc455dc41edfbc311229afa3c0c75dd6b9fe4c50172da2",
+      "originalInstructions": 568,
+      "transformedInstructions": 575,
+      "pluginCalls": 7
+    },
+    {
+      "group": "EditorLiteralPatch",
+      "signature": "Void OnDrawUi(KSA.IGameViewport)",
+      "declaringType": "KSA.VehicleEditor+PartWindow",
+      "ilSha256": "3afba9b0fa15e1170f290826f9da7acb8c523e73cdb3aa90d7057cefba998f2b",
+      "originalInstructions": 1023,
+      "transformedInstructions": 1028,
+      "pluginCalls": 8
+    },
+    {
+      "group": "EditorLiteralPatch",
+      "signature": "Void AppendTooltip(KSA.PartTemplate, Core.SpanBuilder ByRef)",
+      "declaringType": "KSA.PartArchetypes",
+      "ilSha256": "6d5578f18c89b3c6a9133ced09e79a49635ba7530cdd0aff598fe8cb51dd3592",
+      "originalInstructions": 44,
+      "transformedInstructions": 44,
+      "pluginCalls": 0
+    },
+    {
+      "group": "EditorLiteralPatch",
+      "signature": "Void AppendMass(KSA.Part, Core.SpanBuilder ByRef)",
+      "declaringType": "KSA.PartArchetypes",
+      "ilSha256": "022f0a8c50bb0652393be71087073d1d7e96fddea927a9d676bb41451cc75830",
+      "originalInstructions": 28,
+      "transformedInstructions": 29,
+      "pluginCalls": 1
+    },
+    {
+      "group": "EditorLiteralPatch",
+      "signature": "Void AppendVolume(KSA.Part, Core.SpanBuilder ByRef)",
+      "declaringType": "KSA.PartArchetypes",
+      "ilSha256": "40caad300f6b6834c8c7366c488282d9ea8f63aa184002bdb72dd04565412c04",
+      "originalInstructions": 50,
+      "transformedInstructions": 51,
+      "pluginCalls": 1
+    },
+    {
+      "group": "EditorLiteralPatch",
+      "signature": "Void AppendPowerGenerated(KSA.Part, Core.SpanBuilder ByRef)",
+      "declaringType": "KSA.PartArchetypes",
+      "ilSha256": "2290369b44c7bf4d4de66486305257edca08abdf186fad5962e2dbe67bdb4563",
+      "originalInstructions": 80,
+      "transformedInstructions": 81,
+      "pluginCalls": 1
+    },
+    {
+      "group": "EditorLiteralPatch",
+      "signature": "Void AppendCharge(KSA.Part, Core.SpanBuilder ByRef)",
+      "declaringType": "KSA.PartArchetypes",
+      "ilSha256": "e3ad66aedeece92147369d3041bac07c381004a5232c184770098ca0abcc3c57",
+      "originalInstructions": 36,
+      "transformedInstructions": 37,
+      "pluginCalls": 1
+    },
+    {
+      "group": "EditorLiteralPatch",
+      "signature": "Void AppendPowerConsumed(KSA.Part, Core.SpanBuilder ByRef)",
+      "declaringType": "KSA.PartArchetypes",
+      "ilSha256": "6c5f3cbd88a09c65fe37a847a735586c9ba267f90dee2974eb2f4edbe4742c51",
+      "originalInstructions": 51,
+      "transformedInstructions": 52,
+      "pluginCalls": 1
+    },
+    {
+      "group": "EditorLiteralPatch",
+      "signature": "Void AppendThrust(KSA.Part, Core.SpanBuilder ByRef)",
+      "declaringType": "KSA.PartArchetypes",
+      "ilSha256": "9c4c5490fb8f5f8234aba1dd94a10967954de1447c7ef3c3de383528ddbb3c21",
+      "originalInstructions": 80,
+      "transformedInstructions": 82,
+      "pluginCalls": 2
+    },
+    {
+      "group": "EditorLiteralPatch",
+      "signature": "Void AppendThrustBlock(System.ReadOnlySpan`1[System.Char], System.ValueTuple`2[System.Single,System.Single], System.ValueTuple`2[System.Single,System.Single], Core.SpanBuilder ByRef)",
+      "declaringType": "KSA.PartArchetypes",
+      "ilSha256": "20c33212eb7e32f8a3efc9cea6e82cabff48ec392fa58133703be74be1e1fbd0",
+      "originalInstructions": 86,
+      "transformedInstructions": 90,
+      "pluginCalls": 4
+    },
+    {
+      "group": "EditorLiteralPatch",
+      "signature": "Void AppendPropellantBranch(System.ReadOnlySpan`1[KSA.RocketCore], Core.SpanBuilder ByRef)",
+      "declaringType": "KSA.PartArchetypes",
+      "ilSha256": "6f65f765ca59c43ef32ae3376d0d0a3ebc81877e262cac664dc2a95d724f39c6",
+      "originalInstructions": 80,
+      "transformedInstructions": 83,
+      "pluginCalls": 3
+    },
+    {
+      "group": "EditorLiteralPatch",
+      "signature": "Void AppendTankRoleAffinity(KSA.Part, Core.SpanBuilder ByRef)",
+      "declaringType": "KSA.PartArchetypes",
+      "ilSha256": "64e10de77bd25ba9af99e2c07a97f0b6d645b896bea36b2d837333a53f1b5f9c",
+      "originalInstructions": 93,
+      "transformedInstructions": 96,
+      "pluginCalls": 3
+    },
+    {
+      "group": "EditorLiteralPatch",
+      "signature": "Void AppendDecouplerForce(KSA.Part, Core.SpanBuilder ByRef)",
+      "declaringType": "KSA.PartArchetypes",
+      "ilSha256": "2bdc6a792de9a7da28eb65dd803134286218a4e73e98698cc68f0a969c77c4ac",
+      "originalInstructions": 50,
+      "transformedInstructions": 51,
+      "pluginCalls": 1
+    },
+    {
+      "group": "EditorSegmentsPatch",
+      "signature": "Int32 Segmented(System.ReadOnlySpan`1[System.Char], System.ReadOnlySpan`1[System.String], Int32)",
+      "declaringType": "KSA.ConsoleWidgets",
+      "ilSha256": "5db447c0b7c857b964e1c684705f0d6bc20d0d4bfcd3a6149075770958216730",
+      "originalInstructions": 269,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "EditorStageCaptionPatch",
+      "signature": "Void DrawStageWindow(KSA.IViewport)",
+      "declaringType": "KSA.VehicleEditingSpace",
+      "ilSha256": "5e4492ec1ceef8b4af1a78716e35b46f6a6c0e6ce2330e35b515ef462dddfda1",
+      "originalInstructions": 353,
+      "transformedInstructions": 357,
+      "pluginCalls": 7
+    },
+    {
+      "group": "EditorWindowTitlePatch",
+      "signature": "Boolean BeginWindowCore(System.ReadOnlySpan`1[System.Char], System.ReadOnlySpan`1[System.Char], System.ReadOnlySpan`1[System.Char], System.ReadOnlySpan`1[System.Char], Boolean ByRef, Boolean, Brutal.Numerics.float2, Brutal.ImGuiApi.ImGuiWindowFlags, Brutal.ImGuiApi.ImGuiCond, Boolean)",
+      "declaringType": "KSA.ConsoleStyle",
+      "ilSha256": "b759d8b14dc28dc0287575c9a0ba1b351c3a12ecd9f75ccc83e52ce6c9da941e",
+      "originalInstructions": 331,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "EditorWindowTitlePatch",
+      "signature": "Boolean BeginModalCore(System.ReadOnlySpan`1[System.Char], System.ReadOnlySpan`1[System.Char], System.ReadOnlySpan`1[System.Char], Brutal.Numerics.float2, Boolean, Brutal.ImGuiApi.ImGuiWindowFlags)",
+      "declaringType": "KSA.ConsoleStyle",
+      "ilSha256": "045eb560353550d888058fcbccf95298f149203dc5f629e886df565b09f07587",
+      "originalInstructions": 222,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "ExitPopupCaptionPatch",
+      "signature": "Void OnDrawUi()",
+      "declaringType": "KSA.ExitPopup",
+      "ilSha256": "8750520cefea05a216e84312a671680aff1789afafd311c860249ee1c5828d30",
+      "originalInstructions": 34,
+      "transformedInstructions": 36,
+      "pluginCalls": 2
+    },
+    {
+      "group": "FlightPlanCallsitePatch",
+      "signature": "Void DrawPatchWindow(KSA.IViewport)",
+      "declaringType": "KSA.Vehicle",
+      "ilSha256": "83482d8765286ef16cb626b52bb34ac680b2cf8d6e778fd65051faaa3694d40f",
+      "originalInstructions": 159,
+      "transformedInstructions": 159,
+      "pluginCalls": 4
+    },
+    {
+      "group": "FlightPlanCallsitePatch",
+      "signature": "Void DrawPatchInfo()",
+      "declaringType": "KSA.FlightPlan",
+      "ilSha256": "2742ed755e7204842096683fd2a813060c9c23bc243f4db8951363b69333cd99",
+      "originalInstructions": 103,
+      "transformedInstructions": 103,
+      "pluginCalls": 1
+    },
+    {
+      "group": "FlightPlanCallsitePatch",
+      "signature": "Void DrawPatchInfo()",
+      "declaringType": "KSA.PatchedConic",
+      "ilSha256": "23179cb25bdb1887fc20c1cd53b8ac0820182164ab240457e02c2c04afe8655a",
+      "originalInstructions": 492,
+      "transformedInstructions": 492,
+      "pluginCalls": 30
+    },
+    {
+      "group": "FlightPlanCallsitePatch",
+      "signature": "Void DrawEncounterInfo()",
+      "declaringType": "KSA.Encounter",
+      "ilSha256": "ae1cc9e3993e6a10ce0099d3410a04fd554bc4e6071bb5d36fb1e14e903bb247",
+      "originalInstructions": 94,
+      "transformedInstructions": 94,
+      "pluginCalls": 1
+    },
+    {
+      "group": "FlightPlanCallsitePatch",
+      "signature": "Void DrawBurnPatchWindow(KSA.FlightComputer, Boolean)",
+      "declaringType": "KSA.Burn",
+      "ilSha256": "a2766c38d0c19a2cb291ae80875b22856206d693cf0f852a4e4af3a061eb75d5",
+      "originalInstructions": 151,
+      "transformedInstructions": 152,
+      "pluginCalls": 4
+    },
+    {
+      "group": "FlightPlanCallsitePatch",
+      "signature": "Void DrawBurnInfo(KSA.FlightComputer)",
+      "declaringType": "KSA.Burn",
+      "ilSha256": "c4484d537b6417fa62ae2414d54c2e74b908bcbf28a17f6f1ca9f4af819b4905",
+      "originalInstructions": 243,
+      "transformedInstructions": 245,
+      "pluginCalls": 10
+    },
+    {
+      "group": "FlightPlanCallsitePatch",
+      "signature": "Void DrawBurnEditorWindowContent(KSA.Vehicle, KSA.FlightComputer, Boolean, Boolean)",
+      "declaringType": "KSA.Burn",
+      "ilSha256": "ad3bab5c1028f863e0971f4b425a184c917c945289441b6ec4e946273247d2c6",
+      "originalInstructions": 804,
+      "transformedInstructions": 804,
+      "pluginCalls": 25
+    },
+    {
+      "group": "FlightPlanCallsitePatch",
+      "signature": "Void Draw()",
+      "declaringType": "KSA.BurnContextMenu",
+      "ilSha256": "d3288daf0a753624fcca39d1831e9ee47fc2f6e0b83d16d5c81fa03c6c2ca9a2",
+      "originalInstructions": 317,
+      "transformedInstructions": 317,
+      "pluginCalls": 5
+    },
+    {
+      "group": "FlightPlanCallsitePatch",
+      "signature": "Void DrawParentDepartureAction(KSA.Vehicle, KSA.CelestialPosition ByRef)",
+      "declaringType": "KSA.BurnContextMenu",
+      "ilSha256": "df6c434190e7a8eaf764865d85d3148d4c06872cf2c0d3794abcccaaa23631b5",
+      "originalInstructions": 125,
+      "transformedInstructions": 125,
+      "pluginCalls": 2
+    },
+    {
+      "group": "FlightPlanCallsitePatch",
+      "signature": "Boolean DrawBurnActions(KSA.Vehicle, KSA.CelestialPosition ByRef, Boolean)",
+      "declaringType": "KSA.BurnContextMenu",
+      "ilSha256": "a2cf6c20c949a8a1a4bcc766a34c154843812620f0be55079a1be77b92a7b718",
+      "originalInstructions": 222,
+      "transformedInstructions": 222,
+      "pluginCalls": 1
+    },
+    {
+      "group": "FlightPlanCallsitePatch",
+      "signature": "Boolean BurnActionMenuItem(Int32, System.ReadOnlySpan`1[System.Char], BurnPlacement)",
+      "declaringType": "KSA.BurnContextMenu",
+      "ilSha256": "727f045846c852c79429185d08087d4f94f90cb7b236063e7905eeaf96bd9efd",
+      "originalInstructions": 111,
+      "transformedInstructions": 111,
+      "pluginCalls": 2
+    },
+    {
+      "group": "FlightPlanUiScopePatch",
+      "signature": "Void DrawPatchInfo()",
+      "declaringType": "KSA.PatchedConic",
+      "ilSha256": "23179cb25bdb1887fc20c1cd53b8ac0820182164ab240457e02c2c04afe8655a",
+      "originalInstructions": 492,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "FontRegistrationPatch",
+      "signature": "Void RegenerateFonts()",
+      "declaringType": "KSA.FontManager",
+      "ilSha256": "7672652ef6f4e4dfd4330a7613fef2c7150095b63bc0a000eef7370045d6e887",
+      "originalInstructions": 163,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "GalacticGridCaptionPatch",
+      "signature": "Void DrawGalacticGrid(KSA.IGameViewport)",
+      "declaringType": "KSA.Universe",
+      "ilSha256": "4f8a15324ab0979affbb219d88d98eea09a36503bbc4a0f79387e943b284b58d",
+      "originalInstructions": 142,
+      "transformedInstructions": 145,
+      "pluginCalls": 3
+    },
+    {
+      "group": "GaugeFontPatch",
+      "signature": "Void RefreshFontCache()",
+      "declaringType": "KSA.ConsoleStyle",
+      "ilSha256": "328e68e71cef0b34bcf5fca91a103a42b3e2118510550e5495877463c8b52675",
+      "originalInstructions": 23,
+      "transformedInstructions": 23,
+      "pluginCalls": 1
+    },
+    {
+      "group": "GaugeWidgetTextPatch",
+      "signature": "Void DrawWidgetText(Brutal.Numerics.float2, Brutal.Numerics.float2, Brutal.Numerics.float4)",
+      "declaringType": "KSA.GaugeCanvas",
+      "ilSha256": "8a36db40d38d99f293747345e13fe3424195164a03c966e55838f847a8e23a6a",
+      "originalInstructions": 143,
+      "transformedInstructions": 147,
+      "pluginCalls": 4
+    },
+    {
+      "group": "HelperTooltipPatch",
+      "signature": "Void DrawTooltip(Brutal.ImGuiApi.ImString, System.Func`1[System.Boolean])",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "f610d43b84075a939c7b35fd9e47a1023a3d4104a3d36db67b03cb4a9d90124b",
+      "originalInstructions": 56,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "HelperTooltipPatch",
+      "signature": "Void DrawTooltip(Brutal.ImGuiApi.ImString, Brutal.ImGuiApi.ImColor8)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "9d5e3727af71c7d173a279b018b1c0d467de47ac92374980191c34f785a68359",
+      "originalInstructions": 50,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "HudConfirmPopupCaptionPatch",
+      "signature": "Void OnDrawUi()",
+      "declaringType": "KSA.ConfirmActionPopup",
+      "ilSha256": "ce630ba5a4cea73002cf224eb90b50fc35ecd766bb9c5e279f717224f53e6cfc",
+      "originalInstructions": 36,
+      "transformedInstructions": 39,
+      "pluginCalls": 2
+    },
+    {
+      "group": "HudConsoleTitlePatch",
+      "signature": "Boolean BeginWindowCore(System.ReadOnlySpan`1[System.Char], System.ReadOnlySpan`1[System.Char], System.ReadOnlySpan`1[System.Char], System.ReadOnlySpan`1[System.Char], Boolean ByRef, Boolean, Brutal.Numerics.float2, Brutal.ImGuiApi.ImGuiWindowFlags, Brutal.ImGuiApi.ImGuiCond, Boolean)",
+      "declaringType": "KSA.ConsoleStyle",
+      "ilSha256": "b759d8b14dc28dc0287575c9a0ba1b351c3a12ecd9f75ccc83e52ce6c9da941e",
+      "originalInstructions": 331,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "HudContextAssignmentDisplayPatch",
+      "signature": "Void DrawContent(KSA.IViewport)",
+      "declaringType": "KSA.GaugeContextAssignmentWindow+Window",
+      "ilSha256": "308a0dfc343ad0105c0b8332af64097640d6a1629de16c424de7374bf8e8356d",
+      "originalInstructions": 188,
+      "transformedInstructions": 188,
+      "pluginCalls": 4
+    },
+    {
+      "group": "HudLayoutMenuBufferPatch",
+      "signature": "Boolean DrawMenuItem(Brutal.ImGuiApi.ImString, Boolean, Boolean)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "9866c8d526cca58e304aaddf2215b84cb1f4474627e5bf7da65af2ea818fc50d",
+      "originalInstructions": 184,
+      "transformedInstructions": 184,
+      "pluginCalls": 2
+    },
+    {
+      "group": "HudLayoutPatches",
+      "signature": "Void DrawMenu()",
+      "declaringType": "KSA.LayoutSaves",
+      "ilSha256": "81af3aafa52d565b1111535be5943625dac79838d8d82623526cec751a44e08e",
+      "originalInstructions": 205,
+      "transformedInstructions": 210,
+      "pluginCalls": 5
+    },
+    {
+      "group": "HudLayoutPatches",
+      "signature": "Void DrawMenuBar()",
+      "declaringType": "KSA.LayoutSaves+LayoutSavesWindow",
+      "ilSha256": "2152a817aebc219d6ac9a9ba2cff59c60b21074b301b7ccba8980fdd6941d61c",
+      "originalInstructions": 77,
+      "transformedInstructions": 81,
+      "pluginCalls": 4
+    },
+    {
+      "group": "HudLayoutPatches",
+      "signature": "Void DrawViewMenu()",
+      "declaringType": "KSA.LayoutSaves+LayoutSavesWindow",
+      "ilSha256": "097142c9f910af61818e51801a01d60c0ff9cf8c310b5751e3db2966bbf7510a",
+      "originalInstructions": 35,
+      "transformedInstructions": 37,
+      "pluginCalls": 2
+    },
+    {
+      "group": "HudLayoutPatches",
+      "signature": "Void DrawConsoleFooter()",
+      "declaringType": "KSA.LayoutSaves+LayoutSavesWindow",
+      "ilSha256": "77e18d17cb539b6f4e2ba26b68a1c8752662a723afd46c4fef4a7e854c4211c1",
+      "originalInstructions": 38,
+      "transformedInstructions": 38,
+      "pluginCalls": 1
+    },
+    {
+      "group": "HudLayoutPatches",
+      "signature": "Void DrawContent(KSA.IViewport)",
+      "declaringType": "KSA.LayoutSaves+LayoutSavesWindow",
+      "ilSha256": "0ee0e832413fda8e911eb82034ca8fa6ace5dc800dc6dc6a7bef76293a05cc64",
+      "originalInstructions": 156,
+      "transformedInstructions": 156,
+      "pluginCalls": 5
+    },
+    {
+      "group": "HudLayoutPatches",
+      "signature": "Void DrawInTable()",
+      "declaringType": "KSA.LayoutSave",
+      "ilSha256": "3532a538e0c67ad31c26f94e4f9c7c6774b4c03f967097975cd0c808f1163219",
+      "originalInstructions": 197,
+      "transformedInstructions": 202,
+      "pluginCalls": 4
+    },
+    {
+      "group": "HudSavePopupCaptionPatch",
+      "signature": "Void OnDrawUi()",
+      "declaringType": "KSA.StringInputPopup",
+      "ilSha256": "61dcdab56ae59fe15c443de2bbc17a7b33b962aed35e72a90240ab897573de67",
+      "originalInstructions": 63,
+      "transformedInstructions": 65,
+      "pluginCalls": 2
+    },
+    {
+      "group": "HudSavePopupCaptionPatch",
+      "signature": "Void DrawSanitizedHint()",
+      "declaringType": "KSA.StringInputPopup",
+      "ilSha256": "62679c5dbbeb314d84b57fea9451f165fd512279691a6606d921a00ad8046752",
+      "originalInstructions": 59,
+      "transformedInstructions": 61,
+      "pluginCalls": 2
+    },
+    {
+      "group": "HudSavePopupScopePatch",
+      "signature": "Void OnDrawUi()",
+      "declaringType": "KSA.StringInputPopup",
+      "ilSha256": "61dcdab56ae59fe15c443de2bbc17a7b33b962aed35e72a90240ab897573de67",
+      "originalInstructions": 63,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "HudWindowTitlePatch",
+      "signature": "Void OnDrawUi(KSA.IGameViewport)",
+      "declaringType": "KSA.ImGuiWindow",
+      "ilSha256": "785cb829dcb3ca226e4f8229a03009409ae2cfa0937f3e162aa2ea73175a79a2",
+      "originalInstructions": 372,
+      "transformedInstructions": 374,
+      "pluginCalls": 1
+    },
+    {
+      "group": "HudWindowViewMenuPatch",
+      "signature": "Void DrawMenuBar()",
+      "declaringType": "KSA.ImGuiWindow",
+      "ilSha256": "8b3f59a134002ec761a31c2b83d141c26b01ac0aa4ac56c5e8436e72c1003ce3",
+      "originalInstructions": 24,
+      "transformedInstructions": 26,
+      "pluginCalls": 1
+    },
+    {
+      "group": "HudWindowViewMenuPatch",
+      "signature": "Void DrawViewMenu()",
+      "declaringType": "KSA.ImGuiWindow",
+      "ilSha256": "63f1b2c21d3f8b9ff4efe6e1b0c6319dc354034dc6f97381bbc5ce51809ee29f",
+      "originalInstructions": 98,
+      "transformedInstructions": 104,
+      "pluginCalls": 3
+    },
+    {
+      "group": "KeyAssignmentPopupPromptPatch",
+      "signature": "Void OnDrawUi()",
+      "declaringType": "KSA.KeyAssignmentPopup",
+      "ilSha256": "b9f5f625d3794d59881d0d9e93f02731c062c238c8ebb2c2595387c8d3b31bfc",
+      "originalInstructions": 57,
+      "transformedInstructions": 59,
+      "pluginCalls": 2
+    },
+    {
+      "group": "KeyAssignmentPopupPromptPatch",
+      "signature": "Void DrawModifierReadout(Brutal.GlfwApi.GlfwModifier, System.String)",
+      "declaringType": "KSA.KeyAssignmentPopup",
+      "ilSha256": "a56cb8d40d64fe5805c2a399d6d74b3f9cfcc144b327a7bc9418a86f0aa69e81",
+      "originalInstructions": 17,
+      "transformedInstructions": 18,
+      "pluginCalls": 1
+    },
+    {
+      "group": "KeyAssignmentPopupTitlePatch",
+      "signature": "Void .ctor(KSA.GameSettings, KSA.InputAction)",
+      "declaringType": "KSA.KeyAssignmentPopup",
+      "ilSha256": "6cbd6bb01f17dee78bd3462e47f351c3516b3a5318159a235e8cd08551bdbba9",
+      "originalInstructions": 17,
+      "transformedInstructions": 17,
+      "pluginCalls": 1
+    },
+    {
+      "group": "KittenEvaActionCaptionPatch",
+      "signature": "Void DrawLadderPrompt(KSA.IViewport)",
+      "declaringType": "KSA.KittenEva",
+      "ilSha256": "28e177a5d4732489441e9a8e3a29e45f713bf3ea5e1a6bb4398a355d776a3661",
+      "originalInstructions": 150,
+      "transformedInstructions": 153,
+      "pluginCalls": 3
+    },
+    {
+      "group": "LanguageMenuPatch",
+      "signature": "Void DrawProgramMenusHook()",
+      "declaringType": "KSA.Program",
+      "ilSha256": "587bae728805519c3542d21766295396bd01087b6c47765ae3cadbf679813bbe",
+      "originalInstructions": 2,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "LoadingCaptionPatch",
+      "signature": "Void DrawUi()",
+      "declaringType": "KSA.Loading",
+      "ilSha256": "19e88cacc0b6e85301bee98a85cd63fa49f90810671b64bbac209f8ef795e9bd",
+      "originalInstructions": 133,
+      "transformedInstructions": 136,
+      "pluginCalls": 3
+    },
+    {
+      "group": "MenuTextPatch",
+      "signature": "Void DrawMenuBar(KSA.IGameViewport, Int32)",
+      "declaringType": "KSA.Program",
+      "ilSha256": "71c49c0a5f6ad36746e9d15bd1736a3118fd6f1ed126ba5a1c72644c28680e5c",
+      "originalInstructions": 2263,
+      "transformedInstructions": 2362,
+      "pluginCalls": 99
+    },
+    {
+      "group": "MenuTextPatch",
+      "signature": "Void DrawMenuItems()",
+      "declaringType": "KSA.ProfilerUi",
+      "ilSha256": "2b88b6de650a546130355b18e526764ba0251fc7735a41f6ab198d55677d471d",
+      "originalInstructions": 18,
+      "transformedInstructions": 20,
+      "pluginCalls": 2
+    },
+    {
+      "group": "MenuTextPatch",
+      "signature": "Void DrawMoveCameraToSubMenu(System.String, System.ReadOnlySpan`1[System.Int32])",
+      "declaringType": "KSA.Program",
+      "ilSha256": "3d00537d9792e872b41ae9a0aa315d3f1ce32678a3f9cf6c7af1c0f203c44a91",
+      "originalInstructions": 91,
+      "transformedInstructions": 91,
+      "pluginCalls": 1
+    },
+    {
+      "group": "MenuTextPatch",
+      "signature": "Void OnDrawMenuBar()",
+      "declaringType": "KSA.GaugeCanvas",
+      "ilSha256": "ac634840d4eae77c5bb1d54a81e160ea808a7cd1d3c19d2b6737c99ea27a9659",
+      "originalInstructions": 53,
+      "transformedInstructions": 54,
+      "pluginCalls": 1
+    },
+    {
+      "group": "OrbiterHoverTooltipPatch",
+      "signature": "Boolean OnDrawUi(KSA.IOrbiter, KSA.IGameViewport, System.String, Brutal.ImGuiApi.ImGuiWindowFlags)",
+      "declaringType": "KSA.IOrbiter",
+      "ilSha256": "11daf002bfae48155b9ea6432c635e0ae0cd1e6c2410c72724af505ccdc8f604",
+      "originalInstructions": 753,
+      "transformedInstructions": 754,
+      "pluginCalls": 1
+    },
+    {
+      "group": "ParachutePartCaptionPatch",
+      "signature": "Boolean ShowContextMenu(KSA.Vehicle)",
+      "declaringType": "KSA.Parachute",
+      "ilSha256": "c1ccb0ff2a25845485033f5f6b85db0c239d8c420a1c2e8827dcf9c6a93ac8c6",
+      "originalInstructions": 419,
+      "transformedInstructions": 420,
+      "pluginCalls": 5
+    },
+    {
+      "group": "ParachutePartCaptionPatch",
+      "signature": "Boolean DrawGatedButton(System.ReadOnlySpan`1[System.Byte], Boolean)",
+      "declaringType": "KSA.Parachute",
+      "ilSha256": "c121541d1f16c8791fd46bd9032deac175a60e84200b5e2e35df5598ca8817a2",
+      "originalInstructions": 41,
+      "transformedInstructions": 41,
+      "pluginCalls": 1
+    },
+    {
+      "group": "ParachutePartCaptionPatch",
+      "signature": "Void AppendClusterState(System.ReadOnlySpan`1[KSA.Parachute], Core.SpanBuilder ByRef)",
+      "declaringType": "KSA.Parachute",
+      "ilSha256": "7e7982ef06591fa308e06e355b8bde3a9abc2af9cc1e2c1a0c48844c9562dc47",
+      "originalInstructions": 153,
+      "transformedInstructions": 153,
+      "pluginCalls": 2
+    },
+    {
+      "group": "PartContextCaptionPatch",
+      "signature": "Boolean ShowContextMenu(KSA.Vehicle, KSA.Vehicle)",
+      "declaringType": "KSA.Part",
+      "ilSha256": "07480d65e38e43e626119e96292cac43e45ed3978854c5bb4822b42dcbadd115",
+      "originalInstructions": 1823,
+      "transformedInstructions": 1835,
+      "pluginCalls": 16
+    },
+    {
+      "group": "PartContextCaptionPatch",
+      "signature": "Void DrawTransferButton(KSA.Tank, KSA.TankTransferMode, Boolean)",
+      "declaringType": "KSA.Part",
+      "ilSha256": "ca5585d23cfa8967908efd0342588bab9d4136c214e878dfc8be24b37d25b6b9",
+      "originalInstructions": 145,
+      "transformedInstructions": 147,
+      "pluginCalls": 3
+    },
+    {
+      "group": "PartContextCaptionPatch",
+      "signature": "Boolean OnDrawUi(KSA.Vehicle, KSA.Vehicle, KSA.Camera, KSA.IGameViewport, Brutal.Numerics.double4x4 ByRef)",
+      "declaringType": "KSA.Part",
+      "ilSha256": "63218e38496f8ba77ea5b5b7e17c9ca665c8f840977024791af0487be2d72c06",
+      "originalInstructions": 405,
+      "transformedInstructions": 407,
+      "pluginCalls": 3
+    },
+    {
+      "group": "PartContextCaptionPatch",
+      "signature": "Boolean ShowControlFromHereItem(KSA.Vehicle, KSA.Part, Connector)",
+      "declaringType": "KSA.Part",
+      "ilSha256": "f7c0104de45970b05ce2fe68ebcfd93bf945c590b279cfcdd4f010fff9a25fcb",
+      "originalInstructions": 107,
+      "transformedInstructions": 107,
+      "pluginCalls": 1
+    },
+    {
+      "group": "PartContextCaptionPatch",
+      "signature": "Void DrawPartInfo()",
+      "declaringType": "KSA.Part",
+      "ilSha256": "811ae0a485fb900cb380d7486638ea3e9220212dc24a72fbca20be4b9ebd77fe",
+      "originalInstructions": 715,
+      "transformedInstructions": 721,
+      "pluginCalls": 12
+    },
+    {
+      "group": "PartContextCaptionPatch",
+      "signature": "Boolean ShowContextMenu(KSA.Vehicle, KSA.Vehicle)",
+      "declaringType": "KSA.DockingPort",
+      "ilSha256": "ef17e0c7f13ee693db650e5c8ba1268c8229761afa89f4fc39aa68492d508dcf",
+      "originalInstructions": 678,
+      "transformedInstructions": 684,
+      "pluginCalls": 12
+    },
+    {
+      "group": "PartContextCaptionPatch",
+      "signature": "Boolean OnDrawUi(KSA.Vehicle, KSA.Camera, KSA.IGameViewport, Brutal.Numerics.double4x4 ByRef)",
+      "declaringType": "KSA.DockingPort",
+      "ilSha256": "34e1ba690387f4669b05080d6b9b5806626d7656ce35bd5c865fdcc45f78db68",
+      "originalInstructions": 332,
+      "transformedInstructions": 336,
+      "pluginCalls": 4
+    },
+    {
+      "group": "PartContextCaptionPatch",
+      "signature": "Void OnDrawUi(KSA.IGameViewport)",
+      "declaringType": "KSA.MapController",
+      "ilSha256": "eaec5d21ec30c598575f8907c695760dcc231a1cc0868a70441162945fdc5f04",
+      "originalInstructions": 456,
+      "transformedInstructions": 472,
+      "pluginCalls": 22
+    },
+    {
+      "group": "PartContextFieldCaptionPatch",
+      "signature": "Boolean DrawCheckbox(Brutal.ImGuiApi.ImString, Boolean ByRef, Boolean)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "813863d5c3200d6531ea4175dfabe0913799681656fe9b40079088b8408d4780",
+      "originalInstructions": 114,
+      "transformedInstructions": 114,
+      "pluginCalls": 1
+    },
+    {
+      "group": "PartContextFieldCaptionPatch",
+      "signature": "Boolean DrawCombo[FlowRuleObject](Brutal.ImGuiApi.ImString, KSA.FlowRuleObject ByRef, System.Collections.Generic.List`1[KSA.FlowRuleObject], Boolean)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "4d33b45cf5c4c0f30057e6f054d61ec9bb4eeeee999d369c47d8fc8727dc7e52",
+      "originalInstructions": 190,
+      "transformedInstructions": 190,
+      "pluginCalls": 3
+    },
+    {
+      "group": "PartContextFieldScopePatch",
+      "signature": "Boolean ShowContextMenu(KSA.Vehicle, KSA.Vehicle)",
+      "declaringType": "KSA.Part",
+      "ilSha256": "07480d65e38e43e626119e96292cac43e45ed3978854c5bb4822b42dcbadd115",
+      "originalInstructions": 1823,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "PartTooltipNamePatch",
+      "signature": "Void AppendTooltip(KSA.PartTemplate, Core.SpanBuilder ByRef)",
+      "declaringType": "KSA.PartArchetypes",
+      "ilSha256": "6d5578f18c89b3c6a9133ced09e79a49635ba7530cdd0aff598fe8cb51dd3592",
+      "originalInstructions": 44,
+      "transformedInstructions": 44,
+      "pluginCalls": 1
+    },
+    {
+      "group": "PartWindowNamePatch",
+      "signature": "Void DrawPartUi(Int32, KSA.IGameViewport)",
+      "declaringType": "KSA.VehicleEditor",
+      "ilSha256": "953c536ea17dcd62840accfdf3266d153d0b77540f9aaf461454c5da7c662b4d",
+      "originalInstructions": 2501,
+      "transformedInstructions": 2501,
+      "pluginCalls": 1
+    },
+    {
+      "group": "ResourceNamePatch",
+      "signature": "Void DrawBar(Brutal.Numerics.float2, Brutal.Numerics.float2, Single, System.Nullable`1[Brutal.Numerics.float4], System.ReadOnlySpan`1[System.Char], System.ReadOnlySpan`1[System.Char])",
+      "declaringType": "KSA.ResourcesPanel",
+      "ilSha256": "327ccac5330f3f99a64204e821803d587e05c2f0b0fd583a03dc3bcfc7d1478a",
+      "originalInstructions": 327,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "ResourceUtilityCaptionPatch",
+      "signature": "Void DrawContent(KSA.IViewport)",
+      "declaringType": "KSA.ResourceGroupsPanel+ResourceGroupsPanelWindow",
+      "ilSha256": "01c923c5f737dcbc71325111b2b5817c0a10b9e77a2c3975b92723a30cbf5ceb",
+      "originalInstructions": 68,
+      "transformedInstructions": 69,
+      "pluginCalls": 1
+    },
+    {
+      "group": "ResourceUtilityCaptionPatch",
+      "signature": "Void DrawResourceGroupContent(KSA.StagingDrawContext ByRef)",
+      "declaringType": "KSA.ResourceGroupList",
+      "ilSha256": "14e72a16d296f716dd08d67d9b7309ee890de28201ecf5a04c034a1302ee73f2",
+      "originalInstructions": 657,
+      "transformedInstructions": 669,
+      "pluginCalls": 24
+    },
+    {
+      "group": "ResourceUtilityCaptionPatch",
+      "signature": "Void DrawResourceInfo(Brutal.Numerics.double4x4 ByRef, KSA.IGameViewport, System.ReadOnlySpan`1[KSA.MoleState], Boolean, System.ReadOnlySpan`1[KSA.BatteryState], Boolean)",
+      "declaringType": "KSA.PartTree",
+      "ilSha256": "29344e1bc254d7f61c80b2d4ac2b3e7895f0f58da3603bce6fc9b854aab9ee56",
+      "originalInstructions": 856,
+      "transformedInstructions": 860,
+      "pluginCalls": 15
+    },
+    {
+      "group": "ResourceUtilityCaptionPatch",
+      "signature": "Void DrawResourceWindow(KSA.IGameViewport, Brutal.Numerics.double4x4)",
+      "declaringType": "KSA.PartTree",
+      "ilSha256": "1524f84234446f72bba3adab13c13cbfb823eadd5a54b69c761783b1f098cb6a",
+      "originalInstructions": 143,
+      "transformedInstructions": 145,
+      "pluginCalls": 6
+    },
+    {
+      "group": "ResourceUtilityCaptionPatch",
+      "signature": "Void DrawFuelLinksSection(Brutal.ImGuiApi.ImGuiTreeNodeFlags)",
+      "declaringType": "KSA.FuelLinkList",
+      "ilSha256": "5910b58e6d0576a351741072dbe59bb6bd4ed04242cc01cf4643f4c7cdfeceef",
+      "originalInstructions": 291,
+      "transformedInstructions": 293,
+      "pluginCalls": 8
+    },
+    {
+      "group": "ResourceUtilityCaptionPatch",
+      "signature": "Void DrawStateInfo(KSA.BatteryState ByRef)",
+      "declaringType": "KSA.Battery",
+      "ilSha256": "8a628086680f48a6ef5a4dc05bd574724c11c915a566d8ea52fae6de64895381",
+      "originalInstructions": 44,
+      "transformedInstructions": 46,
+      "pluginCalls": 2
+    },
+    {
+      "group": "ResourceUtilityCaptionPatch",
+      "signature": "Void DrawStateInfo(KSA.GeneratorState ByRef)",
+      "declaringType": "KSA.Generator",
+      "ilSha256": "dff9c9ce40967b5a01710c14518e397a6f1c2861d6bf1597fda838c0329063f9",
+      "originalInstructions": 42,
+      "transformedInstructions": 46,
+      "pluginCalls": 4
+    },
+    {
+      "group": "ResourceUtilityCaptionPatch",
+      "signature": "Void DrawStateInfo(KSA.SolarPanelState ByRef)",
+      "declaringType": "KSA.SolarPanel",
+      "ilSha256": "6fd657e697cb3ec7b4ef06727444573afd909ff00e6ba72987acef3ee540329c",
+      "originalInstructions": 134,
+      "transformedInstructions": 145,
+      "pluginCalls": 11
+    },
+    {
+      "group": "ResourceUtilityCaptionPatch",
+      "signature": "Void DrawStateInfo(KSA.PowerConsumerState ByRef)",
+      "declaringType": "KSA.PowerConsumer",
+      "ilSha256": "976c302c09dd49ddf1b62953a536538ac60bc8b76a67c1f062a3729fdab1a59c",
+      "originalInstructions": 63,
+      "transformedInstructions": 68,
+      "pluginCalls": 6
+    },
+    {
+      "group": "ResourceUtilityCaptionPatch",
+      "signature": "Void DrawStateInfo(System.ReadOnlySpan`1[KSA.MoleState], UInt64, UInt64, Brutal.ImGuiApi.ImGuiTreeNodeFlags)",
+      "declaringType": "KSA.Tank",
+      "ilSha256": "82ebf206c02c1c84dbd0c1cd7df140f99c0b2d9929edb8b54628a0f1890d16b3",
+      "originalInstructions": 182,
+      "transformedInstructions": 185,
+      "pluginCalls": 3
+    },
+    {
+      "group": "RosterCaptionPatch",
+      "signature": "Void DrawRoster()",
+      "declaringType": "KSA.KittenRosterWindow+Window",
+      "ilSha256": "cf23c7503df49d45538789d136845a6318688fa710f8ca6e35c9e7d90ed9b6d7",
+      "originalInstructions": 211,
+      "transformedInstructions": 219,
+      "pluginCalls": 8
+    },
+    {
+      "group": "RosterCaptionPatch",
+      "signature": "Void DrawMemorial()",
+      "declaringType": "KSA.KittenRosterWindow+Window",
+      "ilSha256": "b5f934240909b941dca56b57cc7bd75f6238ca5f08b60b742721f38618a50d88",
+      "originalInstructions": 145,
+      "transformedInstructions": 151,
+      "pluginCalls": 6
+    },
+    {
+      "group": "RosterCaptionPatch",
+      "signature": "Void Draw(KSA.KittenRosterEntryData)",
+      "declaringType": "KSA.KittenRosterWindow+Window",
+      "ilSha256": "5c7975f8858858c4792d9a5a1cc78bd5f3409dc016bbba74a36f246d4b60161c",
+      "originalInstructions": 284,
+      "transformedInstructions": 286,
+      "pluginCalls": 2
+    },
+    {
+      "group": "RosterCaptionPatch",
+      "signature": "Void DrawConsoleFooter()",
+      "declaringType": "KSA.KittenRosterWindow+Window",
+      "ilSha256": "98fbc10edca08eae6aa4735161064461a7912e4055702956176162e40dc9e652",
+      "originalInstructions": 81,
+      "transformedInstructions": 84,
+      "pluginCalls": 3
+    },
+    {
+      "group": "RosterTabsPatch",
+      "signature": "Int32 Segmented(System.ReadOnlySpan`1[System.Char], System.ReadOnlySpan`1[System.String], Int32)",
+      "declaringType": "KSA.ConsoleWidgets",
+      "ilSha256": "5db447c0b7c857b964e1c684705f0d6bc20d0d4bfcd3a6149075770958216730",
+      "originalInstructions": 269,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "RosterTitlePatch",
+      "signature": "Boolean BeginWindowCore(System.ReadOnlySpan`1[System.Char], System.ReadOnlySpan`1[System.Char], System.ReadOnlySpan`1[System.Char], System.ReadOnlySpan`1[System.Char], Boolean ByRef, Boolean, Brutal.Numerics.float2, Brutal.ImGuiApi.ImGuiWindowFlags, Brutal.ImGuiApi.ImGuiCond, Boolean)",
+      "declaringType": "KSA.ConsoleStyle",
+      "ilSha256": "b759d8b14dc28dc0287575c9a0ba1b351c3a12ecd9f75ccc83e52ce6c9da941e",
+      "originalInstructions": 331,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "SettingsLiteralPatch",
+      "signature": "Void OnDrawUi(KSA.Camera)",
+      "declaringType": "KSA.GameSettings",
+      "ilSha256": "be013bfb2d3db7743a2360ed72c457b830efe1e2dfb25b3bb786d181d8aa7da0",
+      "originalInstructions": 3307,
+      "transformedInstructions": 3313,
+      "pluginCalls": 6
+    },
+    {
+      "group": "SettingsLiteralPatch",
+      "signature": "Void DrawFooter()",
+      "declaringType": "KSA.GameSettings",
+      "ilSha256": "c65f6b7a1319402563d5e76a699bd44c320b2473c9ba6af7d1e9d51af0e381ee",
+      "originalInstructions": 509,
+      "transformedInstructions": 515,
+      "pluginCalls": 6
+    },
+    {
+      "group": "SettingsLiteralPatch",
+      "signature": "Void Draw()",
+      "declaringType": "KSA.EscMenu",
+      "ilSha256": "220762c5c6e298b839e263936bc21459bf36db2a92b6e2a3b5ab966660ab9d67",
+      "originalInstructions": 349,
+      "transformedInstructions": 351,
+      "pluginCalls": 2
+    },
+    {
+      "group": "StartupCheckboxPatch",
+      "signature": "Void DrawUi(KSA.ConfigOnStartPopup, Single)",
+      "declaringType": "KSA.PopupCheckbox`1[[KSA.ConfigOnStartPopup, KSA, Version=2026.10.13.5602, Culture=neutral, PublicKeyToken=null]]",
+      "ilSha256": "b501d7952d67e2fc4402916bb38ca7e6ff6f6d4aa301972711e04ba87e432909",
+      "originalInstructions": 21,
+      "transformedInstructions": 22,
+      "pluginCalls": 1
+    },
+    {
+      "group": "StartupFieldPatch",
+      "signature": "Boolean DrawCombo[SystemInfo](Brutal.ImGuiApi.ImString, KSA.SystemInfo ByRef, System.Collections.Generic.List`1[KSA.SystemInfo], Boolean)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "4d33b45cf5c4c0f30057e6f054d61ec9bb4eeeee999d369c47d8fc8727dc7e52",
+      "originalInstructions": 190,
+      "transformedInstructions": 191,
+      "pluginCalls": 3
+    },
+    {
+      "group": "StartupFieldPatch",
+      "signature": "Boolean DrawCombo[GameTypeObject](Brutal.ImGuiApi.ImString, KSA.GameTypeObject ByRef, System.Collections.Generic.List`1[KSA.GameTypeObject], Boolean)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "4d33b45cf5c4c0f30057e6f054d61ec9bb4eeeee999d369c47d8fc8727dc7e52",
+      "originalInstructions": 190,
+      "transformedInstructions": 191,
+      "pluginCalls": 3
+    },
+    {
+      "group": "StartupFieldPatch",
+      "signature": "Boolean DrawCombo[VehicleObject](Brutal.ImGuiApi.ImString, VehicleObject ByRef, System.Collections.Generic.List`1[KSA.ConfigOnStartPopup+VehicleObject], Boolean)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "4d33b45cf5c4c0f30057e6f054d61ec9bb4eeeee999d369c47d8fc8727dc7e52",
+      "originalInstructions": 190,
+      "transformedInstructions": 191,
+      "pluginCalls": 1
+    },
+    {
+      "group": "StartupFieldPatch",
+      "signature": "Boolean DrawCombo[TextureSize](Brutal.ImGuiApi.ImString, UInt16 ByRef, System.Collections.Generic.List`1[KSA.TextureSize], Boolean)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "88bb8fccfba9c51f6501dbca2b1edf529787a38ff994253d836975431cafc2eb",
+      "originalInstructions": 192,
+      "transformedInstructions": 193,
+      "pluginCalls": 3
+    },
+    {
+      "group": "StartupFieldPatch",
+      "signature": "Boolean DrawComboWithTooltips[Filter](Brutal.ImGuiApi.ImString, Filter ByRef, KSA.StringEnumCollection`1[KSA.Rendering.Lighting.CascadedShadowSystem+Filter], System.ReadOnlySpan`1[Brutal.Localization.LString], Boolean)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "361161c55a9d2e1a11aa2145c583e58650bc00f77b2da9b9b2b5aa93719b9eff",
+      "originalInstructions": 175,
+      "transformedInstructions": 176,
+      "pluginCalls": 3
+    },
+    {
+      "group": "StartupFieldPatch",
+      "signature": "Boolean DrawCombo[ShadowSlots](Brutal.ImGuiApi.ImString, ShadowSlots ByRef, KSA.StringEnumCollection`1[KSA.GameSettings+ShadowSlots], System.ReadOnlySpan`1[KSA.GameSettings+ShadowSlots], Boolean)",
+      "declaringType": "KSA.ImGuiHelper",
+      "ilSha256": "5b169d6dabfc61501ff89ecefad1d8c0a9e52c9a204f3559052a9d721cd92dc6",
+      "originalInstructions": 156,
+      "transformedInstructions": 157,
+      "pluginCalls": 3
+    },
+    {
+      "group": "StartupUiPatch",
+      "signature": "Void OnDrawUi()",
+      "declaringType": "KSA.ConfigOnStartPopup",
+      "ilSha256": "0837e47f59791376e5c60dd194a1ba4b26c276dcdae5dedbcad3d0a5efc9c8f3",
+      "originalInstructions": 597,
+      "transformedInstructions": 625,
+      "pluginCalls": 29
+    },
+    {
+      "group": "TrackingCaptionPatch",
+      "signature": "Void DrawMenuBar()",
+      "declaringType": "KSA.GroundTrackWindow",
+      "ilSha256": "1793a817da1d7d990fee6a008edcf4d644f35fa77ec7d7470d4255ee8fdd5bf2",
+      "originalInstructions": 32,
+      "transformedInstructions": 33,
+      "pluginCalls": 1
+    },
+    {
+      "group": "TrackingCaptionPatch",
+      "signature": "Void DrawViewMenu()",
+      "declaringType": "KSA.GroundTrackWindow",
+      "ilSha256": "673cfca7a5dc4df09470bd3c402f695c114a64a554c68c9d06b0c0498a0c086b",
+      "originalInstructions": 231,
+      "transformedInstructions": 240,
+      "pluginCalls": 9
+    },
+    {
+      "group": "TrackingCaptionPatch",
+      "signature": "Void DrawContent(KSA.IViewport)",
+      "declaringType": "KSA.GroundTrackWindow",
+      "ilSha256": "08dbe4f613f7f040ed5da18a8a86e2cad26f7175196cfeda75f4f27c8c606c72",
+      "originalInstructions": 572,
+      "transformedInstructions": 573,
+      "pluginCalls": 1
+    },
+    {
+      "group": "TrackingCaptionPatch",
+      "signature": "Void DrawMenuBar()",
+      "declaringType": "KSA.TargetTrackWindow",
+      "ilSha256": "f3a01cda998da21c85499be24542d0a42978dcf2fa6c936e7fa896b284cce456",
+      "originalInstructions": 525,
+      "transformedInstructions": 546,
+      "pluginCalls": 21
+    },
+    {
+      "group": "TrackingCaptionPatch",
+      "signature": "Void DrawContent(KSA.IViewport)",
+      "declaringType": "KSA.TargetTrackWindow",
+      "ilSha256": "ae41ed5a7aa9635078eb060da934b04597d317baa1a5fb930ca335d0ff06b477",
+      "originalInstructions": 1372,
+      "transformedInstructions": 1378,
+      "pluginCalls": 6
+    },
+    {
+      "group": "TrackingCaptionPatch",
+      "signature": "PanelResult DrawPanel(PanelInput)",
+      "declaringType": "KSA.TargetTrackWindow",
+      "ilSha256": "8d569dd2989de14aea2a83730aa26cf41fff39d7b9fe918bee874c6e56979743",
+      "originalInstructions": 3344,
+      "transformedInstructions": 3365,
+      "pluginCalls": 21
+    },
+    {
+      "group": "TrackingCaptionPatch",
+      "signature": "Void DrawAddBurnPopup()",
+      "declaringType": "KSA.TargetTrackWindow",
+      "ilSha256": "5466944aa016e9cae3465860d63740d1ba8069cca59df442242d2d24fe334f17",
+      "originalInstructions": 74,
+      "transformedInstructions": 77,
+      "pluginCalls": 3
+    },
+    {
+      "group": "TrackingCaptionPatch",
+      "signature": "Void DrawBurnEditPopup()",
+      "declaringType": "KSA.TargetTrackWindow",
+      "ilSha256": "dfa6d060ecd4073021a82d06c7e200ce752d03433ed09d0a58877cfe26db15b3",
+      "originalInstructions": 141,
+      "transformedInstructions": 142,
+      "pluginCalls": 1
+    },
+    {
+      "group": "TrackingCaptionPatch",
+      "signature": "Boolean TryGetValidTarget(KSA.IOrbiter ByRef, KSA.Orbit ByRef, KSA.Orbit ByRef)",
+      "declaringType": "KSA.TargetTrackWindow",
+      "ilSha256": "05580ec978729b7fc747438331ee2146bc046e42784df7ffb700ed134f183b34",
+      "originalInstructions": 66,
+      "transformedInstructions": 68,
+      "pluginCalls": 2
+    },
+    {
+      "group": "TrackingWindowTitlePatch",
+      "signature": "Boolean BeginWindowCore(System.ReadOnlySpan`1[System.Char], System.ReadOnlySpan`1[System.Char], System.ReadOnlySpan`1[System.Char], System.ReadOnlySpan`1[System.Char], Boolean ByRef, Boolean, Brutal.Numerics.float2, Brutal.ImGuiApi.ImGuiWindowFlags, Brutal.ImGuiApi.ImGuiCond, Boolean)",
+      "declaringType": "KSA.ConsoleStyle",
+      "ilSha256": "b759d8b14dc28dc0287575c9a0ba1b351c3a12ecd9f75ccc83e52ce6c9da941e",
+      "originalInstructions": 331,
+      "transformedInstructions": null,
+      "pluginCalls": 0
+    },
+    {
+      "group": "TransferPlannerCaptionPatch",
+      "signature": "Void DrawPlanWindow(KSA.IGameViewport)",
+      "declaringType": "KSA.TransferPlanner",
+      "ilSha256": "af9744023a376f88d42129c23a9d35249132f716e070348397f7ac2d3ecb0018",
+      "originalInstructions": 1865,
+      "transformedInstructions": 1897,
+      "pluginCalls": 36
+    },
+    {
+      "group": "TransferPlannerCaptionPatch",
+      "signature": "Void DrawInterstellarBurnsSummary(InterstellarBurns, System.Span`1[System.Char])",
+      "declaringType": "KSA.TransferPlanner",
+      "ilSha256": "61b789955b11b0127de1c2c4abad359037c0b27bd551cd96073451ebab2b58a5",
+      "originalInstructions": 93,
+      "transformedInstructions": 99,
+      "pluginCalls": 6
+    },
+    {
+      "group": "TransferPlannerCaptionPatch",
+      "signature": "Void DrawTransferSummary(TransferData, KSA.TimeUnit, Boolean, System.Span`1[System.Char])",
+      "declaringType": "KSA.TransferPlanner",
+      "ilSha256": "d4f3a9782714b430dedf81aa122215cfe780ccf605e68c5fec5d60d5e1c42b23",
+      "originalInstructions": 99,
+      "transformedInstructions": 105,
+      "pluginCalls": 6
+    },
+    {
+      "group": "TransferPlannerCaptionPatch",
+      "signature": "Void DrawInterstellarPlan(System.Span`1[System.Char])",
+      "declaringType": "KSA.TransferPlanner",
+      "ilSha256": "3cb8c985fd75084105f84c12447d707c66a1efdc373fb3f587c60632557088c0",
+      "originalInstructions": 663,
+      "transformedInstructions": 693,
+      "pluginCalls": 31
+    },
+    {
+      "group": "TransferPlannerCaptionPatch",
+      "signature": "Void DrawInterstellarBurnFuel(System.ReadOnlySpan`1[System.Char], KSA.InterstellarBurnEstimate, System.Span`1[System.Char])",
+      "declaringType": "KSA.TransferPlanner",
+      "ilSha256": "0084ded30f2f234ec5122d70d2593188af355029c3e96cd622c5da6451d898b7",
+      "originalInstructions": 134,
+      "transformedInstructions": 144,
+      "pluginCalls": 10
+    },
+    {
+      "group": "TransferPlannerCaptionPatch",
+      "signature": "Void DrawPropellantShortfalls(KSA.Vehicle, System.Span`1[System.Char])",
+      "declaringType": "KSA.TransferPlanner",
+      "ilSha256": "de3b48305808c476c338376ce1ce35c9c6228ca13a3225dc3223c9007eb48718",
+      "originalInstructions": 89,
+      "transformedInstructions": 91,
+      "pluginCalls": 2
+    },
+    {
+      "group": "TransferPlannerCaptionPatch",
+      "signature": "Void DrawTargetPeriapsisRow()",
+      "declaringType": "KSA.TransferPlanner",
+      "ilSha256": "702562576aafca94f966c44b0809363ef58953046f7caf2ee620cbfa26ddda86",
+      "originalInstructions": 32,
+      "transformedInstructions": 33,
+      "pluginCalls": 1
+    },
+    {
+      "group": "TransferPlannerCaptionPatch",
+      "signature": "Void DrawInterstellarCorrection(KSA.PatchedConic, System.Span`1[System.Char])",
+      "declaringType": "KSA.TransferPlanner",
+      "ilSha256": "9211eb3d719934e37a2092c2800d7aa07b8241eaca3fb11382c576dbf817f4a1",
+      "originalInstructions": 144,
+      "transformedInstructions": 149,
+      "pluginCalls": 6
+    },
+    {
+      "group": "TransferPlannerCaptionPatch",
+      "signature": "Void DrawDeltaVShortfall(KSA.Vehicle, Double, System.Span`1[System.Char])",
+      "declaringType": "KSA.TransferPlanner",
+      "ilSha256": "51b75964a5ef626cdb8c5e23d1ef6693c1d6c76d416af7a559433e2202b00a32",
+      "originalInstructions": 42,
+      "transformedInstructions": 44,
+      "pluginCalls": 2
+    },
+    {
+      "group": "TransferPlannerCaptionPatch",
+      "signature": "Boolean DrawCalculatingSegmentBars()",
+      "declaringType": "KSA.TransferPlanner",
+      "ilSha256": "2eca023e2d28d59f47eecfaaa17ba6f6c5bdafa6572892bc3ae61978b4ed17da",
+      "originalInstructions": 214,
+      "transformedInstructions": 215,
+      "pluginCalls": 1
+    },
+    {
+      "group": "TransferPlannerCaptionPatch",
+      "signature": "Void DrawPorkChopToolTip(Single, Single)",
+      "declaringType": "KSA.TransferPlanner",
+      "ilSha256": "7553c4a0694668513ec29da07ea61e0f6c4cb01e22b0ad2c0efc2c58d555ca2f",
+      "originalInstructions": 323,
+      "transformedInstructions": 330,
+      "pluginCalls": 7
+    },
+    {
+      "group": "TransferPlannerCaptionPatch",
+      "signature": "Void DrawCorrectionTransfer()",
+      "declaringType": "KSA.TransferPlanner",
+      "ilSha256": "ac99ff6d07ddd5b5feeb307b9807f139d514e8dfaf8ec287279dc089d4e10cc6",
+      "originalInstructions": 242,
+      "transformedInstructions": 244,
+      "pluginCalls": 3
+    },
+    {
+      "group": "TransferPlannerCaptionPatch",
+      "signature": "Void DrawSelectedTransferFlightPlan(KSA.IGameViewport)",
+      "declaringType": "KSA.TransferPlanner",
+      "ilSha256": "9a42d02aa79e8e6560dccf24bb15ee837d3ce0f6c0b1cfba3760558b54a698f3",
+      "originalInstructions": 93,
+      "transformedInstructions": 96,
+      "pluginCalls": 3
+    },
+    {
+      "group": "TransferPlannerComboPatch",
+      "signature": "Boolean DrawComboControl[TransferType](System.ReadOnlySpan`1[System.Char], KSA.TransferType ByRef, System.ReadOnlySpan`1[KSA.TransferType])",
+      "declaringType": "KSA.TransferPlanner",
+      "ilSha256": "7780e58676397d4019eddaeefd56c7b58a838334c3e77daafe5358ba5e004c3e",
+      "originalInstructions": 164,
+      "transformedInstructions": 164,
+      "pluginCalls": 2
+    },
+    {
+      "group": "TransferPlannerComboPatch",
+      "signature": "Boolean DrawComboControl[TimeObject](System.ReadOnlySpan`1[System.Char], KSA.TimeObject ByRef, System.ReadOnlySpan`1[KSA.TimeObject])",
+      "declaringType": "KSA.TransferPlanner",
+      "ilSha256": "7780e58676397d4019eddaeefd56c7b58a838334c3e77daafe5358ba5e004c3e",
+      "originalInstructions": 164,
+      "transformedInstructions": 164,
+      "pluginCalls": 2
+    },
+    {
+      "group": "UtilityWindowPatches",
+      "signature": "Void DrawViewMenu()",
+      "declaringType": "KSA.GameSaves+GameSavesWindow",
+      "ilSha256": "6ba5ed4e4f99b3356b872d660f1c8733494119acedf316d96519ae79f14aeabc",
+      "originalInstructions": 35,
+      "transformedInstructions": 37,
+      "pluginCalls": 4
+    },
+    {
+      "group": "UtilityWindowPatches",
+      "signature": "Void DrawMenuBar()",
+      "declaringType": "KSA.GameSaves+GameSavesWindow",
+      "ilSha256": "f40874b1e9ca285c15988b695ab5118f729420dd064c1e78d3e85d09433c3609",
+      "originalInstructions": 67,
+      "transformedInstructions": 71,
+      "pluginCalls": 8
+    },
+    {
+      "group": "UtilityWindowPatches",
+      "signature": "Void DrawConsoleFooter()",
+      "declaringType": "KSA.GameSaves+GameSavesWindow",
+      "ilSha256": "cb7478df93991cc3a826bbefa67d5743914fbf48b521b1bf395a93dec603f042",
+      "originalInstructions": 38,
+      "transformedInstructions": 40,
+      "pluginCalls": 2
+    },
+    {
+      "group": "UtilityWindowPatches",
+      "signature": "Void DrawContent(KSA.IViewport)",
+      "declaringType": "KSA.GameSaves+GameSavesWindow",
+      "ilSha256": "21c11c329173bb422c70e901870922c0f307026d4194a9e95d46ae4f368d9e37",
+      "originalInstructions": 163,
+      "transformedInstructions": 169,
+      "pluginCalls": 10
+    },
+    {
+      "group": "UtilityWindowPatches",
+      "signature": "Void DrawViewMenu()",
+      "declaringType": "KSA.VehicleSaves+VehicleSavesWindow",
+      "ilSha256": "fa48f1005ac5635b66ba96657b2b1782348842d483108adfcc1ebe1b93c698ed",
+      "originalInstructions": 35,
+      "transformedInstructions": 37,
+      "pluginCalls": 4
+    },
+    {
+      "group": "UtilityWindowPatches",
+      "signature": "Void DrawMenuBar()",
+      "declaringType": "KSA.VehicleSaves+VehicleSavesWindow",
+      "ilSha256": "fcc1b6ce204625a8ba2ffea21ab9ec73830383019d1929e317848634c3ac3db7",
+      "originalInstructions": 143,
+      "transformedInstructions": 148,
+      "pluginCalls": 10
+    },
+    {
+      "group": "UtilityWindowPatches",
+      "signature": "Void DrawConsoleFooter()",
+      "declaringType": "KSA.VehicleSaves+VehicleSavesWindow",
+      "ilSha256": "384b0e333d8ce10b86c3878721e70c4bb811000886fb96c09581ebcf2920e744",
+      "originalInstructions": 38,
+      "transformedInstructions": 40,
+      "pluginCalls": 2
+    },
+    {
+      "group": "UtilityWindowPatches",
+      "signature": "Void DrawContent(KSA.IViewport)",
+      "declaringType": "KSA.VehicleSaves+VehicleSavesWindow",
+      "ilSha256": "88caa0c4ca3bfbfa8ef6c21a891b981de84cf6ec4865c954bbeda8c4d50d2e75",
+      "originalInstructions": 190,
+      "transformedInstructions": 196,
+      "pluginCalls": 10
+    },
+    {
+      "group": "UtilityWindowPatches",
+      "signature": "Void LoadOnConfirm()",
+      "declaringType": "KSA.GameSave",
+      "ilSha256": "ea61f93f9c9c2a6a1635f9fd62f6870bbb67891e548dba0d28b92a0f64de4087",
+      "originalInstructions": 13,
+      "transformedInstructions": 13,
+      "pluginCalls": 1
+    },
+    {
+      "group": "UtilityWindowPatches",
+      "signature": "Void MakeSave(System.String)",
+      "declaringType": "KSA.GameSaves",
+      "ilSha256": "55513dcfbc1fc644c7c17393b9cd7a753add555df96e0b2ebc0fcdee47af052e",
+      "originalInstructions": 43,
+      "transformedInstructions": 43,
+      "pluginCalls": 1
+    },
+    {
+      "group": "UtilityWindowPatches",
+      "signature": "Void DrawInTable()",
+      "declaringType": "KSA.UncompressedSave",
+      "ilSha256": "312aebf2bc095e6d7c8adeefd189f16e4f0a8201cda4843e14b5abd1bd2a3869",
+      "originalInstructions": 158,
+      "transformedInstructions": 161,
+      "pluginCalls": 8
+    },
+    {
+      "group": "UtilityWindowPatches",
+      "signature": "KSA.PartTree DrawInTable(KSA.IViewport)",
+      "declaringType": "KSA.UncompressedVehicleSave",
+      "ilSha256": "e50ff404a44d6a49cf2b37fa0c933846f7464def98fa67598abf1aa10901c848",
+      "originalInstructions": 249,
+      "transformedInstructions": 252,
+      "pluginCalls": 9
+    },
+    {
+      "group": "UtilityWindowPatches",
+      "signature": "Void <DrawInTable>b__1()",
+      "declaringType": "KSA.UncompressedVehicleSave+<>c__DisplayClass22_0",
+      "ilSha256": "6b1bf45570f1759631753a047cd5b06b07a989b645960cdf0b4cc4313e3093f5",
+      "originalInstructions": 7,
+      "transformedInstructions": 7,
+      "pluginCalls": 0
+    },
+    {
+      "group": "UtilityWindowPatches",
+      "signature": "Void <DrawInTable>b__2()",
+      "declaringType": "KSA.UncompressedVehicleSave+<>c__DisplayClass22_1",
+      "ilSha256": "44dcc3447576bbdfcc0867e7d0dea289b265e64fac1cbe16d93c4e24d1cdcb20",
+      "originalInstructions": 7,
+      "transformedInstructions": 7,
+      "pluginCalls": 0
+    },
+    {
+      "group": "UtilityWindowPatches",
+      "signature": "Void DrawMenuBar()",
+      "declaringType": "KSA.UniverseManifest+Window",
+      "ilSha256": "458be56c295e9a2596b2abd7e988ea3d811b676fd1d9e53f94357576089da81b",
+      "originalInstructions": 385,
+      "transformedInstructions": 396,
+      "pluginCalls": 25
+    },
+    {
+      "group": "UtilityWindowPatches",
+      "signature": "Void DrawContent(KSA.IViewport)",
+      "declaringType": "KSA.UniverseManifest+Window",
+      "ilSha256": "e2cc588e1ab773107b13c2be7ea491d3566a0c0a03b1f3c626fc880bb05d94a8",
+      "originalInstructions": 197,
+      "transformedInstructions": 200,
+      "pluginCalls": 6
+    },
+    {
+      "group": "UtilityWindowPatches",
+      "signature": "Void Draw(KSA.Astronomical)",
+      "declaringType": "KSA.UniverseManifest+Window",
+      "ilSha256": "aa2a580530b8cd76f3d4b4e0016ca1d5553689449dff467a1d6f212013f8c944",
+      "originalInstructions": 1242,
+      "transformedInstructions": 1252,
+      "pluginCalls": 18
+    },
+    {
+      "group": "WelcomeCaptionPatch",
+      "signature": "Void OnDrawUi()",
+      "declaringType": "KSA.WelcomePopup",
+      "ilSha256": "814edce26a7ea6809b5a4a4aba62c33ebe67e0840222573941849fe849cf42af",
+      "originalInstructions": 45,
+      "transformedInstructions": 48,
+      "pluginCalls": 3
+    }
+  ],
+  "graphicalValidation": "not covered by this headless test"
+}

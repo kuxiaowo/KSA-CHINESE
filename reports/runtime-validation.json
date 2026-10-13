@@ -1,0 +1,139 @@
+{
+  "schema": 1,
+  "game_version": "2026.10.13.5602",
+  "plugin_sha256": "ab1324d2a106187fef8de010cce81765a68460fbd2ff2085e8d595b4578c0cf0",
+  "font_sha256": "d996ad2af13c1e9d69cfcde1257d845096ddc792c54d91ebbb6e0d5cd96602e0",
+  "runs": [
+    {
+      "id": "final2",
+      "plugin_sha256": "5ff8a4604b8079d9126291ca0cb2d5f484b71430f129b351dc1a9270eb05d223",
+      "log_sha256": "b759bf4c36ca96dfb7914dcdd8b8c860b1195506cbf392a2bb96973108cd4f75",
+      "completed": true,
+      "role": "save/load/planning/editor runtime; before subsequent font-cache-only fix"
+    },
+    {
+      "id": "quick",
+      "plugin_sha256": "ab1324d2a106187fef8de010cce81765a68460fbd2ff2085e8d595b4578c0cf0",
+      "log_sha256": "ace024f40f3d50a069a0e8584fb3bc481fe88120fe7500fc6ba0f5a1310ab685",
+      "completed": true,
+      "role": "final font-cache fix and actual settings tab indices; HUD and English roundtrip"
+    },
+    {
+      "id": "installed-quick2",
+      "plugin_sha256": "ab1324d2a106187fef8de010cce81765a68460fbd2ff2085e8d595b4578c0cf0",
+      "log_sha256": "cbea1977b26e0bd59a5ffe9ebb362c25ba139413da4c6639067641d65c9937d6",
+      "completed": true,
+      "role": "final Chinese installed Launch.ps1 on Windows PowerShell 5.1; hash guard, settings and roundtrip"
+    },
+    {
+      "id": "fallback2",
+      "log_sha256": "a04f1b972a3a5e3153dbe18d0d2f2bdbf5f4a9b868b44070b73560028b79d634",
+      "completed": true,
+      "role": "installed Launch.ps1 on Windows PowerShell 5.1; KsaChinese uninstalled; same test save loads"
+    }
+  ],
+  "observations": {
+    "chinese_hud": true,
+    "display_settings": true,
+    "graphics_top": true,
+    "controls_top": true,
+    "planning_initial": true,
+    "target_track_empty": true,
+    "editor_and_part_window_drawn_without_exception": true,
+    "editor_visual_verified": false,
+    "editor_screenshot_rejection": "Screenshot: not available in the editor",
+    "game_save_created_and_loaded": true,
+    "uninstalled_save_loaded_in_english": true,
+    "test_save_hashes_unchanged_by_uninstall": true
+  },
+  "audited_game_inputs_unchanged": {
+    "KSA.dll": true,
+    "Brutal.Localization.dll": true,
+    "Content/Core/Languages/en-US.resx": true,
+    "Content/Core/Languages.xml": true,
+    "Content/Core/mod.toml": true,
+    "Content/Core/Shaders/GaugeLabel.frag": true
+  },
+  "original_player_save_contents_read": false,
+  "screenshots": [
+    {
+      "file": "screenshots/hud-zh.png",
+      "sha256": "e0dda440c8e05f6a8b92d20074d625fbd33750f4b551daf9a5ede985211ee8db",
+      "bytes": 1911604,
+      "run": "quick",
+      "interpretation": "中文HUD；标签和数字分别渲染，缩写保持",
+      "visual_review": "root inspected actual PNG"
+    },
+    {
+      "file": "screenshots/settings-display-zh.png",
+      "sha256": "e37b796a13e16d7b224528cd8f07d34c87c5b07cf63945bbd5024f63506fbbe1",
+      "bytes": 1375340,
+      "run": "final2",
+      "interpretation": "显示页、导航、DISPLAY上下文修正",
+      "visual_review": "root inspected actual PNG"
+    },
+    {
+      "file": "screenshots/settings-graphics-zh.png",
+      "sha256": "174f0190dc826af3cd1eea51fd576e90b079fcfb7bf1fc7169c0adf51f7e9f73",
+      "bytes": 1377525,
+      "run": "quick",
+      "interpretation": "图形页顶部；不包含滚动下方所有设置",
+      "visual_review": "root inspected actual PNG"
+    },
+    {
+      "file": "screenshots/settings-controls-zh.png",
+      "sha256": "5b659e5b01d7a7c178da096a6869a2b0b64872f46c56b15f35a2cb6246690a81",
+      "bytes": 1375630,
+      "run": "quick",
+      "interpretation": "控制页顶部键位标题与原按键；未改绑定",
+      "visual_review": "root inspected actual PNG"
+    },
+    {
+      "file": "screenshots/planning-zh.png",
+      "sha256": "71630a30deac4db00c8314da71c6c81667592ad1c05081df2dbd88526827bf71",
+      "bytes": 1339998,
+      "run": "final2",
+      "interpretation": "飞行计划/转移规划初始状态；未计算转移解",
+      "visual_review": "root inspected actual PNG"
+    },
+    {
+      "file": "screenshots/hud-en.png",
+      "sha256": "2a4df2afad0db22814dc0ce9d85623b4196843689fcd9c7294c342121a00802f",
+      "bytes": 1919154,
+      "run": "quick",
+      "interpretation": "英文回退；字体比例缓存修正后",
+      "visual_review": "root inspected actual PNG"
+    },
+    {
+      "file": "screenshots/hud-zh-roundtrip.png",
+      "sha256": "dcbbed256478c8eace33a0ac8c0bdc994a098bf6c39bd096a7070fdfef10e12b",
+      "bytes": 1906971,
+      "run": "quick",
+      "interpretation": "英文切回中文后HUD",
+      "visual_review": "root inspected actual PNG"
+    },
+    {
+      "file": "screenshots/tracking-zh.png",
+      "sha256": "637da25e80e2c1b24dc9551ac461117223108aefd6791ee28c52aefbcc58bfe7",
+      "bytes": 695768,
+      "run": "final2",
+      "interpretation": "目标窗无目标提示；地面窗有遮挡，绘图未完整验收",
+      "visual_review": "root inspected actual PNG"
+    },
+    {
+      "file": "screenshots/uninstalled-en.png",
+      "sha256": "b2a736b7536ac3de174d55713f27f108b73a82c91de38ffa6a6688fca86dbb05",
+      "bytes": 1974866,
+      "run": "fallback2",
+      "interpretation": "卸载后实际载入中文测试存档；不再有Language菜单",
+      "visual_review": "root inspected actual PNG"
+    }
+  ],
+  "limits": [
+    "developer driver triggers native code; not full human mouse/keyboard interaction",
+    "no editor/part layout screenshots",
+    "no complete transfer calculation or maneuver execution",
+    "single machine/GPU; partial resolution coverage",
+    "no long run or personal save migration"
+  ]
+}

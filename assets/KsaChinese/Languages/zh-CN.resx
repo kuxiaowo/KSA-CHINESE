@@ -1,0 +1,645 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root>
+  <data name="Language" xml:space="preserve">
+    <value>简体中文</value>
+  </data>
+  <data name="Font" xml:space="preserve">
+    <value>KsaUiNotoSC.ttf</value>
+  </data>
+  <data name="SettingsWindowTitle" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="SettingsMenuApply" xml:space="preserve">
+    <value>应用</value>
+  </data>
+  <data name="SettingsMenuCancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="SettingsMenuResetSettings" xml:space="preserve">
+    <value>重置设置</value>
+  </data>
+  <data name="SettingsMenuDiscard" xml:space="preserve">
+    <value>放弃更改</value>
+  </data>
+  <data name="SettingsMenuResetKeybindings" xml:space="preserve">
+    <value>重置键位</value>
+  </data>
+  <data name="SettingsDisplayMode" xml:space="preserve">
+    <value>显示模式</value>
+  </data>
+  <data name="SettingsDisplayScreen" xml:space="preserve">
+    <value>显示器</value>
+  </data>
+  <data name="SettingsDisplayResolution" xml:space="preserve">
+    <value>分辨率</value>
+  </data>
+  <data name="SettingsDisplayRefreshRate" xml:space="preserve">
+    <value>刷新率</value>
+  </data>
+  <data name="SettingsDisplayAntiAliasing" xml:space="preserve">
+    <value>抗锯齿</value>
+  </data>
+  <data name="SettingsDisplayFieldOfView" xml:space="preserve">
+    <value>视野角度</value>
+  </data>
+  <data name="SettingsDisplayVsync" xml:space="preserve">
+    <value>垂直同步</value>
+  </data>
+  <data name="SettingsDisplayFrameQueueLimit" xml:space="preserve">
+    <value>预渲染帧数上限</value>
+  </data>
+  <data name="SettingsDisplayMaxFrameRate" xml:space="preserve">
+    <value>帧率上限</value>
+  </data>
+  <data name="SettingsDisplayAlwaysOnTop" xml:space="preserve">
+    <value>窗口置顶</value>
+  </data>
+  <data name="SettingsGraphicsGeneral" xml:space="preserve">
+    <value>常规</value>
+  </data>
+  <data name="SettingsAudioGeneral" xml:space="preserve">
+    <value>常规</value>
+  </data>
+  <data name="SettingsAudioMasterVolume" xml:space="preserve">
+    <value>总音量</value>
+  </data>
+  <data name="SettingsAudioSfxVolume" xml:space="preserve">
+    <value>音效音量</value>
+  </data>
+  <data name="SettingsAudioUiVolume" xml:space="preserve">
+    <value>界面音量</value>
+  </data>
+  <data name="SettingsAudioMusicVolume" xml:space="preserve">
+    <value>音乐音量</value>
+  </data>
+  <data name="SettingsInterfaceGeneral" xml:space="preserve">
+    <value>常规</value>
+  </data>
+  <data name="SettingsInterfaceCelestialNames" xml:space="preserve">
+    <value>天体名称</value>
+  </data>
+  <data name="SettingsInterfaceLocationNames" xml:space="preserve">
+    <value>地点名称</value>
+  </data>
+  <data name="SettingsInterfaceAutoHideMenuBar" xml:space="preserve">
+    <value>自动隐藏菜单栏</value>
+  </data>
+  <data name="SettingsInterfaceFrameStatistics" xml:space="preserve">
+    <value>帧统计信息</value>
+  </data>
+  <data name="SettingsInterfaceManualOrbitLineVisibility" xml:space="preserve">
+    <value>手动控制轨道线显示</value>
+  </data>
+  <data name="SettingsInterfaceMapGridToggle" xml:space="preserve">
+    <value>地图网格</value>
+  </data>
+  <data name="SettingsInterfaceCrewPortraitCameras" xml:space="preserve">
+    <value>乘员头像相机</value>
+  </data>
+  <data name="SettingsInterfaceCameraJumpTime" xml:space="preserve">
+    <value>相机切换时间</value>
+  </data>
+  <data name="SettingsInterfaceFontRegion" xml:space="preserve">
+    <value>字体</value>
+  </data>
+  <data name="SettingsInterfaceFont" xml:space="preserve">
+    <value>界面字体</value>
+  </data>
+  <data name="SettingsInterfaceScale" xml:space="preserve">
+    <value>界面缩放</value>
+  </data>
+  <data name="SettingsInterfaceFontDensity" xml:space="preserve">
+    <value>字体渲染密度</value>
+  </data>
+  <data name="SettingsInterfaceFontPixelSnap" xml:space="preserve">
+    <value>字体像素对齐</value>
+  </data>
+  <data name="SettingsControlsCameraSensitivityRegion" xml:space="preserve">
+    <value>相机灵敏度</value>
+  </data>
+  <data name="SettingsControlsMouseLook" xml:space="preserve">
+    <value>鼠标视角灵敏度</value>
+  </data>
+  <data name="SettingsControlsRoll" xml:space="preserve">
+    <value>滚转灵敏度</value>
+  </data>
+  <data name="SettingsControlsEditorFreeCamScroll" xml:space="preserve">
+    <value>编辑器自由相机滚轮移动</value>
+  </data>
+  <data name="SettingsControlsKeyAssignmentsRegion" xml:space="preserve">
+    <value>键位设置</value>
+  </data>
+  <data name="SettingsSimulationPerformanceRegion" xml:space="preserve">
+    <value>性能</value>
+  </data>
+  <data name="SettingsSimulationOrbitSolvers" xml:space="preserve">
+    <value>轨道求解线程数</value>
+  </data>
+  <data name="SettingsSimulationMinTargetFramerate" xml:space="preserve">
+    <value>最低目标帧率</value>
+  </data>
+  <data name="SettingsSimulationMaxFlightComputerRate" xml:space="preserve">
+    <value>飞行计算机最高更新率</value>
+  </data>
+  <data name="AlertSimulationPaused" xml:space="preserve">
+    <value>模拟已暂停</value>
+  </data>
+  <data name="AlertAutoWarpActive" xml:space="preserve">
+    <value>自动时间加速已启动</value>
+  </data>
+  <data name="AlertFixedCamera" xml:space="preserve">
+    <value>固定相机</value>
+  </data>
+  <data name="AlertFreeCamera" xml:space="preserve">
+    <value>自由相机</value>
+  </data>
+  <data name="AlertOrbitCamera" xml:space="preserve">
+    <value>环绕相机</value>
+  </data>
+  <data name="AlertTargetSet" xml:space="preserve">
+    <value>已设置目标：{Target}</value>
+  </data>
+  <data name="AlertTargetUnset" xml:space="preserve">
+    <value>已取消目标。</value>
+  </data>
+  <data name="SettingsGraphicsStars" xml:space="preserve">
+    <value>恒星</value>
+  </data>
+  <data name="SettingsGraphicsMilkyWayQuality" xml:space="preserve">
+    <value>银河画质</value>
+  </data>
+  <data name="SettingsGraphicsVesselAmbientLighting" xml:space="preserve">
+    <value>飞船环境光</value>
+  </data>
+  <data name="SettingsGraphicsAmbientOcclusion" xml:space="preserve">
+    <value>环境光遮蔽（AO）</value>
+  </data>
+  <data name="SettingsGraphicsThinFilmInterference" xml:space="preserve">
+    <value>薄膜干涉效果</value>
+  </data>
+  <data name="SettingsGraphicsTonemapper" xml:space="preserve">
+    <value>色调映射</value>
+  </data>
+  <data name="SettingsGraphicsTonemapExposure" xml:space="preserve">
+    <value>曝光</value>
+  </data>
+  <data name="SettingsGraphicsTonemapGamma" xml:space="preserve">
+    <value>伽马</value>
+  </data>
+  <data name="SettingsGraphicsUiPixelCulling" xml:space="preserve">
+    <value>UI 像素裁剪</value>
+  </data>
+  <data name="SettingsGraphicsShadowsRegion" xml:space="preserve">
+    <value>阴影</value>
+  </data>
+  <data name="SettingsGraphicsShadowsLights" xml:space="preserve">
+    <value>光源阴影</value>
+  </data>
+  <data name="SettingsGraphicsShadowsLightsSize" xml:space="preserve">
+    <value>光源阴影分辨率</value>
+  </data>
+  <data name="SettingsGraphicsShadowsLightsSlots" xml:space="preserve">
+    <value>光源阴影数量</value>
+  </data>
+  <data name="SettingsGraphicsShadowsHardShadowsOnly" xml:space="preserve">
+    <value>仅使用硬阴影</value>
+  </data>
+  <data name="SettingsGraphicsShadowsVessels" xml:space="preserve">
+    <value>飞船阴影</value>
+  </data>
+  <data name="SettingsGraphicsShadowsVesselOnVolumetricExhausts" xml:space="preserve">
+    <value>飞船在体积尾焰上的阴影</value>
+  </data>
+  <data name="SettingsGraphicsShadowsTerrain" xml:space="preserve">
+    <value>地形阴影</value>
+  </data>
+  <data name="SettingsGraphicsShadowsTerrainMap" xml:space="preserve">
+    <value>地形阴影贴图</value>
+  </data>
+  <data name="SettingsGraphicsShadowsCascadedShadowMap" xml:space="preserve">
+    <value>级联阴影贴图</value>
+  </data>
+  <data name="SettingsGraphicsShadowsCascadedShadowFilter" xml:space="preserve">
+    <value>级联阴影过滤</value>
+  </data>
+  <data name="SettingsGraphicsShadowsSkybox" xml:space="preserve">
+    <value>天空背景阴影</value>
+  </data>
+  <data name="SettingsGraphicsShadowsClouds" xml:space="preserve">
+    <value>云层阴影</value>
+  </data>
+  <data name="SettingsGraphicsTexturesRegion" xml:space="preserve">
+    <value>纹理</value>
+  </data>
+  <data name="SettingsGraphicsTexturesVessels" xml:space="preserve">
+    <value>飞船纹理</value>
+  </data>
+  <data name="SettingsGraphicsTexturesTerrains" xml:space="preserve">
+    <value>地形纹理</value>
+  </data>
+  <data name="SettingsGraphicsTexturesPartThumbnails" xml:space="preserve">
+    <value>部件缩略图</value>
+  </data>
+  <data name="SettingsGraphicsTextureStreamingRegion" xml:space="preserve">
+    <value>纹理流送</value>
+  </data>
+  <data name="SettingsGraphicsTextureStreamingEnabled" xml:space="preserve">
+    <value>启用</value>
+  </data>
+  <data name="SettingsGraphicsTextureStreamingBudget" xml:space="preserve">
+    <value>显存预算（VRAM）</value>
+  </data>
+  <data name="SettingsGraphicsTerrainRegion" xml:space="preserve">
+    <value>地形</value>
+  </data>
+  <data name="SettingsGraphicsTerrainTessellation" xml:space="preserve">
+    <value>曲面细分</value>
+  </data>
+  <data name="SettingsGraphicsGroundClutterRegion" xml:space="preserve">
+    <value>地表植被与杂物</value>
+  </data>
+  <data name="SettingsGraphicsGroundClutter" xml:space="preserve">
+    <value>地表植被与杂物</value>
+  </data>
+  <data name="SettingsGraphicsGroundClutterTerrainBlending" xml:space="preserve">
+    <value>与地形混合</value>
+  </data>
+  <data name="SettingsGraphicsGroundClutterShadowCasting" xml:space="preserve">
+    <value>投射阴影</value>
+  </data>
+  <data name="SettingsGraphicsOceanRegion" xml:space="preserve">
+    <value>海洋</value>
+  </data>
+  <data name="SettingsGraphicsOcean" xml:space="preserve">
+    <value>海洋</value>
+  </data>
+  <data name="SettingsGraphicsOceanSimulationQuality" xml:space="preserve">
+    <value>海洋模拟质量</value>
+  </data>
+  <data name="SettingsGraphicsOceanHeightQueries" xml:space="preserve">
+    <value>海面高度查询</value>
+  </data>
+  <data name="SettingsGraphicsPlanetaryRingsRegion" xml:space="preserve">
+    <value>行星环</value>
+  </data>
+  <data name="SettingsGraphicsPlanetaryRings" xml:space="preserve">
+    <value>行星环</value>
+  </data>
+  <data name="SettingsGraphicsPlanetaryRingsVolumetricDust" xml:space="preserve">
+    <value>体积尘埃</value>
+  </data>
+  <data name="SettingsGraphicsPlanetaryRingsMeshes" xml:space="preserve">
+    <value>网格</value>
+  </data>
+  <data name="SettingsGraphicsVolumetricsRegion" xml:space="preserve">
+    <value>体积效果</value>
+  </data>
+  <data name="SettingsGraphicsVolumetricsAtmosphere" xml:space="preserve">
+    <value>大气</value>
+  </data>
+  <data name="SettingsGraphicsVolumetricsGodrays" xml:space="preserve">
+    <value>体积光束</value>
+  </data>
+  <data name="SettingsGraphicsVolumetricsClouds" xml:space="preserve">
+    <value>云层</value>
+  </data>
+  <data name="SettingsGraphicsVolumetricsPlumeTrails" xml:space="preserve">
+    <value>尾焰轨迹</value>
+  </data>
+  <data name="SettingsGraphicsVolumetricsExplosions" xml:space="preserve">
+    <value>爆炸</value>
+  </data>
+  <data name="SettingsGraphicsVolumetricsCloudQuality" xml:space="preserve">
+    <value>云层与尾焰轨迹升采样</value>
+  </data>
+  <data name="SettingsGraphicsVolumetricsExhaustQuality" xml:space="preserve">
+    <value>尾焰画质</value>
+  </data>
+  <data name="SettingsGraphicsVolumetricsMaxExhaustInstances" xml:space="preserve">
+    <value>尾焰实例数量上限</value>
+  </data>
+  <data name="SettingsGraphicsBloomsRegion" xml:space="preserve">
+    <value>泛光、太阳与镜头光晕</value>
+  </data>
+  <data name="SettingsGraphicsBloomsLensFlares" xml:space="preserve">
+    <value>镜头光晕</value>
+  </data>
+  <data name="SettingsGraphicsBloomsLensFlareIntensities" xml:space="preserve">
+    <value>镜头光晕强度</value>
+  </data>
+  <data name="SettingsGraphicsBloomsGlobalBloom" xml:space="preserve">
+    <value>全局泛光</value>
+  </data>
+  <data name="SettingsGraphicsBloomsThresholdBloom" xml:space="preserve">
+    <value>阈值泛光</value>
+  </data>
+  <data name="SettingsGraphicsDistantGlintsRegion" xml:space="preserve">
+    <value>远处反光</value>
+  </data>
+  <data name="SettingsGraphicsDistantGlints" xml:space="preserve">
+    <value>显示远处反光</value>
+  </data>
+  <data name="SettingsGraphicsVesselEffectsRegion" xml:space="preserve">
+    <value>飞船表面效果</value>
+  </data>
+  <data name="SettingsGraphicsVesselFrost" xml:space="preserve">
+    <value>结霜</value>
+  </data>
+  <data name="SettingsGraphicsVesselWater" xml:space="preserve">
+    <value>表面水迹</value>
+  </data>
+  <data name="SettingsGraphicsVesselDeformation" xml:space="preserve">
+    <value>撞击凹痕</value>
+  </data>
+  <data name="SettingsGraphicsVesselDeformationQuality" xml:space="preserve">
+    <value>撞击凹痕质量</value>
+  </data>
+  <data name="SettingsGraphicsKittensRegion" xml:space="preserve">
+    <value>小猫</value>
+  </data>
+  <data name="SettingsGraphicsKittensFurQuality" xml:space="preserve">
+    <value>毛发画质</value>
+  </data>
+  <data name="SettingsGraphicsParticlesRegion" xml:space="preserve">
+    <value>粒子</value>
+  </data>
+  <data name="SettingsGraphicsParticles" xml:space="preserve">
+    <value>粒子效果</value>
+  </data>
+  <data name="SettingsGraphicsParticleQuality" xml:space="preserve">
+    <value>粒子画质</value>
+  </data>
+  <data name="SettingsGraphicsAmbientOcclusionRegion" xml:space="preserve">
+    <value>环境光遮蔽（AO）</value>
+  </data>
+  <data name="SettingsGraphicsAmbientOcclusionQuality" xml:space="preserve">
+    <value>质量</value>
+  </data>
+  <data name="SettingsGraphicsAmbientOcclusionBlurPasses" xml:space="preserve">
+    <value>模糊次数</value>
+  </data>
+  <data name="SettingsGraphicsRaytracingRegion" xml:space="preserve">
+    <value>光线追踪</value>
+  </data>
+  <data name="SettingsGraphicsRaytracingIvaRayTracing" xml:space="preserve">
+    <value>舱内光线追踪（IVA）</value>
+  </data>
+  <data name="SettingsGraphicsRaytracingReflectionBounces" xml:space="preserve">
+    <value>反射次数</value>
+  </data>
+  <data name="SettingsGraphicsRaytracingOpaqueReflectionResolutionScale" xml:space="preserve">
+    <value>不透明反射分辨率比例</value>
+  </data>
+  <data name="SettingsGraphicsRaytracingTranslucentReflectionResolutionScale" xml:space="preserve">
+    <value>半透明反射分辨率比例</value>
+  </data>
+  <data name="SettingsGraphicsRaytracingIndirectLightingBounces" xml:space="preserve">
+    <value>间接光照反弹次数</value>
+  </data>
+  <data name="SettingsGraphicsRaytracingIndirectLightingResolutionScale" xml:space="preserve">
+    <value>间接光照分辨率比例</value>
+  </data>
+  <data name="SettingsGraphicsRaytracingShadowResolutionScale" xml:space="preserve">
+    <value>阴影分辨率比例</value>
+  </data>
+  <data name="SettingsGraphicsDebugRegion" xml:space="preserve">
+    <value>调试</value>
+  </data>
+  <data name="SettingsGraphicsDebugShaderHotReloading" xml:space="preserve">
+    <value>着色器热重载（启用后需要重启）</value>
+  </data>
+  <data name="SettingsInterfaceMouseHoverHighlightColor" xml:space="preserve">
+    <value>鼠标悬停高亮颜色</value>
+  </data>
+  <data name="SettingsInterfaceGaugesRegion" xml:space="preserve">
+    <value>仪表</value>
+  </data>
+  <data name="SettingsInterfaceGaugesSharpness" xml:space="preserve">
+    <value>仪表清晰度</value>
+  </data>
+  <data name="SettingsInterfaceGaugeScale" xml:space="preserve">
+    <value>HUD 缩放</value>
+  </data>
+  <data name="SettingsInterfaceOrbitLinesRegion" xml:space="preserve">
+    <value>轨道线</value>
+  </data>
+  <data name="SettingsInterfaceOrbitTrackColor" xml:space="preserve">
+    <value>轨迹颜色</value>
+  </data>
+  <data name="SettingsInterfaceOrbitPatchColor" xml:space="preserve">
+    <value>轨道段颜色</value>
+  </data>
+  <data name="SettingsInterfaceOrbitBurnColor" xml:space="preserve">
+    <value>机动颜色</value>
+  </data>
+  <data name="SettingsInterfaceOrbitInactiveColor" xml:space="preserve">
+    <value>非活动轨道颜色</value>
+  </data>
+  <data name="SettingsInterfaceEditorRegion" xml:space="preserve">
+    <value>编辑器</value>
+  </data>
+  <data name="SettingsInterfaceEditorHideEdgeOnRotationRings" xml:space="preserve">
+    <value>隐藏侧对视线的旋转环</value>
+  </data>
+  <data name="SettingsInterfaceSystemRegion" xml:space="preserve">
+    <value>系统</value>
+  </data>
+  <data name="SettingsInterfaceSystemConfigPopup" xml:space="preserve">
+    <value>启动时显示系统选择窗口</value>
+  </data>
+  <data name="SettingsInterfaceSystemWelcomePopup" xml:space="preserve">
+    <value>启动时显示欢迎窗口</value>
+  </data>
+  <data name="SettingsInterfaceSystemCheckForUpdates" xml:space="preserve">
+    <value>检查更新</value>
+  </data>
+  <data name="SettingsInterfaceSystemShowChangelogOnUpdated" xml:space="preserve">
+    <value>更新后显示更新日志</value>
+  </data>
+  <data name="SettingsSimulationGroundClutterRegion" xml:space="preserve">
+    <value>地表植被与杂物</value>
+  </data>
+  <data name="SettingsSimulationGroundClutterCollisions" xml:space="preserve">
+    <value>[实验性] 启用碰撞</value>
+  </data>
+  <data name="SettingsConsoleOnBoot" xml:space="preserve">
+    <value>启动时执行</value>
+  </data>
+  <data name="SettingsConsoleOnLoad" xml:space="preserve">
+    <value>载入时执行</value>
+  </data>
+  <data name="AlertControlNotActive" xml:space="preserve">
+    <value>当前未控制正在跟随的飞船</value>
+  </data>
+  <data name="AlertNoEnginesActive" xml:space="preserve">
+    <value>没有活动发动机</value>
+  </data>
+  <data name="AlertNoPropellantActive" xml:space="preserve">
+    <value>活动发动机没有推进剂</value>
+  </data>
+  <data name="AlertFuelTransferNoPower" xml:space="preserve">
+    <value>转移推进剂需要电力</value>
+  </data>
+  <data name="AlertFuelTransferDonorDisabled" xml:space="preserve">
+    <value>无法转移推进剂：来源储罐禁止使用推进剂</value>
+  </data>
+  <data name="AlertThrottleGLoadLimited" xml:space="preserve">
+    <value>为避免超过 G 载荷限制，油门已受限</value>
+  </data>
+  <data name="AlertNearLimitGForce" xml:space="preserve">
+    <value>飞船接近最大 G 载荷！</value>
+  </data>
+  <data name="AlertNearLimitAerodynamic" xml:space="preserve">
+    <value>飞船接近最大气动力载荷！</value>
+  </data>
+  <data name="AlertDuplicateBurn" xml:space="preserve">
+    <value>机动重复。</value>
+  </data>
+  <data name="AlertBurnOnStaleFlightPlan" xml:space="preserve">
+    <value>无法在已失效的飞行计划中创建机动。</value>
+  </data>
+  <data name="AlertTransferBurnOtherBurns" xml:space="preserve">
+    <value>无法创建转移机动：飞船已有其他活动机动。</value>
+  </data>
+  <data name="AlertIvaCamera" xml:space="preserve">
+    <value>舱内相机（IVA）</value>
+  </data>
+  <data name="AlertFrameCamera" xml:space="preserve">
+    <value>{Frame} 相机</value>
+  </data>
+  <data name="AlertSimulationRealTime" xml:space="preserve">
+    <value>模拟恢复正常时间倍率</value>
+  </data>
+  <data name="AlertFuelPortExists" xml:space="preserve">
+    <value>此部件已有推进剂接口，请点击现有接口</value>
+  </data>
+  <data name="AlertCannotLoadLaunchVehicle" xml:space="preserve">
+    <value>无法载入待发射飞船</value>
+  </data>
+  <data name="AlertVehicleRecovered" xml:space="preserve">
+    <value>飞船已回收</value>
+  </data>
+  <data name="AlertAutoWarpStopped" xml:space="preserve">
+    <value>自动时间加速已停止</value>
+  </data>
+  <data name="AlertControlPointReset" xml:space="preserve">
+    <value>控制点已重置。</value>
+  </data>
+  <data name="AlertControllingFrom" xml:space="preserve">
+    <value>当前控制点：{Name}</value>
+  </data>
+  <data name="AlertCannotCreateTransferBurn" xml:space="preserve">
+    <value>无法创建转移机动</value>
+  </data>
+  <data name="AlertTransferBurnImpacts" xml:space="preserve">
+    <value>无法在此创建转移机动：离开引力影响范围前会发生撞击。</value>
+  </data>
+  <data name="AlertTransferBurnSoiTime" xml:space="preserve">
+    <value>无法在此创建转移机动：请预留离开引力影响范围的时间。</value>
+  </data>
+  <data name="AlertAutoBurnStoppedNextLoaded" xml:space="preserve">
+    <value>自动机动已停止：推进剂耗尽。下一机动已载入。</value>
+  </data>
+  <data name="AlertAutoBurnStoppedNextLoadedVehicle" xml:space="preserve">
+    <value>{Vehicle}：自动机动已停止，推进剂耗尽。下一机动已载入。</value>
+  </data>
+  <data name="AlertAutoBurnStopped" xml:space="preserve">
+    <value>自动机动已停止：推进剂耗尽。</value>
+  </data>
+  <data name="AlertAutoBurnStoppedVehicle" xml:space="preserve">
+    <value>{Vehicle}：自动机动已停止，推进剂耗尽。</value>
+  </data>
+  <data name="AlertSlowDownBurnNotReplanned" xml:space="preserve">
+    <value>无法重新规划减速机动。</value>
+  </data>
+  <data name="AlertSlowDownBurnNotReplannedVehicle" xml:space="preserve">
+    <value>{Vehicle}：无法重新规划减速机动。</value>
+  </data>
+  <data name="AlertSlowDownBurnReplanned" xml:space="preserve">
+    <value>减速机动已重新规划。</value>
+  </data>
+  <data name="AlertSlowDownBurnReplannedVehicle" xml:space="preserve">
+    <value>{Vehicle}：减速机动已重新规划。</value>
+  </data>
+  <data name="AlertAutoBurnCompleteNextLoaded" xml:space="preserve">
+    <value>自动机动完成：下一机动已载入。</value>
+  </data>
+  <data name="AlertAutoBurnCompleteNextLoadedVehicle" xml:space="preserve">
+    <value>{Vehicle}：自动机动完成，下一机动已载入。</value>
+  </data>
+  <data name="AlertAutoBurnComplete" xml:space="preserve">
+    <value>自动机动完成。</value>
+  </data>
+  <data name="AlertAutoBurnCompleteVehicle" xml:space="preserve">
+    <value>{Vehicle}：自动机动完成。</value>
+  </data>
+  <data name="AlertNearLimitHydrodynamic" xml:space="preserve">
+    <value>飞船接近最大水动力载荷！</value>
+  </data>
+  <data name="AlertWreckageGroundImpact" xml:space="preserve">
+    <value>飞船因猛烈撞击地面而损毁！</value>
+  </data>
+  <data name="AlertWreckageOceanImpact" xml:space="preserve">
+    <value>飞船因猛烈撞击海面而损毁！</value>
+  </data>
+  <data name="AlertWreckageCollision" xml:space="preserve">
+    <value>飞船因碰撞而损毁！</value>
+  </data>
+  <data name="AlertWreckageExcessiveGForce" xml:space="preserve">
+    <value>飞船因 G 载荷过大而损毁！</value>
+  </data>
+  <data name="AlertWreckageAerodynamicForces" xml:space="preserve">
+    <value>飞船因气动力载荷过大而损毁！</value>
+  </data>
+  <data name="AlertWreckageHydrodynamicForces" xml:space="preserve">
+    <value>飞船因水动力载荷过大而损毁！</value>
+  </data>
+  <data name="FlightComputerTooltipNoBurn" xml:space="preserve">
+    <value>尚未创建机动。</value>
+  </data>
+  <data name="FlightComputerTooltipBurnNotTransferred" xml:space="preserve">
+    <value>请先将出发机动转移到飞行计划。</value>
+  </data>
+  <data name="FlightComputerTooltipNoTarget" xml:space="preserve">
+    <value>尚未设置目标。</value>
+  </data>
+  <data name="FlightComputerTooltipNoEngine" xml:space="preserve">
+    <value>没有活动发动机。</value>
+  </data>
+  <data name="FlightComputerTooltipBurnEmpty" xml:space="preserve">
+    <value>未设置有效机动时长。</value>
+  </data>
+  <data name="FlightComputerTooltipNoControl" xml:space="preserve">
+    <value>飞船没有控制模块。</value>
+  </data>
+  <data name="AlertAutoBurnStageRanDry" xml:space="preserve">
+    <value>自动机动已暂停：本级推进剂耗尽。请执行分级，再重新打开自动模式以完成机动。</value>
+  </data>
+  <data name="AlertAutoBurnStageRanDryVehicle" xml:space="preserve">
+    <value>{Vehicle}：自动机动已暂停，本级推进剂耗尽。请执行分级，再重新打开自动模式以完成机动。</value>
+  </data>
+  <data name="SettingsGraphicsSpecularAntiAliasing" xml:space="preserve">
+    <value>镜面反射抗锯齿</value>
+  </data>
+  <data name="ShadowFilterTooltip_Hard" xml:space="preserve">
+    <value>不作滤波：开销最低，但阴影像素感明显。</value>
+  </data>
+  <data name="ShadowFilterTooltip_Pcf" xml:space="preserve">
+    <value>简单盒式滤波：固定模糊，性能开销较低。</value>
+  </data>
+  <data name="ShadowFilterTooltip_Pcss" xml:space="preserve">
+    <value>半影遮挡：视觉效果最佳，性能开销较高。</value>
+  </data>
+  <data name="SettingsGraphicsVolumetricsPlumeTrailShadows" xml:space="preserve">
+    <value>尾焰轨迹阴影</value>
+  </data>
+  <data name="SettingsGraphicsVolumetricsExplosionQuality" xml:space="preserve">
+    <value>爆炸效果质量</value>
+  </data>
+  <data name="SettingsGraphicsVolumetricsMaxExplosionInstances" xml:space="preserve">
+    <value>爆炸实例数量上限</value>
+  </data>
+  <data name="SettingsInterfaceOrbitBurnPathColor" xml:space="preserve">
+    <value>机动轨迹颜色</value>
+  </data>
+</root>
