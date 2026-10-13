@@ -1,0 +1,8 @@
+.tools/
+work/
+__pycache__/
+*.pyc
+dist/
+**/bin/
+**/obj/
+
