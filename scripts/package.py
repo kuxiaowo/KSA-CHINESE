@@ -1,6 +1,6 @@
 """Package explicit Mod/loader/license/source/report allowlists, never game files."""
 from pathlib import Path
-import datetime,hashlib,json,shutil,uuid,zipfile
+import datetime,hashlib,json,shutil,uuid,zipfile,re
 
 root=Path(__file__).resolve().parents[1]
 stage=root/'work'/('package-'+datetime.datetime.now().strftime('%Y%m%d-%H%M%S')+'-'+uuid.uuid4().hex[:8])
@@ -27,7 +27,8 @@ for p in files:
 manifest={str(p.relative_to(stage)).replace('\\','/'):hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
 (stage/'FILES-SHA256.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 dist=root/'dist'; dist.mkdir(exist_ok=True)
-archive=dist/'KsaChinese-0.1.0-5602.zip'
+version=re.search(r'^version = "([^"]+)"',(root/'assets/KsaChinese/mod.toml').read_text(encoding='utf-8'),re.M).group(1)
+archive=dist/f'KsaChinese-{version}-5602-Legacy.zip'
 with zipfile.ZipFile(archive,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
     for p in sorted(stage.rglob('*')):
         if p.is_file(): z.write(p,str(p.relative_to(stage)).replace('\\','/'))

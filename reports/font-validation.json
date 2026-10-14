@@ -1,9 +1,9 @@
 {
   "source": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
   "source_sha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
-  "subset_sha256": "d996ad2af13c1e9d69cfcde1257d845096ddc792c54d91ebbb6e0d5cd96602e0",
-  "mapped_codepoints": 1325,
-  "required_codepoints": 1325,
+  "subset_sha256": "a60c3b6a45b129d351b6f3da879ca9147c9ee086414bca8b6b0aab677e4f11c9",
+  "mapped_codepoints": 1327,
+  "required_codepoints": 1327,
   "missing_codepoints": [],
   "scope": "all runtime translation keys and values; UI/tooltip/gauge share this subset; arbitrary player names may need additional characters",
   "license": "SIL OFL 1.1"

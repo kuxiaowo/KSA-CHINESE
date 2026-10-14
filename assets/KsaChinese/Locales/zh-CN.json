@@ -810,7 +810,8 @@
     "Double-Base": "双基推进剂",
     "REFILL CONSUMABLES": "补满消耗品",
     "AUTO GROUPS": "自动分组",
-    "RESOURCES": "资源"
+    "RESOURCES": "资源",
+    "Luna": "月球"
   },
   "startup": {
     "CONFIGURATION": "启动配置",
@@ -849,7 +850,9 @@
     "Earth Only + Interstellar": "仅地球＋星际",
     "Some systems may require more Video Memory (VRAM) than others due to texture size for color and heightmap data, and may not be available or crash the game if you do not have enough VRAM available.": "不同天体系统使用的颜色纹理和高度图大小不同，因此需要的显存也不同。可用显存不足时，天体系统可能无法载入，也可能导致游戏崩溃。",
     " Reported usage and budget: ~": " 当前报告的显存占用／预算：约 ",
-    " / ~": " ／约 "
+    " / ~": " ／约 ",
+    "Interstellar (Dense)": "星际系统（密集）",
+    "Earth and Moon": "地球与月球"
   },
   "parts": {
     "CoreCommandA_Prefab_MediumCapsuleVariantA": "中型乘员舱 A",
@@ -1646,6 +1649,7 @@
     "RATE": "消旋",
     "RELATIVE": "相对",
     "RELAX": "宽松",
+    "RES": "资源",
     "RESOURCES": "资源",
     "RETRO": "逆行",
     "ROLL": "滚转",
@@ -1671,6 +1675,12 @@
   },
   "scoped": {
     "Settings.VsyncFpsPreview": "显示器刷新率",
-    "Menu.SimulationSpeed": "模拟速度"
+    "Menu.SimulationSpeed": "模拟速度",
+    "Staging.ATM": "大气",
+    "Staging.VAC": "真空",
+    "Staging.Isp ": "比冲 ",
+    "Staging.TWR ": "推重比 ",
+    "Staging.TOTAL dV": "总Δv",
+    "Staging.Environment for this sequence's delta-v and TWR. Click to toggle. Atmospheric uses sea-level (1 atm) engine performance.": "本级速度增量和推重比的计算工况。点击切换。大气工况采用海平面（1 atm）的发动机性能。"
   }
 }
