@@ -1,9 +1,10 @@
 """Build a game-directory Mod package using explicit, non-game allowlists."""
 from pathlib import Path
-import hashlib, json, shutil, zipfile, uuid
+import hashlib, json, shutil, zipfile, uuid, re
 
 root = Path(__file__).resolve().parents[1]
-stage = root/'work'/('portable-package-0.1.1-'+uuid.uuid4().hex[:8])
+version=re.search(r'^version = "([0-9.]+)"',(root/'assets/KsaChinese/mod.toml').read_text(encoding='utf-8'),re.M).group(1)
+stage = root/'work'/('portable-package-'+version+'-'+uuid.uuid4().hex[:8])
 stage.mkdir(parents=True)
 
 def copy(src, dest):
@@ -29,7 +30,7 @@ for p in files:
     if 'Profile' in p.parts or 'saves' in p.parts: raise ValueError('Player data '+str(p))
 manifest={p.relative_to(stage).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
 (stage/'KsaChinese/FILES-SHA256.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-archive=root/'dist/KsaChinese-0.1.1-5602-Portable.zip'
+archive=root/f'dist/KsaChinese-{version}-5602-Portable.zip'
 archive.parent.mkdir(exist_ok=True)
 with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
     for p in sorted(stage.rglob('*')):
@@ -37,7 +38,7 @@ with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
 with zipfile.ZipFile(archive) as z:
     assert z.testzip() is None
 digest=hashlib.sha256(archive.read_bytes()).hexdigest()
-(archive.parent/'SHA256SUMS-0.1.1.txt').write_text(digest+'  '+archive.name+'\n',encoding='utf-8')
+(archive.parent/f'SHA256SUMS-{version}.txt').write_text(digest+'  '+archive.name+'\n',encoding='utf-8')
 result=dict(archive=archive.name,sha256=digest,files=len(manifest)+1,bytes=archive.stat().st_size,game_binaries_included=False,player_data_included=False)
 (root/'reports/portable-package-validation.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
 print(json.dumps(result))

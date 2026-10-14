@@ -1,6 +1,6 @@
 # 5602 简体中文便携 Mod
 
-完整解压 `KsaChinese-0.1.1-5602-Portable.zip` **到含 `KSA.exe` 的游戏目录**。最终位置应为：
+完整解压 `KsaChinese-0.1.2-5602-Portable.zip` **到含 `KSA.exe` 的游戏目录**。最终位置应为：
 
 ```text
 Kitten Space Agency/
@@ -20,6 +20,6 @@ Kitten Space Agency/
 
 卸载：关闭游戏，先备份需要的档案，将 `Content/KsaChinese` 移出 `Content`，将桌面快捷方式改回原 `KSA.exe`。需要保留存档时保留 `KsaChinese/Profile`；不要把它连同加载器一起删掉。若指定了旧汉化档案，该档案仍位于旧位置。
 
-本版补齐启动系统的 `Interstellar (Dense)`、`Earth and Moon`、地点中的 `Luna`，以及分级面板的 `RES`、`ATM/VAC`、`Isp`、`TWR` 和 `TOTAL dV`。Apollo11、Viking1 等任务型号与玩家名称保留。`VAC/ATM` 是计算性能采用的工况，不代表飞船当前所在环境。1655 条审核词条不能视为全游戏翻译完成。
+本版包括此前启动/分级汉化，并补齐仪表右键的启用、始终置顶、重置、独立窗口、锁定。星际预设显示为“太阳系及邻近恒星”，Dense 为“太阳系及邻近恒星（扩充版）”。Apollo11、Viking1 等任务型号与玩家名称保留。`VAC/ATM` 是计算性能采用的工况，不代表飞船当前所在环境。1660 条审核词条不能视为全游戏翻译完成。
 
 本包不含游戏本体、Core 原素材、反编译源码或个人存档。许可见 `LICENSES`，代码为 MIT、字体为 OFL。验证记录见项目 `reports`；源码按 developing → PR → main 合并。

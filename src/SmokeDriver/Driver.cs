@@ -1,9 +1,13 @@
 // Development-only driver. Never included in the player Mod/package.
 using System.Diagnostics;
 using System.Reflection;
+using System.Reflection.Emit;
+using Brutal.ImGuiApi;
+using Brutal.Numerics;
 using HarmonyLib;
 using KSA;
 using StarMap.API;
+using Constants = KSA.Constants;
 
 namespace KsaChineseSmoke;
 
@@ -14,6 +18,8 @@ public sealed class Driver
     int Stage;
     bool Fallback => Environment.GetEnvironmentVariable("KSA_SMOKE_FALLBACK")=="1";
     bool Quick => Environment.GetEnvironmentVariable("KSA_SMOKE_QUICK")=="1";
+    bool GaugeContext => Environment.GetEnvironmentVariable("KSA_SMOKE_GAUGE_CONTEXT")=="1";
+    static bool ShowGaugeContext;
     [StarMapBeforeMain]
     public void Initialize()
     {
@@ -23,6 +29,7 @@ public sealed class Driver
         var patch=new Harmony("local.ksa.chinese.smoke");
         patch.Patch(AccessTools.Constructor(typeof(ConfigOnStartPopup)),postfix:new HarmonyMethod(typeof(Driver),nameof(SkipConfig)));
         patch.Patch(AccessTools.Constructor(typeof(WelcomePopup)),postfix:new HarmonyMethod(typeof(Driver),nameof(SkipWelcome)));
+        if(GaugeContext) patch.Patch(AccessTools.Method(typeof(GaugeCanvas),nameof(GaugeCanvas.OnDrawUi)),transpiler:new HarmonyMethod(typeof(Driver),nameof(ContextRenderer)));
         Log("isolation="+path);
     }
     public static void SkipConfig(ConfigOnStartPopup __instance)
@@ -44,6 +51,29 @@ public sealed class Driver
         AccessTools.Method(typeof(KSA.Program),"Screenshot").Invoke(null,new object[]{1,"ui hud warm=3"});
     }
     static void Log(string s) { Console.WriteLine("[Smoke] "+s); File.AppendAllText(Path.Combine(Constants.DocumentsFolderPath,"smoke.log"),DateTimeOffset.UtcNow.ToString("O")+" "+s+Environment.NewLine); }
+    // Open the real SequenceCanvas popup in the fixture without injecting mouse
+    // clicks or changing any checked value. This driver never ships to players.
+    public static bool ContextPopup(ImString id, ImGuiPopupFlags flags)
+    {
+        if(ShowGaugeContext && Program.SequenceCanvas is not null && id.ToString()==Program.SequenceCanvas.DebugTitle)
+        {
+            ImGui.SetNextWindowPos(ImGui.GetMainViewport().Pos+new float2(400,250));
+            ImGui.OpenPopup(id,ImGuiPopupFlags.None);
+            return ImGui.BeginPopup(id,ImGuiWindowFlags.AlwaysAutoResize);
+        }
+        return ImGui.BeginPopupContextWindow(id,flags);
+    }
+    public static IEnumerable<CodeInstruction> ContextRenderer(IEnumerable<CodeInstruction> instructions)
+    {
+        int count=0;
+        foreach(var instruction in instructions)
+        {
+            if(instruction.operand is MethodInfo m && m.DeclaringType==typeof(ImGui) && m.Name==nameof(ImGui.BeginPopupContextWindow))
+            { instruction.opcode=OpCodes.Call; instruction.operand=AccessTools.Method(typeof(Driver),nameof(ContextPopup)); count++; }
+            yield return instruction;
+        }
+        if(count!=1) throw new InvalidOperationException("Fixture gauge popup site changed.");
+    }
     static void Tab(string name)
     {
         GameSettings.Show=true;
@@ -61,6 +91,17 @@ public sealed class Driver
         double t=Timer.Elapsed.TotalSeconds;
         try
         {
+            if(GaugeContext)
+            {
+                ShowGaugeContext=true;
+                if(Stage==0 && t>3) { Shot("gauge-context-zh"); Stage++; }
+                else if(Stage==1 && t>7) { Locale("en-US"); Stage++; }
+                else if(Stage==2 && t>10) { Shot("gauge-context-en"); Stage++; }
+                else if(Stage==3 && t>14) { Locale("zh-CN"); Stage++; }
+                else if(Stage==4 && t>17) { Shot("gauge-context-zh-roundtrip"); Stage++; }
+                else if(Stage==5 && t>22) { Log("gauge-context-completed"); Program.Instance.RequestExit(0); Stage++; }
+                return;
+            }
             if(Quick)
             {
                 if(Stage==0 && t>3) { Shot("quick-hud-zh"); Stage++; }
