@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "ledger_rows": 1729,
+  "ledger_rows": 1734,
   "review_status_counts": {
-    "reviewed": 1655,
+    "reviewed": 1660,
     "defer": 55,
     "needs-context": 11,
     "preserve": 8
@@ -20,7 +20,7 @@
     "planning": 244,
     "utility": 297,
     "gauges": 74,
-    "scoped": 8
+    "scoped": 13
   },
   "excluded_entries": [
     {

@@ -1674,6 +1674,11 @@
     "YEARS": "年"
   },
   "scoped": {
+    "Gauge.Context.Enabled": "启用",
+    "Gauge.Context.Always on top": "始终置顶",
+    "Gauge.Context.Reset": "重置",
+    "Gauge.Context.Detached": "独立窗口",
+    "Gauge.Context.Lock": "锁定",
     "Settings.VsyncFpsPreview": "显示器刷新率",
     "Menu.SimulationSpeed": "模拟速度",
     "Staging.ATM": "大气",

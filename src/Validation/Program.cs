@@ -80,7 +80,15 @@ internal static class Program
         Check(StagingCaptionPatch.Text("Isp ")+"436s"=="比冲 436s" && StagingCaptionPatch.Text("TWR ")+"2.6"=="推重比 2.6","分级显示保留数值和单位");
         Check(StagingCaptionPatch.Text("VAC")=="真空" && StagingCaptionPatch.Text("ATM")=="大气" && StagingCaptionPatch.Text("TOTAL dV")=="总Δv" && Runtime.GaugeText("RES")=="资源","分级工况、速度增量与资源按钮翻译");
         Check(StagingCaptionPatch.Text("###seqenv")=="###seqenv" && StagingCaptionPatch.Text("玩家名称")=="玩家名称","分级控件 ID 及未知文本不改写");
+        var gaugeLabels=new[]{"Enabled","Always on top","Reset","Detached","Lock"};
+        var gaugeMenuIds=gaugeLabels.ToDictionary(x=>x,x=>GaugeContextMenuPatch.Caption(x,false));
+        Check(GaugeContextMenuPatch.Caption("Lock",false)=="锁定      ###Lock" && GaugeContextMenuPatch.Caption("Detached",false)=="独立窗口      ###Detached","仪表右键显示层翻译及勾选区域留白");
+        Check(GaugeContextMenuPatch.Caption("Always on top",true).TrimEnd()=="始终置顶" && !GaugeContextMenuPatch.Caption("Always on top",true).Contains("###"),"禁用仪表菜单不显示隐藏 ID");
+        Check(GaugeContextMenuPatch.Caption("玩家仪表名",false)=="玩家仪表名" && GaugeContextMenuPatch.Caption("NeedsResize",true)=="NeedsResize","仪表未知名字和调试字段保持");
         Runtime.ApplyLanguage("en-US");
+        foreach(var label in gaugeLabels) foreach(uint seed in new uint[]{0,0x735A1913})
+            Check(Hash(GaugeContextMenuPatch.Caption(label,false)+"   ",seed)==Hash(gaugeMenuIds[label]+"   ",seed),"仪表右键中英 ID 与 helper 尾部空格: "+label+" seed="+seed);
+        Check(GaugeContextMenuPatch.Caption("Always on top",true).TrimEnd()=="Always on top","仪表禁用菜单英文回退");
         foreach(var label in startupLabels) foreach(uint seed in new uint[]{0,0x735A1913})
             Check(Hash(Runtime.StartupMenuText(label),seed)==Hash(startupIds[label],seed),"启动系统中英 ID: "+label+" seed="+seed);
         Check(Runtime.EditorNativeText("At Apollo11 On Luna",2)=="At Apollo11 On Luna" && StagingCaptionPatch.Text("Isp ")=="Isp " && Runtime.GaugeText("RES")=="RES","新增地点与分级文本可恢复英文");
