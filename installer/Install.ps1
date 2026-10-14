@@ -7,6 +7,9 @@ function Get-TaskSha256([string]$Path) {
     finally { $taskStream.Dispose(); $taskHasher.Dispose() }
 }
 $taskPackage=Split-Path $PSScriptRoot -Parent
+$taskPayloadToml=Get-Content -LiteralPath (Join-Path $taskPackage 'PlayerPayload\KsaChinese\mod.toml') -Raw -Encoding UTF8
+if($taskPayloadToml -notmatch '(?m)^version\s*=\s*"([0-9.]+)"\s*$') { throw 'Mod version missing' }
+$taskPayloadVersion=$Matches[1]
 if(!$GameDir) {
     $taskDefault=Join-Path $env:ProgramFiles 'Kitten Space Agency'
     if(Test-Path -LiteralPath (Join-Path $taskDefault 'KSA.dll')) { $GameDir=$taskDefault }
@@ -33,5 +36,5 @@ Copy-Item -LiteralPath (Join-Path $taskPackage 'README-安装卸载.md') -Destin
 Copy-Item -LiteralPath (Join-Path $taskPackage 'LICENSES') -Destination $Destination -Recurse
 [IO.File]::WriteAllText((Join-Path $Destination 'Loader\StarMapConfig.json'),(@{GameLocation=(Join-Path $GameDir 'KSA.dll');RepositoryLocation='';GameArguments=@()}|ConvertTo-Json),[Text.UTF8Encoding]::new($false))
 [IO.File]::WriteAllText((Join-Path $Destination 'Profile\manifest.toml'),"[[mods]]`nid = `"Core`"`nenabled = true`n`n[[mods]]`nid = `"KsaChinese`"`nenabled = true`n",[Text.UTF8Encoding]::new($false))
-[IO.File]::WriteAllText((Join-Path $Destination 'install-state.json'),(@{product='KSA-CHINESE';version='0.1.0';game=$GameDir;profile=(Join-Path $Destination 'Profile');installed_at=[DateTimeOffset]::UtcNow.ToString('O')}|ConvertTo-Json),[Text.UTF8Encoding]::new($false))
+[IO.File]::WriteAllText((Join-Path $Destination 'install-state.json'),(@{product='KSA-CHINESE';version=$taskPayloadVersion;game=$GameDir;profile=(Join-Path $Destination 'Profile');installed_at=[DateTimeOffset]::UtcNow.ToString('O')}|ConvertTo-Json),[Text.UTF8Encoding]::new($false))
 Write-Host "已安装到 $Destination。双击 Launch.cmd 启动。使用独立玩家目录，个人原存档没有复制或修改。"

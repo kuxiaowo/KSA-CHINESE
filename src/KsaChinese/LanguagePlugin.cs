@@ -356,12 +356,17 @@ public static class FontRegistrationPatch
             throw new InvalidOperationException("UI font registration is not ready.");
         Runtime.OriginalFontName ??= GameSettings.Current.Interface.FontName;
         // Put the selected font first so this build also creates its tooltip font from the right file.
-        var rest = fonts.Where(file => !string.Equals(file, Runtime.FontPath, StringComparison.OrdinalIgnoreCase));
+        // Content fonts may already be found as relative paths by KSA. Font
+        // atlas keys use basenames, so absolute-path equality is insufficient.
+        var rest = WithoutLocaleFont(fonts, Runtime.FontName);
         field.SetValue(null, new[] { Runtime.FontPath }.Concat(rest).ToArray());
         if(!FontManager.FontFiles.Any(font=>font.GetKey()==Runtime.FontName)) FontManager.RegisterFont(Runtime.FontPath);
         GameSettings.Current.Interface.FontName = Runtime.FontName;
         Runtime.Log("Registered UI font before atlas generation: " + Runtime.FontName);
     }
+
+    public static IEnumerable<string> WithoutLocaleFont(IEnumerable<string> files, string fontName)
+        => files.Where(file => !string.Equals(Path.GetFileNameWithoutExtension(file), fontName, StringComparison.OrdinalIgnoreCase));
 }
 
 [HarmonyPatch]

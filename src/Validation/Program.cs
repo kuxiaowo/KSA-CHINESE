@@ -68,7 +68,23 @@ internal static class Program
         Check(EditorLiteralPatch.StaticText("玩家自定义部件").ToString()=="玩家自定义部件","未知玩家名称回退");
         Check(PartContextCaptionPatch.InteractiveText("Control 用户飞船").Contains("用户飞船"),"动态对象名称后缀保留");
         Check(GaugeFontPatch.Name()==Runtime.FontName,"仪表选择中文字体");
+        var fontCandidates=new[]{"Content/KsaChinese/Fonts/KsaUiNotoSC.ttf",Runtime.FontPath,"Content/Core/Fonts/OtherFont.ttf"};
+        Check(FontRegistrationPatch.WithoutLocaleFont(fontCandidates,Runtime.FontName).SequenceEqual(new[]{"Content/Core/Fonts/OtherFont.ttf"}),"Content 相对路径与绝对路径的中文字体按图集键去重，其他字体保留");
+        var startupLabels=new[]{"Interstellar (Dense)","Earth and Moon"};
+        var startupIds=startupLabels.ToDictionary(x=>x,Runtime.StartupMenuText);
+        Check(Runtime.StartupText(startupLabels[0])=="星际系统（密集）" && Runtime.StartupText(startupLabels[1])=="地球与月球","当前版本 XML 系统显示名翻译");
+        Check(Runtime.EditorNativeText("At Apollo11 On Luna",2)=="月球：Apollo11","地点天体名称翻译，任务型号保留");
+        Check(Runtime.EditorNativeText("At 玩家地点 On Luna",2)=="月球：玩家地点","地点玩家名称保留");
+        var locationId=Runtime.EditorNativeSelectable("At Apollo11 On Luna###location-key",2);
+        Check(locationId=="月球：Apollo11###location-key","地点隐藏 ID 保留");
+        Check(StagingCaptionPatch.Text("Isp ")+"436s"=="比冲 436s" && StagingCaptionPatch.Text("TWR ")+"2.6"=="推重比 2.6","分级显示保留数值和单位");
+        Check(StagingCaptionPatch.Text("VAC")=="真空" && StagingCaptionPatch.Text("ATM")=="大气" && StagingCaptionPatch.Text("TOTAL dV")=="总Δv" && Runtime.GaugeText("RES")=="资源","分级工况、速度增量与资源按钮翻译");
+        Check(StagingCaptionPatch.Text("###seqenv")=="###seqenv" && StagingCaptionPatch.Text("玩家名称")=="玩家名称","分级控件 ID 及未知文本不改写");
         Runtime.ApplyLanguage("en-US");
+        foreach(var label in startupLabels) foreach(uint seed in new uint[]{0,0x735A1913})
+            Check(Hash(Runtime.StartupMenuText(label),seed)==Hash(startupIds[label],seed),"启动系统中英 ID: "+label+" seed="+seed);
+        Check(Runtime.EditorNativeText("At Apollo11 On Luna",2)=="At Apollo11 On Luna" && StagingCaptionPatch.Text("Isp ")=="Isp " && Runtime.GaugeText("RES")=="RES","新增地点与分级文本可恢复英文");
+        Check(Hash(Runtime.EditorNativeSelectable("At Apollo11 On Luna###location-key",2),0)==Hash(locationId,0),"地点跨语言 ID 稳定");
         Check(GaugeFontPatch.Name()=="MilSpec33558","仪表英文恢复原字体");
         Check(Hash(HudLayoutPatches.CustomLayoutMenuLabel(longName,true),0x735A1913)==Hash(zhLong,0x735A1913),"长中文自定义名跨语言 ID 稳定");
         Runtime.ApplyLanguage("zh-CN");

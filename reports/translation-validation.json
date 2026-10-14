@@ -1,26 +1,26 @@
 {
   "schema": 1,
-  "ledger_rows": 1720,
+  "ledger_rows": 1729,
   "review_status_counts": {
-    "reviewed": 1645,
+    "reviewed": 1655,
     "defer": 55,
     "needs-context": 11,
-    "preserve": 9
+    "preserve": 8
   },
   "active_translation_sections": {
     "native": 212,
     "literals": 86,
     "ui": 192,
     "tooltips": 150,
-    "editor": 160,
-    "startup": 37,
+    "editor": 161,
+    "startup": 39,
     "parts": 51,
     "controls": 99,
     "hud": 42,
     "planning": 244,
     "utility": 297,
-    "gauges": 73,
-    "scoped": 2
+    "gauges": 74,
+    "scoped": 8
   },
   "excluded_entries": [
     {
@@ -102,11 +102,6 @@
       "id": "gauges:RCS",
       "status": "preserve",
       "notes": "反作用控制系统通用缩写，保留。"
-    },
-    {
-      "id": "gauges:RES",
-      "status": "preserve",
-      "notes": "Resources按钮短缩写，保留以避免布局挤压。"
     },
     {
       "id": "gauges:STAR",
