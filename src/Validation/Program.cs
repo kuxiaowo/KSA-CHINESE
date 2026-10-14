@@ -72,7 +72,7 @@ internal static class Program
         Check(FontRegistrationPatch.WithoutLocaleFont(fontCandidates,Runtime.FontName).SequenceEqual(new[]{"Content/Core/Fonts/OtherFont.ttf"}),"Content 相对路径与绝对路径的中文字体按图集键去重，其他字体保留");
         var startupLabels=new[]{"Interstellar (Dense)","Earth and Moon"};
         var startupIds=startupLabels.ToDictionary(x=>x,Runtime.StartupMenuText);
-        Check(Runtime.StartupText(startupLabels[0])=="星际系统（密集）" && Runtime.StartupText(startupLabels[1])=="地球与月球","当前版本 XML 系统显示名翻译");
+        Check(Runtime.StartupText(startupLabels[0])=="太阳系及邻近恒星（扩充版）" && Runtime.StartupText(startupLabels[1])=="地球与月球","当前版本 XML 系统显示名翻译");
         Check(Runtime.EditorNativeText("At Apollo11 On Luna",2)=="月球：Apollo11","地点天体名称翻译，任务型号保留");
         Check(Runtime.EditorNativeText("At 玩家地点 On Luna",2)=="月球：玩家地点","地点玩家名称保留");
         var locationId=Runtime.EditorNativeSelectable("At Apollo11 On Luna###location-key",2);

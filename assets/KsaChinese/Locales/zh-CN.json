@@ -846,12 +846,12 @@
     "None": "无",
     "Solar System": "太阳系",
     "Earth Only": "仅地球",
-    "Solar System + Interstellar": "太阳系＋星际",
+    "Solar System + Interstellar": "太阳系及邻近恒星",
     "Earth Only + Interstellar": "仅地球＋星际",
     "Some systems may require more Video Memory (VRAM) than others due to texture size for color and heightmap data, and may not be available or crash the game if you do not have enough VRAM available.": "不同天体系统使用的颜色纹理和高度图大小不同，因此需要的显存也不同。可用显存不足时，天体系统可能无法载入，也可能导致游戏崩溃。",
     " Reported usage and budget: ~": " 当前报告的显存占用／预算：约 ",
     " / ~": " ／约 ",
-    "Interstellar (Dense)": "星际系统（密集）",
+    "Interstellar (Dense)": "太阳系及邻近恒星（扩充版）",
     "Earth and Moon": "地球与月球"
   },
   "parts": {
