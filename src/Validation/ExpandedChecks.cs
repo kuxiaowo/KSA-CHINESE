@@ -71,10 +71,10 @@ internal static partial class Program
         HudConsoleTitlePatch.Localize("KSA-VER",ref versionTitle);
         Check(versionTitle.SequenceEqual("版本历史"),"控制台风格的版本历史标题在实际绘制入口翻译");
         Check(Runtime.UiText("One Frame")=="1 帧","实际帧队列枚举选项接入设置预览");
-        using(var history=JsonDocument.Parse(File.ReadAllText(Path.Combine(Game,"Content","Versions","v2026.10.X.5602.json"))))
+        using(var history=JsonDocument.Parse(File.ReadAllText(Path.Combine(Game,"Content","Versions","v2026.10.X.5638.json"))))
         {
             var lines=history.RootElement.GetProperty("commits").EnumerateArray().SelectMany(c=>c.GetProperty("lines").EnumerateArray().Select(l=>l.GetString()!)).ToArray();
-            Check(lines.Length==135&&lines.All(s=>ExpandedUi.HistoryText(s)!=s),"当前 5602 更新说明 135 条正文完整匹配显示译文");
+            Check(lines.Length==93&&lines.All(s=>ExpandedUi.HistoryText(s)!=s),"当前 5638 更新说明 93 条正文完整匹配显示译文");
             Check(ExpandedUi.HistoryText("2026-10-13")=="2026-10-13"&&ExpandedUi.HistoryText("JPLRepoRocketWerkz")=="JPLRepoRocketWerkz","更新说明日期和作者元数据保持原样");
         }
         var historyMethod=AccessTools.Method(typeof(ChangeLog),nameof(ChangeLog.DrawInTable));
@@ -101,6 +101,41 @@ internal static partial class Program
         foreach(var label in labels)foreach(uint seed in new uint[]{0,0x735A1913})
             Check(Hash(ExpandedUi.Menu(label),seed)==Hash(translated[label],seed),"新增控件跨语言原生 ID: "+label+" seed="+seed);
         Check(ExpandedUi.Text("Combustion Pressure")=="Combustion Pressure"&&ExpandedUi.OrbitAnomaly("EccentricAnomaly",1).ToString()=="EccentricAnomaly","新显示适配器英文回退");
+        Runtime.ApplyLanguage("zh-CN");
+        Check(!LanguagePlugin.SupportsGameVersion("2026.10.13.5602"), "5638 构建拒绝旧 5602，旧发布包独立保留");
+        Check(KSA.LStrings.SettingsGraphicsVolumetricsAurora.Localized == "极光"
+            && KSA.LStrings.SettingsGraphicsVolumetricsAuroraQuality.Localized == "极光质量", "新增极光原生设置资源接入");
+        var missingParts = KSA.LStrings.AlertVehicleMissingParts.Format("玩家飞船 English", "Engine_99");
+        Check(missingParts.Contains("玩家飞船 English") && missingParts.Contains("Engine_99")
+            && missingParts.StartsWith("无法加载"), "缺失部件告警翻译并保留飞船名和部件身份");
+        Check(Runtime.GaugeText("DOSE MSV/H") == "剂量率 MSV/H"
+            && Runtime.GaugeText("ORBIT AVERAGE") == "轨道平均"
+            && HudContextAssignmentDisplayPatch.CanvasCaption("Radiation") == "辐射", "辐射仪表标题与剂量率单位显示");
+        Check(MapUiPatch.RowText("CONTROL [M]") == "控制 [M]"
+            && MapUiPatch.FixedValue("玩家飞船 English") == "玩家飞船 English", "地图行标题只译固定部分，快捷键与玩家名称保留");
+        Check(MapUiPatch.FixedValue("MAGNETOSPHERES") == "磁层"
+            && MapUiPatch.FixedValue("Draw each magnetised body's radiation belts, field lines, magnetopause and bow shock.").Contains("磁层顶和弓形激波"),
+            "地图磁层开关与科学说明分别接入显示层");
+        var mapCaller = AccessTools.Method(typeof(MapController), "OnDrawUi");
+        var mapCallerTranslated = MapUiPatch.Translate(PatchProcessor.GetOriginalInstructions(mapCaller).Select(i => new CodeInstruction(i)), mapCaller).ToArray();
+        bool HasCaptionCallAfter(int i) => i + 1 < mapCallerTranslated.Length && mapCallerTranslated[i+1].operand is MethodInfo m
+            && m.DeclaringType == typeof(MapUiPatch) && m.Name == nameof(MapUiPatch.FixedValue);
+        Check(new[]{"BODY GRID PLANES", "ALIGN PLANES", "MAGNETOSPHERES"}.All(label =>
+            mapCallerTranslated.Select((instruction,index)=>(instruction,index)).Any(x => x.instruction.opcode == OpCodes.Ldstr
+                && Equals(x.instruction.operand,label) && HasCaptionCallAfter(x.index))), "地图三项开关在调用处适配，避免原生小方法内联绕过补丁");
+        Check(new[]{"MapBodyGridPlanes", "MapAlignPlanes", "MapMagnetospheres"}.All(id =>
+            mapCallerTranslated.Select((instruction,index)=>(instruction,index)).Any(x => x.instruction.opcode == OpCodes.Ldstr
+                && Equals(x.instruction.operand,id) && !HasCaptionCallAfter(x.index))), "地图三个独立开关 ID 不进入文字适配器");
+        var mapButton = AccessTools.Method(typeof(MapController), "DrawButtonRow");
+        var mapButtonOriginal = PatchProcessor.GetOriginalInstructions(mapButton);
+        var mapButtonTranslated = MapUiPatch.Translate(mapButtonOriginal.Select(i => new CodeInstruction(i)), mapButton).ToArray();
+        Check(mapButtonOriginal.Count(i => i.operand is MethodInfo m && m.DeclaringType == typeof(ConsoleWidgets) && m.Name == "Button") == 1
+            && mapButtonTranslated.Count(i => i.operand is MethodInfo m && m.DeclaringType == typeof(ConsoleWidgets) && m.Name == "Button") == 1,
+            "地图按钮调用与原始 ID 参数通路保留，仅替换最终行标题绘制");
+        Runtime.ApplyLanguage("en-US");
+        Check(MapUiPatch.RowText("CONTROL [M]") == "CONTROL [M]"
+            && Runtime.GaugeText("DOSE MSV/H") == "DOSE MSV/H"
+            && KSA.LStrings.SettingsGraphicsVolumetricsAurora.Localized == "Aurora", "5638 地图、辐射仪表及极光设置回退英文");
         Runtime.ApplyLanguage("zh-CN");
     }
 }

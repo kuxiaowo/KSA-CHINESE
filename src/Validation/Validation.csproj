@@ -3,7 +3,7 @@
     <OutputType>Exe</OutputType><TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable><AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <KsaDir Condition="'$(KsaDir)' == ''">F:\系统应用\Kitten Space Agency</KsaDir>
-    <LoaderDir>$(MSBuildThisFileDirectory)..\..\.tools\StarMap-0.4.7</LoaderDir>
+    <LoaderDir>$(MSBuildThisFileDirectory)..\..\.tools\StarMap-0.4.8</LoaderDir>
     <PluginDir>$(MSBuildThisFileDirectory)..\..\work\build\KsaChinese</PluginDir>
   </PropertyGroup>
   <ItemGroup>

@@ -44,8 +44,6 @@ public static class PartContextCaptionPatch
         foreach (string name in new[] { "ShowContextMenu", "OnDrawUi" })
             yield return AccessTools.Method(typeof(DockingPort), name)
                 ?? throw new MissingMethodException(typeof(DockingPort).FullName, name);
-        yield return AccessTools.Method(typeof(MapController), nameof(MapController.OnDrawUi))
-            ?? throw new MissingMethodException(typeof(MapController).FullName, nameof(MapController.OnDrawUi));
     }
 
     public static string PlainText(string source)

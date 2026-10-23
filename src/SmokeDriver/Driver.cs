@@ -21,6 +21,9 @@ public sealed class Driver
     bool GaugeContext => Environment.GetEnvironmentVariable("KSA_SMOKE_GAUGE_CONTEXT")=="1";
     bool PartsReview => Environment.GetEnvironmentVariable("KSA_SMOKE_PARTS_REVIEW")=="1";
     bool FullReview => Environment.GetEnvironmentVariable("KSA_SMOKE_FULL_REVIEW")=="1";
+    bool UpdateReview => Environment.GetEnvironmentVariable("KSA_SMOKE_5638_REVIEW")=="1";
+    bool HistoryReview => Environment.GetEnvironmentVariable("KSA_SMOKE_HISTORY_REVIEW")=="1";
+    static bool ScrollToAurora;
     ImGuiWindow? ChuteWindow,KittenWindow;
     static bool ShowGaugeContext;
     [StarMapBeforeMain]
@@ -33,6 +36,7 @@ public sealed class Driver
         patch.Patch(AccessTools.Constructor(typeof(ConfigOnStartPopup)),postfix:new HarmonyMethod(typeof(Driver),nameof(SkipConfig)));
         patch.Patch(AccessTools.Constructor(typeof(WelcomePopup)),postfix:new HarmonyMethod(typeof(Driver),nameof(SkipWelcome)));
         patch.Patch(AccessTools.Constructor(typeof(UpdateAvailablePopup)),postfix:new HarmonyMethod(typeof(Driver),nameof(SkipUpdate)));
+        if(UpdateReview) patch.Patch(AccessTools.Method(typeof(GameSettings),"DrawCheckboxRow"),postfix:new HarmonyMethod(typeof(Driver),nameof(AuroraScroll)));
         if(GaugeContext) patch.Patch(AccessTools.Method(typeof(GaugeCanvas),nameof(GaugeCanvas.OnDrawUi)),transpiler:new HarmonyMethod(typeof(Driver),nameof(ContextRenderer)));
         Log("isolation="+path);
     }
@@ -45,6 +49,10 @@ public sealed class Driver
     }
     public static void SkipWelcome(WelcomePopup __instance)=>__instance.Active=false;
     public static void SkipUpdate(UpdateAvailablePopup __instance)=>__instance.Active=false;
+    public static void AuroraScroll(ReadOnlySpan<char> label)
+    {
+        if(ScrollToAurora && (label.SequenceEqual("极光") || label.SequenceEqual("Aurora"))) ImGui.SetScrollHereY(0.4f);
+    }
     static void Position(ImGuiWindow window,float x,float y)
         =>AccessTools.Field(typeof(ImGuiWindow),"_initialPosition").SetValue(window,new float2(x,y));
     static void ContentSnapshot()
@@ -123,6 +131,12 @@ public sealed class Driver
         for(int i=0;i<order.Length;i++) if(order.GetValue(i)!.ToString()==name) AccessTools.Field(typeof(GameSettings),"_openTabIndex").SetValue(null,i);
         Log("settings-tab="+name);
     }
+    static void History(bool shown)
+    {
+        var field=AccessTools.Field(typeof(VersionHistory),"_instance");
+        if(field.GetValue(null) is null)VersionHistory.Toggle();
+        ((ImGuiWindow)field.GetValue(null)!).SetShown(shown);
+    }
     [StarMapAfterOnFrame]
     public void Frame(double currentPlayerTime,double dtPlayer)
     {
@@ -131,6 +145,41 @@ public sealed class Driver
         double t=Timer.Elapsed.TotalSeconds;
         try
         {
+            if(HistoryReview)
+            {
+                if(Stage==0 && t>2) { GameSettings.Show=false;History(true);Stage++; }
+                else if(Stage==1 && t>6) { Shot("update-history-zh");Stage++; }
+                else if(Stage==2 && t>10) { Log("history-review-completed");Program.Instance.RequestExit(0);Stage++; }
+                return;
+            }
+            if(UpdateReview)
+            {
+                if(Stage==0 && t>3)
+                {
+                    ContentSnapshot();GameSettings.Show=false;
+                    foreach(var canvas in GaugeCanvas.AllCanvases)canvas.SetEnabled(canvas.Id=="Radiation");
+                    Log("radiation-canvas="+GaugeCanvas.AllCanvases.Count(c=>c.Id=="Radiation"));
+                    Stage++;
+                }
+                else if(Stage==1 && t>7) { Shot("update-radiation-zh");Stage++; }
+                else if(Stage==2 && t>10) { Locale("en-US");Stage++; }
+                else if(Stage==3 && t>14) { Shot("update-radiation-en");Stage++; }
+                else if(Stage==4 && t>17) { Locale("zh-CN");Program.MainViewport.SetCameraMode(CameraMode.Map);MagnetosphereOverlay.Show=true;Stage++; }
+                else if(Stage==5 && t>22) { Shot("update-map-zh");Stage++; }
+                else if(Stage==6 && t>25) { Locale("en-US");Stage++; }
+                else if(Stage==7 && t>30) { Shot("update-map-en");Stage++; }
+                else if(Stage==8 && t>33) { Locale("zh-CN");Program.MainViewport.SetCameraMode(CameraMode.Orbit);ScrollToAurora=true;Tab("Graphics");Stage++; }
+                else if(Stage==9 && t>38) { Shot("update-aurora-zh");Stage++; }
+                else if(Stage==10 && t>41) { ScrollToAurora=false;GameSettings.Show=false;History(true);Stage++; }
+                else if(Stage==11 && t>46) { Shot("update-history-zh");Stage++; }
+                else if(Stage==12 && t>49) { History(false);Program.ShowEngineDesignDebug=true;AccessTools.Field(typeof(EngineDesigner),"_combustionProcess").SetValue(null,SubstanceLibrary.AllReactions().ToArray().First(r=>r.Id=="Kerolox"));Stage++; }
+                else if(Stage==13 && t>54) { Shot("update-engine-zh");Stage++; }
+                else if(Stage==14 && t>57) { Program.ShowEngineDesignDebug=false;CrewPortraitPanel.ShowCameraControls=true;GameSaves.MakeUncompressedSave("ksa_chinese_5638_test");Log("update-save-request");Stage++; }
+                else if(Stage==15 && t>64) { GameSaves.LoadSaveGame("ksa_chinese_5638_test");Log("update-load-request");Stage++; }
+                else if(Stage==16 && t>74) { ContentSnapshot();Log("update-after-load; controlled="+Program.ControlledVehicle?.Id);Stage++; }
+                else if(Stage==17 && t>79) { Log("update-review-completed");Program.Instance.RequestExit(0);Stage++; }
+                return;
+            }
             if(FullReview)
             {
                 if(Stage==0 && t>3)

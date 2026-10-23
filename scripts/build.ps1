@@ -1,8 +1,8 @@
-﻿param([string]$GameDir='F:\系统应用\Kitten Space Agency',[string]$LoaderDir='', [switch]$Validate)
+param([string]$GameDir='F:\系统应用\Kitten Space Agency',[string]$LoaderDir='', [switch]$Validate)
 $ErrorActionPreference='Stop'
 $taskRoot=Split-Path $PSScriptRoot -Parent
-if(!$LoaderDir) { $LoaderDir=Join-Path $taskRoot '.tools\StarMap-0.4.7' }
-$taskExpected='94f6291754dffe24d18d2eef5cd925a2baa9d72fbdaef1c24182f08065348380'
+if(!$LoaderDir) { $LoaderDir=Join-Path $taskRoot '.tools\StarMap-0.4.8' }
+$taskExpected=(Get-Content -LiteralPath (Join-Path $taskRoot 'assets\KsaChinese\compatibility.json') -Raw | ConvertFrom-Json).files.'KSA.dll'
 if((Get-FileHash -LiteralPath (Join-Path $GameDir 'KSA.dll') -Algorithm SHA256).Hash.ToLowerInvariant() -ne $taskExpected) { throw 'Uninspected KSA.dll; build/validation stopped.' }
 $taskLauncher=Join-Path $taskRoot 'work\build\Launcher'
 & dotnet build (Join-Path $taskRoot 'src\Launcher\Launcher.csproj') -c Release --nologo "-p:BaseIntermediateOutputPath=$(Join-Path $taskRoot 'work\obj\Launcher\')" "-p:OutputPath=$taskLauncher\"

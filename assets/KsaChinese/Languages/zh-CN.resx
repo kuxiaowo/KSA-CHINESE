@@ -6,6 +6,18 @@
   <data name="Font" xml:space="preserve">
     <value>KsaUiNotoSC.ttf</value>
   </data>
+  <data name="AlertVehicleMissingParts" xml:space="preserve">
+    <value>无法加载 {Vehicle}：所用部件已不存在（{Parts}）</value>
+  </data>
+  <data name="AlertVehicleChangedParts" xml:space="preserve">
+    <value>无法加载 {Vehicle}：所用部件自保存后已发生变化</value>
+  </data>
+  <data name="SettingsGraphicsVolumetricsAurora" xml:space="preserve">
+    <value>极光</value>
+  </data>
+  <data name="SettingsGraphicsVolumetricsAuroraQuality" xml:space="preserve">
+    <value>极光质量</value>
+  </data>
   <data name="SettingsWindowTitle" xml:space="preserve">
     <value>设置</value>
   </data>

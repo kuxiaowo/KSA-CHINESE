@@ -42,7 +42,8 @@ if errors: raise ValueError(errors)
 out=root/'assets/KsaChinese/Locales/zh-CN.json'
 out.write_text(json.dumps(pack,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 ledger=sorted(reviewed.values(),key=lambda r:(r['section'],r['key']))
-(root/'translations/reviewed-5602.jsonl').write_text(''.join(json.dumps(r,ensure_ascii=False)+'\n' for r in ledger),encoding='utf-8')
+game_build=json.loads((root/'assets/KsaChinese/compatibility.json').read_text(encoding='utf-8'))['version'].rsplit('.',1)[-1]
+(root/f'translations/reviewed-{game_build}.jsonl').write_text(''.join(json.dumps(r,ensure_ascii=False)+'\n' for r in ledger),encoding='utf-8')
 resx=ET.Element('root')
 for key,value in [('Language','简体中文'),('Font','KsaUiNotoSC.ttf'),*pack['native'].items()]:
     data=ET.SubElement(resx,'data',{'name':key,'{http://www.w3.org/XML/1998/namespace}space':'preserve'})

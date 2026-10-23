@@ -1,0 +1,114 @@
+{
+  "schema": 1,
+  "date": "2026-10-23",
+  "mod_version": "0.1.5",
+  "game_version": "2026.10.19.5638",
+  "official_version_verified": "2026.10.19.5638",
+  "previous_releases_now_prerelease": false,
+  "personal_mod_install_updated": false,
+  "compatibility": {
+    "schema": 1,
+    "version": "2026.10.19.5638",
+    "files": {
+      "KSA.dll": "98ecbe7d74b0243eede28077ad5e26c135723d854269ad89a3725c488c18c7cb",
+      "Brutal.ImGui.dll": "c3758dc12c2ac5fe76767814ed7ccd845de2f36bd69647ac921c661e4514101b",
+      "Brutal.Localization.dll": "8cd588c0dcb62c223b7f6edbd8d6ee951c914b8980afb9374be8878c06caa28d",
+      "Content/Core/Gauges.xml": "83dd3dd2f82af14bb6e03c2554bb1c69a5a202e36581a4ceca7fb73805a1f130",
+      "Brutal.Core.dll": "a878f4743df20d598d4727e93d6699e8ab6a6274b45617aea0066b9d906cba56",
+      "Brutal.Numerics.dll": "8ef62a7b0b85025ace835c0fcdc73a5f15d856bb2833e4f2498129be3f08ee9b",
+      "Brutal.ImGui.Abstractions.dll": "3d55d93916569a8f88927078d089ab2a15f94c00d09c7ee59b00914f87127d9c",
+      "Brutal.ImGui.Extensions.dll": "1efe88a03db3cb3088d7b2a7c32f15dc9b5b37d9f783d628d76f8878672cd049",
+      "Brutal.Strings.dll": "f32d94b7898871ac4777b4e153ad0a9a22922d91bf898594bf7ed307cf3e05dc",
+      "imgui.dll": "fd239f291ca8567df772a4d12244e8f5bbb0b9bcb291975e8217043403eefff4"
+    },
+    "loader": "StarMap 0.4.8",
+    "interpretation": "Exact inspected file identities. Target resolution, transformation matches, headless and GUI results are documented separately; hashes are not visual coverage."
+  },
+  "headless_checks": 1049,
+  "patch_target_references": 712,
+  "distinct_target_signatures": 567,
+  "plugin_sha256": "dc1be6ca096741954c560e86b7329e9b3e3a22f36093f5afb3b365e92176902e",
+  "locale_sha256": "22d9ad97ec5c8381b13425a31d1af8b467d8b8761bd355144cc893309941849e",
+  "font_sha256": "af81c15ba73c739ed8c693a7eb28a27e3380cc4d46df34a3bc915ba81a7380fa",
+  "display_sites_sha256": "2c6efb1dec13532d6841b7c579a5009b85ad285e76088ebc613e10720228f65a",
+  "runtime": {
+    "fixture": "work/test-profile-5638-015",
+    "regression_tag": "update5638-final",
+    "history_capture_tag": "update5638-history",
+    "exit_codes": [
+      0,
+      0
+    ],
+    "stderr_empty": true,
+    "save_reload_passed": true,
+    "part_templates": 650,
+    "translated_part_names": 649,
+    "model_only_preserved": "VTR-10",
+    "substances": 83,
+    "phases": 120,
+    "reactions": 17,
+    "input_actions": 103,
+    "source_fields_unchanged": true,
+    "tested_plugin_matches_package": true
+  },
+  "snapshots": {
+    "update-radiation-zh": {
+      "file": "reports/screenshots/015-update-radiation-zh.png",
+      "sha256": "58301eb83b3a71fa32113436b77d3c238e669811bd70b12ede302384bc7d91f8"
+    },
+    "update-radiation-en": {
+      "file": "reports/screenshots/015-update-radiation-en.png",
+      "sha256": "93649622cb90cacd40e62eec1d34a4dcaeacf611a48fb9c61e0b861983c3a501"
+    },
+    "update-map-zh": {
+      "file": "reports/screenshots/015-update-map-zh.png",
+      "sha256": "0c8a167340ee45847362d586a3d8a09ee7c2f0275f2ef290d2995961d7ac6b4d"
+    },
+    "update-map-en": {
+      "file": "reports/screenshots/015-update-map-en.png",
+      "sha256": "b3bd4847f91ce36410e3c133dde8b023c9958940226f156b426e74e19345b511"
+    },
+    "update-aurora-zh": {
+      "file": "reports/screenshots/015-update-aurora-zh.png",
+      "sha256": "3ce66a433998d02baf91c3c270dad2fc0a2ce2d46013499020db91bffc422370"
+    },
+    "update-engine-zh": {
+      "file": "reports/screenshots/015-update-engine-zh.png",
+      "sha256": "47fb8f3a67dfb5d38dd7f6672643040082112710beadc1107333a88b0c2cd8fb"
+    },
+    "update-history-zh": {
+      "file": "reports/screenshots/015-update-history-zh.png",
+      "sha256": "e0d2339d9a5eb8c96bc2ded3689d8a29c9a6cec042eb6143da02cbacf9220136"
+    }
+  },
+  "history": {
+    "current_5638_lines": 93,
+    "current_5638_translated": 93,
+    "previous_5602_lines": 135,
+    "all_version_body_lines": 6401,
+    "matched_lines": 229,
+    "untranslated_lines": 6172
+  },
+  "package": {
+    "archive": "KsaChinese-0.1.5-5638-Portable.zip",
+    "sha256": "22bb67a48192906c177efe512955f9d1f7b6f0ba573cae1724c6a315a302654a",
+    "files": 33,
+    "bytes": 1553059,
+    "game_binaries_included": false,
+    "player_data_included": false,
+    "all_archive_hashes_verified": true,
+    "tested_payload_matches": true,
+    "test_driver_included": false
+  },
+  "remaining": [
+    "earlier version history bodies",
+    "native toolkit, console and exception text not exhaustive",
+    "embedded model or texture lettering not exhaustive",
+    "not every editor, advanced window, interaction or tooltip visually exercised",
+    "no long-duration stability claim"
+  ],
+  "launcher_guard": {
+    "pinned_5638_accepted": true,
+    "changed_fixture_rejected": true
+  }
+}

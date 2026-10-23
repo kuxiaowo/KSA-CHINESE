@@ -1,6 +1,6 @@
-name = "KSA Chinese 5602"
-version = "0.1.4"
-description = "Partial Chinese UI with English fallback for inspected KSA build 5602"
+name = "KSA Chinese 5638"
+version = "0.1.5"
+description = "Partial Chinese UI with English fallback for inspected KSA build 5638"
 assets = []
 
 [StarMap]
