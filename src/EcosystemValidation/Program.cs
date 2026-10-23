@@ -1,5 +1,5 @@
 // Local integration runner against the unmodified Borea v0.5.1 source libraries.
-// The index transport uses a local candidate because public submission needs approval.
+// Candidate mode covers runtime checks; --public-catalog checks the live catalogue install path.
 using System.Net;
 using System.Security.Cryptography;
 using System.Text.Json;
@@ -20,6 +20,7 @@ var project = Path.GetFullPath(args[0]);
 var root = Path.GetFullPath(args[1]);
 var game = Path.GetFullPath(args[2]);
 var published = args.Contains("--published");
+var publicCatalog = args.Contains("--public-catalog");
 if (!root.StartsWith(Path.Combine(project, "work") + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase)
     || !root.Contains("test-profile", StringComparison.OrdinalIgnoreCase)
     || Directory.Exists(Path.Combine(root, "Instances")))
@@ -35,7 +36,8 @@ async Task<BoreaServices> Graph()
 {
     var reader = new ContentIndexReader(new GamePathProvider(null, boreaRoot: root));
     var fallback = new ContentIndexModRepository(new ReaderSnapshotProvider(reader));
-    return await BoreaServices.BuildAsync(root, new CandidateTransport(project, snapshot, published), fallback,
+    HttpMessageHandler transport = publicCatalog ? new HttpClientHandler() : new CandidateTransport(project, snapshot, published);
+    return await BoreaServices.BuildAsync(root, transport, fallback,
         new NoCandidates(), sharedProfileRoot: Path.Combine(root, "unused-shared-profile"));
 }
 async Task Command(params string[] command)
@@ -88,6 +90,17 @@ string Settings(Instance instance) => Path.Combine(Profile(instance), "KsaChines
 string Dll(Instance instance) => Path.Combine(Profile(instance), "mods/KsaChinese/KsaChinese.dll");
 Check(Digest(Dll(first)) == Digest(Path.Combine(project, "work/build/KsaChinese/KsaChinese.dll")), "Installed plugin equals the built release payload");
 Check(Digest(Dll(first)) == Digest(Dll(second)), "Both instances use the same release bytes");
+if (publicCatalog)
+{
+    Check(!Directory.Exists(Path.Combine(root, "unused-shared-profile")), "Public catalogue installation did not create a shared/personal game profile");
+    var publicReport = new { boreaVersion = "0.5.1", sourceCommit = "284d5cf929c8ede99320f8afc451fa44f12aeadd",
+        verifiedAtUtc = DateTime.UtcNow, transport = "public index and published archives; default HTTP handler",
+        scope = "CLI search and isolated-instance installation through upstream source components; no game launch or desktop GUI acceptance in this run",
+        checks, records };
+    File.WriteAllText(Path.Combine(project, "reports/ecosystem-public-catalog-validation.json"), JsonSerializer.Serialize(publicReport, new JsonSerializerOptions { WriteIndented = true }) + "\n");
+    Console.WriteLine("PASS: " + checks.Count + " public catalogue checks");
+    return;
+}
 var immutable = Digest(Path.Combine(Profile(first), "mods/KsaChinese/language.json"));
 
 foreach (var instance in instances)

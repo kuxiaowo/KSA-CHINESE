@@ -1,0 +1,155 @@
+{
+  "verified_at_utc": "2026-10-23T13:56:28.023333+00:00",
+  "forum": {
+    "url": "https://forums.ahwoo.com/forums/kitten-space-agency/mod-releases/ksa-chinese-0-1-6-simplified-chinese-ui-for-ksa-5638.1440/",
+    "thread_id": 1440,
+    "post_id": 6753
+  },
+  "index_pull_request": {
+    "mergeCommit": {
+      "oid": "ace02f35217942896fea12d5c06e20c535b6ad48"
+    },
+    "mergedAt": "2026-10-23T13:51:34Z",
+    "state": "MERGED",
+    "statusCheckRollup": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-23T13:50:12Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/KSAModding/content-index/actions/runs/39964492102/job/120450692698",
+        "name": "layout",
+        "startedAt": "2026-10-23T13:50:09Z",
+        "status": "COMPLETED",
+        "workflowName": "checks"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-23T13:50:24Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/KSAModding/content-index/actions/runs/39964492102/job/120450692882",
+        "name": "schema",
+        "startedAt": "2026-10-23T13:50:09Z",
+        "status": "COMPLETED",
+        "workflowName": "checks"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-23T13:50:17Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/KSAModding/content-index/actions/runs/39964492102/job/120450693491",
+        "name": "page",
+        "startedAt": "2026-10-23T13:50:10Z",
+        "status": "COMPLETED",
+        "workflowName": "checks"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-23T13:50:23Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/KSAModding/content-index/actions/runs/39964492102/job/120450692905",
+        "name": "verdict",
+        "startedAt": "2026-10-23T13:50:09Z",
+        "status": "COMPLETED",
+        "workflowName": "checks"
+      },
+      {
+        "__typename": "StatusContext",
+        "context": "validate",
+        "startedAt": "2026-10-23T13:50:46Z",
+        "state": "SUCCESS",
+        "targetUrl": "https://github.com/KSAModding/content-index/actions/runs/39964492102"
+      }
+    ],
+    "url": "https://github.com/KSAModding/content-index/pull/223"
+  },
+  "watcher_run": "https://github.com/KSAModding/content-index-releases/actions/runs/39964736160",
+  "snapshot_deployment_run": "https://github.com/KSAModding/content-index-releases/actions/runs/39964836263",
+  "public_snapshot": {
+    "url": "https://ksamodding.github.io/content-index-releases/v1/index.json",
+    "sha256": "315963f7e4aeb0983a87838b3f4a5fe1698561b66218b5975df02a4154af0f47",
+    "sources": {
+      "authored": {
+        "repository": "KSAModding/content-index",
+        "commit": "ace02f35217942896fea12d5c06e20c535b6ad48"
+      },
+      "generated": {
+        "repository": "KSAModding/content-index-releases",
+        "commit": "6c91ab93e8c3456988711535e7e8219c2ec36275"
+      }
+    }
+  },
+  "stamped_release": {
+    "id": "KsaChinese",
+    "version": "0.1.6",
+    "release_status": "stable",
+    "game_min": "2026.10.19.5638",
+    "game_max": "2026.10.19.5638",
+    "os": [
+      "windows"
+    ],
+    "download": {
+      "url": "https://github.com/kuxiaowo/KSA-CHINESE/releases/download/v0.1.6/KsaChinese-0.1.6.zip",
+      "sha256": "C35DE18C4833878B7CC4BA4DE8A57F1828029E7AEE28EA2EBF08F03F28AF8646",
+      "size": 581944,
+      "content_type": "application/zip"
+    },
+    "install": {
+      "root": "KsaChinese",
+      "derived": true
+    },
+    "loader": {
+      "id": "StarMap",
+      "min": "0.4.8",
+      "max": "0.4.8",
+      "source": "authored"
+    }
+  },
+  "local_pre_pr_checks": [
+    {
+      "check": "check_layout.py",
+      "exit_code": 0,
+      "output": "checked 29 document(s), all in the right place\n"
+    },
+    {
+      "check": "check_schema.py",
+      "exit_code": 0,
+      "output": "checked 29 document(s) against the schema, all valid\n"
+    },
+    {
+      "check": "check_index.py",
+      "exit_code": 0,
+      "output": "checked 29 document(s) against the index, no collisions or wrong references\n"
+    },
+    {
+      "check": "check_license.py",
+      "exit_code": 0,
+      "output": "checked 29 license expression(s) against the SPDX list, all resolve\n"
+    },
+    {
+      "check": "check_status.py",
+      "exit_code": 0,
+      "output": "index-status.toml is well formed and every state resolves\n"
+    },
+    {
+      "check": "check_images.py",
+      "exit_code": 0,
+      "output": "note: listings/KSAero.toml: images.icon: the icon is 360 by 314 pixels, so clients show the square from 23,0 to 337,314\nchecked the images of 29 document(s)\n"
+    },
+    {
+      "check": "check_images.py KsaChinese",
+      "exit_code": 0,
+      "output": "note: listings/KSAero.toml: images.icon: the icon is 360 by 314 pixels, so clients show the square from 23,0 to 337,314\nchecked the images of 29 document(s)\n"
+    },
+    {
+      "check": "check_release.py KsaChinese",
+      "exit_code": 0,
+      "output": "listings/KsaChinese.toml: pass: the latest release 0.1.6 stamps cleanly\n"
+    }
+  ],
+  "public_catalog_validation": "ecosystem-public-catalog-validation.json",
+  "limitations": [
+    "Public-catalog validation used unmodified Borea 0.5.1 source components, not desktop GUI clicks.",
+    "Original candidate-index/runtime reports preserve their pre-publication status; they are historical evidence.",
+    "Exact KSA 2026.10.19.5638, Windows x64, StarMap 0.4.8 remain required."
+  ]
+}

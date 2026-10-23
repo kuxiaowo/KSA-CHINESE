@@ -1,0 +1,107 @@
+{
+  "boreaVersion": "0.5.1",
+  "sourceCommit": "284d5cf929c8ede99320f8afc451fa44f12aeadd",
+  "verifiedAtUtc": "2026-10-23T13:54:34.0855559Z",
+  "transport": "public index and published archives; default HTTP handler",
+  "scope": "CLI search and isolated-instance installation through upstream source components; no game launch or desktop GUI acceptance in this run",
+  "checks": [
+    "Borea blocks unsupported game build 2026.10.13.5602",
+    "Borea blocks unsupported game build 2026.10.19.5639",
+    "Borea warns about unverified platform Linux",
+    "Borea warns about unverified platform MacOs",
+    "Installed plugin equals the built release payload",
+    "Both instances use the same release bytes",
+    "Public catalogue installation did not create a shared/personal game profile"
+  ],
+  "records": [
+    {
+      "command": [
+        "index",
+        "refresh"
+      ],
+      "code": 0,
+      "output": "Content index: downloaded.\r\n",
+      "error": ""
+    },
+    {
+      "command": [
+        "index",
+        "validate",
+        "--json"
+      ],
+      "code": 0,
+      "output": "{\r\n  \u0022snapshotVersion\u0022: 1,\r\n  \u0022accepted\u0022: {\r\n    \u0022listings\u0022: 27,\r\n    \u0022releases\u0022: 141,\r\n    \u0022packs\u0022: 1,\r\n    \u0022packVersions\u0022: 2,\r\n    \u0022gameVersions\u0022: 165,\r\n    \u0022downloadCounts\u0022: 26\r\n  },\r\n  \u0022diagnostics\u0022: {\r\n    \u0022malformed\u0022: 0,\r\n    \u0022unsupportedVersions\u0022: 0,\r\n    \u0022unsupportedValues\u0022: 0,\r\n    \u0022entries\u0022: []\r\n  }\r\n}\r\n",
+      "error": ""
+    },
+    {
+      "command": [
+        "search",
+        "KsaChinese",
+        "--json"
+      ],
+      "code": 0,
+      "output": "{\r\n  \u0022query\u0022: \u0022KsaChinese\u0022,\r\n  \u0022installedGameVersion\u0022: \u00222026.10.19.5638\u0022,\r\n  \u0022results\u0022: [\r\n    {\r\n      \u0022id\u0022: \u0022KsaChinese\u0022,\r\n      \u0022name\u0022: \u0022KSA Chinese / \\u7B80\\u4F53\\u4E2D\\u6587\u0022,\r\n      \u0022state\u0022: \u0022known\u0022,\r\n      \u0022type\u0022: \u0022mod\u0022,\r\n      \u0022source\u0022: \u0022index\u0022,\r\n      \u0022latestVersion\u0022: \u00220.1.6\u0022,\r\n      \u0022compatibility\u0022: \u0022compatible\u0022,\r\n      \u0022downloads\u0022: null\r\n    }\r\n  ],\r\n  \u0022diagnostics\u0022: []\r\n}\r\n",
+      "error": ""
+    },
+    {
+      "command": [
+        "instance",
+        "create",
+        "Chinese A",
+        "--json"
+      ],
+      "code": 0,
+      "output": "{\r\n  \u0022id\u0022: \u00224c9c7663-903c-4c01-9ba5-3f68ecb8a67c\u0022,\r\n  \u0022name\u0022: \u0022Chinese A\u0022,\r\n  \u0022activated\u0022: true\r\n}\r\n",
+      "error": ""
+    },
+    {
+      "command": [
+        "instance",
+        "create",
+        "Chinese B",
+        "--json"
+      ],
+      "code": 0,
+      "output": "{\r\n  \u0022id\u0022: \u002226f4b146-3934-4197-b11e-4108b7658dee\u0022,\r\n  \u0022name\u0022: \u0022Chinese B\u0022,\r\n  \u0022activated\u0022: false\r\n}\r\n",
+      "error": ""
+    },
+    {
+      "command": [
+        "loader",
+        "install",
+        "StarMap",
+        "--version",
+        "0.4.8"
+      ],
+      "code": 0,
+      "output": "Installed StarMap 0.4.8 in \u0027\u003Cproject\u003E\\work\\borea-test-profile-016-public-catalog\\Loaders\\StarMap\u0027.\r\nConfigured game directory in \u0027\u003Cproject\u003E\\work\\borea-test-profile-016-public-catalog\\Loaders\\StarMap\\StarMapConfig.json\u0027.\r\n",
+      "error": "Downloading StarMap 0.4.8\r\nExtracting StarMap 0.4.8\r\nConfiguring StarMap 0.4.8\r\nFinishing StarMap 0.4.8\r\n"
+    },
+    {
+      "command": [
+        "install",
+        "KsaChinese",
+        "--instance",
+        "Chinese A",
+        "--version",
+        "0.1.6"
+      ],
+      "code": 0,
+      "output": "Install KsaChinese 0.1.6.\r\n",
+      "error": "Downloading KsaChinese 0.1.6\r\nExtracting KsaChinese 0.1.6\r\nFinishing KsaChinese 0.1.6\r\n"
+    },
+    {
+      "command": [
+        "install",
+        "KsaChinese",
+        "--instance",
+        "Chinese B",
+        "--version",
+        "0.1.6"
+      ],
+      "code": 0,
+      "output": "Install KsaChinese 0.1.6.\r\n",
+      "error": "Finishing KsaChinese 0.1.6\r\n"
+    }
+  ]
+}

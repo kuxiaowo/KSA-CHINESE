@@ -4,9 +4,9 @@
 
 ## Borea
 
-社区目录收录后，可在 Borea 中搜索 `KsaChinese`，选择目标实例并安装，再由 Borea 启动该实例。首次收录仍需社区帖子和外部索引 PR；在它们完成前，不应期待公共目录已经能搜到本项目。
+2026-10-23 已完成社区收录：[Ahwoo 帖子](https://forums.ahwoo.com/forums/kitten-space-agency/mod-releases/ksa-chinese-0-1-6-simplified-chinese-ui-for-ksa-5638.1440/) 和 [索引 PR #223](https://github.com/KSAModding/content-index/pull/223)。刷新 Borea 公共目录后搜索 `KsaChinese`，选择目标实例并安装，再由 Borea 启动该实例。0.1.6 的公共目录搜索、下载和隔离实例安装已通过 Borea 0.5.1 原版源码组件验证；本次未进行桌面 GUI 点击验收。
 
-尚未收录时，也可以在 Borea 创建实例、安装 StarMap，把 ZIP 中的整个 `KsaChinese` 文件夹放到该实例的 `mods` 目录。启用该模组后由 Borea 启动；手动安装的文件需要使用 Borea 的扫描/接管功能才能由它管理更新。不要把便携包作为标准模组导入。
+也可以在 Borea 创建实例、安装 StarMap，把 ZIP 中的整个 `KsaChinese` 文件夹放到该实例的 `mods` 目录。启用该模组后由 Borea 启动；手动安装的文件需要使用 Borea 的扫描/接管功能才能由它管理更新。不要把便携包作为标准模组导入。
 
 ## 直接使用 StarMap
 
