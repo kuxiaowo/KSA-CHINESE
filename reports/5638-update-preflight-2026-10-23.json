@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "checked_at_utc": "2026-10-23T10:55:47.536518+00:00",
+  "official_version_endpoint": "http://ksa-master1.rocketwerkz.com:8082/version",
+  "official_version": "2026.10.19.5638",
+  "official_download_page": "https://ahwoo.com/app/100000/kitten-space-agency",
+  "local_game_version": "2026.10.13.5602",
+  "local_game_changed": false,
+  "release": {
+    "version": "0.1.4",
+    "url": "https://github.com/kuxiaowo/KSA-CHINESE/releases/tag/v0.1.4",
+    "pr": 5,
+    "merge_commit": "6ea73bd4ada4a1bc0802effce5a4183bb0c7f570",
+    "published": true,
+    "prerelease": true,
+    "asset_sha256": "4fe0cef49fc41ca3ea73c80908d38da86715822f2ff6894f7fd5dbbde78d9cac",
+    "downloaded_from_release_and_verified": true
+  },
+  "requires_new_translation": true,
+  "evidence": "https://ahwoo.com/news/5633976/kitten-space-agency/space-weather",
+  "confirmed_new_ui_concepts": [
+    "Radiation gauge",
+    "Magnetospheres toggle",
+    "Aurora setting"
+  ],
+  "pretranslated_terms": 9,
+  "pretranslated_terms_runtime_enabled": false,
+  "download_http_status": 401,
+  "browser_attempts": "two timeouts; no authenticated download obtained",
+  "game_5638_files_available": false,
+  "game_5638_compatibility_verified": false,
+  "required_input": "local path to official 5638 installer or extracted game directory",
+  "next_checks": [
+    "verify version and all binary/resource fingerprints",
+    "compare actual display strings and data resources against 5602",
+    "review new UI labels, descriptions, units and hidden IDs",
+    "audit changed Harmony patch signatures and IL",
+    "build, isolated runtime, language roundtrip, font and visual verification"
+  ],
+  "future_features_excluded": [
+    "crew injury or death from radiation",
+    "vehicle shielding gameplay",
+    "solar storm gameplay"
+  ]
+}
