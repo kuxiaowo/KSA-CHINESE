@@ -12,7 +12,7 @@ using Constants = KSA.Constants;
 namespace KsaChineseSmoke;
 
 [StarMapMod]
-public sealed class Driver
+public sealed partial class Driver
 {
     readonly Stopwatch Timer=new();
     int Stage;
@@ -145,6 +145,12 @@ public sealed class Driver
         double t=Timer.Elapsed.TotalSeconds;
         try
         {
+            var ecosystem = Environment.GetEnvironmentVariable("KSA_SMOKE_ECOSYSTEM");
+            if (!string.IsNullOrEmpty(ecosystem))
+            {
+                EcosystemFrame(ecosystem, t);
+                return;
+            }
             if(HistoryReview)
             {
                 if(Stage==0 && t>2) { GameSettings.Show=false;History(true);Stage++; }
