@@ -120,9 +120,18 @@ public static class Runtime
             using var config = JsonDocument.Parse(File.ReadAllText(configPath));
             SelectedLocale = config.RootElement.GetProperty("locale").GetString() ?? "zh-CN";
         }
+        SelectedLocale = LocaleSettings.Read(SettingsPath, SelectedLocale, Packs.Keys, Log);
         if (!Packs.ContainsKey(SelectedLocale)) SelectedLocale = "en-US";
         _previousProvider = NativeStrings.LocalizedStringProvider;
         ApplyLanguage(SelectedLocale);
+    }
+
+    public static string SettingsPath => Path.Combine(KSA.Constants.DocumentsFolderPath, "KsaChinese", "settings.json");
+
+    public static void SelectLanguage(string locale)
+    {
+        ApplyLanguage(locale);
+        LocaleSettings.Write(SettingsPath, locale, Log);
     }
 
     public static void ApplyLanguage(string locale)
@@ -648,7 +657,7 @@ public static class LanguageMenuPatch
         foreach (var pack in Runtime.Packs.Values)
         {
             if (ImGui.MenuItem(pack.DisplayName, default(ImString), Runtime.SelectedLocale == pack.Locale))
-                Runtime.ApplyLanguage(pack.Locale);
+                Runtime.SelectLanguage(pack.Locale);
         }
         ImGui.EndMenu();
     }

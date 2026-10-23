@@ -1,6 +1,6 @@
 # 5638 简体中文便携 Mod
 
-当前包为 `KsaChinese-0.1.5-5638-Portable.zip`，发布于项目 v0.1.5 Release。完整解压便携包 **到含 `KSA.exe` 的游戏目录**。最终位置应为：
+当前包为 `KsaChinese-0.1.6-5638-Portable.zip`，发布于项目 v0.1.6 Release。已有 StarMap/Borea 时优先选择独立的标准模组包，见 [生态安装与迁移](README-生态安装.md)；不要把整个便携包导入 Borea。完整解压便携包 **到含 `KSA.exe` 的游戏目录**。最终位置应为：
 
 ```text
 Kitten Space Agency/
@@ -14,7 +14,7 @@ Kitten Space Agency/
 
 本版随包加载器为 StarMap 0.4.8，修复了 5638 的 BRUTAL 依赖更名；旧 0.4.7 不能用于本版。
 
-汉化本身是 StarMap 代码 Mod，文件放在 `Content/KsaChinese`；加载器仅用于执行 Mod。**原始 `KSA.exe` 不会执行汉化代码**。没有替换原程序，也没有修改游戏 DLL。已使用 StarMap 的玩家可以只放入 `Content/KsaChinese`，并在自己的 Mod 清单中启用 `KsaChinese`。
+汉化本身是 StarMap 代码 Mod，便携包将文件放在 `Content/KsaChinese`；加载器仅用于执行 Mod。**原始 `KSA.exe` 不会执行汉化代码**。没有替换原程序，也没有修改游戏 DLL。已使用 StarMap 的玩家请选标准模组包，安装到所选档案的 `mods/KsaChinese`，并在自己的 Mod 清单中启用 `KsaChinese`；不要同时留下 Content 和 mods 两份。
 
 默认将档案保存在 `KsaChinese/Profile`，原来的个人存档不搬动。`launcher-settings.json` 可指定已有档案路径，例如 `{"profile":"D:/KSA-Profile"}`；只在关闭游戏后修改，且已有清单需要启用 Core 和 KsaChinese。本机从旧汉化升级时继续指定旧档案，避免产生另一个新档案。语言可在游戏菜单切换，日常只需一个入口。
 

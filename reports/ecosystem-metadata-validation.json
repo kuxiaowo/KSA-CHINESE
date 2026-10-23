@@ -1,0 +1,50 @@
+{
+  "upstream_checks": [
+    {
+      "check": "check_layout.py",
+      "exit_code": 0,
+      "output": "checked 29 document(s), all in the right place\n"
+    },
+    {
+      "check": "check_schema.py",
+      "exit_code": 0,
+      "output": "checked 29 document(s) against the schema, all valid\n"
+    },
+    {
+      "check": "check_index.py",
+      "exit_code": 0,
+      "output": "checked 29 document(s) against the index, no collisions or wrong references\n"
+    },
+    {
+      "check": "check_license.py",
+      "exit_code": 0,
+      "output": "checked 29 license expression(s) against the SPDX list, all resolve\n"
+    },
+    {
+      "check": "check_status.py",
+      "exit_code": 0,
+      "output": "index-status.toml is well formed and every state resolves\n"
+    },
+    {
+      "check": "check_images.py",
+      "exit_code": 0,
+      "output": "note: listings/KSAero.toml: images.icon: the icon is 360 by 314 pixels, so clients show the square from 23,0 to 337,314\nchecked the images of 29 document(s)\n"
+    }
+  ],
+  "install": {
+    "root": "KsaChinese",
+    "derived": true
+  },
+  "loader": {
+    "id": "StarMap",
+    "min": "0.4.8",
+    "max": "0.4.8",
+    "source": "authored"
+  },
+  "standard_archive_selected_over_portable": true,
+  "archive_sha256": "c35de18c4833878b7cc4ba4de8a57f1828029e7aee28ea2ebf08f03f28af8646",
+  "real_forum_url_pending": true,
+  "fixture_forum_url_used_only_locally": true,
+  "final_listing_schema_passed": false,
+  "public_index_submitted": false
+}

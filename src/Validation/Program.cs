@@ -37,6 +37,7 @@ internal static partial class Program
         var previous=Brutal.Localization.LStrings.LocalizedStringProvider;
         Compatibility.Validate(Game,Path.Combine(Root,"assets","KsaChinese","compatibility.json"));
         Check(true,"游戏及依赖指纹匹配");
+        ProfileSettingsChecks();
         bool mismatch=false;
         try { Compatibility.Validate(Fixture,Path.Combine(Root,"assets","KsaChinese","compatibility.json")); }
         catch(IOException) { mismatch=true; }
