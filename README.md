@@ -2,7 +2,7 @@
 
 为 Kitten Space Agency 提供独立显示层 Mod、逐条审核词典、中文字体及便携启动器。当前适配精确版本 **2026.10.19.5638** 与记录的依赖哈希。
 
-[下载 v0.1.6](https://github.com/kuxiaowo/KSA-CHINESE/releases/tag/v0.1.6)。已有 StarMap/Borea 时选择 **KsaChinese-0.1.6.zip**，将其中 KsaChinese 文件夹安装到所选档案的 mods 目录，见 [生态安装与迁移](README-生态安装.md)。标准包只含汉化插件、词典、字体和许可；需要单独安装 StarMap 0.4.8 和 .NET 10 x64 Runtime。社区目录收录尚需真实论坛帖子与外部索引 PR，公共搜索在收录前不可用。
+[下载 v0.1.6](https://github.com/kuxiaowo/KSA-CHINESE/releases/tag/v0.1.6)。已被社区目录收录，刷新 Borea 目录后搜索 **KsaChinese**，选择目标实例安装。手动安装时下载 **KsaChinese-0.1.6.zip**，将其中 KsaChinese 文件夹安装到所选档案的 mods 目录，见 [生态安装与迁移](README-生态安装.md)。标准包只含汉化插件、词典、字体和许可；需要单独安装 StarMap 0.4.8 和 .NET 10 x64 Runtime。[Ahwoo 帖子](https://forums.ahwoo.com/forums/kitten-space-agency/mod-releases/ksa-chinese-0-1-6-simplified-chinese-ui-for-ksa-5638.1440/) · [已合并的收录 PR](https://github.com/KSAModding/content-index/pull/223)。
 
 也保留 [便携包](README-便携Mod.md)：完整解压到含 KSA.exe 的游戏目录，运行 `KsaChinese/KsaChineseLauncher.exe`。原 KSA.exe 不执行汉化代码，包不替换游戏 DLL。迁移到 Borea 前备份旧 Profile，移走旧 Content/KsaChinese，避免同名副本覆盖实例版本。
 
@@ -22,7 +22,7 @@
 .\scripts\build.ps1 -GameDir 'C:\Games\Kitten Space Agency' -LoaderDir 'C:\Tools\StarMap-0.4.8' -Validate
 ```
 
-Python 工具优先在 conda 环境中执行。`scripts/build_translations.py` 从 review-*.jsonl 生成运行词典、resx 及 [当前汇总底稿](translations/reviewed-5638.jsonl)；保留旧版汇总用于追溯。`scripts/build_font.py` 从词典和插件源码收集字形，重建需要 fontTools 及固定哈希的 Noto 源文件。`scripts/package_mod.py` 按白名单生成标准包；`scripts/package_portable.py` 生成含启动器和加载器的便携包。[社区接入文件](ecosystem/README.md)包含待确认帖文、索引模板和验证复现说明。
+Python 工具优先在 conda 环境中执行。`scripts/build_translations.py` 从 review-*.jsonl 生成运行词典、resx 及 [当前汇总底稿](translations/reviewed-5638.jsonl)；保留旧版汇总用于追溯。`scripts/build_font.py` 从词典和插件源码收集字形，重建需要 fontTools 及固定哈希的 Noto 源文件。`scripts/package_mod.py` 按白名单生成标准包；`scripts/package_portable.py` 生成含启动器和加载器的便携包。[社区接入文件](ecosystem/README.md)包含已发布帖文、收录记录、索引模板和验证复现说明。
 
 扩展显示清单为 `assets/KsaChinese/display-sites.json`。可用本机审计数据执行 `scripts/build_display_sites.py --audit-dir <审计目录> --game-dir <游戏目录> --check` 校验。反编译材料、候选与游戏资源只供本机检查，不随源码或包分发。
 

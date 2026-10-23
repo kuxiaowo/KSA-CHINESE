@@ -1,4 +1,6 @@
-# 待维护者确认，尚未发帖
+# 已经维护者批准并发布
+
+2026-10-23：[Ahwoo 正式帖子](https://forums.ahwoo.com/forums/kitten-space-agency/mod-releases/ksa-chinese-0-1-6-simplified-chinese-ui-for-ksa-5638.1440/)。以下保留发布正文。
 
 目标：[Ahwoo Mod Releases](https://forums.ahwoo.com/forums/kitten-space-agency/mod-releases/)
 
