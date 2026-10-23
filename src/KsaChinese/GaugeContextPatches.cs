@@ -12,12 +12,12 @@ namespace KsaChinese;
 public static class GaugeContextMenuPatch
 {
     private static readonly HashSet<string> Labels = new(StringComparer.Ordinal)
-        { "Enabled", "Always on top", "Reset", "Detached", "Lock" };
+        { "Enabled", "Always on top", "Reset", "Detached", "Lock", "Resizing", "Selected", "Interacting", "NeedsResize" };
 
     public static string Caption(string original, bool disabled)
     {
         if (!Labels.Contains(original)) return original;
-        string translated = Runtime.ScopedText("Gauge.Context." + original, original);
+        string translated = Runtime.ScopedText("Gauge.Context." + original, ExpandedUi.Text(original));
         // Disabled helpers use TextDisabled, which displays ### literally.
         // Active helpers use Selectable and need a stable ID in both locales.
         // The native helper's trailing spaces end up AFTER ### and no longer

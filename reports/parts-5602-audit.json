@@ -1,0 +1,1941 @@
+{
+  "schema": 1,
+  "game_version": "2026.10.13.5602",
+  "top_level_definitions": 180,
+  "translated": 179,
+  "preserved_models": [
+    "CorePropulsionA_Prefab_EngineA4"
+  ],
+  "missing": [],
+  "named_subparts": [
+    {
+      "key": "CoreUtilityA_Subpart_StandaloneParachuteA",
+      "original": "Drogue",
+      "chinese": "减速伞"
+    },
+    {
+      "key": "CoreUtilityA_Subpart_StandaloneParachuteB",
+      "original": "Main Parachutes",
+      "chinese": "主伞"
+    }
+  ],
+  "internal_subpart_definitions": 470,
+  "source_xml_sha256": {
+    "Astronomicals.xml": "7c22fa570e942e41800627503fc0071e5a9db10964623709551d4d4a1b9ba583",
+    "CharacterAssets.xml": "55c115756c79ea9c059831b484fae2dc7ed4736454db2729816acaa9f9edad4a",
+    "CoreCommandAAssets.xml": "c22f96bffa67f87abfc012b24a5b2d260a9f34ec0ede4fbcd8b046d4ef92ab45",
+    "CoreCommandAGameData.xml": "447101b13bc87afb47ea1dd49da9781ea9df188f7db86937fc3de70a41dfab2a",
+    "CoreCouplingAAssets.xml": "75812b28a3b61f67fa257e4d9aba2cdc915ed3b043236a41fa525aa3415f2c2b",
+    "CoreCouplingAGameData.xml": "72e1171b52d0b23dc9d89636cac1b84f745b2ffe4b616be9fe72d4b08e834be4",
+    "CoreEditorTagsGameData.xml": "f7d13da3378d7bf1cd1e7912fd748b16f8fdd461ec5345946de578756e83a2fa",
+    "CoreElectricalAAssets.xml": "afda809644ee32d3c14176c77ee364f6bc0fb6d320d20d6e754baa23a61f5b56",
+    "CoreElectricalAGameData.xml": "3d53272e4c6bde407444e5637beba10489eba5e70100157fad4b231d78506c6e",
+    "CoreFairingAAssets.xml": "e02db7fda231937aae7113a1a3c63090f471585c9531a727efd3d3986311ebc7",
+    "CoreFairingAGameData.xml": "84cf1383a3c19ea731992b6fbfe9b49b8c872b754601ac597272bb33f3df5771",
+    "CoreFuelPortGameData.xml": "56d52aa2ed8bf98a8de19460d3173cb19749deb0cdc4616b66f98f71af0bdfa8",
+    "CoreFuelTankAAssets.xml": "dccad324fda061043dd2e3c094520905523b5a4edff80ca48b7c936e0de9c8a8",
+    "CoreFuelTankAGameData.xml": "bc35c00481a9cd82a188d062b46b076bcc4ee6f087b0203e1f12d7c78cf42897",
+    "CoreFuelTankBAssets.xml": "7db8c70f2bc2cbefde99f7cf6a1e0a93c4eb10c5fcab57444359c4b7768d4846",
+    "CoreFuelTankBGameData.xml": "4da7ea1e554201ac9e9d3f024dc611791cac656b792f9894fb959465cc8fec0f",
+    "CoreIVAPropAAssets.xml": "6f52c864b3b804cedf86af779a7478054739d0a473eb42fc2dacdd3fb6f9436e",
+    "CoreIVASpaceAAssets.xml": "01169f851c7f0fb1f292a3bba3bda551c7523e472b14c74951a8698949b5c633",
+    "CoreIVASpaceAGameData.xml": "35e1080dd9ee5b5be60ab69420e1a3aec51e687ab9586795972bf01f4d02d89c",
+    "CoreLandingAAssets.xml": "9d7d12c9aff861388e5748008d5ce737b0c758619a2a75cdb887bf628a78a66e",
+    "CoreLandingAGameData.xml": "8b5cd13c0ef354662e5cb56c754d092ca53ecd9e791c8f727e62d595841d3fd3",
+    "CoreLaunchPadAAssets.xml": "9a4a8f01858f1c98c1ae6e4c575481cab308d1334165b5717a1637c27d16ba0d",
+    "CoreLaunchPadAGameData.xml": "ebcf9277b08fb565878d03240123e8e9ac6705e11f41f3ca78af4d8303f3c3be",
+    "CoreLaunchPadBAssets.xml": "39dbd99830fda566b99d520471cdc47adfd6dac26bcea18f5471b9be8e1712ec",
+    "CoreLaunchPadCAssets.xml": "969a74ce336951fa55c16b896785ed919aeab6cdc8a212620f97235be021ae17",
+    "CorePassageAAssets.xml": "8715298f35e6b226a8558ab6bc53043a75c82bcc36b4f66b0d14dda0c9e8a948",
+    "CorePassageAGameData.xml": "79660230f69071e0859dc806f538b89ed05e1aa747275874d5d753a7fceed9a4",
+    "CorePropulsionAAssets.xml": "a90fc3ef68d76acc4f4f3eee63b6f3034e369af8c6335a9661ad596ceb7387c2",
+    "CorePropulsionAGameData.xml": "2ca44ffcc173b793142ff9af07b2b32fe5254aad9a2915d9b4bf32e94a9ae92b",
+    "CorePropulsionBAssets.xml": "6ad668b9f536ceee0e34c879348fb2ea3c4f148c5db79622caea9561785611d8",
+    "CorePropulsionBGameData.xml": "412c75a2c15397c9526288b9a61c9349ae4d51dba0a1d11ed6a78ed5b79f33af",
+    "CorePropulsionCAssets.xml": "a84679252a6d338a7d1cb933a229758340aec9442c6527b036f013ffaa2a66be",
+    "CorePropulsionCGameData.xml": "6faede65d28df27890c4a590e66dab222a492469080f8fbb3727925fcbbdb01a",
+    "CoreServiceModuleAAssets.xml": "2df249ddc135ff73a870121f3e2ed76f79ce4fd93bd43d3c5096605563466c00",
+    "CoreServiceModuleAGameData.xml": "5f338b7fb895f911b46fcc62c84c9ba09f47744d96658f7d036933e9c45f4fc3",
+    "CoreStructuralAAssets.xml": "bbbd0ea71267fcc5f2fc718d67a384459bb4a38ee84ccb925385d75e981e6688",
+    "CoreStructuralAGameData.xml": "89e7e1d9073af03e241118da5b04d2c58abac08b09ed1cf4ec2eb058be9f4eb7",
+    "CoreUtilityAAssets.xml": "f0436a0033ff9b43c4a9fc653b232c8f2d8b690b398808e2d5e0dc32b4d8d06a",
+    "CoreUtilityAGameData.xml": "6a31141f708379ee0fa91af5795464f943c91839863423764ca57c24ab3a037d",
+    "DefaultAssets.xml": "f66eba2f2362492d7f96be6f60f04a53cd958eff55d5fae960399443a7d5b1f9",
+    "DistantGlintAssets.xml": "18bc091280f1155b187a971204b4b9774c8a2cdfc242230f9c8de1a6f186dc56",
+    "EarthOnly.xml": "d2f1edda27f212126ed08679503985e0daea3e9d69d39aa5cbc8e52d1fa026ea",
+    "EarthOnlyInterstellar.xml": "44e64fb122cb9af5e459b89b58f5eef38dbd3265e780bf2b8d99d10256992354",
+    "EarthSystem.xml": "7c45555ceeca44677a65dc6ecbd9e0a9c6a88f153e68e62e310297c2fd1dcb9e",
+    "ExhaustAssets.xml": "f876d81622ba740c551536a5c5ad067ef602b39304c524fc72a358cc40242750",
+    "ExplosionAssets.xml": "9fd6c605e2950eeda16b62090e92315ddfd38fc281854e92668770057efd597c",
+    "Gauges.xml": "5c9908eafcd5f614e865bd54bdc49044e0dcbc9587a3dca250737515ff03a036",
+    "GrainGeometries.xml": "a8a3fc5402e80f056258803cacc6f8192a883429502bc10f72fc03dd6dc507ae",
+    "InterstellarAstronomicals.xml": "583f7f4c391100166c9473eb0025c97678b3cf78cc37398fdd8084fd5108e04f",
+    "Languages.xml": "f28817ffc576125963a86d778b9b630194c137de46653a3458eb192ad2e439ec",
+    "Materials.xml": "bfccb8b6515ed1ff4666c86c6ff7ffcf9b303bba2c5ab0a17c3061fe1765e336",
+    "ParachuteAssets.xml": "f8c7291684a77407c712640f701f5160ab5ad790e7318e95e3ca3217c2ec9b1c",
+    "PartAssets.xml": "eb7cd84a2bc44c490466f7b6b4a7d55d16c5de3e77ad53bd6c27e7d3e3c9328b",
+    "PartGameData.xml": "55f9de6fef2a3591ef269fac1000c61803df6d86b883d325fa7690e7577ebced",
+    "ParticleEmitterAssets.xml": "6d63ab0dbcf20279832c9d65ab1888ad2b184cbcbe5516b4c5bd0ca3c9343d38",
+    "PlumeTrailAssets.xml": "20b706507a37088d18f25565f0499eb4f7e3a18028326c4c7e439dea2626f10e",
+    "Reactions.xml": "d65558ff9c83ac75921ce95fa1c807b21ee27971acb71fe1feccff271cf6df67",
+    "Situations.xml": "95c31d95634826f5270e8d9868469816fa07c9a764fc1180765f381fb3974715",
+    "SolidPropellants.xml": "1b6b8f15dbed87c31776109b70cd4a63acf38377856a79e1443a43e0cf899ec7",
+    "SolSystem.xml": "d458581b7f7ac7d2bcab76f8f595b57571f2227b3eae7137f696dfbf2fb13af6",
+    "SolSystemDense.xml": "bbe2753887b359bcfbb12d3b54a015e8c09de09e5329ce05eb25c69318b01d8d",
+    "SolSystemInterstellar.xml": "daa02e5a1d2507296675cfd3a168a2b7fb363f3b45840889f452944907da1710",
+    "Sounds.xml": "68fca943ee362bf581aba35ab5505123ac7dedbbf9a4a73970f8b450d8035d4d",
+    "Volatiles.xml": "a93013e9d5ad573ecc4fc52add3e72919479971b4a57164ce11bcf4fe54788d9"
+  },
+  "parts": [
+    {
+      "key": "CoreCommandA_Prefab_MediumCapsuleVariantA",
+      "source_file": "Content/Core/CoreCommandAAssets.xml",
+      "original": "CoreCommandA_Prefab_MediumCapsuleVariantA",
+      "chinese": "中型乘员舱 A",
+      "editor_tags": [
+        "Capsules"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreCouplingA_Prefab_Decoupler1WA",
+      "source_file": "Content/Core/CoreCouplingAAssets.xml",
+      "original": "CoreCouplingA_Prefab_Decoupler1WA",
+      "chinese": "1 米分离器 WA",
+      "editor_tags": [
+        "Coupling"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreCouplingA_Prefab_Decoupler1WB",
+      "source_file": "Content/Core/CoreCouplingAAssets.xml",
+      "original": "CoreCouplingA_Prefab_Decoupler1WB",
+      "chinese": "1 米分离器 WB",
+      "editor_tags": [
+        "Coupling"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreCouplingA_Prefab_Decoupler2WA",
+      "source_file": "Content/Core/CoreCouplingAAssets.xml",
+      "original": "CoreCouplingA_Prefab_Decoupler2WA",
+      "chinese": "2 米分离器 WA",
+      "editor_tags": [
+        "Coupling"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreCouplingA_Prefab_Decoupler2WB",
+      "source_file": "Content/Core/CoreCouplingAAssets.xml",
+      "original": "CoreCouplingA_Prefab_Decoupler2WB",
+      "chinese": "2 米分离器 WB",
+      "editor_tags": [
+        "Coupling"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreCouplingA_Prefab_Decoupler3WA",
+      "source_file": "Content/Core/CoreCouplingAAssets.xml",
+      "original": "CoreCouplingA_Prefab_Decoupler3WA",
+      "chinese": "3 米分离器 WA",
+      "editor_tags": [
+        "Coupling"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreCouplingA_Prefab_Decoupler3WB",
+      "source_file": "Content/Core/CoreCouplingAAssets.xml",
+      "original": "CoreCouplingA_Prefab_Decoupler3WB",
+      "chinese": "3 米分离器 WB",
+      "editor_tags": [
+        "Coupling"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreCouplingA_Prefab_DecouplerHalfWA",
+      "source_file": "Content/Core/CoreCouplingAAssets.xml",
+      "original": "CoreCouplingA_Prefab_DecouplerHalfWA",
+      "chinese": "0.5 米分离器 WA",
+      "editor_tags": [
+        "Coupling"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreCouplingA_Prefab_DecouplerHalfWB",
+      "source_file": "Content/Core/CoreCouplingAAssets.xml",
+      "original": "CoreCouplingA_Prefab_DecouplerHalfWB",
+      "chinese": "0.5 米分离器 WB",
+      "editor_tags": [
+        "Coupling"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreCouplingA_Prefab_DecouplerQuarterWA",
+      "source_file": "Content/Core/CoreCouplingAAssets.xml",
+      "original": "CoreCouplingA_Prefab_DecouplerQuarterWA",
+      "chinese": "0.25 米分离器 WA",
+      "editor_tags": [
+        "Coupling"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreCouplingA_Prefab_DecouplerQuarterWB",
+      "source_file": "Content/Core/CoreCouplingAAssets.xml",
+      "original": "CoreCouplingA_Prefab_DecouplerQuarterWB",
+      "chinese": "0.25 米分离器 WB",
+      "editor_tags": [
+        "Coupling"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreCouplingA_Prefab_DockingPort1WA",
+      "source_file": "Content/Core/CoreCouplingAAssets.xml",
+      "original": "CoreCouplingA_Prefab_DockingPort1WA",
+      "chinese": "对接端口 1WA",
+      "editor_tags": [
+        "Coupling"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreCouplingA_Prefab_DockingPort1WB",
+      "source_file": "Content/Core/CoreCouplingAAssets.xml",
+      "original": "CoreCouplingA_Prefab_DockingPort1WB",
+      "chinese": "对接端口 1WB",
+      "editor_tags": [
+        "Coupling"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreCouplingA_Prefab_DockingPort1WC",
+      "source_file": "Content/Core/CoreCouplingAAssets.xml",
+      "original": "CoreCouplingA_Prefab_DockingPort1WC",
+      "chinese": "对接端口 1WC",
+      "editor_tags": [
+        "Coupling"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreElectricalA_Prefab_BayFuelcellSmall",
+      "source_file": "Content/Core/CoreElectricalAAssets.xml",
+      "original": "CoreElectricalA_Prefab_BayFuelcellSmall",
+      "chinese": "小型舱内燃料电池",
+      "editor_tags": [],
+      "status": "translated"
+    },
+    {
+      "key": "CoreElectricalA_Prefab_InlineBatteryBankA",
+      "source_file": "Content/Core/CoreElectricalAAssets.xml",
+      "original": "CoreElectricalA_Prefab_InlineBatteryBankA",
+      "chinese": "串联式电池组 A",
+      "editor_tags": [
+        "Electrical",
+        "NoFaceSnapping"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreElectricalA_Prefab_InlineBatteryBankB",
+      "source_file": "Content/Core/CoreElectricalAAssets.xml",
+      "original": "CoreElectricalA_Prefab_InlineBatteryBankB",
+      "chinese": "串联式电池组 B",
+      "editor_tags": [
+        "Electrical",
+        "NoFaceSnapping"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreElectricalA_Prefab_MagneticScoopA",
+      "source_file": "Content/Core/CoreElectricalAAssets.xml",
+      "original": "MRS-1 Magnetic Scoop",
+      "chinese": "MRS-1 磁场收集器",
+      "editor_tags": [
+        "Interstellar",
+        "NoFaceSnapping"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreElectricalA_Prefab_LightSmallA",
+      "source_file": "Content/Core/CoreElectricalAAssets.xml",
+      "original": "CoreElectricalA_Prefab_LightSmallA",
+      "chinese": "小型照明灯 A",
+      "editor_tags": [
+        "Lights"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreElectricalA_Prefab_LightSmallB",
+      "source_file": "Content/Core/CoreElectricalAAssets.xml",
+      "original": "CoreElectricalA_Prefab_LightSmallB",
+      "chinese": "小型照明灯 B",
+      "editor_tags": [
+        "Lights"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreElectricalA_Prefab_LightSmallC",
+      "source_file": "Content/Core/CoreElectricalAAssets.xml",
+      "original": "CoreElectricalA_Prefab_LightSmallC",
+      "chinese": "小型照明灯 C",
+      "editor_tags": [
+        "Lights"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreElectricalA_Prefab_RadialBatteryA",
+      "source_file": "Content/Core/CoreElectricalAAssets.xml",
+      "original": "CoreElectricalA_Prefab_RadialBatteryA",
+      "chinese": "径向安装电池 A",
+      "editor_tags": [
+        "Electrical"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreElectricalA_Prefab_RadialBatteryB",
+      "source_file": "Content/Core/CoreElectricalAAssets.xml",
+      "original": "CoreElectricalA_Prefab_RadialBatteryB",
+      "chinese": "径向安装电池 B",
+      "editor_tags": [
+        "Electrical"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreElectricalA_Prefab_SolarPanelA",
+      "source_file": "Content/Core/CoreElectricalAAssets.xml",
+      "original": "CoreElectricalA_Prefab_SolarPanelA",
+      "chinese": "太阳能电池板 A",
+      "editor_tags": [
+        "Electrical"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreElectricalA_Prefab_SolarPanelB",
+      "source_file": "Content/Core/CoreElectricalAAssets.xml",
+      "original": "CoreElectricalA_Prefab_SolarPanelB",
+      "chinese": "可展开太阳能电池板 B",
+      "editor_tags": [
+        "Electrical"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_AeroshroudAA",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_AeroshroudAA",
+      "chinese": "气动整流罩 AA",
+      "editor_tags": [
+        "Radial",
+        "Structural"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_AeroshroudAB",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_AeroshroudAB",
+      "chinese": "气动整流罩 AB",
+      "editor_tags": [
+        "Radial",
+        "Structural"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_AeroshroudBA",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_AeroshroudBA",
+      "chinese": "气动整流罩 BA",
+      "editor_tags": [
+        "Radial",
+        "Structural"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_AeroshroudBB",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_AeroshroudBB",
+      "chinese": "气动整流罩 BB",
+      "editor_tags": [
+        "Radial",
+        "Structural"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_AeroshroudCA",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_AeroshroudCA",
+      "chinese": "气动整流罩 CA",
+      "editor_tags": [
+        "Radial",
+        "Structural"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_AeroshroudCB",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_AeroshroudCB",
+      "chinese": "气动整流罩 CB",
+      "editor_tags": [
+        "Radial",
+        "Structural"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_AeroshroudCC",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_AeroshroudCC",
+      "chinese": "气动整流罩 CC",
+      "editor_tags": [
+        "Radial",
+        "Structural"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_Interstage1W1HA",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_Interstage1W1HA",
+      "chinese": "级间段 1W1HA",
+      "editor_tags": [
+        "Coupling",
+        "Interstage"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_Interstage1WHalfHA",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_Interstage1WHalfHA",
+      "chinese": "级间段 1WHalfHA",
+      "editor_tags": [
+        "Coupling",
+        "Interstage"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_Interstage1WQuarterHA",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_Interstage1WQuarterHA",
+      "chinese": "级间段 1WQuarterHA",
+      "editor_tags": [
+        "Coupling",
+        "Interstage"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_Interstage2W1HA",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_Interstage2W1HA",
+      "chinese": "级间段 2W1HA",
+      "editor_tags": [
+        "Coupling",
+        "Interstage"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_Interstage2W2HA",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_Interstage2W2HA",
+      "chinese": "级间段 2W2HA",
+      "editor_tags": [
+        "Coupling",
+        "Interstage"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_Interstage2WHalfHA",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_Interstage2WHalfHA",
+      "chinese": "级间段 2WHalfHA",
+      "editor_tags": [
+        "Coupling",
+        "Interstage"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_Interstage3W1HA",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_Interstage3W1HA",
+      "chinese": "级间段 3W1HA",
+      "editor_tags": [
+        "Coupling",
+        "Interstage"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_Interstage3W2HA",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_Interstage3W2HA",
+      "chinese": "级间段 3W2HA",
+      "editor_tags": [
+        "Coupling",
+        "Interstage"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_Interstage3W3HA",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_Interstage3W3HA",
+      "chinese": "级间段 3W3HA",
+      "editor_tags": [
+        "Coupling",
+        "Interstage"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_Interstage3W3HB",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_Interstage3W3HB",
+      "chinese": "级间段 3W3HB",
+      "editor_tags": [
+        "Coupling",
+        "Interstage"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_Interstage3WHalfHA",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_Interstage3WHalfHA",
+      "chinese": "级间段 3WHalfHA",
+      "editor_tags": [
+        "Coupling",
+        "Interstage"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_InterstageBridge1WHalfWA",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_InterstageBridge1WHalfWA",
+      "chinese": "变径级间段 1WHalfWA",
+      "editor_tags": [
+        "Coupling",
+        "Interstage"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_InterstageBridge2W1WA",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_InterstageBridge2W1WA",
+      "chinese": "变径级间段 2W1WA",
+      "editor_tags": [
+        "Coupling",
+        "Interstage"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_InterstageBridge2W1WB",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_InterstageBridge2W1WB",
+      "chinese": "变径推进剂箱 2W1WB",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_InterstageBridge3W2WA",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_InterstageBridge3W2WA",
+      "chinese": "变径级间段 3W2WA",
+      "editor_tags": [
+        "Coupling",
+        "Interstage"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_InterstageBridge3W2WB",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_InterstageBridge3W2WB",
+      "chinese": "变径推进剂箱 3W2WB",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_InterstageBridgePetal1WHalfWA",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_InterstageBridgePetal1WHalfWA",
+      "chinese": "分瓣式变径级间段 1WHalfWA",
+      "editor_tags": [
+        "Coupling",
+        "Interstage"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_InterstageBridgePetal2W1WA",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_InterstageBridgePetal2W1WA",
+      "chinese": "分瓣式变径级间段 2W1WA",
+      "editor_tags": [
+        "Coupling",
+        "Interstage"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_InterstageHalfW1HA1",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_InterstageHalfW1HA1",
+      "chinese": "级间段 HalfW1HA1",
+      "editor_tags": [
+        "Coupling",
+        "Interstage"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_NoseconeA",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_NoseconeA",
+      "chinese": "头锥 A",
+      "editor_tags": [
+        "Interstage",
+        "Structural"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_NoseconeB",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_NoseconeB",
+      "chinese": "头锥 B",
+      "editor_tags": [
+        "Interstage",
+        "Structural"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_NoseconeC",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_NoseconeC",
+      "chinese": "头锥式推进剂箱 C",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_NoseconeD",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_NoseconeD",
+      "chinese": "头锥 D",
+      "editor_tags": [
+        "Interstage",
+        "Structural"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_NoseconeE",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_NoseconeE",
+      "chinese": "头锥式推进剂箱 E",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_NoseconeF",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_NoseconeF",
+      "chinese": "头锥式推进剂箱 F",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_NoseconeG",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_NoseconeG",
+      "chinese": "头锥式推进剂箱 G",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_NoseconeH",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_NoseconeH",
+      "chinese": "头锥式推进剂箱 H",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_SRBForwardSkirtA",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_SRBForwardSkirtA",
+      "chinese": "固体助推器前裙段 A",
+      "editor_tags": [
+        "Booster"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFairingA_Prefab_SRBForwardSkirtB",
+      "source_file": "Content/Core/CoreFairingAAssets.xml",
+      "original": "CoreFairingA_Prefab_SRBForwardSkirtB",
+      "chinese": "固体助推器前裙段 B",
+      "editor_tags": [
+        "Booster"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_FuelPortA",
+      "source_file": "Content/Core/CoreFuelPortGameData.xml",
+      "original": "Fuel Port",
+      "chinese": "推进剂接口",
+      "editor_tags": [
+        "Fuel Tanks",
+        "Radial"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_LF1W1HA",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "CoreFuelTankA_Prefab_LF1W1HA",
+      "chinese": "1 米推进剂箱 LF1W1HA",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_LF1W1HB",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "CoreFuelTankA_Prefab_LF1W1HB",
+      "chinese": "1 米推进剂箱 LF1W1HB",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_LF1W1HC",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "CoreFuelTankA_Prefab_LF1W1HC",
+      "chinese": "1 米推进剂箱 LF1W1HC",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_LF1WHalfHA",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "CoreFuelTankA_Prefab_LF1WHalfHA",
+      "chinese": "1 米短型推进剂箱 LF1WHalfHA",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_LF1WHalfHB",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "CoreFuelTankA_Prefab_LF1WHalfHB",
+      "chinese": "1 米短型推进剂箱 LF1WHalfHB",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_LF1WHalfHC",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "CoreFuelTankA_Prefab_LF1WHalfHC",
+      "chinese": "1 米短型推进剂箱 LF1WHalfHC",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_LF2W1HA",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "CoreFuelTankA_Prefab_LF2W1HA",
+      "chinese": "2 米推进剂箱 LF2W1HA",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_LF2W1HB",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "CoreFuelTankA_Prefab_LF2W1HB",
+      "chinese": "2 米推进剂箱 LF2W1HB",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_LF2W2HA",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "CoreFuelTankA_Prefab_LF2W2HA",
+      "chinese": "2 米推进剂箱 LF2W2HA",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_LF2W2HB",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "CoreFuelTankA_Prefab_LF2W2HB",
+      "chinese": "2 米推进剂箱 LF2W2HB",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_LF2W2HC",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "CoreFuelTankA_Prefab_LF2W2HC",
+      "chinese": "2 米推进剂箱 LF2W2HC",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_LF2W4HA",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "CoreFuelTankA_Prefab_LF2W4HA",
+      "chinese": "2 米推进剂箱 LF2W4HA",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_LF2W4HB",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "CoreFuelTankA_Prefab_LF2W4HB",
+      "chinese": "2 米推进剂箱 LF2W4HB",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_LF2W4HC",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "CoreFuelTankA_Prefab_LF2W4HC",
+      "chinese": "2 米推进剂箱 LF2W4HC",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_LF2W4HD",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "CoreFuelTankA_Prefab_LF2W4HD",
+      "chinese": "2 米推进剂箱 LF2W4HD",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_LF3W3HA",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "CoreFuelTankA_Prefab_LF3W3HA",
+      "chinese": "3 米推进剂箱 LF3W3HA",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_LF3W3HB",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "CoreFuelTankA_Prefab_LF3W3HB",
+      "chinese": "3 米推进剂箱 LF3W3HB",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_LF3W6HA",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "CoreFuelTankA_Prefab_LF3W6HA",
+      "chinese": "3 米推进剂箱 LF3W6HA",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_MagneticTrapA",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "MTT-1 Magnetic Trap Tank",
+      "chinese": "MTT-1 磁阱储箱",
+      "editor_tags": [
+        "Interstellar"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_LF3W6HB",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "CoreFuelTankA_Prefab_LF3W6HB",
+      "chinese": "3 米推进剂箱 LF3W6HB",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_LF3W6HC",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "CoreFuelTankA_Prefab_LF3W6HC",
+      "chinese": "3 米推进剂箱 LF3W6HC",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_LF3W6HD",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "CoreFuelTankA_Prefab_LF3W6HD",
+      "chinese": "3 米推进剂箱 LF3W6HD",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_MP1W1HA",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "CoreFuelTankA_Prefab_MP1W1HA",
+      "chinese": "1 米推进剂箱 MP1W1HA",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_MP1W1HB",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "CoreFuelTankA_Prefab_MP1W1HB",
+      "chinese": "1 米推进剂箱 MP1W1HB",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_MP1W1HC",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "CoreFuelTankA_Prefab_MP1W1HC",
+      "chinese": "1 米推进剂箱 MP1W1HC",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_MP1W1HD",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "CoreFuelTankA_Prefab_MP1W1HD",
+      "chinese": "1 米推进剂箱 MP1W1HD",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_MP1WHalfHA",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "CoreFuelTankA_Prefab_MP1WHalfHA",
+      "chinese": "1 米短型推进剂箱 MP1WHalfHA",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_MP1WHalfHB",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "CoreFuelTankA_Prefab_MP1WHalfHB",
+      "chinese": "1 米短型推进剂箱 MP1WHalfHB",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_MP1WHalfHC",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "CoreFuelTankA_Prefab_MP1WHalfHC",
+      "chinese": "1 米短型推进剂箱 MP1WHalfHC",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_MP1WHalfHD",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "CoreFuelTankA_Prefab_MP1WHalfHD",
+      "chinese": "1 米短型推进剂箱 MP1WHalfHD",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_RadialMPHalfWA",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "CoreFuelTankA_Prefab_RadialMPHalfWA",
+      "chinese": "球形推进剂箱 RadialMPHalfWA",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_RadialMPHalfWB",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "CoreFuelTankA_Prefab_RadialMPHalfWB",
+      "chinese": "球形推进剂箱 RadialMPHalfWB",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankA_Prefab_RadialMPQuarterWA",
+      "source_file": "Content/Core/CoreFuelTankAAssets.xml",
+      "original": "CoreFuelTankA_Prefab_RadialMPQuarterWA",
+      "chinese": "球形推进剂箱 RadialMPQuarterWA",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankB_Prefab_BaypartTankA",
+      "source_file": "Content/Core/CoreFuelTankBAssets.xml",
+      "original": "CoreFuelTankB_Prefab_BaypartTankA",
+      "chinese": "球形推进剂箱 BaypartTankA",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankB_Prefab_BaypartTankB",
+      "source_file": "Content/Core/CoreFuelTankBAssets.xml",
+      "original": "CoreFuelTankB_Prefab_BaypartTankB",
+      "chinese": "圆柱形推进剂箱 BaypartTankB",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankB_Prefab_BaypartTankC",
+      "source_file": "Content/Core/CoreFuelTankBAssets.xml",
+      "original": "CoreFuelTankB_Prefab_BaypartTankC",
+      "chinese": "球形推进剂箱 BaypartTankC",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreFuelTankB_Prefab_BaypartTankD",
+      "source_file": "Content/Core/CoreFuelTankBAssets.xml",
+      "original": "CoreFuelTankB_Prefab_BaypartTankD",
+      "chinese": "双圆柱形推进剂箱 BaypartTankD",
+      "editor_tags": [
+        "Fuel Tanks"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreIVASpaceA_Prefab_MediumCapsuleA",
+      "source_file": "Content/Core/CoreIVASpaceAAssets.xml",
+      "original": "CoreIVASpaceA_Prefab_MediumCapsuleA",
+      "chinese": "中型乘员舱内饰 A",
+      "editor_tags": [
+        "Hidden"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreLandingA_Prefab_MediumLandingLegA",
+      "source_file": "Content/Core/CoreLandingAAssets.xml",
+      "original": "CoreLandingA_Prefab_MediumLandingLegA",
+      "chinese": "中型着陆支腿 A",
+      "editor_tags": [
+        "Landing"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePassageA_Prefab_HatchAVariantA",
+      "source_file": "Content/Core/CorePassageAAssets.xml",
+      "original": "CorePassageA_Prefab_HatchAVariantA",
+      "chinese": "舱门 A（A 型）",
+      "editor_tags": [
+        "NoFaceSnapping",
+        "Passage"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePassageA_Prefab_HatchAVariantB",
+      "source_file": "Content/Core/CorePassageAAssets.xml",
+      "original": "CorePassageA_Prefab_HatchAVariantB",
+      "chinese": "舱门 A（B 型）",
+      "editor_tags": [
+        "NoFaceSnapping",
+        "Passage"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePassageA_Prefab_HatchAVariantC",
+      "source_file": "Content/Core/CorePassageAAssets.xml",
+      "original": "CorePassageA_Prefab_HatchAVariantC",
+      "chinese": "舱门 A（C 型）",
+      "editor_tags": [
+        "NoFaceSnapping",
+        "Passage"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePassageA_Prefab_HatchAVariantD",
+      "source_file": "Content/Core/CorePassageAAssets.xml",
+      "original": "CorePassageA_Prefab_HatchAVariantD",
+      "chinese": "舱门 A（D 型）",
+      "editor_tags": [
+        "NoFaceSnapping",
+        "Passage"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionA_Prefab_EngineA2",
+      "source_file": "Content/Core/CorePropulsionAAssets.xml",
+      "original": "LR91 Sea",
+      "chinese": "LR91 海平面型发动机 A2",
+      "editor_tags": [
+        "Engines"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionA_Prefab_EngineA3",
+      "source_file": "Content/Core/CorePropulsionAAssets.xml",
+      "original": "LR91 Vac",
+      "chinese": "LR91 真空型发动机 A3",
+      "editor_tags": [
+        "Engines"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionA_Prefab_AntimatterRamDriveA",
+      "source_file": "Content/Core/CorePropulsionAAssets.xml",
+      "original": "RAIR-1 Antimatter Ramjet",
+      "chinese": "RAIR-1 反物质冲压发动机",
+      "editor_tags": [
+        "Interstellar",
+        "NoFaceSnapping"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionA_Prefab_FusionTorchDriveA",
+      "source_file": "Content/Core/CorePropulsionAAssets.xml",
+      "original": "FPD-1 Torch",
+      "chinese": "FPD-1 聚变火炬发动机",
+      "editor_tags": [
+        "Interstellar",
+        "NoFaceSnapping"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionA_Prefab_EngineA4",
+      "source_file": "Content/Core/CorePropulsionAAssets.xml",
+      "original": "VTR-10",
+      "chinese": "VTR-10",
+      "editor_tags": [
+        "Engines"
+      ],
+      "status": "preserved-model"
+    },
+    {
+      "key": "CorePropulsionA_Prefab_EngineA5",
+      "source_file": "Content/Core/CorePropulsionAAssets.xml",
+      "original": "LR91 Vac + Verniers",
+      "chinese": "LR91 真空型发动机（带游动发动机）A5",
+      "editor_tags": [
+        "Engines"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionA_Prefab_EngineA6",
+      "source_file": "Content/Core/CorePropulsionAAssets.xml",
+      "original": "LR91 Vac",
+      "chinese": "LR91 真空型发动机 A6",
+      "editor_tags": [
+        "Engines"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionA_Prefab_LESA",
+      "source_file": "Content/Core/CorePropulsionAAssets.xml",
+      "original": "CorePropulsionA_Prefab_LESA",
+      "chinese": "发射逃逸系统 LES-A",
+      "editor_tags": [
+        "Booster"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionA_Prefab_LESSegmentNoseconeA",
+      "source_file": "Content/Core/CorePropulsionAAssets.xml",
+      "original": "CorePropulsionA_Prefab_LESSegmentNoseconeA",
+      "chinese": "发射逃逸系统头锥 A",
+      "editor_tags": [
+        "Booster"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionA_Prefab_LESSegmentThrustAssemblyA",
+      "source_file": "Content/Core/CorePropulsionAAssets.xml",
+      "original": "CorePropulsionA_Prefab_LESSegmentThrustAssemblyA",
+      "chinese": "发射逃逸系统推力组件 A",
+      "editor_tags": [
+        "Booster"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionA_Prefab_SRBA1",
+      "source_file": "Content/Core/CorePropulsionAAssets.xml",
+      "original": "CorePropulsionA_Prefab_SRBA1",
+      "chinese": "固体助推器 SRBA1",
+      "editor_tags": [
+        "Booster"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionA_Prefab_SRBA2",
+      "source_file": "Content/Core/CorePropulsionAAssets.xml",
+      "original": "CorePropulsionA_Prefab_SRBA2",
+      "chinese": "固体助推器 SRBA2",
+      "editor_tags": [
+        "Booster"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionA_Prefab_SRBA3",
+      "source_file": "Content/Core/CorePropulsionAAssets.xml",
+      "original": "CorePropulsionA_Prefab_SRBA3",
+      "chinese": "固体助推器 SRBA3",
+      "editor_tags": [
+        "Booster"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionA_Prefab_SRBA4",
+      "source_file": "Content/Core/CorePropulsionAAssets.xml",
+      "original": "CorePropulsionA_Prefab_SRBA4",
+      "chinese": "固体助推器 SRBA4",
+      "editor_tags": [
+        "Booster"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionA_Prefab_SRBB1",
+      "source_file": "Content/Core/CorePropulsionAAssets.xml",
+      "original": "CorePropulsionA_Prefab_SRBB1",
+      "chinese": "固体助推器 SRBB1",
+      "editor_tags": [
+        "Booster"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionA_Prefab_SRBB2",
+      "source_file": "Content/Core/CorePropulsionAAssets.xml",
+      "original": "CorePropulsionA_Prefab_SRBB2",
+      "chinese": "固体助推器 SRBB2",
+      "editor_tags": [
+        "Booster"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionA_Prefab_SRBB3",
+      "source_file": "Content/Core/CorePropulsionAAssets.xml",
+      "original": "CorePropulsionA_Prefab_SRBB3",
+      "chinese": "固体助推器 SRBB3",
+      "editor_tags": [
+        "Booster"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionA_Prefab_SRBB4",
+      "source_file": "Content/Core/CorePropulsionAAssets.xml",
+      "original": "CorePropulsionA_Prefab_SRBB4",
+      "chinese": "固体助推器 SRBB4",
+      "editor_tags": [
+        "Booster"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionA_Prefab_SRBC1",
+      "source_file": "Content/Core/CorePropulsionAAssets.xml",
+      "original": "CorePropulsionA_Prefab_SRBC1",
+      "chinese": "固体助推器 SRBC1",
+      "editor_tags": [
+        "Booster"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionA_Prefab_SRBC2",
+      "source_file": "Content/Core/CorePropulsionAAssets.xml",
+      "original": "CorePropulsionA_Prefab_SRBC2",
+      "chinese": "固体助推器 SRBC2",
+      "editor_tags": [
+        "Booster"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionA_Prefab_SRBC3",
+      "source_file": "Content/Core/CorePropulsionAAssets.xml",
+      "original": "CorePropulsionA_Prefab_SRBC3",
+      "chinese": "固体助推器 SRBC3",
+      "editor_tags": [
+        "Booster"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionA_Prefab_SRBCSegmentLargeA",
+      "source_file": "Content/Core/CorePropulsionAAssets.xml",
+      "original": "CorePropulsionA_Prefab_SRBCSegmentLargeA",
+      "chinese": "C 型固体助推器大型分段 A",
+      "editor_tags": [
+        "Booster"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionA_Prefab_SRBCSegmentMediumA",
+      "source_file": "Content/Core/CorePropulsionAAssets.xml",
+      "original": "CorePropulsionA_Prefab_SRBCSegmentMediumA",
+      "chinese": "C 型固体助推器中型分段 A",
+      "editor_tags": [
+        "Booster"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionA_Prefab_SRBCSegmentNoseconeA",
+      "source_file": "Content/Core/CorePropulsionAAssets.xml",
+      "original": "CorePropulsionA_Prefab_SRBCSegmentNoseconeA",
+      "chinese": "C 型固体助推器头锥 A",
+      "editor_tags": [
+        "Booster"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionA_Prefab_SRBCSegmentSmallA",
+      "source_file": "Content/Core/CorePropulsionAAssets.xml",
+      "original": "CorePropulsionA_Prefab_SRBCSegmentSmallA",
+      "chinese": "C 型固体助推器小型分段 A",
+      "editor_tags": [
+        "Booster"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionA_Prefab_SRBCSegmentSmallB",
+      "source_file": "Content/Core/CorePropulsionAAssets.xml",
+      "original": "CorePropulsionA_Prefab_SRBCSegmentSmallB",
+      "chinese": "C 型固体助推器小型分段 B",
+      "editor_tags": [
+        "Booster"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionA_Prefab_SRBCSegmentThrustAssemblyA",
+      "source_file": "Content/Core/CorePropulsionAAssets.xml",
+      "original": "CorePropulsionA_Prefab_SRBCSegmentThrustAssemblyA",
+      "chinese": "C 型固体助推器推力组件 A",
+      "editor_tags": [
+        "Booster"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionB_Prefab_RCSALargeA",
+      "source_file": "Content/Core/CorePropulsionBAssets.xml",
+      "original": "CorePropulsionB_Prefab_RCSALargeA",
+      "chinese": "大型姿态控制推进器 RCS-A（A 型）",
+      "editor_tags": [
+        "RCS"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionB_Prefab_RCSALargeB",
+      "source_file": "Content/Core/CorePropulsionBAssets.xml",
+      "original": "CorePropulsionB_Prefab_RCSALargeB",
+      "chinese": "大型姿态控制推进器 RCS-A（B 型）",
+      "editor_tags": [
+        "RCS"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionB_Prefab_RCSALargeC",
+      "source_file": "Content/Core/CorePropulsionBAssets.xml",
+      "original": "CorePropulsionB_Prefab_RCSALargeC",
+      "chinese": "大型姿态控制推进器 RCS-A（C 型）",
+      "editor_tags": [
+        "RCS"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionB_Prefab_RCSAMediumA",
+      "source_file": "Content/Core/CorePropulsionBAssets.xml",
+      "original": "CorePropulsionB_Prefab_RCSAMediumA",
+      "chinese": "中型姿态控制推进器 RCS-A（A 型）",
+      "editor_tags": [
+        "RCS"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionB_Prefab_RCSAMediumB",
+      "source_file": "Content/Core/CorePropulsionBAssets.xml",
+      "original": "CorePropulsionB_Prefab_RCSAMediumB",
+      "chinese": "中型姿态控制推进器 RCS-A（B 型）",
+      "editor_tags": [
+        "RCS"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionB_Prefab_RCSAMediumC",
+      "source_file": "Content/Core/CorePropulsionBAssets.xml",
+      "original": "CorePropulsionB_Prefab_RCSAMediumC",
+      "chinese": "中型姿态控制推进器 RCS-A（C 型）",
+      "editor_tags": [
+        "RCS"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionB_Prefab_RCSAMediumD",
+      "source_file": "Content/Core/CorePropulsionBAssets.xml",
+      "original": "CorePropulsionB_Prefab_RCSAMediumD",
+      "chinese": "中型姿态控制推进器 RCS-A（D 型）",
+      "editor_tags": [
+        "RCS"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionB_Prefab_RCSAMediumLowA",
+      "source_file": "Content/Core/CorePropulsionBAssets.xml",
+      "original": "CorePropulsionB_Prefab_RCSAMediumLowA",
+      "chinese": "中型薄式姿态控制推进器 RCS-A（A 型）",
+      "editor_tags": [
+        "RCS"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionB_Prefab_RCSAMediumLowB",
+      "source_file": "Content/Core/CorePropulsionBAssets.xml",
+      "original": "CorePropulsionB_Prefab_RCSAMediumLowB",
+      "chinese": "中型薄式姿态控制推进器 RCS-A（B 型）",
+      "editor_tags": [
+        "RCS"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionB_Prefab_RCSAMediumLowC",
+      "source_file": "Content/Core/CorePropulsionBAssets.xml",
+      "original": "CorePropulsionB_Prefab_RCSAMediumLowC",
+      "chinese": "中型薄式姿态控制推进器 RCS-A（C 型）",
+      "editor_tags": [
+        "RCS"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionB_Prefab_RCSAMediumLowD",
+      "source_file": "Content/Core/CorePropulsionBAssets.xml",
+      "original": "CorePropulsionB_Prefab_RCSAMediumLowD",
+      "chinese": "中型薄式姿态控制推进器 RCS-A（D 型）",
+      "editor_tags": [
+        "RCS"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionB_Prefab_RCSASmallA",
+      "source_file": "Content/Core/CorePropulsionBAssets.xml",
+      "original": "CorePropulsionB_Prefab_RCSASmallA",
+      "chinese": "小型姿态控制推进器 RCS-A（A 型）",
+      "editor_tags": [
+        "RCS"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionB_Prefab_RCSASmallB",
+      "source_file": "Content/Core/CorePropulsionBAssets.xml",
+      "original": "CorePropulsionB_Prefab_RCSASmallB",
+      "chinese": "小型姿态控制推进器 RCS-A（B 型）",
+      "editor_tags": [
+        "RCS"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionB_Prefab_RCSASmallC",
+      "source_file": "Content/Core/CorePropulsionBAssets.xml",
+      "original": "CorePropulsionB_Prefab_RCSASmallC",
+      "chinese": "小型姿态控制推进器 RCS-A（C 型）",
+      "editor_tags": [
+        "RCS"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionB_Prefab_RCSASmallD",
+      "source_file": "Content/Core/CorePropulsionBAssets.xml",
+      "original": "CorePropulsionB_Prefab_RCSASmallD",
+      "chinese": "小型姿态控制推进器 RCS-A（D 型）",
+      "editor_tags": [
+        "RCS"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionB_Prefab_RCSASmallE",
+      "source_file": "Content/Core/CorePropulsionBAssets.xml",
+      "original": "CorePropulsionB_Prefab_RCSASmallE",
+      "chinese": "小型姿态控制推进器 RCS-A（E 型）",
+      "editor_tags": [
+        "RCS"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionC_Prefab_SRBDSegmentLargeA",
+      "source_file": "Content/Core/CorePropulsionCAssets.xml",
+      "original": "SRB Size D Segment",
+      "chinese": "D 型固体助推器分段 A",
+      "editor_tags": [
+        "Booster"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionC_Prefab_SRBDThrustAssemblyA",
+      "source_file": "Content/Core/CorePropulsionCAssets.xml",
+      "original": "SRB Size D Thrust Assembly",
+      "chinese": "D 型固体助推器推力组件 A",
+      "editor_tags": [
+        "Booster"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionC_Prefab_SRBESegmentLargeA",
+      "source_file": "Content/Core/CorePropulsionCAssets.xml",
+      "original": "SRB Size E Segment",
+      "chinese": "E 型固体助推器分段 A",
+      "editor_tags": [
+        "Booster"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CorePropulsionC_Prefab_SRBEThrustAssemblyA",
+      "source_file": "Content/Core/CorePropulsionCAssets.xml",
+      "original": "SRB Size E Thrust Assembly",
+      "chinese": "E 型固体助推器推力组件 A",
+      "editor_tags": [
+        "Booster"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreServiceModuleA_Prefab_SetAHeightA",
+      "source_file": "Content/Core/CoreServiceModuleAAssets.xml",
+      "original": "CoreServiceModuleA_Prefab_SetAHeightA",
+      "chinese": "服务舱 A（高度 A）",
+      "editor_tags": [
+        "Cargo"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreServiceModuleA_Prefab_SetAHeightB",
+      "source_file": "Content/Core/CoreServiceModuleAAssets.xml",
+      "original": "CoreServiceModuleA_Prefab_SetAHeightB",
+      "chinese": "服务舱 A（高度 B）",
+      "editor_tags": [
+        "Cargo"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreServiceModuleA_Prefab_SetAHeightC",
+      "source_file": "Content/Core/CoreServiceModuleAAssets.xml",
+      "original": "CoreServiceModuleA_Prefab_SetAHeightC",
+      "chinese": "服务舱 A（高度 C）",
+      "editor_tags": [
+        "Cargo"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreServiceModuleA_Prefab_SetAHeightD",
+      "source_file": "Content/Core/CoreServiceModuleAAssets.xml",
+      "original": "CoreServiceModuleA_Prefab_SetAHeightD",
+      "chinese": "服务舱 A（高度 D）",
+      "editor_tags": [
+        "Cargo"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreStructuralA_Prefab_EnginePlateLowProfile2WA",
+      "source_file": "Content/Core/CoreStructuralAAssets.xml",
+      "original": "CoreStructuralA_Prefab_EnginePlateLowProfile2WA",
+      "chinese": "薄型发动机安装板 2WA",
+      "editor_tags": [
+        "NoFaceSnapping",
+        "Structural"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreStructuralA_Prefab_EnginePlateLowProfile2WB",
+      "source_file": "Content/Core/CoreStructuralAAssets.xml",
+      "original": "CoreStructuralA_Prefab_EnginePlateLowProfile2WB",
+      "chinese": "薄型发动机安装板 2WB",
+      "editor_tags": [
+        "NoFaceSnapping",
+        "Structural"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreStructuralA_Prefab_EnginePlateLowProfile3WA",
+      "source_file": "Content/Core/CoreStructuralAAssets.xml",
+      "original": "CoreStructuralA_Prefab_EnginePlateLowProfile3WA",
+      "chinese": "薄型发动机安装板 3WA",
+      "editor_tags": [
+        "NoFaceSnapping",
+        "Structural"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreStructuralA_Prefab_EnginePlateLowProfile3WB",
+      "source_file": "Content/Core/CoreStructuralAAssets.xml",
+      "original": "CoreStructuralA_Prefab_EnginePlateLowProfile3WB",
+      "chinese": "薄型发动机安装板 3WB",
+      "editor_tags": [
+        "NoFaceSnapping",
+        "Structural"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreStructuralA_Prefab_EnginePlateLowProfile3WC",
+      "source_file": "Content/Core/CoreStructuralAAssets.xml",
+      "original": "CoreStructuralA_Prefab_EnginePlateLowProfile3WC",
+      "chinese": "薄型发动机安装板 3WC",
+      "editor_tags": [
+        "NoFaceSnapping",
+        "Structural"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreStructuralA_Prefab_EnginePlateLowProfile3WD",
+      "source_file": "Content/Core/CoreStructuralAAssets.xml",
+      "original": "CoreStructuralA_Prefab_EnginePlateLowProfile3WD",
+      "chinese": "薄型发动机安装板 3WD",
+      "editor_tags": [
+        "NoFaceSnapping",
+        "Structural"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreStructuralA_Prefab_EnginePlateLowProfile3WE",
+      "source_file": "Content/Core/CoreStructuralAAssets.xml",
+      "original": "CoreStructuralA_Prefab_EnginePlateLowProfile3WE",
+      "chinese": "薄型发动机安装板 3WE",
+      "editor_tags": [
+        "NoFaceSnapping",
+        "Structural"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreStructuralA_Prefab_RadialDecouplerLargeA",
+      "source_file": "Content/Core/CoreStructuralAAssets.xml",
+      "original": "CoreStructuralA_Prefab_RadialDecouplerLargeA",
+      "chinese": "大型径向分离器 A",
+      "editor_tags": [
+        "Coupling",
+        "NoFaceSnapping",
+        "Radial",
+        "Structural"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreStructuralA_Prefab_StrutA",
+      "source_file": "Content/Core/CoreStructuralAAssets.xml",
+      "original": "CoreStructuralA_Prefab_StrutA",
+      "chinese": "结构支撑杆 A",
+      "editor_tags": [
+        "Structural"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreStructuralA_Prefab_StrutB",
+      "source_file": "Content/Core/CoreStructuralAAssets.xml",
+      "original": "CoreStructuralA_Prefab_StrutB",
+      "chinese": "结构支撑杆 B",
+      "editor_tags": [
+        "Structural"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreStructuralA_Prefab_StrutC",
+      "source_file": "Content/Core/CoreStructuralAAssets.xml",
+      "original": "CoreStructuralA_Prefab_StrutC",
+      "chinese": "结构支撑杆 C",
+      "editor_tags": [
+        "Structural"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreStructuralA_Prefab_StrutD",
+      "source_file": "Content/Core/CoreStructuralAAssets.xml",
+      "original": "CoreStructuralA_Prefab_StrutD",
+      "chinese": "结构支撑杆 D",
+      "editor_tags": [],
+      "status": "translated"
+    },
+    {
+      "key": "CoreStructuralA_Prefab_SurfaceAttachMount1WA",
+      "source_file": "Content/Core/CoreStructuralAAssets.xml",
+      "original": "CoreStructuralA_Prefab_SurfaceAttachMount1WA",
+      "chinese": "表面安装支座 1WA",
+      "editor_tags": [
+        "Structural"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreStructuralA_Prefab_SurfaceAttachMount2WA",
+      "source_file": "Content/Core/CoreStructuralAAssets.xml",
+      "original": "CoreStructuralA_Prefab_SurfaceAttachMount2WA",
+      "chinese": "表面安装支座 2WA",
+      "editor_tags": [
+        "Structural"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreStructuralA_Prefab_SurfaceAttachMountHalfWA",
+      "source_file": "Content/Core/CoreStructuralAAssets.xml",
+      "original": "CoreStructuralA_Prefab_SurfaceAttachMountHalfWA",
+      "chinese": "表面安装支座 HalfWA",
+      "editor_tags": [
+        "Structural"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreUtilityA_Prefab_HandrailA",
+      "source_file": "Content/Core/CoreUtilityAAssets.xml",
+      "original": "CoreUtilityA_Prefab_HandrailA",
+      "chinese": "扶手 A",
+      "editor_tags": [
+        "Structural"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreUtilityA_Prefab_LadderA",
+      "source_file": "Content/Core/CoreUtilityAAssets.xml",
+      "original": "CoreUtilityA_Prefab_LadderA",
+      "chinese": "舷梯 A",
+      "editor_tags": [
+        "Structural"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreUtilityA_Prefab_ParachuteBayB",
+      "source_file": "Content/Core/CoreUtilityAAssets.xml",
+      "original": "Parachute Bay",
+      "chinese": "降落伞舱 B",
+      "editor_tags": [
+        "Landing",
+        "Structural"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreUtilityA_Prefab_RadialParachuteMediumA",
+      "source_file": "Content/Core/CoreUtilityAAssets.xml",
+      "original": "Parachute Radial A",
+      "chinese": "径向安装主伞 A",
+      "editor_tags": [
+        "Landing",
+        "Radial"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreUtilityA_Prefab_RadialParachuteMediumB",
+      "source_file": "Content/Core/CoreUtilityAAssets.xml",
+      "original": "Parachute Radial B",
+      "chinese": "径向安装主伞 B",
+      "editor_tags": [
+        "Landing",
+        "Radial"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreUtilityA_Prefab_RadialParachuteSmallA",
+      "source_file": "Content/Core/CoreUtilityAAssets.xml",
+      "original": "Drogue Radial A",
+      "chinese": "径向安装减速伞 A",
+      "editor_tags": [
+        "Landing",
+        "Radial"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "CoreUtilityA_Prefab_RadialParachuteSmallB",
+      "source_file": "Content/Core/CoreUtilityAAssets.xml",
+      "original": "Drogue Radial B",
+      "chinese": "径向安装减速伞 B",
+      "editor_tags": [
+        "Landing",
+        "Radial"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "KittenBackPackPart",
+      "source_file": "Content/Core/PartAssets.xml",
+      "original": "KittenBackPackPart",
+      "chinese": "航天员背包",
+      "editor_tags": [
+        "Hidden"
+      ],
+      "status": "translated"
+    },
+    {
+      "key": "LightPart",
+      "source_file": "Content/Core/PartAssets.xml",
+      "original": "LightPart",
+      "chinese": "照明灯",
+      "editor_tags": [
+        "Hidden",
+        "Lights"
+      ],
+      "status": "translated"
+    }
+  ],
+  "limits": "Core top-level definitions including hidden/test assets; not selectable-part count or per-entry visual acceptance. Internal mesh/subpart IDs remain technical identifiers unless explicitly named and reviewed."
+}

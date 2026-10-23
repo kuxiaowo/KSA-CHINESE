@@ -1,0 +1,88 @@
+{
+  "schema": 1,
+  "date": "2026-10-23",
+  "game_version": "2026.10.13.5602",
+  "mod_version": "0.1.4",
+  "published": false,
+  "personal_install_updated": false,
+  "binary_compatibility_hashes": {
+    "KSA.dll": "94f6291754dffe24d18d2eef5cd925a2baa9d72fbdaef1c24182f08065348380",
+    "Brutal.ImGui.dll": "ad97d91c407260c6297e6f2a2a05248f482502c487c645911d57abe56400178b",
+    "Brutal.Localization.dll": "7d6f3a54b06c9e1a1fdca8e112da514dddaf4fd56e3a1754db61125ecb0027bb",
+    "Content/Core/Gauges.xml": "5c9908eafcd5f614e865bd54bdc49044e0dcbc9587a3dca250737515ff03a036"
+  },
+  "plugin_sha256": "92bf9de392016cd1f0ba4c26322eed98ae7b52ade3d8c9308fcf4e1c212bbf6f",
+  "locale_sha256": "609bb80940c8c70f67daa08365e41af97947cb2423a7e40aff22e22ca45e2e12",
+  "font_sha256": "af4caec2526f00e0d05daadd3b3f0480cef97cbf29d49445b4d21d12a94e0e33",
+  "display_sites_sha256": "8b55793a47ce1d2e79c2a8503fa5ced4e3ed146c21d4a137e151b42f964c3f1b",
+  "headless_checks": 1038,
+  "patch_target_references": 709,
+  "distinct_target_signatures": 563,
+  "runtime": {
+    "fixture": "work/test-profile-full-014-review-20261023",
+    "exit_code": 0,
+    "stderr_empty": true,
+    "loaded_plugin_matches_packaged_build": true,
+    "part_templates": 650,
+    "translated_part_names": 649,
+    "model_only_preserved": "VTR-10",
+    "substances": 83,
+    "substance_phases": 120,
+    "reactions": 17,
+    "input_action_captions": 103,
+    "substance_identity_and_source_fields_unchanged": true,
+    "english_chinese_roundtrip": true
+  },
+  "screenshots": {
+    "full-engine-zh": {
+      "file": "reports/screenshots/full-014-engine-zh.png",
+      "sha256": "8b493bb5bf79ada433fa67bc422d4075fc9e2596777d12dbdcf39ec877af25ad"
+    },
+    "full-engine-en": {
+      "file": "reports/screenshots/full-014-engine-en.png",
+      "sha256": "88dfc353cbc9ea706bef6cc3dac14d9123d3ae25c5bc407b0bd0d171e09d6988"
+    },
+    "full-tuning-zh": {
+      "file": "reports/screenshots/full-014-tuning-zh.png",
+      "sha256": "99c325f2c613653cc77553e857b79eb47b74ab5e8043bcf9bef96a06eda73045"
+    },
+    "full-display-zh": {
+      "file": "reports/screenshots/full-014-display-zh.png",
+      "sha256": "03c3475468db02fd1f26319a3f88b68d08fc0bddc32afd5cbb09d240d975cc9a"
+    },
+    "full-history-zh": {
+      "file": "reports/screenshots/full-014-history-zh.png",
+      "sha256": "1d4a2b5f3b2d10d26dc2f4e58b209e5869901b00adbad30252ac3e41a859b07d"
+    }
+  },
+  "editor_visual_verification": false,
+  "expected_capture_warnings": [
+    "Screenshot: not available in the editor"
+  ],
+  "history": {
+    "current_body_lines": 135,
+    "current_translated": 135,
+    "all_version_body_lines": 6308,
+    "all_matched_lines": 135,
+    "all_untranslated_lines": 6173
+  },
+  "remaining": [
+    "earlier version-history bodies",
+    "native toolkit/console/exception text not exhaustively translated",
+    "embedded model/texture lettering not exhaustively audited",
+    "editor screenshots unavailable in native capture; no visual acceptance",
+    "not every advanced window, setting combination or tooltip visually exercised"
+  ],
+  "package": {
+    "archive": "KsaChinese-0.1.4-5602-Portable.zip",
+    "sha256": "4fe0cef49fc41ca3ea73c80908d38da86715822f2ff6894f7fd5dbbde78d9cac",
+    "files": 33,
+    "bytes": 1533933,
+    "game_binaries_included": false,
+    "player_data_included": false,
+    "all_archive_hashes_verified": true,
+    "tested_plugin_locale_font_sites_match": true,
+    "test_driver_included": false
+  },
+  "publication_state_scope": "validation snapshot before release; see GitHub v0.1.4 release for current publication state"
+}

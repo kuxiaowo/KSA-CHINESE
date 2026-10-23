@@ -1,10 +1,13 @@
-﻿param([switch]$Fallback,[string]$Tag='final',[string]$Profile='')
+param([switch]$Fallback,[string]$Tag='final',[string]$Profile='',[string]$RuntimeDir='',[switch]$WaitForExit)
 $ErrorActionPreference='Stop'
 $taskRoot=Split-Path $PSScriptRoot -Parent
 if(!$Profile) { $Profile=Join-Path $taskRoot 'work\test-profile' }
 $Profile=[IO.Path]::GetFullPath($Profile)
 if(!$Profile.StartsWith((Join-Path $taskRoot 'work\'),[StringComparison]::OrdinalIgnoreCase) -or !$Profile.Contains('test-profile')) { throw 'Smoke is restricted to workspace test-profile directories.' }
 if($Tag -notmatch '^[a-zA-Z0-9-]+$') { throw 'Invalid log tag' }
+if(!$RuntimeDir) { $RuntimeDir=Join-Path $taskRoot 'work\runtime' }
+$RuntimeDir=[IO.Path]::GetFullPath($RuntimeDir)
+if(!$RuntimeDir.StartsWith((Join-Path $taskRoot 'work\'),[StringComparison]::OrdinalIgnoreCase)) { throw 'Smoke runtime must be inside workspace work directory.' }
 & dotnet build (Join-Path $taskRoot 'src\SmokeDriver\SmokeDriver.csproj') -c Release --nologo "-p:BaseIntermediateOutputPath=$(Join-Path $taskRoot 'work\obj\SmokeDriver\')" "-p:OutputPath=$(Join-Path $taskRoot 'work\build\SmokeDriver\')"
 if($LASTEXITCODE -ne 0) { throw 'Smoke driver build failed' }
 $taskMods=Join-Path $Profile 'mods'
@@ -21,7 +24,16 @@ $taskManifest+="`n[[mods]]`nid = `"SmokeDriver`"`nenabled = true`n"
 $taskOld=$env:KSA_SMOKE_FALLBACK
 try {
     $env:KSA_SMOKE_FALLBACK=if($Fallback){'1'}else{'0'}
-    $taskProcess=Start-Process -FilePath (Join-Path $taskRoot 'work\runtime\StarMap.exe') -WorkingDirectory (Join-Path $taskRoot 'work\runtime') -ArgumentList @('-InstancePath',('"'+$Profile+'"')) -RedirectStandardOutput (Join-Path $taskRoot "work\runtime\$Tag.stdout.log") -RedirectStandardError (Join-Path $taskRoot "work\runtime\$Tag.stderr.log") -WindowStyle Hidden -PassThru
+    $taskProcess=Start-Process -FilePath (Join-Path $RuntimeDir 'StarMap.exe') -WorkingDirectory $RuntimeDir -ArgumentList @('-InstancePath',('"'+$Profile+'"')) -RedirectStandardOutput (Join-Path $taskRoot "work\runtime\$Tag.stdout.log") -RedirectStandardError (Join-Path $taskRoot "work\runtime\$Tag.stderr.log") -WindowStyle Hidden -PassThru
     $taskProcess.Id | Set-Content -LiteralPath (Join-Path $taskRoot "work\runtime\$Tag.pid")
     Write-Output "Smoke process $($taskProcess.Id), profile $Profile"
+    if($WaitForExit) {
+        $null=$taskProcess.Handle
+        $taskProcess.WaitForExit()
+        $taskExitCode=$taskProcess.ExitCode
+        if($null -eq $taskExitCode) { throw 'Fixture exit code unavailable; do not record success.' }
+        [IO.File]::WriteAllText((Join-Path $taskRoot "work\runtime\$Tag.exit-code.txt"),[string]$taskExitCode)
+        Write-Output "Fixture exit code: $taskExitCode"
+        if($taskExitCode -ne 0) { throw "Fixture failed with exit code $taskExitCode" }
+    }
 } finally { $env:KSA_SMOKE_FALLBACK=$taskOld }

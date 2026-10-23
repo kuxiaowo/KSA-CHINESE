@@ -48,6 +48,8 @@ public static class EditorSegmentsPatch
     [HarmonyPrefix]
     public static void Localize(ReadOnlySpan<char> id, ref ReadOnlySpan<string> segments)
     {
+        if (id.SequenceEqual("KittenRosterTabs"))
+        { segments=segments.ToArray().Select(ExpandedUi.Text).ToArray(); return; }
         if (!Ids.Contains(id.ToString()) || Runtime.CurrentPack.Editor.Count == 0) return;
         string[] translated = segments.ToArray();
         bool changed = false;
@@ -136,6 +138,7 @@ public static class EditorFieldCaptionPatch
 
     public static ImString DisplayCaption(ImString label)
     {
+        label = ExpandedUi.FieldCaption(label);
         if (Runtime.StartupUiDepth > 0) return Runtime.ImText(Runtime.StartupText(label.ToString()));
         if (Runtime.EditorUiDepth <= 0) return label;
         string original = label.ToString();
@@ -144,16 +147,16 @@ public static class EditorFieldCaptionPatch
     }
 
     public static bool CelestialCombo(ImString id, ImString preview, ImGuiComboFlags flags)
-        => ImGui.BeginCombo(id, Runtime.EditorUiDepth > 0 || Runtime.StartupUiDepth > 0 ? Runtime.ImText(Runtime.EditorNativeText(preview.ToString(), 1)) : preview, flags);
+        => ImGui.BeginCombo(id, Runtime.EditorUiDepth > 0 || Runtime.StartupUiDepth > 0 || ExpandedUi.InUi ? Runtime.ImText(Runtime.EditorNativeText(preview.ToString(), 1)) : preview, flags);
 
     public static bool LocationCombo(ImString id, ImString preview, ImGuiComboFlags flags)
-        => ImGui.BeginCombo(id, Runtime.EditorUiDepth > 0 || Runtime.StartupUiDepth > 0 ? Runtime.ImText(Runtime.EditorNativeText(preview.ToString(), 2)) : preview, flags);
+        => ImGui.BeginCombo(id, Runtime.EditorUiDepth > 0 || Runtime.StartupUiDepth > 0 || ExpandedUi.InUi ? Runtime.ImText(Runtime.EditorNativeText(preview.ToString(), 2)) : preview, flags);
 
     public static bool CelestialOption(ImString label, bool selected, ImGuiSelectableFlags flags, in float2? size)
-        => ImGui.Selectable(Runtime.EditorUiDepth > 0 || Runtime.StartupUiDepth > 0 ? Runtime.ImText(Runtime.EditorNativeSelectable(label.ToString(), 1)) : label, selected, flags, in size);
+        => ImGui.Selectable(Runtime.EditorUiDepth > 0 || Runtime.StartupUiDepth > 0 || ExpandedUi.InUi ? Runtime.ImText(Runtime.EditorNativeSelectable(label.ToString(), 1)) : label, selected, flags, in size);
 
     public static bool LocationOption(ImString label, bool selected, ImGuiSelectableFlags flags, in float2? size)
-        => ImGui.Selectable(Runtime.EditorUiDepth > 0 || Runtime.StartupUiDepth > 0 ? Runtime.ImText(Runtime.EditorNativeSelectable(label.ToString(), 2)) : label, selected, flags, in size);
+        => ImGui.Selectable(Runtime.EditorUiDepth > 0 || Runtime.StartupUiDepth > 0 || ExpandedUi.InUi ? Runtime.ImText(Runtime.EditorNativeSelectable(label.ToString(), 2)) : label, selected, flags, in size);
 
     [HarmonyTranspiler]
     public static IEnumerable<CodeInstruction> Translate(IEnumerable<CodeInstruction> instructions, MethodBase __originalMethod)

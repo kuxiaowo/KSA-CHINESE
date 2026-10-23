@@ -23,15 +23,35 @@ public static class HudWindowTitlePatch
 
     public static string DisplayTitle(string original, ImGuiWindow window)
     {
+        var type=window.GetType();
+        if(type.Assembly==typeof(KSA.Program).Assembly && (type.Name is "ChuteTuningWindow" or "KittenTuningWindow" or "ProfilerWindow" or "WorkerProfilerWindow"
+            || type.FullName is "KSA.GaugeHierarchy+HierarchyWindow" or "KSA.GaugeInspector+InspectorWindow" or "KSA.ThreadProfiler+Window"
+                or "KSA.DistantGlintEditor+DebugWindow" or "KSA.ExplosionEditor+DebugWindow"
+                or "KSA.ParticleEmitterDebugEditor+DebugWindow" or "KSA.VersionHistory+VersionHistoryWindow"))
+        {
+            if(Runtime.SelectedLocale=="zh-CN"&&type.Name=="ProfilerWindow"&&original.StartsWith("Profiler    frame ",StringComparison.Ordinal))
+                return original.Replace("Profiler    frame ","性能分析    帧 ",StringComparison.Ordinal);
+            if(Runtime.SelectedLocale=="zh-CN"&&type.Name=="WorkerProfilerWindow"&&original.StartsWith("CPU Profiler - ",StringComparison.Ordinal))
+                return "CPU 性能分析 - "+original[15..];
+            return ExpandedUi.Menu(original);
+        }
         if (!IsKnownWindow(window)) return original;
         string utility=Runtime.UtilityMenuText(original);
         return utility!=original ? utility : Runtime.HudMenuText(original);
+    }
+    public static string DisplayPlainTitle(string original,ImGuiWindow window)
+    {
+        string translated=DisplayTitle(original,window);
+        if(translated==original)return original;
+        int marker=translated.IndexOf("###",StringComparison.Ordinal);
+        return marker<0?translated:translated[..marker];
     }
 
     [HarmonyTranspiler]
     public static IEnumerable<CodeInstruction> Translate(IEnumerable<CodeInstruction> instructions)
     {
         var titleField = AccessTools.Field(typeof(ImGuiWindow), "_windowTitle");
+        var plainField = AccessTools.Field(typeof(ImGuiWindow), "_displayTitle");
         var display = AccessTools.Method(typeof(HudWindowTitlePatch), nameof(DisplayTitle));
         foreach (var instruction in instructions)
         {
@@ -40,6 +60,11 @@ public static class HudWindowTitlePatch
             {
                 yield return new CodeInstruction(OpCodes.Ldarg_0);
                 yield return new CodeInstruction(OpCodes.Call, display);
+            }
+            else if(instruction.opcode==OpCodes.Ldfld&&Equals(instruction.operand,plainField))
+            {
+                yield return new CodeInstruction(OpCodes.Ldarg_0);
+                yield return new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(HudWindowTitlePatch),nameof(DisplayPlainTitle)));
             }
         }
     }
@@ -56,6 +81,8 @@ public static class HudConsoleTitlePatch
         else if(signature.SequenceEqual("KSA-SAV") || signature.SequenceEqual("KSA-VEH")
             || signature.SequenceEqual("KSA-MAN") || signature.SequenceEqual("KSA-RES"))
             title=Runtime.UtilityText(title.ToString()).AsSpan();
+        else if(signature.SequenceEqual("KSA-VER"))
+            title=ExpandedUi.Text(title.ToString()).AsSpan();
     }
 }
 

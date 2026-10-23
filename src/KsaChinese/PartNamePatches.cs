@@ -49,3 +49,45 @@ public static class PartWindowNamePatch
         }
     }
 }
+
+// Part.OnDrawUi reads the name three times: window ID, visible title and
+// popup heading. Leave the first read byte-exact. Both languages use the same
+// canonical popup heading ID, as with the other translated ImGui menus.
+[HarmonyPatch(typeof(Part), nameof(Part.OnDrawUi))]
+public static class FlightPartNamePatch
+{
+    public static string MenuCaption(Part part)
+    {
+        string original = part.DisplayName;
+        if (original != part.Template.DisplayName && original != part.Template.Id) return original;
+        if (!Runtime.Packs.Values.Any(pack => pack.Parts.TryGetValue(part.Template.Id, out string? value)
+            && value != original)) return original;
+        string translated = Runtime.PartCaption(part);
+        int stable = original.IndexOf("###", StringComparison.Ordinal);
+        return translated + (stable >= 0 ? original[stable..] : "###" + original);
+    }
+
+    [HarmonyTranspiler]
+    public static IEnumerable<CodeInstruction> Translate(IEnumerable<CodeInstruction> instructions)
+    {
+        int names = 0;
+        foreach (var instruction in instructions)
+        {
+            if (instruction.operand is MethodInfo method && method.DeclaringType == typeof(Part)
+                && method.Name == "get_DisplayName")
+            {
+                names++;
+                if (names is 2 or 3)
+                {
+                    instruction.opcode = OpCodes.Call;
+                    instruction.operand = names == 2
+                        ? AccessTools.Method(typeof(Runtime), nameof(Runtime.PartCaption))
+                        : AccessTools.Method(typeof(FlightPartNamePatch), nameof(MenuCaption));
+                }
+            }
+            yield return instruction;
+        }
+        if (names != 3)
+            throw new InvalidOperationException($"Flight part name display sites changed: {names}.");
+    }
+}
