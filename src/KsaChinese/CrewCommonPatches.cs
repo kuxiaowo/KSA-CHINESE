@@ -98,10 +98,9 @@ public static class CrewAssignmentWindowTitlePatch
 public static class CrewPortraitBoneCaptionPatch
 {
     public static MethodBase TargetMethod()
-        => AccessTools.Method(typeof(CrewPortraitPanel), "Draw",
-            new[] { typeof(GaugeCanvas), typeof(float2), typeof(float2) })
+        => AccessTools.Method(typeof(CrewPortraitPanel), "DrawCameraControls")
             ?? throw new MissingMethodException(typeof(CrewPortraitPanel).FullName,
-                "Draw(GaugeCanvas, float2, float2)");
+                "DrawCameraControls");
 
     public static ImString LocalizeBoneCaption(ImString source, bool selectable)
     {
@@ -232,15 +231,20 @@ public static class GalacticGridCaptionPatch
         => AccessTools.Method(typeof(Universe), "DrawGalacticGrid", new[] { typeof(IGameViewport) })
             ?? throw new MissingMethodException(typeof(Universe).FullName, "DrawGalacticGrid(IGameViewport)");
 
+    public static ImString Caption(ImString source)
+        => Labels.Contains(source.ToString()) ? Runtime.ImText(Runtime.UtilityText(source.ToString())) : source;
+
     [HarmonyTranspiler]
     public static IEnumerable<CodeInstruction> Translate(IEnumerable<CodeInstruction> instructions)
     {
-        var lookup = AccessTools.Method(typeof(Runtime), nameof(Runtime.UtilityText), new[] { typeof(string) })!;
+        var lookup = AccessTools.Method(typeof(GalacticGridCaptionPatch), nameof(Caption))!;
         int sites = 0;
         foreach (var instruction in instructions)
         {
             yield return instruction;
-            if (instruction.opcode == OpCodes.Ldstr && instruction.operand is string label && Labels.Contains(label))
+            if (instruction.operand is MethodInfo conversion && conversion.DeclaringType == typeof(ImString)
+                && conversion.Name == "op_Implicit" && conversion.GetParameters() is [{ ParameterType: var source }]
+                && source == typeof(ReadOnlySpan<byte>))
             {
                 yield return new CodeInstruction(OpCodes.Call, lookup);
                 sites++;

@@ -16,8 +16,9 @@ args = parser.parse_args()
 compat = json.loads((root/'assets/KsaChinese/compatibility.json').read_text(encoding='utf-8'))
 if hashlib.sha256((args.game/'KSA.dll').read_bytes()).hexdigest() != compat['files']['KSA.dll']:
     raise ValueError('Uninspected KSA.dll; part audit stopped.')
+game_build = compat['version'].rsplit('.',1)[-1]
 pack = json.loads((root/'assets/KsaChinese/Locales/zh-CN.json').read_text(encoding='utf-8'))
-ledger = {r['key']: r for r in map(json.loads, (root/'translations/reviewed-5602.jsonl').read_text(encoding='utf-8').splitlines()) if r['section']=='parts' and r['review_status']=='reviewed'}
+ledger = {r['key']: r for r in map(json.loads, (root/f'translations/reviewed-{game_build}.jsonl').read_text(encoding='utf-8').splitlines()) if r['section']=='parts' and r['review_status']=='reviewed'}
 parts, data, subparts = {}, {}, {}
 sources = {}
 for path in sorted((args.game/'Content/Core').glob('*.xml')):
@@ -57,7 +58,7 @@ report = dict(schema=1, game_version=compat['version'], top_level_definitions=le
               internal_subpart_definitions=len(subparts),
               source_xml_sha256=sources, parts=rows,
               limits='Core top-level definitions including hidden/test assets; not selectable-part count or per-entry visual acceptance. Internal mesh/subpart IDs remain technical identifiers unless explicitly named and reviewed.')
-(root/'reports/parts-5602-audit.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+(root/f'reports/parts-{game_build}-audit.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print({k:v for k,v in report.items() if k not in ('source_xml_sha256','parts')})
 if missing or any(r['chinese'] is None for r in named_subparts):
     raise SystemExit('Missing core part display translations')

@@ -19,7 +19,7 @@ for p in (root/'assets/KsaChinese').iterdir():
 for name in ('KsaChineseLauncher.exe','KsaChineseLauncher.dll','KsaChineseLauncher.deps.json','KsaChineseLauncher.runtimeconfig.json'):
     copy(root/'work/build/Launcher'/name, Path('KsaChinese')/name)
 loader_names=('0Harmony.dll','StarMap.API.dll','StarMap.Core.dll','StarMap.deps.json','StarMap.dll','StarMap.exe','StarMap.runtimeconfig.json','StarMap.Types.dll')
-for name in loader_names: copy(root/'.tools/StarMap-0.4.7'/name,Path('KsaChinese/Loader')/name)
+for name in loader_names: copy(root/'.tools/StarMap-0.4.8'/name,Path('KsaChinese/Loader')/name)
 copy(root/'LICENSES',Path('KsaChinese/LICENSES'))
 for name in ('README-便携Mod.md','THIRD_PARTY.md','LICENSE'):
     copy(root/name,Path('KsaChinese')/name)
@@ -30,7 +30,8 @@ for p in files:
     if 'Profile' in p.parts or 'saves' in p.parts: raise ValueError('Player data '+str(p))
 manifest={p.relative_to(stage).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in files}
 (stage/'KsaChinese/FILES-SHA256.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-archive=root/f'dist/KsaChinese-{version}-5602-Portable.zip'
+game_build=json.loads((root/'assets/KsaChinese/compatibility.json').read_text(encoding='utf-8'))['version'].rsplit('.',1)[-1]
+archive=root/f'dist/KsaChinese-{version}-{game_build}-Portable.zip'
 archive.parent.mkdir(exist_ok=True)
 with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
     for p in sorted(stage.rglob('*')):

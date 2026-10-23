@@ -42,7 +42,7 @@ public sealed class LanguagePlugin
 {
     private Harmony? _patches;
     public static bool SupportsGameVersion(string? version)
-        => version is "2026.10.13.5602";
+        => version is "2026.10.19.5638";
 
     [StarMapBeforeMain]
     public void BeforeMain()
@@ -50,20 +50,20 @@ public sealed class LanguagePlugin
         var gameVersion = typeof(KSA.Program).Assembly.GetName().Version?.ToString();
         if (!SupportsGameVersion(gameVersion))
         {
-            Runtime.Log($"Chinese mod disabled: supported build is 2026.10.13.5602; found {gameVersion}.");
+            Runtime.Log($"Chinese mod disabled: supported build is 2026.10.19.5638; found {gameVersion}.");
             return;
         }
         try
         {
             Compatibility.Validate(Path.GetDirectoryName(typeof(KSA.Program).Assembly.Location)!, Path.Combine(Runtime.ModRoot,"compatibility.json"));
             Runtime.Initialize();
-            _patches = new Harmony("local.ksa.chinese.5602");
+            _patches = new Harmony("local.ksa.chinese.5638");
             _patches.PatchAll(typeof(LanguagePlugin).Assembly);
             Runtime.Log($"Initialized UI language mod for game {gameVersion}.");
         }
         catch (Exception error)
         {
-            _patches?.UnpatchAll("local.ksa.chinese.5602");
+            _patches?.UnpatchAll("local.ksa.chinese.5638");
             _patches = null;
             Runtime.RestoreProvider();
             Runtime.Log("Prototype disabled after initialization error: " + error);
@@ -83,7 +83,7 @@ public sealed class LanguagePlugin
     {
         if (_patches is null) return;
         Runtime.RestoreProvider();
-        _patches.UnpatchAll("local.ksa.chinese.5602");
+        _patches.UnpatchAll("local.ksa.chinese.5638");
     }
 }
 
@@ -431,7 +431,7 @@ public static class MenuTextPatch
         "Show Cascaded Shadow Debug", "Gauge UI", "Debug Mode", "Inspector", "Hierarchy", "Reset",
         "Show Physics Debug", "Show Engine Debug", "Show Flight Computer Debug", "Show Set Orbit Debug",
         "Show Audio Debug", "Sprite Distance", "Editor Toggle", "Show PBR Spheres", "Show experimental particles",
-        "Minor Bodies", "Asteroids"
+        "Minor Bodies", "Asteroids", "Show Portrait Camera Controls"
     };
     private static readonly HashSet<string> CameraCategoryTitles = new(StringComparer.Ordinal)
     {
@@ -440,7 +440,7 @@ public static class MenuTextPatch
     private static readonly HashSet<string> HudTitles = new(StringComparer.Ordinal)
     {
         "Navball", "Telemetry", "Engine Control", "Autopilot Settings", "Resources", "Game Time", "Gametime",
-        "Sequences", "Crew Portraits", "Altitude", "Attitude Indicators", "Rendezvous Control", "Burn Control", "Kitten Flight Control"
+        "Radiation", "Sequences", "Crew Portraits", "Altitude", "Attitude Indicators", "Rendezvous Control", "Burn Control", "Kitten Flight Control"
     };
 
     public static IEnumerable<MethodBase> TargetMethods()

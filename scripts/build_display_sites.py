@@ -1,4 +1,4 @@
-"""Build the 5602 display-site manifest from local AST/IL and the review ledger.
+"""Build the 5638 display-site manifest from local AST/IL and the review ledger.
 
 The audit inputs contain game-derived investigation data and must stay local.
 Only method identities and reviewed display keys are written to the Mod.
@@ -19,7 +19,8 @@ for name,expected in compat['files'].items():
     if hashlib.sha256((args.game_dir/name).read_bytes()).hexdigest()!=expected:
         raise SystemExit('Uninspected game identity: '+name)
 rows=lambda p:[json.loads(l) for l in p.read_text(encoding='utf-8-sig').splitlines() if l.strip()]
-existing={r['id']:r for r in rows(ROOT/'translations/reviewed-5602.jsonl')}
+game_build=compat['version'].rsplit('.',1)[-1]
+existing={r['id']:r for r in rows(ROOT/f'translations/reviewed-{game_build}.jsonl')}
 new={}
 calls=rows(AUDIT/'ast/ui-calls.jsonl'); literals=rows(AUDIT/'ast/literals.jsonl')
 il=rows(AUDIT/'il/il-methods.jsonl'); by_short=defaultdict(set)
@@ -28,7 +29,7 @@ for x in il:
         for name in {x['type'].removeprefix('KSA.').replace('+','.'),x['type'].rsplit('.',1)[-1].replace('+','.')}:
             by_short[(name,x['member'])].add(x['type'])
 sites={}
-excluded={'ImGuiHelper','ConsoleStyle','ConsoleWidgets'}
+excluded={'ImGuiHelper','ConsoleStyle','ConsoleWidgets','MapController'}
 for x in calls:
     loc=x['location'];key=(loc['type'],loc['member'])
     if '/decompiled/KSA/' not in loc['file'] or loc['type'] in excluded or loc['member'].startswith('.'):continue
@@ -70,6 +71,14 @@ for x in literals:
     for (typ,method),site in sites.items():
         if typ.rsplit('.',1)[-1].replace('+','.')==loc['type']:site['Fields'].add(x['value'])
 manifest=[]
+# The compiler lowers this interpolated Text call into an AppendLiteral
+# fragment. Authorize that reviewed fragment only in its actual UI method.
+fragment_site=sites.get(('KSA.Rendering.CelestialTextureStreamer','DrawDebugWindow'))
+if fragment_site is not None:
+    il_strings=rows(AUDIT/'il/il-strings.jsonl')
+    if not any(x['type']=='KSA.Rendering.CelestialTextureStreamer' and x['member']=='DrawDebugWindow' and x['value']=='Budget: ' for x in il_strings):
+        raise SystemExit('Texture-streaming budget display fragment changed')
+    fragment_site['Literals'].add('Budget: ')
 display_sections={'literals','ui','tooltips','editor','startup','controls','hud','planning','utility','gauges','display'}
 reviewed_keys={r['key'] for r in [*existing.values(),*new.values()] if r['section'] in display_sections and r['review_status']=='reviewed'}
 for site in sites.values():

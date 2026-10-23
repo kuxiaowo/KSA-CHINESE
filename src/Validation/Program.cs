@@ -12,7 +12,7 @@ internal static partial class Program
 {
     static string Root = Path.GetFullPath(Environment.GetEnvironmentVariable("KSA_PROJECT_ROOT") ?? Environment.CurrentDirectory);
     static string Game = Environment.GetEnvironmentVariable("KSA_GAME_DIR") ?? @"F:\系统应用\Kitten Space Agency";
-    static string Loader = Environment.GetEnvironmentVariable("KSA_LOADER_DIR") ?? Path.Combine(Root,".tools","StarMap-0.4.7");
+    static string Loader = Environment.GetEnvironmentVariable("KSA_LOADER_DIR") ?? Path.Combine(Root,".tools","StarMap-0.4.8");
     static string Fixture = Path.Combine(Root,"work","validation-profile");
     static List<string> Checks = new();
     static List<object> Targets = new();
@@ -33,7 +33,7 @@ internal static partial class Program
         var isolate = new Harmony("local.ksa.chinese.validation.isolation");
         isolate.Patch(AccessTools.PropertyGetter(typeof(KSA.Constants),nameof(KSA.Constants.DocumentsFolderPath)),prefix:new HarmonyMethod(typeof(Program),nameof(UseFixture)));
         Check(KSA.Constants.DocumentsFolderPath==Fixture,"玩家目录重定向至工作区");
-        Check(LanguagePlugin.SupportsGameVersion("2026.10.13.5602") && !LanguagePlugin.SupportsGameVersion(null) && !LanguagePlugin.SupportsGameVersion("2026.10.13.5603"),"精确版本保护及未知版本拒绝");
+        Check(LanguagePlugin.SupportsGameVersion("2026.10.19.5638") && !LanguagePlugin.SupportsGameVersion(null) && !LanguagePlugin.SupportsGameVersion("2026.10.19.5639"),"精确版本保护及未知版本拒绝");
         var previous=Brutal.Localization.LStrings.LocalizedStringProvider;
         Compatibility.Validate(Game,Path.Combine(Root,"assets","KsaChinese","compatibility.json"));
         Check(true,"游戏及依赖指纹匹配");
@@ -43,7 +43,7 @@ internal static partial class Program
         Check(mismatch,"缺少或不同游戏文件安全拒绝");
         Runtime.Initialize();
         System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(KSA.LStrings).TypeHandle);
-        Check(Runtime.CurrentPack.Native.Count==212,"原生213定义中212已核对接入，TabsId暂缓");
+        Check(Runtime.CurrentPack.Native.Count==216,"原生217定义中216已核对接入，TabsId暂缓");
         Check(Brutal.Localization.LStrings.TryGet(Brutal.Localization.LStringId.From("ShadowFilterTooltip_Hard"),out var shadow)
             && shadow.Localized.StartsWith("不作滤波",StringComparison.Ordinal),"数组内无同名字段的原生ID接入");
         Check(KSA.LStrings.SettingsDisplayResolution.Localized=="分辨率","实际原生 LString 提供器");
@@ -169,8 +169,8 @@ internal static partial class Program
         Runtime.RestoreProvider();
         Check(ReferenceEquals(Brutal.Localization.LStrings.LocalizedStringProvider,previous),"卸载恢复原提供器");
         Check(KSA.LStrings.SettingsDisplayResolution.Localized=="Resolution","卸载回退原生英文");
-        var report=new{schema=1,gameVersion=typeof(KSA.Program).Assembly.GetName().Version?.ToString(),ksaSha256=Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(Path.Combine(Game,"KSA.dll")))).ToLowerInvariant(),fixture=Fixture,checks=Checks,targets=Targets,graphicalValidation="not covered by this headless test"};
-        File.WriteAllText(Path.Combine(Root,"reports","5602-bootstrap-validation.json"),JsonSerializer.Serialize(report,new JsonSerializerOptions{WriteIndented=true}));
+        var report=new{schema=1,gameVersion=typeof(KSA.Program).Assembly.GetName().Version?.ToString(),ksaSha256=Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(Path.Combine(Game,"KSA.dll")))).ToLowerInvariant(),fixture=Path.GetRelativePath(Root,Fixture),checks=Checks,targets=Targets,graphicalValidation="not covered by this headless test"};
+        File.WriteAllText(Path.Combine(Root,"reports","5638-bootstrap-validation.json"),JsonSerializer.Serialize(report,new JsonSerializerOptions{WriteIndented=true}));
         Console.WriteLine($"PASS: {Checks.Count} checks, {Targets.Count} target references");
     }
     static uint Hash(string s,uint seed) { var b=Encoding.UTF8.GetBytes(s+'\0'); return ImHash(b,0,seed); }

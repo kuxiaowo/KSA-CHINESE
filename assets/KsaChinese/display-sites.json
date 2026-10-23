@@ -288,6 +288,8 @@
       "Departure Outward",
       "Departure Prograde",
       "Game Time",
+      "MAKE VEHICLE TRANSFER FLIGHTPLAN",
+      "MOVE TO VEHICLE FLIGHTPLAN",
       "Multiplier",
       "Normal",
       "Outward",
@@ -949,6 +951,12 @@
     "Literals": [
       "EVA"
     ]
+  },
+  {
+    "Type": "KSA.CrewPortraitPanel",
+    "Method": "DrawCameraControls",
+    "Fields": [],
+    "Literals": []
   },
   {
     "Type": "KSA.CrewPortraitPanel",
@@ -2851,7 +2859,9 @@
     "Literals": [
       " components)",
       " items)",
-      " rects)"
+      " rects)",
+      "(canvas)",
+      "(component)"
     ]
   },
   {
@@ -3092,6 +3102,16 @@
     "Method": "DrawCursorReadout",
     "Fields": [],
     "Literals": []
+  },
+  {
+    "Type": "KSA.GroundTrackWindow",
+    "Method": "DrawIgnitionPoint",
+    "Fields": [
+      "Ignition T-"
+    ],
+    "Literals": [
+      "Ignition T-"
+    ]
   },
   {
     "Type": "KSA.GroundTrackWindow",
@@ -3881,48 +3901,6 @@
     ]
   },
   {
-    "Type": "KSA.MapController",
-    "Method": "OnDrawUi",
-    "Fields": [
-      "Align Planes",
-      "Body Grid Planes",
-      "Control ",
-      "Control Vehicle",
-      "Draw the equatorial plane of the followed body and its target alongside the ecliptic.",
-      "Focus ",
-      "Following: None",
-      "Hold every plane parallel to the ecliptic instead of orienting it by its body's axial tilt.",
-      "Map View",
-      "Mode: Map",
-      "Mode: Vehicle (",
-      "Offset: ",
-      "Recenter",
-      "Release Control",
-      "Scope: ",
-      "Viewing: ",
-      "first column"
-    ],
-    "Literals": [
-      "Align Planes",
-      "Body Grid Planes",
-      "Control ",
-      "Control Vehicle",
-      "Draw the equatorial plane of the followed body and its target alongside the ecliptic.",
-      "Focus ",
-      "Following: None",
-      "Hold every plane parallel to the ecliptic instead of orienting it by its body's axial tilt.",
-      "Map View",
-      "Mode: Map",
-      "Mode: Vehicle (",
-      "Offset: ",
-      "Recenter",
-      "Release Control",
-      "Scope: ",
-      "Viewing: ",
-      "first column"
-    ]
-  },
-  {
     "Type": "KSA.MeshDeformationEditor",
     "Method": "Draw",
     "Fields": [
@@ -4396,7 +4374,9 @@
     "Fields": [
       "Control From Here###controlfromhere{part.InstanceId}"
     ],
-    "Literals": []
+    "Literals": [
+      "Control From Here###controlfromhere{part.InstanceId}"
+    ]
   },
   {
     "Type": "KSA.PartContactLoadDebug",
@@ -5591,6 +5571,7 @@
       "Show Physics Debug",
       "Show Planet Shadow Debug",
       "Show Plume Debug",
+      "Show Portrait Camera Controls",
       "Show Set Orbit Debug",
       "Show Terrain Debug",
       "Show Texture Streaming",
@@ -5673,6 +5654,7 @@
       "Show Physics Debug",
       "Show Planet Shadow Debug",
       "Show Plume Debug",
+      "Show Portrait Camera Controls",
       "Show Set Orbit Debug",
       "Show Terrain Debug",
       "Show Texture Streaming",
@@ -7241,9 +7223,14 @@
     ],
     "Literals": [
       "ANTIMATTER",
+      "ANTIMATTER USED",
       "BURN TIME",
+      "HALFWAY",
       "HYDROGEN",
-      "SPEED AFTER"
+      "HYDROGEN USED",
+      "SPEED AFTER",
+      "TARGET SPEED",
+      "VESSEL BURNED AWAY"
     ]
   },
   {
@@ -8958,6 +8945,8 @@
       "Projection: Perspective (click for Orthographic)",
       "SAVE",
       "SWITCH VEHICLE",
+      "These vehicles have unsaved changes and will be lost when you exit the editor unless you save them:",
+      "These vehicles have unsaved changes and will be lost when you start a new vehicle unless you save them:",
       "UNSAVED VEHICLES"
     ]
   },

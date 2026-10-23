@@ -28,6 +28,7 @@ public static class HudContextAssignmentDisplayPatch
         ["Sequence"] = "Sequences",
         ["CrewPortraits"] = "Crew Portraits",
         ["Navball"] = "Navball",
+        ["Radiation"] = "Radiation",
     };
 
     private static Type WindowType => typeof(GaugeContextAssignmentWindow)
