@@ -13,7 +13,7 @@ for file in sorted((root/'translations').glob('review-*.jsonl')):
 missing=set(imported)-set(reviewed)
 if missing: raise ValueError(f'{len(missing)} imported entries still await explicit review')
 pack={'locale':'zh-CN','displayName':'简体中文','fontFile':'KsaUiNotoSC.ttf'}
-for section in ('native','literals','ui','tooltips','editor','startup','parts','controls','hud','planning','utility','gauges','scoped'): pack[section]={}
+for section in ('native','literals','ui','tooltips','editor','startup','parts','controls','hud','planning','utility','gauges','scoped','display','content','history'): pack[section]={}
 brace=re.compile(r'\{[^{}]+\}')
 printf=re.compile(r'%(?:[-+ #0]*\d*(?:\.\d+)?(?:ll|l|h)?[diuoxXfFeEgGaAcsp])')
 markup=re.compile(r'<[^>]*>')
@@ -29,6 +29,9 @@ for r in reviewed.values():
         r['notes'] += ' Root layout correction: preserve trailing ASCII colon-space required by part-card splitting; semantic wording unchanged.'
     if r['section']!='parts':
         for name,rx in [('placeholders',brace),('printf',printf),('markup',markup)]:
+            # History bodies are passed to ImGui.Text as unformatted content.
+            # A prose percentage such as "2% of" is not a printf %o token.
+            if name=='printf' and r['section']=='history':continue
             if (collections.Counter(rx.findall(en))!=collections.Counter(rx.findall(zh)) if name!='markup' else rx.findall(en)!=rx.findall(zh)):
                 errors.append((r['id'],name))
         if en.endswith(': ') and not zh.endswith(': '): errors.append((r['id'],'ASCII colon layout delimiter'))

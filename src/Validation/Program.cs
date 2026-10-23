@@ -8,7 +8,7 @@ using System.Text.Json;
 using HarmonyLib;
 using KsaChinese;
 
-internal static class Program
+internal static partial class Program
 {
     static string Root = Path.GetFullPath(Environment.GetEnvironmentVariable("KSA_PROJECT_ROOT") ?? Environment.CurrentDirectory);
     static string Game = Environment.GetEnvironmentVariable("KSA_GAME_DIR") ?? @"F:\系统应用\Kitten Space Agency";
@@ -84,7 +84,7 @@ internal static class Program
         var gaugeMenuIds=gaugeLabels.ToDictionary(x=>x,x=>GaugeContextMenuPatch.Caption(x,false));
         Check(GaugeContextMenuPatch.Caption("Lock",false)=="锁定      ###Lock" && GaugeContextMenuPatch.Caption("Detached",false)=="独立窗口      ###Detached","仪表右键显示层翻译及勾选区域留白");
         Check(GaugeContextMenuPatch.Caption("Always on top",true).TrimEnd()=="始终置顶" && !GaugeContextMenuPatch.Caption("Always on top",true).Contains("###"),"禁用仪表菜单不显示隐藏 ID");
-        Check(GaugeContextMenuPatch.Caption("玩家仪表名",false)=="玩家仪表名" && GaugeContextMenuPatch.Caption("NeedsResize",true)=="NeedsResize","仪表未知名字和调试字段保持");
+        Check(GaugeContextMenuPatch.Caption("玩家仪表名",false)=="玩家仪表名" && GaugeContextMenuPatch.Caption("NeedsResize",true).TrimEnd()=="需要调整大小" && !GaugeContextMenuPatch.Caption("NeedsResize",true).Contains("###"),"仪表未知名字保留，禁用调试字段翻译且不显示隐藏 ID");
         Runtime.ApplyLanguage("en-US");
         foreach(var label in gaugeLabels) foreach(uint seed in new uint[]{0,0x735A1913})
             Check(Hash(GaugeContextMenuPatch.Caption(label,false)+"   ",seed)==Hash(gaugeMenuIds[label]+"   ",seed),"仪表右键中英 ID 与 helper 尾部空格: "+label+" seed="+seed);
@@ -96,6 +96,47 @@ internal static class Program
         Check(GaugeFontPatch.Name()=="MilSpec33558","仪表英文恢复原字体");
         Check(Hash(HudLayoutPatches.CustomLayoutMenuLabel(longName,true),0x735A1913)==Hash(zhLong,0x735A1913),"长中文自定义名跨语言 ID 稳定");
         Runtime.ApplyLanguage("zh-CN");
+        // Inventory the actual inspected XML. Display names can be overridden
+        // by GameData; do not infer a friendly English label from a resource ID.
+        var xml = Directory.GetFiles(Path.Combine(Game,"Content","Core"),"*.xml")
+            .Select(System.Xml.Linq.XDocument.Load).ToArray();
+        var definitions = xml.SelectMany(d=>d.Root!.Elements("Part")).ToArray();
+        Check(definitions.Length==180,"5602 Core 顶层部件定义数（包含隐藏和测试资源）");
+        foreach(var definition in definitions)
+        {
+            string key=(string)definition.Attribute("Id")!;
+            string name=xml.SelectMany(d=>d.Root!.Elements("PartGameData"))
+                .Where(n=>(string?)n.Attribute("Id")==key)
+                .Select(n=>(string?)n.Attribute("DisplayName")).LastOrDefault(n=>!string.IsNullOrEmpty(n))
+                ?? (string?)definition.Attribute("DisplayName") ?? key;
+            var template=new KSA.PartTemplate { Id=key, DisplayName=name };
+            string caption=Runtime.PartName(template);
+            Check(key=="CorePropulsionA_Prefab_EngineA4" ? caption=="VTR-10" : caption.Any(c=>c>='\u4e00' && c<='\u9fff'),"主部件类型翻译或纯型号保留: "+key);
+            Check(template.Id==key && template.DisplayName==name,"模板原始资源 ID 与显示字段不变: "+key);
+        }
+        var engineTemplate=new KSA.PartTemplate { Id="CorePropulsionA_Prefab_EngineA5", DisplayName="LR91 Vac + Verniers" };
+        var engine=(KSA.Part)RuntimeHelpers.GetUninitializedObject(typeof(KSA.Part));
+        engine.Template=engineTemplate;
+        var nameField=AccessTools.Field(typeof(KSA.Part),"<DisplayName>k__BackingField");
+        nameField.SetValue(engine,engineTemplate.DisplayName);
+        string engineMenu=FlightPartNamePatch.MenuCaption(engine);
+        Check(Runtime.PartCaption(engine)=="LR91 真空型发动机（带游动发动机）A5","LR91 默认名称及型号、变体保留");
+        foreach(uint seed in new uint[]{0,0x735A1913})
+            Check(Hash(engineMenu,seed)==Hash("###"+engineTemplate.DisplayName,seed),"飞行部件菜单使用固定规范 ID seed="+seed);
+        foreach(string custom in new[]{"玩家自定义发动机","Fuel Port","玩家部件###custom-id"})
+        {
+            nameField.SetValue(engine,custom);
+            Check(Runtime.PartCaption(engine)==custom && FlightPartNamePatch.MenuCaption(engine)==custom,"玩家自定义名称不因命中词典而被翻译: "+custom);
+        }
+        nameField.SetValue(engine,engineTemplate.DisplayName);
+        Runtime.ApplyLanguage("en-US");
+        Check(Runtime.PartName(engineTemplate)==engineTemplate.DisplayName && Runtime.PartCaption(engine)==engineTemplate.DisplayName,
+            "部件名称切换英文恢复原始显示");
+        foreach(uint seed in new uint[]{0,0x735A1913})
+            Check(Hash(FlightPartNamePatch.MenuCaption(engine),seed)==Hash(engineMenu,seed),"飞行部件菜单中英文 ID 一致 seed="+seed);
+        Runtime.ApplyLanguage("zh-CN");
+        Check(FlightPartNamePatch.MenuCaption(engine)==engineMenu,"部件名称中英往返一致");
+        ExpandedChecks();
         var patcher=new Harmony("local.ksa.chinese.validation.patches");
         foreach(var type in typeof(LanguagePlugin).Assembly.GetTypes().Where(t=>t.GetCustomAttributes<HarmonyPatch>().Any()).OrderBy(t=>t.Name))
         {

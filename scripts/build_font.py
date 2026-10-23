@@ -11,6 +11,11 @@ expected='a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da'
 if hashlib.sha256(source.read_bytes()).hexdigest()!=expected:
     raise ValueError('Noto font source changed; review before rebuilding')
 texts=['Language','English','简体中文','显示器刷新率']
+# A small number of adapters have context-specific Chinese captions in code.
+# Include their Han characters as well, so a new menu caption cannot silently
+# lose glyphs merely because it is outside a locale JSON section.
+for p in (root/'src/KsaChinese').glob('*.cs'):
+    texts.append(''.join(c for c in p.read_text(encoding='utf-8') if '\u3400' <= c <= '\u9fff'))
 for p in (root/'assets/KsaChinese/Locales').glob('*.json'):
     pack=json.loads(p.read_text(encoding='utf-8'))
     texts.append(pack['displayName'])
@@ -35,6 +40,6 @@ actual=set(TTFont(out).getBestCmap())
 assert not required-actual
 report=dict(source='https://github.com/google/fonts/tree/main/ofl/notosanssc',source_sha256=expected,
             subset_sha256=hashlib.sha256(out.read_bytes()).hexdigest(),mapped_codepoints=len(actual),required_codepoints=len(required),
-            missing_codepoints=[],scope='all runtime translation keys and values; UI/tooltip/gauge share this subset; arbitrary player names may need additional characters',license='SIL OFL 1.1')
+            missing_codepoints=[],scope='all runtime translation keys and values plus Han characters in plugin source; UI/tooltip/gauge share this subset; arbitrary player names may need additional characters',license='SIL OFL 1.1')
 (root/'reports/font-validation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print(report)

@@ -19,6 +19,9 @@ public sealed class Driver
     bool Fallback => Environment.GetEnvironmentVariable("KSA_SMOKE_FALLBACK")=="1";
     bool Quick => Environment.GetEnvironmentVariable("KSA_SMOKE_QUICK")=="1";
     bool GaugeContext => Environment.GetEnvironmentVariable("KSA_SMOKE_GAUGE_CONTEXT")=="1";
+    bool PartsReview => Environment.GetEnvironmentVariable("KSA_SMOKE_PARTS_REVIEW")=="1";
+    bool FullReview => Environment.GetEnvironmentVariable("KSA_SMOKE_FULL_REVIEW")=="1";
+    ImGuiWindow? ChuteWindow,KittenWindow;
     static bool ShowGaugeContext;
     [StarMapBeforeMain]
     public void Initialize()
@@ -29,6 +32,7 @@ public sealed class Driver
         var patch=new Harmony("local.ksa.chinese.smoke");
         patch.Patch(AccessTools.Constructor(typeof(ConfigOnStartPopup)),postfix:new HarmonyMethod(typeof(Driver),nameof(SkipConfig)));
         patch.Patch(AccessTools.Constructor(typeof(WelcomePopup)),postfix:new HarmonyMethod(typeof(Driver),nameof(SkipWelcome)));
+        patch.Patch(AccessTools.Constructor(typeof(UpdateAvailablePopup)),postfix:new HarmonyMethod(typeof(Driver),nameof(SkipUpdate)));
         if(GaugeContext) patch.Patch(AccessTools.Method(typeof(GaugeCanvas),nameof(GaugeCanvas.OnDrawUi)),transpiler:new HarmonyMethod(typeof(Driver),nameof(ContextRenderer)));
         Log("isolation="+path);
     }
@@ -40,6 +44,42 @@ public sealed class Driver
         __instance.Active=false;
     }
     public static void SkipWelcome(WelcomePopup __instance)=>__instance.Active=false;
+    public static void SkipUpdate(UpdateAvailablePopup __instance)=>__instance.Active=false;
+    static void Position(ImGuiWindow window,float x,float y)
+        =>AccessTools.Field(typeof(ImGuiWindow),"_initialPosition").SetValue(window,new float2(x,y));
+    static void ContentSnapshot()
+    {
+        var plugin=AppDomain.CurrentDomain.GetAssemblies().Single(a=>a.GetName().Name=="KsaChinese");
+        var display=plugin.GetType("KsaChinese.ExpandedUi")!;
+        var registry=AccessTools.Field(typeof(ModLibrary),"AllParts").GetValue(null)!;
+        var templates=(IEnumerable<PartTemplate>)AccessTools.Method(registry.GetType(),"GetList").Invoke(registry,null)!;
+        var partName=plugin.GetType("KsaChinese.Runtime")!.GetMethod("PartName")!;
+        var parts=templates.Select(p=>new {key=p.Id,original=p.DisplayName,chinese=(string)partName.Invoke(null,new object[]{p})!}).ToArray();
+        File.WriteAllText(Path.Combine(Constants.DocumentsFolderPath,"part-name-runtime.json"),System.Text.Json.JsonSerializer.Serialize(parts));
+        if(parts.Length!=650||parts.Count(p=>p.original!=p.chinese)!=649)throw new Exception("Loaded Core part inventory does not match the reviewed 5602 set.");
+        Log("part-registry="+parts.Length+" translated="+parts.Count(p=>p.original!=p.chinese));
+        var controlText=plugin.GetType("KsaChinese.Runtime")!.GetMethod("ControlText")!;
+        var actions=EnumCollections.InputActions.Names.Select(name=>new{original=name,chinese=(string)controlText.Invoke(null,new object[]{name})!}).ToArray();
+        File.WriteAllText(Path.Combine(Constants.DocumentsFolderPath,"controls-runtime.json"),System.Text.Json.JsonSerializer.Serialize(actions));
+        if(actions.Length!=103||actions.Any(a=>a.chinese==a.original))throw new Exception("A loaded input-action caption has no reviewed translation.");
+        Log("input-actions="+actions.Length+" translated="+actions.Count(a=>a.original!=a.chinese));
+        string Caption(string method,object value)=>(string)display.GetMethod(method)!.Invoke(null,new[]{value})!;
+        var substances=((System.Collections.IDictionary)AccessTools.Field(typeof(SubstanceLibrary),"SubstancesByHash").GetValue(null)!).Values.Cast<Substance>().ToArray();
+        var phases=((System.Collections.IDictionary)AccessTools.Field(typeof(SubstanceLibrary),"SubstancePhasesByHash").GetValue(null)!).Values.Cast<SubstancePhase>().ToArray();
+        var reactions=SubstanceLibrary.AllReactions().ToArray();
+        var before=substances.Select(s=>(s.Id,s.Hash,s.ShortName,s.FullName,s.Description)).ToArray();
+        var report=new {
+            plugin=plugin.Location,
+            substances=substances.Select(s=>new{s.Id,original=s.ShortName,chinese=Caption("SubstanceShort",s),full=Caption("SubstanceFull",s),description=Caption("SubstanceDescription",s)}).ToArray(),
+            phases=phases.Select(s=>new{s.Id,original=s.Name,chinese=Caption("PhaseName",s)}).ToArray(),
+            reactions=reactions.Select(s=>new{s.Id,original=s.Name,chinese=Caption("ReactionName",s),description=Caption("ReactionDescription",s)}).ToArray()
+        };
+        if(!before.SequenceEqual(substances.Select(s=>(s.Id,s.Hash,s.ShortName,s.FullName,s.Description))))throw new Exception("Display adapter mutated loaded substance data.");
+        File.WriteAllText(Path.Combine(Constants.DocumentsFolderPath,"content-runtime.json"),System.Text.Json.JsonSerializer.Serialize(report));
+        if(report.substances.Any(s=>!s.chinese.Any(c=>c is >= '\u4e00' and <= '\u9fff'))||report.phases.Any(s=>!s.chinese.Any(c=>c is >= '\u4e00' and <= '\u9fff')))
+            throw new Exception("A loaded Core substance/phase has no Chinese display name.");
+        Log($"content-registry substances={substances.Length} phases={phases.Length} reactions={reactions.Length}; original-fields-unchanged");
+    }
     static void Locale(string locale)
     {
         var runtime=AppDomain.CurrentDomain.GetAssemblies().Single(a=>a.GetName().Name=="KsaChinese").GetType("KsaChinese.Runtime")!;
@@ -48,7 +88,7 @@ public sealed class Driver
     static void Shot(string tag)
     {
         Log("screenshot-request="+tag);
-        AccessTools.Method(typeof(KSA.Program),"Screenshot").Invoke(null,new object[]{1,"ui hud warm=3"});
+        AccessTools.Method(typeof(KSA.Program),"Screenshot").Invoke(null,new object[]{1,"ui hud warm=0"});
     }
     static void Log(string s) { Console.WriteLine("[Smoke] "+s); File.AppendAllText(Path.Combine(Constants.DocumentsFolderPath,"smoke.log"),DateTimeOffset.UtcNow.ToString("O")+" "+s+Environment.NewLine); }
     // Open the real SequenceCanvas popup in the fixture without injecting mouse
@@ -91,6 +131,80 @@ public sealed class Driver
         double t=Timer.Elapsed.TotalSeconds;
         try
         {
+            if(FullReview)
+            {
+                if(Stage==0 && t>3)
+                {
+                    ContentSnapshot();
+                    GameSettings.Show=false;
+                    Program.ShowEngineDesignDebug=true;
+                    AccessTools.Field(typeof(EngineDesigner),"_combustionProcess").SetValue(null,SubstanceLibrary.AllReactions().ToArray().First(r=>r.Id=="Kerolox"));
+                    Stage++;
+                }
+                else if(Stage==1 && t>7) { Shot("full-engine-zh"); Stage++; }
+                else if(Stage==2 && t>10) { Locale("en-US"); Stage++; }
+                else if(Stage==3 && t>14) { Shot("full-engine-en"); Stage++; }
+                else if(Stage==4 && t>17)
+                {
+                    Locale("zh-CN");Program.ShowEngineDesignDebug=false;
+                    foreach(var canvas in GaugeCanvas.AllCanvases)AccessTools.Field(typeof(GaugeCanvas),"_enabled").SetValue(canvas,false);
+                    ChuteWindow=new ChuteTuningWindow();Position(ChuteWindow,30,80);ChuteWindow.SetShown(true);
+                    KittenWindow=new KittenTuningWindow();Position(KittenWindow,570,80);KittenWindow.SetShown(true);
+                    Stage++;
+                }
+                else if(Stage==5 && t>22) { Shot("full-tuning-zh"); Stage++; }
+                else if(Stage==6 && t>25) { ChuteWindow!.SetShown(false);KittenWindow!.SetShown(false);Tab("Display");Stage++; }
+                else if(Stage==7 && t>29) { Shot("full-display-zh"); Stage++; }
+                else if(Stage==8 && t>32) { GameSettings.Show=false;Program.EditorFlag=true;Stage++; }
+                else if(Stage==9 && t>37)
+                {
+                    var editor=Program.Editor!;
+                    var part=editor.EditingSpace.AllParts.ToArray().First(p=>p.Template.Id.Contains("FuelTank"));
+                    editor.PartMenus.Add(new PartMenu{Part=part});Stage++;
+                }
+                else if(Stage==10 && t>41) { Shot("full-editor-zh");Stage++; }
+                else if(Stage==11 && t>45) { Program.EditorFlag=false;VersionHistory.Toggle();Stage++; }
+                else if(Stage==12 && t>50) { Shot("full-history-zh");Stage++; }
+                else if(Stage==13 && t>55) { Log("full-review-completed");Program.Instance.RequestExit(0);Stage++; }
+                return;
+            }
+            if(PartsReview)
+            {
+                if(Stage==0 && t>3)
+                {
+                    var registry=AccessTools.Field(typeof(ModLibrary),"AllParts").GetValue(null)!;
+                    var templates=(IEnumerable<PartTemplate>)AccessTools.Method(registry.GetType(),"GetList").Invoke(registry,null)!;
+                    var runtime=AppDomain.CurrentDomain.GetAssemblies().Single(a=>a.GetName().Name=="KsaChinese").GetType("KsaChinese.Runtime")!;
+                    var translate=runtime.GetMethod("PartName")!;
+                    Log("tested-plugin="+runtime.Assembly.Location);
+                    var rows=templates.Select(p=>new {key=p.Id,original=p.DisplayName,chinese=(string)translate.Invoke(null,new object[]{p})!}).ToArray();
+                    File.WriteAllText(Path.Combine(Constants.DocumentsFolderPath,"part-name-runtime.json"),System.Text.Json.JsonSerializer.Serialize(rows));
+                    Log("part-registry="+rows.Length+" translated="+rows.Count(r=>r.original!=r.chinese));
+                    var part=Program.ControlledVehicle!.Parts.Parts.ToArray().FirstOrDefault(p=>p.Template.Id=="CorePropulsionA_Prefab_EngineA5")
+                        ?? Program.ControlledVehicle.Parts.Parts.ToArray().First(p=>p.Template.Id.Contains("FuelTank"));
+                    AccessTools.Field(typeof(Part),"ShowPartWindow").SetValue(part,true);
+                    Log("flight-part="+part.Template.Id+" original="+part.DisplayName);
+                    Stage++;
+                }
+                else if(Stage==1 && t>7) { Shot("parts-flight-zh"); Stage++; }
+                else if(Stage==2 && t>10) { Locale("en-US"); Stage++; }
+                else if(Stage==3 && t>14) { Shot("parts-flight-en"); Stage++; }
+                else if(Stage==4 && t>17) { Locale("zh-CN"); Stage++; }
+                else if(Stage==5 && t>21) { Shot("parts-flight-zh-roundtrip"); Stage++; }
+                else if(Stage==6 && t>24) { Program.EditorFlag=true; Stage++; }
+                else if(Stage==7 && t>28)
+                {
+                    var editor=Program.Editor!;
+                    var part=editor.EditingSpace.AllParts.ToArray().First(p=>p.Template.Id.Contains("FuelTank"));
+                    editor.PartMenus.Add(new PartMenu{Part=part});
+                    Log("editor-part="+part.Template.Id);
+                    Stage++;
+                }
+                else if(Stage==8 && t>33) { Locale("en-US"); Stage++; }
+                else if(Stage==9 && t>37) { Locale("zh-CN"); Stage++; }
+                else if(Stage==10 && t>42) { Log("parts-review-completed"); Program.Instance.RequestExit(0); Stage++; }
+                return;
+            }
             if(GaugeContext)
             {
                 ShowGaugeContext=true;

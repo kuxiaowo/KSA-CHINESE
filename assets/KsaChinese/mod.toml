@@ -1,5 +1,5 @@
 name = "KSA Chinese 5602"
-version = "0.1.2"
+version = "0.1.4"
 description = "Partial Chinese UI with English fallback for inspected KSA build 5602"
 assets = []
 

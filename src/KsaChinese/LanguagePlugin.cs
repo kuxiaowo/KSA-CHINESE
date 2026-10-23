@@ -16,6 +16,9 @@ namespace KsaChinese;
 
 public sealed class LanguagePack
 {
+    public Dictionary<string, string> Display { get; set; } = new();
+    public Dictionary<string, string> Content { get; set; } = new();
+    public Dictionary<string, string> History { get; set; } = new();
     public string Locale { get; set; } = "en-US";
     public string DisplayName { get; set; } = "English";
     public string FontFile { get; set; } = "KsaUiNotoSC.ttf";
@@ -163,7 +166,7 @@ public static class Runtime
             _originalNavLabels ??= (string[])labels.Clone();
             for (int i = 0; i < labels.Length; i++) labels[i] = Literal(_originalNavLabels[i]);
         }
-        Log($"Language {locale}: {Translations.Count} native, {pack.Literals.Count} literals, {pack.Ui.Count} UI labels, {pack.Tooltips.Count} tooltips, {pack.Editor.Count} editor labels, {pack.Startup.Count} startup labels, {pack.Parts.Count} part names, {pack.Controls.Count} control captions, {pack.Hud.Count} HUD captions, {pack.Planning.Count} planning captions, {pack.Utility.Count} utility captions.");
+        Log($"Language {locale}: {Translations.Count} native, {pack.Literals.Count} literals, {pack.Ui.Count} UI labels, {pack.Tooltips.Count} tooltips, {pack.Editor.Count} editor labels, {pack.Startup.Count} startup labels, {pack.Parts.Count} part names, {pack.Controls.Count} control captions, {pack.Hud.Count} HUD captions, {pack.Planning.Count} planning captions, {pack.Utility.Count} utility captions, {pack.Gauges.Count} gauges, {pack.Display.Count} extended display labels, {pack.Content.Count} content fields, {pack.History.Count} history paragraphs.");
     }
 
     private static IEnumerable<string> Tokens(string text) => Regex.Matches(text, @"\{[^{}]+\}")
@@ -188,9 +191,9 @@ public static class Runtime
 
     public static bool IsLiteralCandidate(string text) => Packs.Values.Any(pack => pack.Literals.ContainsKey(text));
 
-    public static string UiText(string original) => CurrentPack.Ui.GetValueOrDefault(original, original);
+    public static string UiText(string original) => CurrentPack.Ui.GetValueOrDefault(original, ExpandedUi.Text(original));
 
-    public static string TooltipText(string original) => CurrentPack.Tooltips.GetValueOrDefault(original, original);
+    public static string TooltipText(string original) => CurrentPack.Tooltips.GetValueOrDefault(original, ExpandedUi.Tooltip(original));
 
     public static string EditorText(string original) => CurrentPack.Editor.GetValueOrDefault(original, original);
 
@@ -302,7 +305,7 @@ public static class Runtime
         // Normalize known labels in every locale: ### includes its own hash prefix,
         // so both English and translated captions need the same explicit ID.
         bool known = Packs.Values.Any(pack => pack.Ui.ContainsKey(visible));
-        if (!known) return original;
+        if (!known) return ExpandedUi.Menu(original);
         int stableSeparator = original.IndexOf("###", StringComparison.Ordinal);
         if (stableSeparator >= 0) return translated + original[stableSeparator..];
         if (separator >= 0) return translated + "###" + original;
@@ -543,6 +546,7 @@ public static class ButtonCaptionPatch
     {
         string original = label.ToString();
         string translated = Runtime.Literal(original);
+        if (translated == original) translated = ExpandedUi.Text(original);
         if (translated != original) label = translated.AsSpan();
     }
 }
@@ -640,7 +644,7 @@ public static class LanguageMenuPatch
     [HarmonyPostfix]
     public static void Draw()
     {
-        if (!ImGui.BeginMenu("Language")) return;
+        if (!ImGui.BeginMenu(Runtime.SelectedLocale == "zh-CN" ? "语言###Language" : "Language###Language")) return;
         foreach (var pack in Runtime.Packs.Values)
         {
             if (ImGui.MenuItem(pack.DisplayName, default(ImString), Runtime.SelectedLocale == pack.Locale))

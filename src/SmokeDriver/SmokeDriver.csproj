@@ -4,6 +4,7 @@
     <Reference Include="KSA"><HintPath>$(KsaDir)\KSA.dll</HintPath><Private>false</Private></Reference>
     <Reference Include="Brutal.ImGui"><HintPath>$(KsaDir)\Brutal.ImGui.dll</HintPath><Private>false</Private></Reference>
     <Reference Include="Brutal.Core.Numerics"><HintPath>$(KsaDir)\Brutal.Core.Numerics.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Planet.Render.Core"><HintPath>$(KsaDir)\Planet.Render.Core.dll</HintPath><Private>false</Private></Reference>
     <Reference Include="StarMap.API"><HintPath>$(LoaderDir)\StarMap.API.dll</HintPath><Private>false</Private></Reference>
     <Reference Include="0Harmony"><HintPath>$(LoaderDir)\0Harmony.dll</HintPath><Private>false</Private></Reference>
   </ItemGroup>
