@@ -5,6 +5,11 @@
 - `forum-post.en.md`：已在 Ahwoo Mod Releases 发布的帖子正文，User Interface 分类。
 - `KsaChinese.toml.in`：社区索引条目模板，论坛地址明确留空。需要真实帖子地址，不能直接提交模板。
 - `index-pr.en.md`：已合并的 KSAModding/content-index PR 说明和最终文件链接。
+- `media/ksa-chinese-icon-v1.jpg`：Borea 目录图标，512 × 512 JPEG；来源、生成提示词与 MIT 许可见 `media/README.md`。
+
+目录模板同时维护中文和 English 简介。`abstract` 用于短摘要，`description` 按中文、English、来源与许可排列；当前索引格式没有按客户端语言分别保存简介的字段。`images.icon` 记录本仓库托管图标的 HTTPS 地址、SHA-256、尺寸、字节数及独立图片许可。更新图标时使用新文件名，并一并更新图片记录。
+
+展示资料只按已发布的 0.1.6 内容编写；开发中的多语言改动不能提前写成公开版本功能。修改展示资料无需重发插件安装包。图标与模板在本仓库合并后，还需另行确认并向社区索引提交条目更新；只修改本仓库不会自动更新 Borea 的简介。
 
 许可为 MIT AND OFL-1.1；只收录 0.1.6 及以后，避免把旧便携包和旧 5602 支持范围误套入。游戏上下界均为 2026.10.19.5638；平台限定 Windows；StarMap 上下界均为 0.4.8，后续扩大前需测试。
 
