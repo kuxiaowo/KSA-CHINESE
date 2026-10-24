@@ -1,0 +1,145 @@
+{
+  "verified_at_utc": "2026-10-24T04:57:56.934114+00:00",
+  "project_pull_request": "https://github.com/kuxiaowo/KSA-CHINESE/pull/10",
+  "community_pull_request": {
+    "mergeCommit": {
+      "oid": "6ae33f11ae059eed93da8a0785376ab42cfceea5"
+    },
+    "mergedAt": "2026-10-24T04:52:13Z",
+    "state": "MERGED",
+    "statusCheckRollup": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-24T04:51:20Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/KSAModding/content-index/actions/runs/40063974241/job/120783209902",
+        "name": "layout",
+        "startedAt": "2026-10-24T04:51:16Z",
+        "status": "COMPLETED",
+        "workflowName": "checks"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-24T04:51:33Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/KSAModding/content-index/actions/runs/40063974241/job/120783209874",
+        "name": "schema",
+        "startedAt": "2026-10-24T04:51:16Z",
+        "status": "COMPLETED",
+        "workflowName": "checks"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-24T04:51:22Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/KSAModding/content-index/actions/runs/40063974241/job/120783209758",
+        "name": "page",
+        "startedAt": "2026-10-24T04:51:15Z",
+        "status": "COMPLETED",
+        "workflowName": "checks"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-24T04:51:33Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/KSAModding/content-index/actions/runs/40063974241/job/120783210025",
+        "name": "verdict",
+        "startedAt": "2026-10-24T04:51:16Z",
+        "status": "COMPLETED",
+        "workflowName": "checks"
+      },
+      {
+        "__typename": "StatusContext",
+        "context": "validate",
+        "startedAt": "2026-10-24T04:51:50Z",
+        "state": "SUCCESS",
+        "targetUrl": "https://github.com/KSAModding/content-index/actions/runs/40063974241"
+      }
+    ],
+    "url": "https://github.com/KSAModding/content-index/pull/224"
+  },
+  "public_snapshot": {
+    "snapshot_url": "https://ksamodding.github.io/content-index-releases/v1/index.json",
+    "snapshot_sha256": "a25147fcef0e550b8e57ded96242df7321760a7f167f0953e65383f095e067ea",
+    "snapshot_etag": "\"6adc399e-137423\"",
+    "sources": {
+      "authored": {
+        "repository": "KSAModding/content-index",
+        "commit": "6ae33f11ae059eed93da8a0785376ab42cfceea5"
+      },
+      "generated": {
+        "repository": "KSAModding/content-index-releases",
+        "commit": "930a6337380a8926f72ccdb8c7e1899c6754559b"
+      }
+    }
+  },
+  "snapshot_deployment": "https://github.com/KSAModding/content-index-releases/actions/runs/40064051771",
+  "all_authored_fields_match_approved_candidate": true,
+  "image": {
+    "url": "https://raw.githubusercontent.com/kuxiaowo/KSA-CHINESE/main/ecosystem/media/ksa-chinese-icon-v1.jpg",
+    "sha256": "4f86da34eaee37104abb3040e4820003a9a3b47ca5267d16998ed035b171ba2a",
+    "width": 512,
+    "height": 512,
+    "size": 54695,
+    "license": "MIT",
+    "attribution": "KSA-CHINESE contributors; AI-assisted artwork.",
+    "downloaded_bytes_and_hash_match": true
+  },
+  "release_version_unchanged": "0.1.6",
+  "external_forum_action": "Existing forum thread reused; no new post or comment.",
+  "desktop": {
+    "application": "Borea",
+    "version": "0.5.1",
+    "source_commit": "284d5cf929c8ede99320f8afc451fa44f12aeadd",
+    "build": "official release",
+    "method": "Refresh actual public catalogue through the desktop UI, then inspect screenshots and accessibility text.",
+    "checked_at_utc": "2026-10-24T04:57:16.809Z",
+    "checks": [
+      {
+        "scene": "01-discover",
+        "result": "pass",
+        "observed": [
+          "New astronaut-cat icon renders in the search result.",
+          "Chinese and English abstract are visible and wrap inside the row."
+        ]
+      },
+      {
+        "scene": "02-description-chinese",
+        "result": "pass",
+        "observed": [
+          "Chinese section, bullets, coverage limits and installation text render without missing glyph boxes or overlapping text.",
+          "English heading and opening paragraph follow the Chinese section."
+        ]
+      },
+      {
+        "scene": "03-detail-header",
+        "result": "pass",
+        "observed": [
+          "Detail header shows the full new icon and bilingual abstract.",
+          "Icon is centered; no clipping or layout overlap is visible."
+        ]
+      },
+      {
+        "scene": "04-description-english",
+        "result": "pass",
+        "observed": [
+          "English paragraphs, bullet list, installation and migration notes render normally.",
+          "Credits link, MIT and OFL-1.1 text are visible at the end."
+        ]
+      },
+      {
+        "scene": "05-home-tile",
+        "result": "pass",
+        "observed": [
+          "Home Recently updated tile uses the new artwork instead of the puzzle placeholder.",
+          "The bilingual mod name remains readable over the tile."
+        ]
+      }
+    ],
+    "evidence": "Five screenshots and accessibility records retained in local work evidence; not published in the repository.",
+    "limits": [
+      "Current window size, scaling and Windows only.",
+      "No plugin install or gameplay retest: this change only updates listing presentation."
+    ]
+  }
+}
