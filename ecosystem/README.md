@@ -5,9 +5,11 @@
 - `forum-post.en.md`：已在 Ahwoo Mod Releases 发布的帖子正文，User Interface 分类。
 - `KsaChinese.toml.in`：社区索引条目模板，论坛地址明确留空。需要真实帖子地址，不能直接提交模板。
 - `index-pr.en.md`：已合并的 KSAModding/content-index PR 说明和最终文件链接。
-- `media/ksa-chinese-icon-v1.jpg`：Borea 目录图标，512 × 512 JPEG；来源、生成提示词与 MIT 许可见 `media/README.md`。
+- `media/ksa-chinese-hud-v2.jpg`：当前目录封面，按维护者选定区域裁切的真实中文游戏截图，512 × 512 JPEG；截图署名、坐标和独立展示说明见 `media/README.md`。此前的 `ksa-chinese-icon-v1.jpg` 保留为历史图标。
 
 目录模板同时维护中文和 English 简介。`abstract` 用于短摘要，`description` 按中文、English、来源与许可排列；当前索引格式没有按客户端语言分别保存简介的字段。`images.icon` 记录本仓库托管图标的 HTTPS 地址、SHA-256、尺寸、字节数及独立图片许可。更新图标时使用新文件名，并一并更新图片记录。
+
+本次按维护者指令将封面更换为选定截图；简介只新增一行 `作者 / Author: [kuxiaowo](https://github.com/kuxiaowo)`，其余正文与摘要不改动。原有贡献者及 MIT/OFL 来源说明继续保留。
 
 展示资料只按已发布的 0.1.6 内容编写；开发中的多语言改动不能提前写成公开版本功能。修改展示资料无需重发插件安装包。2026-10-24，经维护者批准，本仓库 [PR #10](https://github.com/kuxiaowo/KSA-CHINESE/pull/10) 和社区索引 [PR #224](https://github.com/KSAModding/content-index/pull/224) 已合并；[公共快照部署](https://github.com/KSAModding/content-index-releases/actions/runs/40064051771) 成功。公共条目与批准稿全部字段一致，在线图片字节与哈希匹配。
 
