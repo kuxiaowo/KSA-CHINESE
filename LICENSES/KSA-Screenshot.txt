@@ -1,0 +1,16 @@
+LicenseRef-KSA-Screenshot
+
+This notice applies only to ecosystem/media/ksa-chinese-hud-v2.jpg.
+
+Screenshot supplied and selected for this mod's catalogue listing by kuxiaowo.
+Game: Kitten Space Agency / RocketWerkz. Game imagery and assets remain the
+property of their respective rights holders. Chinese localization credits and
+licenses remain those documented in THIRD_PARTY.md.
+
+The screenshot is provided as a presentation image for this mod's catalogue
+listing and documentation. Clients may fetch, display and cache the image with
+its attribution. This notice does not grant a separate license to extract,
+redistribute or relicense the underlying game assets, and does not represent
+official endorsement of the mod.
+
+The repository's MIT license does not relicense the game imagery in this image.

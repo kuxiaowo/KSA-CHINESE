@@ -6,6 +6,7 @@
 - 加载器：StarMap 0.4.8，MIT。来源：https://github.com/StarMapLoader/StarMap/releases/tag/0.4.8 。下载 ZIP SHA-256：`5324240f15d6841835158940057359ef011149bbc30b4d50f7b27480df7b2d5c`。保留 `LICENSES/StarMap-MIT.txt`。
 - Harmony：随该 StarMap 包中的 `0Harmony.dll`，MIT，保留 `LICENSES/Harmony-MIT.txt`。
 - 字体：Google Noto Sans SC，SIL OFL 1.1。源文件 SHA-256：`a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da`。来源：https://github.com/google/fonts/tree/main/ofl/notosanssc 。生成字体已重新命名家族，保留版权、字体许可证和来源记录。
+- 社区目录截图 `ecosystem/media/ksa-chinese-hud-v2.jpg`：由 kuxiaowo 提供并选定，游戏画面与资产归 Kitten Space Agency / RocketWerkz 及相应权利人。独立展示说明为 `LicenseRef-KSA-Screenshot`，见 `LICENSES/KSA-Screenshot.txt`；不将游戏画面重新授权为 MIT。
 - KSA 本体 DLL、Core 文件、反编译源码、KSP 字典只作本机检查或术语参考，不在发行包和源码包中分发。
 
 运行需要已安装的 Microsoft .NET 10 x64 Runtime；本包不包含 .NET 安装器、SDK 或游戏运行时。
