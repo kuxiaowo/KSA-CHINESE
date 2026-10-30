@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "ledger_rows": 4837,
+  "ledger_rows": 5102,
   "review_status_counts": {
-    "reviewed": 4786,
+    "reviewed": 5051,
     "defer": 49,
     "contextual": 2
   },
   "active_translation_sections": {
-    "native": 216,
+    "native": 220,
     "literals": 86,
     "ui": 193,
     "tooltips": 171,
@@ -18,11 +18,11 @@
     "hud": 43,
     "planning": 245,
     "utility": 297,
-    "gauges": 84,
+    "gauges": 86,
     "scoped": 13,
-    "display": 1991,
-    "content": 257,
-    "history": 228
+    "display": 2092,
+    "content": 259,
+    "history": 383
   },
   "excluded_entries": [
     {

@@ -18,6 +18,18 @@
   <data name="SettingsGraphicsVolumetricsAuroraQuality" xml:space="preserve">
     <value>极光质量</value>
   </data>
+  <data name="SettingsDisplayHdr" xml:space="preserve">
+    <value>HDR（实验性）</value>
+  </data>
+  <data name="SettingsDisplayHdrFormat" xml:space="preserve">
+    <value>HDR 格式</value>
+  </data>
+  <data name="SettingsDisplayHdrPaperWhite" xml:space="preserve">
+    <value>HDR 基准白亮度</value>
+  </data>
+  <data name="SettingsDisplayHdrPeakBrightness" xml:space="preserve">
+    <value>HDR 峰值亮度</value>
+  </data>
   <data name="SettingsWindowTitle" xml:space="preserve">
     <value>设置</value>
   </data>

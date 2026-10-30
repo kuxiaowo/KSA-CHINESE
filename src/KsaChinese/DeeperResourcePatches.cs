@@ -84,7 +84,7 @@ public static class DeeperResourceCaptionPatch
                 fallbacks++;
             }
         }
-        int expected = __originalMethod.DeclaringType == typeof(Mole) ? 4
+        int expected = __originalMethod.DeclaringType == typeof(Mole) ? 8
             : __originalMethod.DeclaringType == typeof(BatteryState) ? 1
             : __originalMethod.DeclaringType == typeof(RocketCoreState) ? 6
             : __originalMethod.DeclaringType == typeof(RocketNozzleState) ? 3

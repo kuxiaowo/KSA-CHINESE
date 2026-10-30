@@ -1,6 +1,8 @@
 LicenseRef-KSA-Screenshot
 
-This notice applies only to ecosystem/media/ksa-chinese-hud-v2.jpg.
+This notice applies to ecosystem/media/ksa-chinese-hud-v2.jpg and
+reports/screenshots/017-*.png. The latter are development test captures
+from the installed game in an isolated test profile.
 
 Screenshot supplied and selected for this mod's catalogue listing by kuxiaowo.
 Game: Kitten Space Agency / RocketWerkz. Game imagery and assets remain the

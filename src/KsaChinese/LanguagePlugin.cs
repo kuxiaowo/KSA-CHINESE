@@ -42,7 +42,7 @@ public sealed class LanguagePlugin
 {
     private Harmony? _patches;
     public static bool SupportsGameVersion(string? version)
-        => version is "2026.10.19.5638";
+        => version is "2026.10.25.5707";
 
     [StarMapBeforeMain]
     public void BeforeMain()
@@ -50,20 +50,20 @@ public sealed class LanguagePlugin
         var gameVersion = typeof(KSA.Program).Assembly.GetName().Version?.ToString();
         if (!SupportsGameVersion(gameVersion))
         {
-            Runtime.Log($"Chinese mod disabled: supported build is 2026.10.19.5638; found {gameVersion}.");
+            Runtime.Log($"Chinese mod disabled: supported build is 2026.10.25.5707; found {gameVersion}.");
             return;
         }
         try
         {
             Compatibility.Validate(Path.GetDirectoryName(typeof(KSA.Program).Assembly.Location)!, Path.Combine(Runtime.ModRoot,"compatibility.json"));
             Runtime.Initialize();
-            _patches = new Harmony("local.ksa.chinese.5638");
+            _patches = new Harmony("local.ksa.chinese.5707");
             _patches.PatchAll(typeof(LanguagePlugin).Assembly);
             Runtime.Log($"Initialized UI language mod for game {gameVersion}.");
         }
         catch (Exception error)
         {
-            _patches?.UnpatchAll("local.ksa.chinese.5638");
+            _patches?.UnpatchAll("local.ksa.chinese.5707");
             _patches = null;
             Runtime.RestoreProvider();
             Runtime.Log("Prototype disabled after initialization error: " + error);
@@ -83,7 +83,7 @@ public sealed class LanguagePlugin
     {
         if (_patches is null) return;
         Runtime.RestoreProvider();
-        _patches.UnpatchAll("local.ksa.chinese.5638");
+        _patches.UnpatchAll("local.ksa.chinese.5707");
     }
 }
 
@@ -427,7 +427,7 @@ public static class MenuTextPatch
         "Show All Orbits", "Hide All Orbits", "Show Celestial Names", "Show Location Names", "Show Map Grid",
         "Frame Statistics", "Context Assignments", "Resource Groups", "Resources", "Draw Part Axes", "Show Delta-V Debug",
         "Vehicle", "Follow", "Control", "Set Target", "Clear Target", "Move Camera To", "Celestial Info",
-        "HUD", "Auto Warp", "Vessels", "Bodies", "Manifest", "Kitten Roster", "Next", "Previous",
+        "HUD", "Auto Warp", "Vessels", "Bodies", "Manifest", "Kitten Roster", "Space Weather", "Show Space Weather", "Show Magnetosphere", "Next", "Previous",
         "Transfer Planner", "Flight Plan", "Ground Track", "Target Track", "Staging", "Threads", "Profiler",
         "Orbit Camera", "Free Camera", "Map Camera", "Add Camera", "Follow Terrain", "Show Orbit Markers",
         "Flight Plans", "Celestial Names", "Debug", "Show All", "Show None", "Comets", "Planets", "Moons",

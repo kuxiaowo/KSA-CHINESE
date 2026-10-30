@@ -954,6 +954,28 @@
   },
   {
     "Type": "KSA.CrewPortraitPanel",
+    "Method": "DrawAcuteDose",
+    "Fields": [
+      "\nHealing ",
+      "\nLethal in ",
+      "\nNet ",
+      "\nRadiation sickness in ",
+      "\nReceiving ",
+      "Acute ",
+      "Acute dose "
+    ],
+    "Literals": [
+      "\nHealing ",
+      "\nLethal in ",
+      "\nNet ",
+      "\nRadiation sickness in ",
+      "\nReceiving ",
+      "Acute ",
+      "Acute dose "
+    ]
+  },
+  {
+    "Type": "KSA.CrewPortraitPanel",
     "Method": "DrawCameraControls",
     "Fields": [],
     "Literals": []
@@ -963,6 +985,28 @@
     "Method": "DrawCentered",
     "Fields": [],
     "Literals": []
+  },
+  {
+    "Type": "KSA.CrewPortraitPanel",
+    "Method": "DrawDoseLine",
+    "Fields": [],
+    "Literals": []
+  },
+  {
+    "Type": "KSA.CrewPortraitPanel",
+    "Method": "DrawLifetimeDose",
+    "Fields": [
+      "\nNever heals",
+      "\nRising ",
+      "Lifetime ",
+      "Lifetime dose "
+    ],
+    "Literals": [
+      "\nNever heals",
+      "\nRising ",
+      "Lifetime ",
+      "Lifetime dose "
+    ]
   },
   {
     "Type": "KSA.CubicHermiteSplineEditor",
@@ -1397,6 +1441,7 @@
       "Lacunarity",
       "Multiply Color",
       "Octaves",
+      "Persistence",
       "Ridge Color",
       "Valley Color"
     ],
@@ -1407,6 +1452,7 @@
       "Lacunarity",
       "Multiply Color",
       "Octaves",
+      "Persistence",
       "Ridge Color",
       "Valley Color"
     ]
@@ -2090,12 +2136,19 @@
       " TAB PENDING",
       " TABS PENDING",
       "APPLY",
+      "Brightest the display can show. Highlights roll off towards this, so set it to the display's rated peak.",
+      "Brightness of white UI and of an exposed scene value of 1. Match it to the system's SDR content brightness so the game sits alongside other windows.",
       "CLOSE",
       "DISCARD",
       "DISPLAY",
       "Global Scale of Hud elements",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers HDR10 only.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB and HDR10.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB only.",
       "Monitor the fullscreen and borderless modes cover, listed with each screen's name and resolution. A windowed window is moved by dragging it.",
       "NO PENDING CHANGES",
+      "Presents in HDR on this screen. The scene always uses the GT7 tonemapper in HDR, the Tonemapper setting only applies to SDR.",
       "RESET",
       "RESET KEYS",
       "RESTART REQUIRED ON APPLY",
@@ -2113,12 +2166,19 @@
       " TAB PENDING",
       " TABS PENDING",
       "APPLY",
+      "Brightest the display can show. Highlights roll off towards this, so set it to the display's rated peak.",
+      "Brightness of white UI and of an exposed scene value of 1. Match it to the system's SDR content brightness so the game sits alongside other windows.",
       "CLOSE",
       "DISCARD",
       "DISPLAY",
       "Global Scale of Hud elements",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers HDR10 only.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB and HDR10.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB only.",
       "Monitor the fullscreen and borderless modes cover, listed with each screen's name and resolution. A windowed window is moved by dragging it.",
       "NO PENDING CHANGES",
+      "Presents in HDR on this screen. The scene always uses the GT7 tonemapper in HDR, the Tonemapper setting only applies to SDR.",
       "RESET",
       "RESET KEYS",
       "RESTART REQUIRED ON APPLY",
@@ -2136,12 +2196,19 @@
       " TAB PENDING",
       " TABS PENDING",
       "APPLY",
+      "Brightest the display can show. Highlights roll off towards this, so set it to the display's rated peak.",
+      "Brightness of white UI and of an exposed scene value of 1. Match it to the system's SDR content brightness so the game sits alongside other windows.",
       "CLOSE",
       "DISCARD",
       "DISPLAY",
       "Global Scale of Hud elements",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers HDR10 only.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB and HDR10.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB only.",
       "Monitor the fullscreen and borderless modes cover, listed with each screen's name and resolution. A windowed window is moved by dragging it.",
       "NO PENDING CHANGES",
+      "Presents in HDR on this screen. The scene always uses the GT7 tonemapper in HDR, the Tonemapper setting only applies to SDR.",
       "RESET",
       "RESET KEYS",
       "RESTART REQUIRED ON APPLY",
@@ -2159,12 +2226,19 @@
       " TAB PENDING",
       " TABS PENDING",
       "APPLY",
+      "Brightest the display can show. Highlights roll off towards this, so set it to the display's rated peak.",
+      "Brightness of white UI and of an exposed scene value of 1. Match it to the system's SDR content brightness so the game sits alongside other windows.",
       "CLOSE",
       "DISCARD",
       "DISPLAY",
       "Global Scale of Hud elements",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers HDR10 only.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB and HDR10.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB only.",
       "Monitor the fullscreen and borderless modes cover, listed with each screen's name and resolution. A windowed window is moved by dragging it.",
       "NO PENDING CHANGES",
+      "Presents in HDR on this screen. The scene always uses the GT7 tonemapper in HDR, the Tonemapper setting only applies to SDR.",
       "RESET",
       "RESET KEYS",
       "RESTART REQUIRED ON APPLY",
@@ -2182,12 +2256,19 @@
       " TAB PENDING",
       " TABS PENDING",
       "APPLY",
+      "Brightest the display can show. Highlights roll off towards this, so set it to the display's rated peak.",
+      "Brightness of white UI and of an exposed scene value of 1. Match it to the system's SDR content brightness so the game sits alongside other windows.",
       "CLOSE",
       "DISCARD",
       "DISPLAY",
       "Global Scale of Hud elements",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers HDR10 only.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB and HDR10.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB only.",
       "Monitor the fullscreen and borderless modes cover, listed with each screen's name and resolution. A windowed window is moved by dragging it.",
       "NO PENDING CHANGES",
+      "Presents in HDR on this screen. The scene always uses the GT7 tonemapper in HDR, the Tonemapper setting only applies to SDR.",
       "RESET",
       "RESET KEYS",
       "RESTART REQUIRED ON APPLY",
@@ -2205,12 +2286,19 @@
       " TAB PENDING",
       " TABS PENDING",
       "APPLY",
+      "Brightest the display can show. Highlights roll off towards this, so set it to the display's rated peak.",
+      "Brightness of white UI and of an exposed scene value of 1. Match it to the system's SDR content brightness so the game sits alongside other windows.",
       "CLOSE",
       "DISCARD",
       "DISPLAY",
       "Global Scale of Hud elements",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers HDR10 only.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB and HDR10.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB only.",
       "Monitor the fullscreen and borderless modes cover, listed with each screen's name and resolution. A windowed window is moved by dragging it.",
       "NO PENDING CHANGES",
+      "Presents in HDR on this screen. The scene always uses the GT7 tonemapper in HDR, the Tonemapper setting only applies to SDR.",
       "RESET",
       "RESET KEYS",
       "RESTART REQUIRED ON APPLY",
@@ -2228,12 +2316,19 @@
       " TAB PENDING",
       " TABS PENDING",
       "APPLY",
+      "Brightest the display can show. Highlights roll off towards this, so set it to the display's rated peak.",
+      "Brightness of white UI and of an exposed scene value of 1. Match it to the system's SDR content brightness so the game sits alongside other windows.",
       "CLOSE",
       "DISCARD",
       "DISPLAY",
       "Global Scale of Hud elements",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers HDR10 only.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB and HDR10.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB only.",
       "Monitor the fullscreen and borderless modes cover, listed with each screen's name and resolution. A windowed window is moved by dragging it.",
       "NO PENDING CHANGES",
+      "Presents in HDR on this screen. The scene always uses the GT7 tonemapper in HDR, the Tonemapper setting only applies to SDR.",
       "RESET",
       "RESET KEYS",
       "RESTART REQUIRED ON APPLY",
@@ -2251,12 +2346,19 @@
       " TAB PENDING",
       " TABS PENDING",
       "APPLY",
+      "Brightest the display can show. Highlights roll off towards this, so set it to the display's rated peak.",
+      "Brightness of white UI and of an exposed scene value of 1. Match it to the system's SDR content brightness so the game sits alongside other windows.",
       "CLOSE",
       "DISCARD",
       "DISPLAY",
       "Global Scale of Hud elements",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers HDR10 only.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB and HDR10.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB only.",
       "Monitor the fullscreen and borderless modes cover, listed with each screen's name and resolution. A windowed window is moved by dragging it.",
       "NO PENDING CHANGES",
+      "Presents in HDR on this screen. The scene always uses the GT7 tonemapper in HDR, the Tonemapper setting only applies to SDR.",
       "RESET",
       "RESET KEYS",
       "RESTART REQUIRED ON APPLY",
@@ -2285,12 +2387,19 @@
       " TAB PENDING",
       " TABS PENDING",
       "APPLY",
+      "Brightest the display can show. Highlights roll off towards this, so set it to the display's rated peak.",
+      "Brightness of white UI and of an exposed scene value of 1. Match it to the system's SDR content brightness so the game sits alongside other windows.",
       "CLOSE",
       "DISCARD",
       "DISPLAY",
       "Global Scale of Hud elements",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers HDR10 only.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB and HDR10.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB only.",
       "Monitor the fullscreen and borderless modes cover, listed with each screen's name and resolution. A windowed window is moved by dragging it.",
       "NO PENDING CHANGES",
+      "Presents in HDR on this screen. The scene always uses the GT7 tonemapper in HDR, the Tonemapper setting only applies to SDR.",
       "RESET",
       "RESET KEYS",
       "RESTART REQUIRED ON APPLY",
@@ -2308,12 +2417,19 @@
       " TAB PENDING",
       " TABS PENDING",
       "APPLY",
+      "Brightest the display can show. Highlights roll off towards this, so set it to the display's rated peak.",
+      "Brightness of white UI and of an exposed scene value of 1. Match it to the system's SDR content brightness so the game sits alongside other windows.",
       "CLOSE",
       "DISCARD",
       "DISPLAY",
       "Global Scale of Hud elements",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers HDR10 only.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB and HDR10.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB only.",
       "Monitor the fullscreen and borderless modes cover, listed with each screen's name and resolution. A windowed window is moved by dragging it.",
       "NO PENDING CHANGES",
+      "Presents in HDR on this screen. The scene always uses the GT7 tonemapper in HDR, the Tonemapper setting only applies to SDR.",
       "RESET",
       "RESET KEYS",
       "RESTART REQUIRED ON APPLY",
@@ -2331,12 +2447,19 @@
       " TAB PENDING",
       " TABS PENDING",
       "APPLY",
+      "Brightest the display can show. Highlights roll off towards this, so set it to the display's rated peak.",
+      "Brightness of white UI and of an exposed scene value of 1. Match it to the system's SDR content brightness so the game sits alongside other windows.",
       "CLOSE",
       "DISCARD",
       "DISPLAY",
       "Global Scale of Hud elements",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers HDR10 only.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB and HDR10.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB only.",
       "Monitor the fullscreen and borderless modes cover, listed with each screen's name and resolution. A windowed window is moved by dragging it.",
       "NO PENDING CHANGES",
+      "Presents in HDR on this screen. The scene always uses the GT7 tonemapper in HDR, the Tonemapper setting only applies to SDR.",
       "RESET",
       "RESET KEYS",
       "RESTART REQUIRED ON APPLY",
@@ -2354,12 +2477,49 @@
       " TAB PENDING",
       " TABS PENDING",
       "APPLY",
+      "Brightest the display can show. Highlights roll off towards this, so set it to the display's rated peak.",
+      "Brightness of white UI and of an exposed scene value of 1. Match it to the system's SDR content brightness so the game sits alongside other windows.",
       "CLOSE",
       "DISCARD",
       "DISPLAY",
       "Global Scale of Hud elements",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers HDR10 only.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB and HDR10.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB only.",
       "Monitor the fullscreen and borderless modes cover, listed with each screen's name and resolution. A windowed window is moved by dragging it.",
       "NO PENDING CHANGES",
+      "Presents in HDR on this screen. The scene always uses the GT7 tonemapper in HDR, the Tonemapper setting only applies to SDR.",
+      "RESET",
+      "RESET KEYS",
+      "RESTART REQUIRED ON APPLY",
+      "This should generally be set to only a portion of the number CPU cores your system has.",
+      "UI text size. Windows, widgets and tooltips scale with it.",
+      "Unlimited"
+    ],
+    "Literals": []
+  },
+  {
+    "Type": "KSA.GameSettings",
+    "Method": "DrawNitsSliderRow",
+    "Fields": [
+      " PENDING",
+      " TAB PENDING",
+      " TABS PENDING",
+      "APPLY",
+      "Brightest the display can show. Highlights roll off towards this, so set it to the display's rated peak.",
+      "Brightness of white UI and of an exposed scene value of 1. Match it to the system's SDR content brightness so the game sits alongside other windows.",
+      "CLOSE",
+      "DISCARD",
+      "DISPLAY",
+      "Global Scale of Hud elements",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers HDR10 only.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB and HDR10.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB only.",
+      "Monitor the fullscreen and borderless modes cover, listed with each screen's name and resolution. A windowed window is moved by dragging it.",
+      "NO PENDING CHANGES",
+      "Presents in HDR on this screen. The scene always uses the GT7 tonemapper in HDR, the Tonemapper setting only applies to SDR.",
       "RESET",
       "RESET KEYS",
       "RESTART REQUIRED ON APPLY",
@@ -2377,12 +2537,19 @@
       " TAB PENDING",
       " TABS PENDING",
       "APPLY",
+      "Brightest the display can show. Highlights roll off towards this, so set it to the display's rated peak.",
+      "Brightness of white UI and of an exposed scene value of 1. Match it to the system's SDR content brightness so the game sits alongside other windows.",
       "CLOSE",
       "DISCARD",
       "DISPLAY",
       "Global Scale of Hud elements",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers HDR10 only.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB and HDR10.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB only.",
       "Monitor the fullscreen and borderless modes cover, listed with each screen's name and resolution. A windowed window is moved by dragging it.",
       "NO PENDING CHANGES",
+      "Presents in HDR on this screen. The scene always uses the GT7 tonemapper in HDR, the Tonemapper setting only applies to SDR.",
       "RESET",
       "RESET KEYS",
       "RESTART REQUIRED ON APPLY",
@@ -2400,12 +2567,19 @@
       " TAB PENDING",
       " TABS PENDING",
       "APPLY",
+      "Brightest the display can show. Highlights roll off towards this, so set it to the display's rated peak.",
+      "Brightness of white UI and of an exposed scene value of 1. Match it to the system's SDR content brightness so the game sits alongside other windows.",
       "CLOSE",
       "DISCARD",
       "DISPLAY",
       "Global Scale of Hud elements",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers HDR10 only.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB and HDR10.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB only.",
       "Monitor the fullscreen and borderless modes cover, listed with each screen's name and resolution. A windowed window is moved by dragging it.",
       "NO PENDING CHANGES",
+      "Presents in HDR on this screen. The scene always uses the GT7 tonemapper in HDR, the Tonemapper setting only applies to SDR.",
       "RESET",
       "RESET KEYS",
       "RESTART REQUIRED ON APPLY",
@@ -2423,12 +2597,19 @@
       " TAB PENDING",
       " TABS PENDING",
       "APPLY",
+      "Brightest the display can show. Highlights roll off towards this, so set it to the display's rated peak.",
+      "Brightness of white UI and of an exposed scene value of 1. Match it to the system's SDR content brightness so the game sits alongside other windows.",
       "CLOSE",
       "DISCARD",
       "DISPLAY",
       "Global Scale of Hud elements",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers HDR10 only.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB and HDR10.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB only.",
       "Monitor the fullscreen and borderless modes cover, listed with each screen's name and resolution. A windowed window is moved by dragging it.",
       "NO PENDING CHANGES",
+      "Presents in HDR on this screen. The scene always uses the GT7 tonemapper in HDR, the Tonemapper setting only applies to SDR.",
       "RESET",
       "RESET KEYS",
       "RESTART REQUIRED ON APPLY",
@@ -2446,14 +2627,21 @@
       " TAB PENDING",
       " TABS PENDING",
       "APPLY",
+      "Brightest the display can show. Highlights roll off towards this, so set it to the display's rated peak.",
+      "Brightness of white UI and of an exposed scene value of 1. Match it to the system's SDR content brightness so the game sits alongside other windows.",
       "CAMERA AND FRAME",
       "CLOSE",
       "DISCARD",
       "DISPLAY",
       "Global Scale of Hud elements",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers HDR10 only.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB and HDR10.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB only.",
       "Monitor the fullscreen and borderless modes cover, listed with each screen's name and resolution. A windowed window is moved by dragging it.",
       "NO PENDING CHANGES",
       "OUTPUT",
+      "Presents in HDR on this screen. The scene always uses the GT7 tonemapper in HDR, the Tonemapper setting only applies to SDR.",
       "RESET",
       "RESET KEYS",
       "RESTART REQUIRED ON APPLY",
@@ -2480,12 +2668,19 @@
       " TAB PENDING",
       " TABS PENDING",
       "APPLY",
+      "Brightest the display can show. Highlights roll off towards this, so set it to the display's rated peak.",
+      "Brightness of white UI and of an exposed scene value of 1. Match it to the system's SDR content brightness so the game sits alongside other windows.",
       "CLOSE",
       "DISCARD",
       "DISPLAY",
       "Global Scale of Hud elements",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers HDR10 only.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB and HDR10.",
+      "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB only.",
       "Monitor the fullscreen and borderless modes cover, listed with each screen's name and resolution. A windowed window is moved by dragging it.",
       "NO PENDING CHANGES",
+      "Presents in HDR on this screen. The scene always uses the GT7 tonemapper in HDR, the Tonemapper setting only applies to SDR.",
       "RESET",
       "RESET KEYS",
       "RESTART REQUIRED ON APPLY",
@@ -3187,6 +3382,7 @@
       "INCLINATION",
       "LAN",
       "LocalPosition",
+      "ORBIT",
       "ORBIT TYPE",
       "ORBITAL PERIOD",
       "ORBITAL SPEED",
@@ -3215,6 +3411,7 @@
       "INCLINATION",
       "LAN",
       "LocalPosition",
+      "ORBIT",
       "ORBIT TYPE",
       "ORBITAL PERIOD",
       "ORBITAL SPEED",
@@ -3343,12 +3540,23 @@
     ]
   },
   {
+    "Type": "KSA.KittenComboOption",
+    "Method": "DrawTooltip",
+    "Fields": [
+      "Radiation sickness\nFit to fly in "
+    ],
+    "Literals": [
+      "Radiation sickness\nFit to fly in "
+    ]
+  },
+  {
     "Type": "KSA.KittenRosterWindow+Window",
     "Method": "Draw",
     "Fields": [
       "Double-click to follow",
       "EVA",
       "MEMORIAL",
+      "RETIRED",
       "ROSTER",
       "Unassigned"
     ],
@@ -3364,13 +3572,16 @@
       " KITTEN",
       " KITTENS",
       " LOST",
+      " RETIRED",
       "MEMORIAL",
+      "RETIRED",
       "ROSTER"
     ],
     "Literals": [
       " KITTEN",
       " KITTENS",
-      " LOST"
+      " LOST",
+      " RETIRED"
     ]
   },
   {
@@ -3378,35 +3589,17 @@
     "Method": "DrawContent",
     "Fields": [
       "MEMORIAL",
+      "RETIRED",
       "ROSTER"
     ],
     "Literals": []
   },
   {
     "Type": "KSA.KittenRosterWindow+Window",
-    "Method": "DrawMemorial",
-    "Fields": [
-      "Distance Travelled",
-      "Fastest Speed",
-      "MEMORIAL",
-      "Missions",
-      "Name",
-      "ROSTER",
-      "Total Mission Elapsed"
-    ],
-    "Literals": [
-      "Distance Travelled",
-      "Fastest Speed",
-      "Missions",
-      "Name",
-      "Total Mission Elapsed"
-    ]
-  },
-  {
-    "Type": "KSA.KittenRosterWindow+Window",
-    "Method": "DrawMemorialRow",
+    "Method": "DrawHeadersRow",
     "Fields": [
       "MEMORIAL",
+      "RETIRED",
       "ROSTER"
     ],
     "Literals": []
@@ -3415,12 +3608,13 @@
     "Type": "KSA.KittenRosterWindow+Window",
     "Method": "DrawMenuBar",
     "Fields": [
-      "Double-click an assigned vehicle to follow it. Click a column header to sort the roster.",
+      "Double-click an assigned vehicle to follow it. Click a column header to sort the roster. Recovery is how long a kitten needs resting at home for its acute dose to heal.",
       "MEMORIAL",
+      "RETIRED",
       "ROSTER"
     ],
     "Literals": [
-      "Double-click an assigned vehicle to follow it. Click a column header to sort the roster."
+      "Double-click an assigned vehicle to follow it. Click a column header to sort the roster. Recovery is how long a kitten needs resting at home for its acute dose to heal."
     ]
   },
   {
@@ -3428,6 +3622,40 @@
     "Method": "DrawNumericCell",
     "Fields": [
       "MEMORIAL",
+      "RETIRED",
+      "ROSTER"
+    ],
+    "Literals": []
+  },
+  {
+    "Type": "KSA.KittenRosterWindow+Window",
+    "Method": "DrawPastCrew",
+    "Fields": [
+      "Distance Travelled",
+      "Fastest Speed",
+      "Lifetime Dose",
+      "MEMORIAL",
+      "Missions",
+      "Name",
+      "RETIRED",
+      "ROSTER",
+      "Total Mission Elapsed"
+    ],
+    "Literals": [
+      "Distance Travelled",
+      "Fastest Speed",
+      "Lifetime Dose",
+      "Missions",
+      "Name",
+      "Total Mission Elapsed"
+    ]
+  },
+  {
+    "Type": "KSA.KittenRosterWindow+Window",
+    "Method": "DrawPastCrewRow",
+    "Fields": [
+      "MEMORIAL",
+      "RETIRED",
       "ROSTER"
     ],
     "Literals": []
@@ -3436,23 +3664,30 @@
     "Type": "KSA.KittenRosterWindow+Window",
     "Method": "DrawRoster",
     "Fields": [
+      "Acute Dose",
       "Assigned Vehicle",
       "Current Mission Elapsed",
       "Distance Travelled",
       "Fastest Speed",
+      "Lifetime Dose",
       "MEMORIAL",
       "Missions",
       "Name",
+      "RETIRED",
       "ROSTER",
+      "Recovery",
       "Total Mission Elapsed"
     ],
     "Literals": [
+      "Acute Dose",
       "Assigned Vehicle",
       "Current Mission Elapsed",
       "Distance Travelled",
       "Fastest Speed",
+      "Lifetime Dose",
       "Missions",
       "Name",
+      "Recovery",
       "Total Mission Elapsed"
     ]
   },
@@ -4065,12 +4300,16 @@
     "Fields": [
       "Density:",
       "Mass:",
+      "Pressure:",
+      "Rated Pressure:",
       "Storage Temperature:",
       "Volume:"
     ],
     "Literals": [
       "Density:",
       "Mass:",
+      "Pressure:",
+      "Rated Pressure:",
       "Storage Temperature:",
       "Volume:"
     ]
@@ -4166,8 +4405,12 @@
   {
     "Type": "KSA.OrbitHoverReadout",
     "Method": "DrawVehicleReadout",
-    "Fields": [],
-    "Literals": []
+    "Fields": [
+      "Orbit Dose: "
+    ],
+    "Literals": [
+      "Orbit Dose: "
+    ]
   },
   {
     "Type": "KSA.OverallBloomRenderer",
@@ -4846,6 +5089,7 @@
       "Biome Blend Strength",
       "Biomes",
       "Body: ",
+      "Compute Tessellation",
       "Debug",
       "Debug Mode",
       "Detail Fade End Distance (Km)",
@@ -4877,6 +5121,7 @@
       "Slope Blend Strength",
       "Slope Material##",
       "Terrain Editor",
+      "Terrain Pre-Pass",
       "Tessellation",
       "Wireframe",
       "[Biome not configured]"
@@ -4887,6 +5132,7 @@
       "Biome Blend Strength",
       "Biomes",
       "Body: ",
+      "Compute Tessellation",
       "Debug",
       "Debug Mode",
       "Detail Fade End Distance (Km)",
@@ -4918,6 +5164,7 @@
       "Slope Blend Strength",
       "Slope Material##",
       "Terrain Editor",
+      "Terrain Pre-Pass",
       "Tessellation",
       "Wireframe",
       "[Biome not configured]"
@@ -5483,13 +5730,27 @@
   {
     "Type": "KSA.Program",
     "Method": "DrawCelestialInfoOption",
-    "Fields": [],
+    "Fields": [
+      "Radiation dose rate averaged over the current orbit, unshielded, in millisieverts per hour.",
+      "Radiation dose rate averaged over the current orbit, unshielded, in sieverts per hour.",
+      "Radiation dose rate averaged over the orbit after this burn, unshielded, in millisieverts per hour.",
+      "Radiation dose rate averaged over the orbit after this burn, unshielded, in sieverts per hour.",
+      "Radiation dose rate here, unshielded, in millisieverts per hour.",
+      "Radiation dose rate here, unshielded, in sieverts per hour."
+    ],
     "Literals": []
   },
   {
     "Type": "KSA.Program",
     "Method": "DrawFps",
-    "Fields": [],
+    "Fields": [
+      "Radiation dose rate averaged over the current orbit, unshielded, in millisieverts per hour.",
+      "Radiation dose rate averaged over the current orbit, unshielded, in sieverts per hour.",
+      "Radiation dose rate averaged over the orbit after this burn, unshielded, in millisieverts per hour.",
+      "Radiation dose rate averaged over the orbit after this burn, unshielded, in sieverts per hour.",
+      "Radiation dose rate here, unshielded, in millisieverts per hour.",
+      "Radiation dose rate here, unshielded, in sieverts per hour."
+    ],
     "Literals": []
   },
   {
@@ -5540,6 +5801,12 @@
       "Parachute Tuning",
       "Planets",
       "Previous",
+      "Radiation dose rate averaged over the current orbit, unshielded, in millisieverts per hour.",
+      "Radiation dose rate averaged over the current orbit, unshielded, in sieverts per hour.",
+      "Radiation dose rate averaged over the orbit after this burn, unshielded, in millisieverts per hour.",
+      "Radiation dose rate averaged over the orbit after this burn, unshielded, in sieverts per hour.",
+      "Radiation dose rate here, unshielded, in millisieverts per hour.",
+      "Radiation dose rate here, unshielded, in sieverts per hour.",
       "Reset",
       "Resources",
       "Save/Load",
@@ -5560,6 +5827,7 @@
       "Show Flare Debug",
       "Show Flight Computer Debug",
       "Show Light Debug",
+      "Show Magnetosphere",
       "Show None",
       "Show Ocean Editor",
       "Show Orbit Directions",
@@ -5573,9 +5841,11 @@
       "Show Plume Debug",
       "Show Portrait Camera Controls",
       "Show Set Orbit Debug",
+      "Show Space Weather",
       "Show Terrain Debug",
       "Show Texture Streaming",
       "Show experimental particles",
+      "Space Weather",
       "Speed",
       "Spherical Billboarding",
       "Sprite Distance",
@@ -5644,6 +5914,7 @@
       "Show Flare Debug",
       "Show Flight Computer Debug",
       "Show Light Debug",
+      "Show Magnetosphere",
       "Show None",
       "Show Ocean Editor",
       "Show Orbit Directions",
@@ -5656,6 +5927,7 @@
       "Show Plume Debug",
       "Show Portrait Camera Controls",
       "Show Set Orbit Debug",
+      "Show Space Weather",
       "Show Terrain Debug",
       "Show Texture Streaming",
       "Show experimental particles",
@@ -5680,20 +5952,40 @@
     "Fields": [
       "Asteroids",
       "Comets",
-      "Minor Bodies"
+      "Minor Bodies",
+      "Radiation dose rate averaged over the current orbit, unshielded, in millisieverts per hour.",
+      "Radiation dose rate averaged over the current orbit, unshielded, in sieverts per hour.",
+      "Radiation dose rate averaged over the orbit after this burn, unshielded, in millisieverts per hour.",
+      "Radiation dose rate averaged over the orbit after this burn, unshielded, in sieverts per hour.",
+      "Radiation dose rate here, unshielded, in millisieverts per hour.",
+      "Radiation dose rate here, unshielded, in sieverts per hour."
     ],
     "Literals": []
   },
   {
     "Type": "KSA.Program",
     "Method": "DrawMoveCameraToSubMenu",
-    "Fields": [],
+    "Fields": [
+      "Radiation dose rate averaged over the current orbit, unshielded, in millisieverts per hour.",
+      "Radiation dose rate averaged over the current orbit, unshielded, in sieverts per hour.",
+      "Radiation dose rate averaged over the orbit after this burn, unshielded, in millisieverts per hour.",
+      "Radiation dose rate averaged over the orbit after this burn, unshielded, in sieverts per hour.",
+      "Radiation dose rate here, unshielded, in millisieverts per hour.",
+      "Radiation dose rate here, unshielded, in sieverts per hour."
+    ],
     "Literals": []
   },
   {
     "Type": "KSA.Program",
     "Method": "DrawOrbitLineOption",
-    "Fields": [],
+    "Fields": [
+      "Radiation dose rate averaged over the current orbit, unshielded, in millisieverts per hour.",
+      "Radiation dose rate averaged over the current orbit, unshielded, in sieverts per hour.",
+      "Radiation dose rate averaged over the orbit after this burn, unshielded, in millisieverts per hour.",
+      "Radiation dose rate averaged over the orbit after this burn, unshielded, in sieverts per hour.",
+      "Radiation dose rate here, unshielded, in millisieverts per hour.",
+      "Radiation dose rate here, unshielded, in sieverts per hour."
+    ],
     "Literals": []
   },
   {
@@ -5726,6 +6018,12 @@
       "Position X",
       "Position Y",
       "Position Z",
+      "Radiation dose rate averaged over the current orbit, unshielded, in millisieverts per hour.",
+      "Radiation dose rate averaged over the current orbit, unshielded, in sieverts per hour.",
+      "Radiation dose rate averaged over the orbit after this burn, unshielded, in millisieverts per hour.",
+      "Radiation dose rate averaged over the orbit after this burn, unshielded, in sieverts per hour.",
+      "Radiation dose rate here, unshielded, in millisieverts per hour.",
+      "Radiation dose rate here, unshielded, in sieverts per hour.",
       "Settings",
       "Speed",
       "Star Sprites",
@@ -5759,6 +6057,26 @@
       "Time Speed",
       "UI Toggle",
       "Vessel"
+    ]
+  },
+  {
+    "Type": "KSA.RadiationShield",
+    "Method": "DrawPartInfo",
+    "Fields": [
+      "Radiation",
+      "Radiation Shield",
+      "Shield Mass",
+      "Solar Wind",
+      "Tank Cover",
+      "Unshielded"
+    ],
+    "Literals": [
+      "Radiation",
+      "Radiation Shield",
+      "Shield Mass",
+      "Solar Wind",
+      "Tank Cover",
+      "Unshielded"
     ]
   },
   {
@@ -6759,7 +7077,7 @@
     "Type": "KSA.SolarPanel",
     "Method": "DrawStateInfo",
     "Fields": [
-      "Distance to Sun:",
+      "Distance to Star:",
       "No",
       "Occluded:",
       "Panel Active:",
@@ -6770,7 +7088,7 @@
       "Yes"
     ],
     "Literals": [
-      "Distance to Sun:",
+      "Distance to Star:",
       "No",
       "Occluded:",
       "Panel Active:",
@@ -6845,6 +7163,175 @@
     "Method": "DrawFillBar",
     "Fields": [],
     "Literals": []
+  },
+  {
+    "Type": "KSA.SpaceWeatherWindow+Window",
+    "Method": "DrawContent",
+    "Fields": [
+      "Bodies with vehicles",
+      "No vehicles in flight.",
+      "Selected"
+    ],
+    "Literals": [
+      "Bodies with vehicles",
+      "No vehicles in flight.",
+      "Selected"
+    ]
+  },
+  {
+    "Type": "KSA.SpaceWeatherWindow+Window",
+    "Method": "DrawGeomagnetic",
+    "Fields": [
+      "Geomagnetic storm: ",
+      "none"
+    ],
+    "Literals": [
+      "Geomagnetic storm: ",
+      "none"
+    ]
+  },
+  {
+    "Type": "KSA.SpaceWeatherWindow+Window",
+    "Method": "DrawIncoming",
+    "Fields": [
+      ", arriving in ",
+      "CME from ",
+      "No CMEs on the way."
+    ],
+    "Literals": [
+      ", arriving in ",
+      "CME from ",
+      "No CMEs on the way."
+    ]
+  },
+  {
+    "Type": "KSA.SpaceWeatherWindow+Window",
+    "Method": "DrawMenuBar",
+    "Fields": [
+      "Space weather at every body with vehicles in its sphere of influence, and at the star and body picked above. A flare's light is the first sign of it. CME arrival forecasts start about half a day out either way and close in as the CME flies. Nothing tells which way a CME's field points until it arrives."
+    ],
+    "Literals": [
+      "Space weather at every body with vehicles in its sphere of influence, and at the star and body picked above. A flare's light is the first sign of it. CME arrival forecasts start about half a day out either way and close in as the CME flies. Nothing tells which way a CME's field points until it arrives."
+    ]
+  },
+  {
+    "Type": "KSA.SpaceWeatherWindow+Window",
+    "Method": "DrawPickers",
+    "Fields": [
+      "Body",
+      "None",
+      "Star"
+    ],
+    "Literals": [
+      "Body",
+      "None",
+      "Star"
+    ]
+  },
+  {
+    "Type": "KSA.SpaceWeatherWindow+Window",
+    "Method": "DrawRadiation",
+    "Fields": [
+      "Radiation storm: ",
+      "none"
+    ],
+    "Literals": [
+      "Radiation storm: ",
+      "none"
+    ]
+  },
+  {
+    "Type": "KSA.SpaceWeatherWindow+Window",
+    "Method": "DrawSection",
+    "Fields": [],
+    "Literals": []
+  },
+  {
+    "Type": "KSA.SpaceWeatherWindow+Window",
+    "Method": "DrawSolarWind",
+    "Fields": [
+      "Solar wind: "
+    ],
+    "Literals": [
+      "Solar wind: "
+    ]
+  },
+  {
+    "Type": "KSA.SpaceWeatherWindow+Window",
+    "Method": "DrawStar",
+    "Fields": [
+      " a day",
+      " ago",
+      ", falling, minimum in ",
+      ", rising, maximum in ",
+      "Active regions: ",
+      "Activity: ",
+      "CME at ",
+      "CMEs: ",
+      "No eruptions.",
+      "No fast CMEs in the last 3 days.",
+      "Wind at 1 AU: "
+    ],
+    "Literals": [
+      " a day",
+      " ago",
+      ", falling, minimum in ",
+      ", rising, maximum in ",
+      "Active regions: ",
+      "Activity: ",
+      "CME at ",
+      "CMEs: ",
+      "No eruptions.",
+      "No fast CMEs in the last 3 days.",
+      "Wind at 1 AU: "
+    ]
+  },
+  {
+    "Type": "KSA.StellarBody",
+    "Method": "DrawCelestialWindowData",
+    "Fields": [
+      " per day",
+      "ACTIVITY",
+      "ACTIVITY CYCLE",
+      "CME RATE",
+      "COSMIC RAYS",
+      "CYCLE PHASE",
+      "Falling",
+      "HELIOPAUSE",
+      "HELIOSPHERE",
+      "None",
+      "POLE TILT",
+      "QUIET DOSE AT 1 AU",
+      "ROTATION PERIOD",
+      "Rising",
+      "SPACE WEATHER",
+      "StellarBody",
+      "TIME TO MAXIMUM",
+      "TIME TO MINIMUM",
+      "WIND PRESSURE AT 1 AU",
+      "WIND SPEED"
+    ],
+    "Literals": [
+      " per day",
+      "ACTIVITY",
+      "ACTIVITY CYCLE",
+      "CME RATE",
+      "COSMIC RAYS",
+      "CYCLE PHASE",
+      "Falling",
+      "HELIOPAUSE",
+      "HELIOSPHERE",
+      "None",
+      "POLE TILT",
+      "QUIET DOSE AT 1 AU",
+      "ROTATION PERIOD",
+      "Rising",
+      "SPACE WEATHER",
+      "TIME TO MAXIMUM",
+      "TIME TO MINIMUM",
+      "WIND PRESSURE AT 1 AU",
+      "WIND SPEED"
+    ]
   },
   {
     "Type": "KSA.StellarBody",
