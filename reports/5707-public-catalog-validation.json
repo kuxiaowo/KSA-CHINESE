@@ -1,0 +1,309 @@
+{
+  "boreaVersion": "0.5.2",
+  "sourceCommit": "4642805bad442a2b965be5cbfe3a973907db8c1b",
+  "verifiedAtUtc": "2026-10-30T10:18:16.6522787Z",
+  "transport": "Live public index and published archives via default HTTP handler",
+  "gameVersion": "2026.10.25.5707",
+  "scope": "Upstream CLI/components: search, two instances per mod, payload checksums, compatibility, enable/disable, no-op latest update and uninstall preserving settings. No desktop UI or gameplay acceptance.",
+  "checks": [
+    "KsaChinese rejects unsupported game 2026.10.19.5638",
+    "KsaChinese rejects unsupported game 2026.10.25.5708",
+    "KsaChinese 0.1.6 retains old 5638 compatibility",
+    "KsaChinese payload checksum: FONT-LICENSE.txt",
+    "KsaChinese payload checksum: FONT-SOURCE.txt",
+    "KsaChinese payload checksum: Fonts/KsaUiNotoSC.ttf",
+    "KsaChinese payload checksum: KsaChinese.dll",
+    "KsaChinese payload checksum: LICENSE",
+    "KsaChinese payload checksum: LICENSE.txt",
+    "KsaChinese payload checksum: LICENSES/KsaUiLanguages-MIT.txt",
+    "KsaChinese payload checksum: LICENSES/NotoSansSC-OFL.txt",
+    "KsaChinese payload checksum: Languages/zh-CN.resx",
+    "KsaChinese payload checksum: Locales/en-US.json",
+    "KsaChinese payload checksum: Locales/zh-CN.json",
+    "KsaChinese payload checksum: README-\u751F\u6001\u5B89\u88C5.md",
+    "KsaChinese payload checksum: README.txt",
+    "KsaChinese payload checksum: THIRD_PARTY.md",
+    "KsaChinese payload checksum: compatibility.json",
+    "KsaChinese payload checksum: display-sites.json",
+    "KsaChinese payload checksum: language.json",
+    "KsaChinese payload checksum: mod.toml",
+    "KsaChinese installs equal plugin bytes in two isolated instances",
+    "KsaChinese enable/disable/current-version update preserves profile settings",
+    "KsaChinese settings remain isolated between instances",
+    "KsaChinese uninstall preserves profile settings",
+    "KsaChinese uninstall removes owned mod folder",
+    "KsaChinese uninstall leaves the second instance intact",
+    "KsaBabel rejects unsupported game 2026.10.19.5638",
+    "KsaBabel rejects unsupported game 2026.10.25.5708",
+    "KsaBabel 0.2.2 retains old 5638 compatibility",
+    "KsaBabel payload checksum: FONT-LICENSE.txt",
+    "KsaBabel payload checksum: FONT-SOURCE.txt",
+    "KsaBabel payload checksum: Fonts/KsaUiNotoSC.ttf",
+    "KsaBabel payload checksum: KsaBabel.dll",
+    "KsaBabel payload checksum: LICENSE",
+    "KsaBabel payload checksum: LICENSE.txt",
+    "KsaBabel payload checksum: LICENSES/KsaUiLanguages-MIT.txt",
+    "KsaBabel payload checksum: LICENSES/NotoSansSC-OFL.txt",
+    "KsaBabel payload checksum: Languages/zh-CN.resx",
+    "KsaBabel payload checksum: Locales/de-DE.json",
+    "KsaBabel payload checksum: Locales/en-US.json",
+    "KsaBabel payload checksum: Locales/es-ES.json",
+    "KsaBabel payload checksum: Locales/fr-FR.json",
+    "KsaBabel payload checksum: Locales/it-IT.json",
+    "KsaBabel payload checksum: Locales/ja-JP.json",
+    "KsaBabel payload checksum: Locales/pt-BR.json",
+    "KsaBabel payload checksum: Locales/ru-RU.json",
+    "KsaBabel payload checksum: Locales/zh-CN.json",
+    "KsaBabel payload checksum: README-\u751F\u6001\u5B89\u88C5.md",
+    "KsaBabel payload checksum: README.txt",
+    "KsaBabel payload checksum: THIRD_PARTY.md",
+    "KsaBabel payload checksum: compatibility.json",
+    "KsaBabel payload checksum: display-sites.json",
+    "KsaBabel payload checksum: language.json",
+    "KsaBabel payload checksum: mod.toml",
+    "KsaBabel installs equal plugin bytes in two isolated instances",
+    "KsaBabel enable/disable/current-version update preserves profile settings",
+    "KsaBabel settings remain isolated between instances",
+    "KsaBabel uninstall preserves profile settings",
+    "KsaBabel uninstall removes owned mod folder",
+    "KsaBabel uninstall leaves the second instance intact",
+    "No shared/personal game profile created"
+  ],
+  "records": [
+    {
+      "command": [
+        "index",
+        "refresh"
+      ],
+      "code": 0,
+      "output": "Content index: downloaded.\r\n",
+      "error": ""
+    },
+    {
+      "command": [
+        "index",
+        "validate",
+        "--json"
+      ],
+      "code": 0,
+      "output": "{\r\n  \u0022snapshotVersion\u0022: 1,\r\n  \u0022accepted\u0022: {\r\n    \u0022listings\u0022: 31,\r\n    \u0022releases\u0022: 173,\r\n    \u0022packs\u0022: 1,\r\n    \u0022packVersions\u0022: 2,\r\n    \u0022gameVersions\u0022: 166,\r\n    \u0022downloadCounts\u0022: 31\r\n  },\r\n  \u0022diagnostics\u0022: {\r\n    \u0022malformed\u0022: 0,\r\n    \u0022unsupportedVersions\u0022: 0,\r\n    \u0022unsupportedValues\u0022: 0,\r\n    \u0022entries\u0022: []\r\n  }\r\n}\r\n",
+      "error": ""
+    },
+    {
+      "command": [
+        "loader",
+        "install",
+        "StarMap",
+        "--version",
+        "0.4.8"
+      ],
+      "code": 0,
+      "output": "Installed StarMap 0.4.8 in \u0027\u003Cproject\u003E\\work\\test-profile-public5707\\Loaders\\StarMap\u0027.\r\nConfigured game directory in \u0027\u003Cproject\u003E\\work\\test-profile-public5707\\Loaders\\StarMap\\StarMapConfig.json\u0027.\r\n",
+      "error": "Downloading StarMap 0.4.8\r\nExtracting StarMap 0.4.8\r\nConfiguring StarMap 0.4.8\r\nFinishing StarMap 0.4.8\r\n"
+    },
+    {
+      "command": [
+        "search",
+        "KsaChinese",
+        "--json"
+      ],
+      "code": 0,
+      "output": "{\r\n  \u0022query\u0022: \u0022KsaChinese\u0022,\r\n  \u0022installedGameVersion\u0022: \u00222026.10.25.5707\u0022,\r\n  \u0022results\u0022: [\r\n    {\r\n      \u0022id\u0022: \u0022KsaBabel\u0022,\r\n      \u0022name\u0022: \u0022KSA Babel / \\u55B5\\u8BED\\u5854\u0022,\r\n      \u0022state\u0022: \u0022known\u0022,\r\n      \u0022type\u0022: \u0022mod\u0022,\r\n      \u0022source\u0022: \u0022index\u0022,\r\n      \u0022latestVersion\u0022: \u00220.2.3\u0022,\r\n      \u0022compatibility\u0022: \u0022compatible\u0022,\r\n      \u0022downloads\u0022: {\r\n        \u0022total\u0022: 18,\r\n        \u0022hosts\u0022: {\r\n          \u0022github\u0022: 18\r\n        }\r\n      }\r\n    },\r\n    {\r\n      \u0022id\u0022: \u0022KsaChinese\u0022,\r\n      \u0022name\u0022: \u0022KSA Chinese / \\u7B80\\u4F53\\u4E2D\\u6587\u0022,\r\n      \u0022state\u0022: \u0022known\u0022,\r\n      \u0022type\u0022: \u0022mod\u0022,\r\n      \u0022source\u0022: \u0022index\u0022,\r\n      \u0022latestVersion\u0022: \u00220.1.7\u0022,\r\n      \u0022compatibility\u0022: \u0022compatible\u0022,\r\n      \u0022downloads\u0022: {\r\n        \u0022total\u0022: 19,\r\n        \u0022hosts\u0022: {\r\n          \u0022github\u0022: 19\r\n        }\r\n      }\r\n    }\r\n  ],\r\n  \u0022diagnostics\u0022: []\r\n}\r\n",
+      "error": ""
+    },
+    {
+      "command": [
+        "instance",
+        "create",
+        "KsaChinese A",
+        "--json"
+      ],
+      "code": 0,
+      "output": "{\r\n  \u0022id\u0022: \u0022911b3f94-96a2-45aa-b9f5-d5f80319afae\u0022,\r\n  \u0022name\u0022: \u0022KsaChinese A\u0022,\r\n  \u0022activated\u0022: true\r\n}\r\n",
+      "error": ""
+    },
+    {
+      "command": [
+        "install",
+        "KsaChinese",
+        "--instance",
+        "KsaChinese A",
+        "--version",
+        "0.1.7"
+      ],
+      "code": 0,
+      "output": "Install KsaChinese 0.1.7.\r\n",
+      "error": "Downloading KsaChinese 0.1.7\r\nExtracting KsaChinese 0.1.7\r\nFinishing KsaChinese 0.1.7\r\n"
+    },
+    {
+      "command": [
+        "instance",
+        "create",
+        "KsaChinese B",
+        "--json"
+      ],
+      "code": 0,
+      "output": "{\r\n  \u0022id\u0022: \u0022de127ab0-08c3-440d-8aca-c7bcc0916164\u0022,\r\n  \u0022name\u0022: \u0022KsaChinese B\u0022,\r\n  \u0022activated\u0022: false\r\n}\r\n",
+      "error": ""
+    },
+    {
+      "command": [
+        "install",
+        "KsaChinese",
+        "--instance",
+        "KsaChinese B",
+        "--version",
+        "0.1.7"
+      ],
+      "code": 0,
+      "output": "Install KsaChinese 0.1.7.\r\n",
+      "error": "Finishing KsaChinese 0.1.7\r\n"
+    },
+    {
+      "command": [
+        "disable",
+        "KsaChinese",
+        "--instance",
+        "KsaChinese A"
+      ],
+      "code": 0,
+      "output": "Disabled KsaChinese in \u0027KsaChinese A\u0027.\r\n",
+      "error": ""
+    },
+    {
+      "command": [
+        "enable",
+        "KsaChinese",
+        "--instance",
+        "KsaChinese A"
+      ],
+      "code": 0,
+      "output": "Enabled KsaChinese in \u0027KsaChinese A\u0027.\r\n",
+      "error": ""
+    },
+    {
+      "command": [
+        "update",
+        "KsaChinese",
+        "--instance",
+        "KsaChinese A"
+      ],
+      "code": 0,
+      "output": "Nothing to do.\r\n",
+      "error": ""
+    },
+    {
+      "command": [
+        "remove",
+        "KsaChinese",
+        "--instance",
+        "KsaChinese A"
+      ],
+      "code": 0,
+      "output": "Remove KsaChinese 0.1.7 from \u0027KsaChinese A\u0027.\r\n",
+      "error": ""
+    },
+    {
+      "command": [
+        "search",
+        "KsaBabel",
+        "--json"
+      ],
+      "code": 0,
+      "output": "{\r\n  \u0022query\u0022: \u0022KsaBabel\u0022,\r\n  \u0022installedGameVersion\u0022: \u00222026.10.25.5707\u0022,\r\n  \u0022results\u0022: [\r\n    {\r\n      \u0022id\u0022: \u0022KsaBabel\u0022,\r\n      \u0022name\u0022: \u0022KSA Babel / \\u55B5\\u8BED\\u5854\u0022,\r\n      \u0022state\u0022: \u0022known\u0022,\r\n      \u0022type\u0022: \u0022mod\u0022,\r\n      \u0022source\u0022: \u0022index\u0022,\r\n      \u0022latestVersion\u0022: \u00220.2.3\u0022,\r\n      \u0022compatibility\u0022: \u0022compatible\u0022,\r\n      \u0022downloads\u0022: {\r\n        \u0022total\u0022: 18,\r\n        \u0022hosts\u0022: {\r\n          \u0022github\u0022: 18\r\n        }\r\n      }\r\n    }\r\n  ],\r\n  \u0022diagnostics\u0022: []\r\n}\r\n",
+      "error": ""
+    },
+    {
+      "command": [
+        "instance",
+        "create",
+        "KsaBabel A",
+        "--json"
+      ],
+      "code": 0,
+      "output": "{\r\n  \u0022id\u0022: \u0022cf81bcca-dc8d-44a2-822e-2471d5165320\u0022,\r\n  \u0022name\u0022: \u0022KsaBabel A\u0022,\r\n  \u0022activated\u0022: false\r\n}\r\n",
+      "error": ""
+    },
+    {
+      "command": [
+        "install",
+        "KsaBabel",
+        "--instance",
+        "KsaBabel A",
+        "--version",
+        "0.2.3"
+      ],
+      "code": 0,
+      "output": "Install KsaBabel 0.2.3.\r\n",
+      "error": "Downloading KsaBabel 0.2.3\r\nExtracting KsaBabel 0.2.3\r\nFinishing KsaBabel 0.2.3\r\n"
+    },
+    {
+      "command": [
+        "instance",
+        "create",
+        "KsaBabel B",
+        "--json"
+      ],
+      "code": 0,
+      "output": "{\r\n  \u0022id\u0022: \u0022acd8bb36-2d0d-4ec3-8620-fdf084cbdc1a\u0022,\r\n  \u0022name\u0022: \u0022KsaBabel B\u0022,\r\n  \u0022activated\u0022: false\r\n}\r\n",
+      "error": ""
+    },
+    {
+      "command": [
+        "install",
+        "KsaBabel",
+        "--instance",
+        "KsaBabel B",
+        "--version",
+        "0.2.3"
+      ],
+      "code": 0,
+      "output": "Install KsaBabel 0.2.3.\r\n",
+      "error": "Finishing KsaBabel 0.2.3\r\n"
+    },
+    {
+      "command": [
+        "disable",
+        "KsaBabel",
+        "--instance",
+        "KsaBabel A"
+      ],
+      "code": 0,
+      "output": "Disabled KsaBabel in \u0027KsaBabel A\u0027.\r\n",
+      "error": ""
+    },
+    {
+      "command": [
+        "enable",
+        "KsaBabel",
+        "--instance",
+        "KsaBabel A"
+      ],
+      "code": 0,
+      "output": "Enabled KsaBabel in \u0027KsaBabel A\u0027.\r\n",
+      "error": ""
+    },
+    {
+      "command": [
+        "update",
+        "KsaBabel",
+        "--instance",
+        "KsaBabel A"
+      ],
+      "code": 0,
+      "output": "Nothing to do.\r\n",
+      "error": ""
+    },
+    {
+      "command": [
+        "remove",
+        "KsaBabel",
+        "--instance",
+        "KsaBabel A"
+      ],
+      "code": 0,
+      "output": "Remove KsaBabel 0.2.3 from \u0027KsaBabel A\u0027.\r\n",
+      "error": ""
+    }
+  ]
+}

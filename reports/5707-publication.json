@@ -1,0 +1,61 @@
+{
+  "verified_at_utc": "2026-10-30T10:19:08.904928+00:00",
+  "public_index": "https://ksamodding.github.io/content-index-releases/v1/index.json",
+  "snapshot_sha256": "8b879c305e667f32d4f2ffc43107c4f37dfbe034bf3fcdb0178b5627f2a9027a",
+  "snapshot_sources": {
+    "authored": {
+      "repository": "KSAModding/content-index",
+      "commit": "9277d5357c988abce381ae940fd7e5c583dfa1b4"
+    },
+    "generated": {
+      "repository": "KSAModding/content-index-releases",
+      "commit": "449cd6e4a4c57771a769c4410b47ad7138e08079"
+    }
+  },
+  "index_pr": "https://github.com/KSAModding/content-index/pull/252",
+  "index_merge_commit": "9277d5357c988abce381ae940fd7e5c583dfa1b4",
+  "snapshot_deployment": "https://github.com/KSAModding/content-index-releases/actions/runs/41039574498",
+  "source_prs": [
+    "https://github.com/kuxiaowo/KSA-CHINESE/pull/13",
+    "https://github.com/kuxiaowo/KSA-Babel/pull/9"
+  ],
+  "releases": [
+    {
+      "id": "KsaChinese",
+      "version": "0.1.7",
+      "release_url": "https://github.com/kuxiaowo/KSA-CHINESE/releases/tag/v0.1.7",
+      "game_min": "2026.10.25.5707",
+      "game_max": "2026.10.25.5707",
+      "release_status": "stable",
+      "download": {
+        "url": "https://github.com/kuxiaowo/KSA-CHINESE/releases/download/v0.1.7/KsaChinese-0.1.7.zip",
+        "sha256": "D3C97B78320592B6B5B8334608BCE588D454FE48291FE80F3FC7304675ED3AB9",
+        "size": 616421,
+        "content_type": "application/zip"
+      },
+      "previous_version": "0.1.6",
+      "previous_game_min": "2026.10.19.5638",
+      "previous_game_max": "2026.10.19.5638"
+    },
+    {
+      "id": "KsaBabel",
+      "version": "0.2.3",
+      "release_url": "https://github.com/kuxiaowo/KSA-Babel/releases/tag/v0.2.3",
+      "game_min": "2026.10.25.5707",
+      "game_max": "2026.10.25.5707",
+      "release_status": "stable",
+      "download": {
+        "url": "https://github.com/kuxiaowo/KSA-Babel/releases/download/v0.2.3/KsaBabel-0.2.3.zip",
+        "sha256": "E6BF3B40422E52DE7A704261D05BD9EAA1DE33F34CD6107113055724A1FC011B",
+        "size": 1760736,
+        "content_type": "application/zip"
+      },
+      "previous_version": "0.2.2",
+      "previous_game_min": "2026.10.19.5638",
+      "previous_game_max": "2026.10.19.5638"
+    }
+  ],
+  "borea_public_catalog_checks": 62,
+  "borea_version": "0.5.2",
+  "limits": "Public catalogue/component installation acceptance, not Borea desktop UI or exhaustive game/language-quality acceptance."
+}

@@ -42,3 +42,5 @@ python scripts/prepare_listing.py --forums-url 'https://forums.ahwoo.com/forums/
 收录后的公共目录验证使用同一命令并加入 `--public-catalog`。该模式使用默认 HTTP 处理器直连真实公共索引和发行附件，不注入候选索引或本机 ZIP；只检查搜索、两个独立实例的安装、文件一致性和兼容界限，写入 `reports/ecosystem-public-catalog-validation.json` 后退出，不启动游戏或修改原有运行验证报告。
 
 包同时保留便携版时，标准包严格命名为 `KsaChinese-<版本>.zip`，符合上游多附件选择规则，避免 watcher 误选便携包。
+
+本轮 5707 更新已完成：[content-index #252](https://github.com/KSAModding/content-index/pull/252) 已合并，公共目录和 Borea 0.5.2 隔离安装验证通过。详见 `../reports/5707-publication.json` 与 `../reports/5707-public-catalog-validation.json`；上方旧记录保留为历史证据。
