@@ -118,6 +118,8 @@ public static class ExpandedUi
     }
     public static string Tooltip(string original)
     {
+        string updated = Update5707Text.Tooltip(original);
+        if (updated != original) return updated;
         const string ratio="The oxidizer-to-fuel mass ratio fed to the combustion chamber.\nTypical value for this mixture: ";
         if(Runtime.SelectedLocale=="zh-CN"&&original.StartsWith(ratio,StringComparison.Ordinal))
             return "送入燃烧室的氧化剂与燃料质量比。\n此组合的典型值："+original[ratio.Length..];

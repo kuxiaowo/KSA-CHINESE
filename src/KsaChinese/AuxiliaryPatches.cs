@@ -17,12 +17,12 @@ public static class RosterCaptionPatch
     };
 
     private static readonly HashSet<string> PlainCaptions = new(StringComparer.Ordinal) { "Unassigned" };
-    private static readonly HashSet<string> FooterFragments = new(StringComparer.Ordinal) { " LOST", " KITTEN", " KITTENS" };
+    private static readonly HashSet<string> FooterFragments = new(StringComparer.Ordinal) { " LOST", " KITTEN", " KITTENS", " RETIRED" };
 
     public static IEnumerable<MethodBase> TargetMethods()
     {
         var window = typeof(KittenRosterWindow).GetNestedType("Window", BindingFlags.NonPublic)!;
-        foreach (string name in new[] { "DrawRoster", "DrawMemorial", "Draw", "DrawConsoleFooter" })
+        foreach (string name in new[] { "DrawRoster", "DrawPastCrew", "Draw", "DrawConsoleFooter" })
             yield return AccessTools.Method(window, name);
     }
 

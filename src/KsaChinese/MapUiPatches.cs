@@ -13,7 +13,8 @@ public static class MapUiPatch
     public static readonly HashSet<string> FixedLabels = new(StringComparer.Ordinal)
     {
         "Vehicle", "Map", "None", "VEHICLE CONTROL", "MAP CONTROL",
-        "BODY GRID PLANES", "ALIGN PLANES", "MAGNETOSPHERES",
+        "BODY GRID PLANES", "ALIGN PLANES", "MAGNETOSPHERES", "SPACE WEATHER",
+        "Draw each star's active regions, the magnetic field line from the star to what you are viewing, and CMEs in flight. A CME's front is drawn where its forecast puts it, between its earliest and latest arrival.",
         "Draw the equatorial plane of the followed body and its target alongside the ecliptic.",
         "Hold every plane parallel to the ecliptic instead of orienting it by its body's axial tilt.",
         "Draw each magnetised body's radiation belts, field lines, magnetopause and bow shock.",

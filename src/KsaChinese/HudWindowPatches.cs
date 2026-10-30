@@ -13,6 +13,7 @@ public static class HudWindowTitlePatch
     public static bool IsKnownWindow(ImGuiWindow window)
         => window.GetType().DeclaringType == typeof(GaugeContextAssignmentWindow)
             || window.GetType().DeclaringType == typeof(LayoutSaves)
+            || window.GetType().DeclaringType == typeof(SpaceWeatherWindow)
             || window.GetType().DeclaringType == typeof(KittenRosterWindow)
             || window.GetType().DeclaringType == typeof(GameSaves)
             || window.GetType().DeclaringType == typeof(VehicleSaves)
@@ -81,7 +82,7 @@ public static class HudConsoleTitlePatch
         else if(signature.SequenceEqual("KSA-SAV") || signature.SequenceEqual("KSA-VEH")
             || signature.SequenceEqual("KSA-MAN") || signature.SequenceEqual("KSA-RES"))
             title=Runtime.UtilityText(title.ToString()).AsSpan();
-        else if(signature.SequenceEqual("KSA-VER") || signature.SequenceEqual("KSA-MAP"))
+        else if(signature.SequenceEqual("KSA-SWX") || signature.SequenceEqual("KSA-VER") || signature.SequenceEqual("KSA-MAP"))
             title=ExpandedUi.Text(title.ToString()).AsSpan();
     }
 }

@@ -1,0 +1,24 @@
+{
+  "game_version": "2026.10.25.5707",
+  "profile": "work/test-profile-5707-release",
+  "exit_code": 0,
+  "stderr_empty": true,
+  "save_reload": true,
+  "loaded_parts": 650,
+  "translated_parts": 649,
+  "substances": 84,
+  "phases": 121,
+  "reactions": 17,
+  "input_actions": 103,
+  "original_content_fields_unchanged": true,
+  "screenshots": [
+    "reports/screenshots/017-weather-zh.png",
+    "reports/screenshots/017-weather-en.png",
+    "reports/screenshots/017-roster-zh.png",
+    "reports/screenshots/017-display-zh.png",
+    "reports/screenshots/017-history-zh.png",
+    "reports/screenshots/017-map-zh.png"
+  ],
+  "limits": "One isolated 1920x1080 scene and save/reload. No exhaustive gameplay, all-resolution, physical HDR-output or long-run acceptance.",
+  "plugin_sha256": "3d01b7d86ccbd62781c5b82db40fe481fd706e263f0f6f75d3aa3e456df0ed51"
+}

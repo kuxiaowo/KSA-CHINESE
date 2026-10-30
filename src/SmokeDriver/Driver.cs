@@ -145,6 +145,11 @@ public sealed partial class Driver
         double t=Timer.Elapsed.TotalSeconds;
         try
         {
+            if(Environment.GetEnvironmentVariable("KSA_SMOKE_5707_REVIEW")=="1")
+            {
+                Update5707Frame(t);
+                return;
+            }
             var ecosystem = Environment.GetEnvironmentVariable("KSA_SMOKE_ECOSYSTEM");
             if (!string.IsNullOrEmpty(ecosystem))
             {

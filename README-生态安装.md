@@ -1,6 +1,6 @@
 # StarMap / Borea 安装与迁移
 
-标准模组包为 **KsaChinese-0.1.6.zip**，只适配 Windows x64 的 KSA **2026.10.19.5638**，需要 .NET 10 x64 Runtime 和 **StarMap 0.4.8**。包不附带加载器、启动器或游戏文件。代码和译文为 MIT；Noto Sans SC 字体子集为 OFL-1.1，来源见包内 THIRD_PARTY.md 和许可文件。
+标准模组包为 **KsaChinese-0.1.7.zip**，只适配 Windows x64 的 KSA **2026.10.25.5707**，需要 .NET 10 x64 Runtime 和 **StarMap 0.4.8**。包不附带加载器、启动器或游戏文件。代码和译文为 MIT；Noto Sans SC 字体子集为 OFL-1.1，来源见包内 THIRD_PARTY.md 和许可文件。
 
 ## Borea
 

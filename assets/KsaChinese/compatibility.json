@@ -1,17 +1,17 @@
 {
   "schema": 1,
-  "version": "2026.10.19.5638",
+  "version": "2026.10.25.5707",
   "files": {
-    "KSA.dll": "98ecbe7d74b0243eede28077ad5e26c135723d854269ad89a3725c488c18c7cb",
-    "Brutal.ImGui.dll": "c3758dc12c2ac5fe76767814ed7ccd845de2f36bd69647ac921c661e4514101b",
-    "Brutal.Localization.dll": "8cd588c0dcb62c223b7f6edbd8d6ee951c914b8980afb9374be8878c06caa28d",
-    "Content/Core/Gauges.xml": "83dd3dd2f82af14bb6e03c2554bb1c69a5a202e36581a4ceca7fb73805a1f130",
-    "Brutal.Core.dll": "a878f4743df20d598d4727e93d6699e8ab6a6274b45617aea0066b9d906cba56",
-    "Brutal.Numerics.dll": "8ef62a7b0b85025ace835c0fcdc73a5f15d856bb2833e4f2498129be3f08ee9b",
-    "Brutal.ImGui.Abstractions.dll": "3d55d93916569a8f88927078d089ab2a15f94c00d09c7ee59b00914f87127d9c",
-    "Brutal.ImGui.Extensions.dll": "1efe88a03db3cb3088d7b2a7c32f15dc9b5b37d9f783d628d76f8878672cd049",
-    "Brutal.Strings.dll": "f32d94b7898871ac4777b4e153ad0a9a22922d91bf898594bf7ed307cf3e05dc",
-    "imgui.dll": "fd239f291ca8567df772a4d12244e8f5bbb0b9bcb291975e8217043403eefff4"
+    "KSA.dll": "a7acc114a016f0fb8c35a132be4ffdef61dcd69c8d0f7e132dd468b7532e006c",
+    "Brutal.ImGui.dll": "9fec93ddeda6b2127cd2bf1db115dbdef1e326b74c775e74917069c007b926f7",
+    "Brutal.Localization.dll": "2453ea06943926bb887628bfe061c2ddaa2b1360664281153121987b287a298b",
+    "Content/Core/Gauges.xml": "7a3b8a8ebc024eafc9d2744d5dfa00b93332cc9904057a17e6596f1f1b77bbc6",
+    "Brutal.Core.dll": "4344eb688bf6fdc2af04a8febae95b1ab43b68337d03e5db3f1264aefbfb66ba",
+    "Brutal.Numerics.dll": "36cc27c34d65b7b14fc8d0acab0c955c24f952b0f57b09673f11dbd9ecdd6c87",
+    "Brutal.ImGui.Abstractions.dll": "c0a06e0367938efb27e2b1e616b6488bd6acfa8053235d125d1ea365fe7c5bff",
+    "Brutal.ImGui.Extensions.dll": "30ea0fa51f2afeaf32cbfe26b17a422e085eb258cf3178d8547520b29a104e0a",
+    "Brutal.Strings.dll": "34464265bca57573d5a7d61586d4fd37583bb3ee0d35534563e02a29aacf68f0",
+    "imgui.dll": "f9ba4a3be42035dda61f0f3df3b97632fd69627bef5d267641cd7a4d189bc331"
   },
   "loader": "StarMap 0.4.8",
   "interpretation": "Exact inspected file identities. Target resolution, transformation matches, headless and GUI results are documented separately; hashes are not visual coverage."

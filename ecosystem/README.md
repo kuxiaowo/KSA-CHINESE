@@ -1,5 +1,7 @@
 # 社区目录接入
 
+本轮 0.1.7 适配 KSA 2026.10.25.5707，依维护者本次指令更新目录；模板使用精确新版上下界。下文保留 0.1.6 的收录和图文历史，不作为新版安装结论。新版证据见 [5707 报告](../reports/0.1.7-5707适配与补译.md)。
+
 本目录保存社区发布内容和验证复现说明。2026-10-23，维护者分别批准发帖和索引 PR：[Ahwoo 帖子](https://forums.ahwoo.com/forums/kitten-space-agency/mod-releases/ksa-chinese-0-1-6-simplified-chinese-ui-for-ksa-5638.1440/) 已发布，[content-index #223](https://github.com/KSAModding/content-index/pull/223) 已通过检查、归属验证并自动合并。其他项目外发布仍需先核实。
 
 - `forum-post.en.md`：已在 Ahwoo Mod Releases 发布的帖子正文，User Interface 分类。

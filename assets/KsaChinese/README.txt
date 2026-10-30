@@ -1,6 +1,6 @@
-KSA Chinese 0.1.6 — 5638 简体中文
+KSA Chinese 0.1.7 — 5707 简体中文
 
-仅适配 compatibility.json 中检查过的 KSA 2026.10.19.5638 文件。
+仅适配 compatibility.json 中检查过的 KSA 2026.10.25.5707 文件。
 通过 StarMap 0.4.8 加载，需要 .NET 10 x64 Runtime。
 标准包供 StarMap/Borea 安装，见 README-生态安装.md；加载器需单独安装。
 便携包的启动和卸载说明位于游戏目录下 KsaChinese/README-便携Mod.md；
@@ -21,3 +21,5 @@ resx 不单独激活显示，主要界面也需要代码补丁。
 部分代码及初始译文来自 KsaUiLanguages（MIT），经本项目重新适配与复核；
 字体使用 Noto Sans SC 子集（OFL）。所有原始署名和许可证均保留。
 本包不含游戏DLL、原Core资源、反编译源码、KSP字典或个人存档。
+
+0.1.7 新增 HDR、空间天气、CME 警报、乘员辐射与退役、储罐压力、高密度聚乙烯和 5707 的 156 条更新正文。
