@@ -24,11 +24,179 @@
   <data name="SettingsDisplayHdrFormat" xml:space="preserve">
     <value>HDR 格式</value>
   </data>
-  <data name="SettingsDisplayHdrPaperWhite" xml:space="preserve">
-    <value>HDR 基准白亮度</value>
-  </data>
   <data name="SettingsDisplayHdrPeakBrightness" xml:space="preserve">
     <value>HDR 峰值亮度</value>
+  </data>
+  <data name="AlertLifeSupportLow" xml:space="preserve">
+    <value>生命保障物资不足</value>
+  </data>
+  <data name="EditorUndoAlert" xml:space="preserve">
+    <value>已撤销：{Action}</value>
+  </data>
+  <data name="EditorRedoAlert" xml:space="preserve">
+    <value>已重做：{Action}</value>
+  </data>
+  <data name="EditorHistoryEdit" xml:space="preserve">
+    <value>编辑</value>
+  </data>
+  <data name="EditorHistoryAddPart" xml:space="preserve">
+    <value>添加部件</value>
+  </data>
+  <data name="EditorHistoryPlacePart" xml:space="preserve">
+    <value>放置部件</value>
+  </data>
+  <data name="EditorHistoryTransformPart" xml:space="preserve">
+    <value>移动或旋转部件</value>
+  </data>
+  <data name="EditorHistoryResetRotation" xml:space="preserve">
+    <value>重置旋转</value>
+  </data>
+  <data name="EditorHistoryDeletePart" xml:space="preserve">
+    <value>删除部件</value>
+  </data>
+  <data name="EditorHistoryReroot" xml:space="preserve">
+    <value>更换根部件</value>
+  </data>
+  <data name="EditorHistoryCopyTree" xml:space="preserve">
+    <value>复制部件树</value>
+  </data>
+  <data name="EditorHistoryFocusTree" xml:space="preserve">
+    <value>切换当前部件树</value>
+  </data>
+  <data name="EditorHistoryLoadVehicle" xml:space="preserve">
+    <value>载入载具</value>
+  </data>
+  <data name="EditorHistoryAddFuelLine" xml:space="preserve">
+    <value>添加燃料管线</value>
+  </data>
+  <data name="EditorHistoryRemoveFuelLine" xml:space="preserve">
+    <value>移除燃料管线</value>
+  </data>
+  <data name="EditorHistoryEditFuelLine" xml:space="preserve">
+    <value>编辑燃料管线</value>
+  </data>
+  <data name="EditorHistoryFlowRule" xml:space="preserve">
+    <value>更改流动规则</value>
+  </data>
+  <data name="EditorHistoryResourceGroup" xml:space="preserve">
+    <value>更改资源组</value>
+  </data>
+  <data name="EditorHistoryStaging" xml:space="preserve">
+    <value>更改分级</value>
+  </data>
+  <data name="EditorHistorySequence" xml:space="preserve">
+    <value>更改序列</value>
+  </data>
+  <data name="EditorHistoryPartSettings" xml:space="preserve">
+    <value>更改部件设置</value>
+  </data>
+  <data name="EditorHistorySwapVariant" xml:space="preserve">
+    <value>切换部件变体</value>
+  </data>
+  <data name="EditorSettingThrustProfile" xml:space="preserve">
+    <value>推力曲线</value>
+  </data>
+  <data name="EditorSettingReaction" xml:space="preserve">
+    <value>反应</value>
+  </data>
+  <data name="EditorSettingAreaRatioMultiplier" xml:space="preserve">
+    <value>面积比倍率</value>
+  </data>
+  <data name="EditorSettingRefill" xml:space="preserve">
+    <value>补满</value>
+  </data>
+  <data name="EditorSettingNozzleAreaRatio" xml:space="preserve">
+    <value>喷管面积比</value>
+  </data>
+  <data name="EditorSettingCanopies" xml:space="preserve">
+    <value>伞衣</value>
+  </data>
+  <data name="EditorSettingCanopyColor" xml:space="preserve">
+    <value>伞衣颜色</value>
+  </data>
+  <data name="EditorSettingDiameter" xml:space="preserve">
+    <value>直径</value>
+  </data>
+  <data name="EditorSettingReefRatio" xml:space="preserve">
+    <value>收口比例</value>
+  </data>
+  <data name="EditorSettingReefDuration" xml:space="preserve">
+    <value>收口持续时间</value>
+  </data>
+  <data name="EditorSettingRiserLength" xml:space="preserve">
+    <value>吊带长度</value>
+  </data>
+  <data name="EditorSettingDeployAltitude" xml:space="preserve">
+    <value>开伞高度</value>
+  </data>
+  <data name="EditorSettingGLimit" xml:space="preserve">
+    <value>过载上限</value>
+  </data>
+  <data name="EditorSettingCutInSequence" xml:space="preserve">
+    <value>在序列中切离</value>
+  </data>
+  <data name="EditorSettingContents" xml:space="preserve">
+    <value>储存内容</value>
+  </data>
+  <data name="EditorSettingRoleAffinity" xml:space="preserve">
+    <value>用途偏好</value>
+  </data>
+  <data name="EditorSettingPropellantUse" xml:space="preserve">
+    <value>推进剂供应</value>
+  </data>
+  <data name="EditorSettingSupplyUse" xml:space="preserve">
+    <value>生命保障物资供应</value>
+  </data>
+  <data name="EditorSettingVolume" xml:space="preserve">
+    <value>容积</value>
+  </data>
+  <data name="EditorSettingVolumeOf" xml:space="preserve">
+    <value>容积 - {Substance}</value>
+  </data>
+  <data name="EditorSettingAuto" xml:space="preserve">
+    <value>自动</value>
+  </data>
+  <data name="EditorSettingRoleAffinityHeading" xml:space="preserve">
+    <value>用途偏好：</value>
+  </data>
+  <data name="EditorRefillConsumables" xml:space="preserve">
+    <value>补满消耗品</value>
+  </data>
+  <data name="EditorSettingCreateNewVehicle" xml:space="preserve">
+    <value>新建载具</value>
+  </data>
+  <data name="EditorSettingDecouplerEnabled" xml:space="preserve">
+    <value>启用分离器</value>
+  </data>
+  <data name="EditorSettingCharge" xml:space="preserve">
+    <value>电量</value>
+  </data>
+  <data name="EditorSettingMeals" xml:space="preserve">
+    <value>餐食</value>
+  </data>
+  <data name="EditorSettingCanisters" xml:space="preserve">
+    <value>CO₂ 吸收罐</value>
+  </data>
+  <data name="EditorSettingDeploy" xml:space="preserve">
+    <value>展开</value>
+  </data>
+  <data name="EditorSettingRetract" xml:space="preserve">
+    <value>收起</value>
+  </data>
+  <data name="EditorSettingActuate" xml:space="preserve">
+    <value>驱动</value>
+  </data>
+  <data name="EditorSettingLightSwitch" xml:space="preserve">
+    <value>照明开关</value>
+  </data>
+  <data name="SettingsDisplayHdrUiBrightness" xml:space="preserve">
+    <value>HDR 界面亮度</value>
+  </data>
+  <data name="SettingsDisplayHdrScenePaperWhite" xml:space="preserve">
+    <value>HDR 场景基准白亮度</value>
+  </data>
+  <data name="FlightComputerTooltipCrewIncapacitated" xml:space="preserve">
+    <value>机上所有喵航员均已失能，且载具没有探测器核心。</value>
   </data>
   <data name="SettingsWindowTitle" xml:space="preserve">
     <value>设置</value>
@@ -502,10 +670,10 @@
     <value>活动发动机没有推进剂</value>
   </data>
   <data name="AlertFuelTransferNoPower" xml:space="preserve">
-    <value>转移推进剂需要电力</value>
+    <value>储罐转移需要电力</value>
   </data>
   <data name="AlertFuelTransferDonorDisabled" xml:space="preserve">
-    <value>无法转移推进剂：来源储罐禁止使用推进剂</value>
+    <value>储罐转移受阻：来源储罐已禁用物资供应</value>
   </data>
   <data name="AlertThrottleGLoadLimited" xml:space="preserve">
     <value>为避免超过 G 载荷限制，油门已受限</value>

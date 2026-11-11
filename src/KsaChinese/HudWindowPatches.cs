@@ -14,6 +14,8 @@ public static class HudWindowTitlePatch
         => window.GetType().DeclaringType == typeof(GaugeContextAssignmentWindow)
             || window.GetType().DeclaringType == typeof(LayoutSaves)
             || window.GetType().DeclaringType == typeof(SpaceWeatherWindow)
+            || window.GetType().DeclaringType == typeof(HabitatZonesWindow)
+            || window.GetType().DeclaringType == typeof(EvaCarryWindow)
             || window.GetType().DeclaringType == typeof(KittenRosterWindow)
             || window.GetType().DeclaringType == typeof(GameSaves)
             || window.GetType().DeclaringType == typeof(VehicleSaves)

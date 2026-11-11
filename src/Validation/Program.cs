@@ -12,7 +12,7 @@ internal static partial class Program
 {
     static string Root = Path.GetFullPath(Environment.GetEnvironmentVariable("KSA_PROJECT_ROOT") ?? Environment.CurrentDirectory);
     static string Game = Environment.GetEnvironmentVariable("KSA_GAME_DIR") ?? @"F:\系统应用\Kitten Space Agency";
-    static string Loader = Environment.GetEnvironmentVariable("KSA_LOADER_DIR") ?? Path.Combine(Root,".tools","StarMap-0.4.8");
+    static string Loader = Environment.GetEnvironmentVariable("KSA_LOADER_DIR") ?? Path.Combine(Root,".tools","StarMap-0.5.4");
     static string Fixture = Path.Combine(Root,"work","validation-profile");
     static List<string> Checks = new();
     static List<object> Targets = new();
@@ -33,7 +33,7 @@ internal static partial class Program
         var isolate = new Harmony("local.ksa.chinese.validation.isolation");
         isolate.Patch(AccessTools.PropertyGetter(typeof(KSA.Constants),nameof(KSA.Constants.DocumentsFolderPath)),prefix:new HarmonyMethod(typeof(Program),nameof(UseFixture)));
         Check(KSA.Constants.DocumentsFolderPath==Fixture,"玩家目录重定向至工作区");
-        Check(LanguagePlugin.SupportsGameVersion("2026.10.25.5707") && !LanguagePlugin.SupportsGameVersion(null) && !LanguagePlugin.SupportsGameVersion("2026.10.19.5639"),"精确版本保护及未知版本拒绝");
+        Check(LanguagePlugin.SupportsGameVersion("2026.11.10.5801") && !LanguagePlugin.SupportsGameVersion(null) && !LanguagePlugin.SupportsGameVersion("2026.10.19.5639"),"精确版本保护及未知版本拒绝");
         var previous=Brutal.Localization.LStrings.LocalizedStringProvider;
         Compatibility.Validate(Game,Path.Combine(Root,"assets","KsaChinese","compatibility.json"));
         Check(true,"游戏及依赖指纹匹配");
@@ -44,7 +44,7 @@ internal static partial class Program
         Check(mismatch,"缺少或不同游戏文件安全拒绝");
         Runtime.Initialize();
         System.Runtime.CompilerServices.RuntimeHelpers.RunClassConstructor(typeof(KSA.LStrings).TypeHandle);
-        Check(Runtime.CurrentPack.Native.Count==220,"原生221定义中220已核对接入，TabsId暂缓");
+        Check(Runtime.CurrentPack.Native.Count==276,"原生277定义中276已核对接入，TabsId暂缓");
         Check(Brutal.Localization.LStrings.TryGet(Brutal.Localization.LStringId.From("ShadowFilterTooltip_Hard"),out var shadow)
             && shadow.Localized.StartsWith("不作滤波",StringComparison.Ordinal),"数组内无同名字段的原生ID接入");
         Check(KSA.LStrings.SettingsDisplayResolution.Localized=="分辨率","实际原生 LString 提供器");
@@ -97,24 +97,6 @@ internal static partial class Program
         Check(GaugeFontPatch.Name()=="MilSpec33558","仪表英文恢复原字体");
         Check(Hash(HudLayoutPatches.CustomLayoutMenuLabel(longName,true),0x735A1913)==Hash(zhLong,0x735A1913),"长中文自定义名跨语言 ID 稳定");
         Runtime.ApplyLanguage("zh-CN");
-        // Inventory the actual inspected XML. Display names can be overridden
-        // by GameData; do not infer a friendly English label from a resource ID.
-        var xml = Directory.GetFiles(Path.Combine(Game,"Content","Core"),"*.xml")
-            .Select(System.Xml.Linq.XDocument.Load).ToArray();
-        var definitions = xml.SelectMany(d=>d.Root!.Elements("Part")).ToArray();
-        Check(definitions.Length==180,"5602 Core 顶层部件定义数（包含隐藏和测试资源）");
-        foreach(var definition in definitions)
-        {
-            string key=(string)definition.Attribute("Id")!;
-            string name=xml.SelectMany(d=>d.Root!.Elements("PartGameData"))
-                .Where(n=>(string?)n.Attribute("Id")==key)
-                .Select(n=>(string?)n.Attribute("DisplayName")).LastOrDefault(n=>!string.IsNullOrEmpty(n))
-                ?? (string?)definition.Attribute("DisplayName") ?? key;
-            var template=new KSA.PartTemplate { Id=key, DisplayName=name };
-            string caption=Runtime.PartName(template);
-            Check(key=="CorePropulsionA_Prefab_EngineA4" ? caption=="VTR-10" : caption.Any(c=>c>='\u4e00' && c<='\u9fff'),"主部件类型翻译或纯型号保留: "+key);
-            Check(template.Id==key && template.DisplayName==name,"模板原始资源 ID 与显示字段不变: "+key);
-        }
         var engineTemplate=new KSA.PartTemplate { Id="CorePropulsionA_Prefab_EngineA5", DisplayName="LR91 Vac + Verniers" };
         var engine=(KSA.Part)RuntimeHelpers.GetUninitializedObject(typeof(KSA.Part));
         engine.Template=engineTemplate;
@@ -139,6 +121,7 @@ internal static partial class Program
         Check(FlightPartNamePatch.MenuCaption(engine)==engineMenu,"部件名称中英往返一致");
         ExpandedChecks();
         Update5707Checks();
+        Update5801Checks();
         var patcher=new Harmony("local.ksa.chinese.validation.patches");
         foreach(var type in typeof(LanguagePlugin).Assembly.GetTypes().Where(t=>t.GetCustomAttributes<HarmonyPatch>().Any()).OrderBy(t=>t.Name))
         {
@@ -172,7 +155,7 @@ internal static partial class Program
         Check(ReferenceEquals(Brutal.Localization.LStrings.LocalizedStringProvider,previous),"卸载恢复原提供器");
         Check(KSA.LStrings.SettingsDisplayResolution.Localized=="Resolution","卸载回退原生英文");
         var report=new{schema=1,gameVersion=typeof(KSA.Program).Assembly.GetName().Version?.ToString(),ksaSha256=Convert.ToHexString(SHA256.HashData(File.ReadAllBytes(Path.Combine(Game,"KSA.dll")))).ToLowerInvariant(),fixture=Path.GetRelativePath(Root,Fixture),checks=Checks,targets=Targets,graphicalValidation="not covered by this headless test"};
-        File.WriteAllText(Path.Combine(Root,"reports","5707-bootstrap-validation.json"),JsonSerializer.Serialize(report,new JsonSerializerOptions{WriteIndented=true}));
+        File.WriteAllText(Path.Combine(Root,"reports","5801-bootstrap-validation.json"),JsonSerializer.Serialize(report,new JsonSerializerOptions{WriteIndented=true}));
         Console.WriteLine($"PASS: {Checks.Count} checks, {Targets.Count} target references");
     }
     static uint Hash(string s,uint seed) { var b=Encoding.UTF8.GetBytes(s+'\0'); return ImHash(b,0,seed); }

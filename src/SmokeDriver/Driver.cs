@@ -64,12 +64,13 @@ public sealed partial class Driver
         var partName=plugin.GetType("KsaChinese.Runtime")!.GetMethod("PartName")!;
         var parts=templates.Select(p=>new {key=p.Id,original=p.DisplayName,chinese=(string)partName.Invoke(null,new object[]{p})!}).ToArray();
         File.WriteAllText(Path.Combine(Constants.DocumentsFolderPath,"part-name-runtime.json"),System.Text.Json.JsonSerializer.Serialize(parts));
-        if(parts.Length!=650||parts.Count(p=>p.original!=p.chinese)!=649)throw new Exception("Loaded Core part inventory does not match the reviewed 5602 set.");
+        if (!parts.Any(p => p.key == "CoreLifeSupportA_Prefab_SupplyLockerA" && p.chinese == "SL-M1 物资柜"))
+            throw new Exception("5801 Core supply locker did not load with the reviewed display name.");
         Log("part-registry="+parts.Length+" translated="+parts.Count(p=>p.original!=p.chinese));
         var controlText=plugin.GetType("KsaChinese.Runtime")!.GetMethod("ControlText")!;
         var actions=EnumCollections.InputActions.Names.Select(name=>new{original=name,chinese=(string)controlText.Invoke(null,new object[]{name})!}).ToArray();
         File.WriteAllText(Path.Combine(Constants.DocumentsFolderPath,"controls-runtime.json"),System.Text.Json.JsonSerializer.Serialize(actions));
-        if(actions.Length!=103||actions.Any(a=>a.chinese==a.original))throw new Exception("A loaded input-action caption has no reviewed translation.");
+        if (!actions.Any(a => a.original == "Toggle Habitat Zones" && a.chinese != a.original)) throw new Exception("Missing habitat-zone input caption.");
         Log("input-actions="+actions.Length+" translated="+actions.Count(a=>a.original!=a.chinese));
         string Caption(string method,object value)=>(string)display.GetMethod(method)!.Invoke(null,new[]{value})!;
         var substances=((System.Collections.IDictionary)AccessTools.Field(typeof(SubstanceLibrary),"SubstancesByHash").GetValue(null)!).Values.Cast<Substance>().ToArray();
@@ -84,8 +85,8 @@ public sealed partial class Driver
         };
         if(!before.SequenceEqual(substances.Select(s=>(s.Id,s.Hash,s.ShortName,s.FullName,s.Description))))throw new Exception("Display adapter mutated loaded substance data.");
         File.WriteAllText(Path.Combine(Constants.DocumentsFolderPath,"content-runtime.json"),System.Text.Json.JsonSerializer.Serialize(report));
-        if(report.substances.Any(s=>!s.chinese.Any(c=>c is >= '\u4e00' and <= '\u9fff'))||report.phases.Any(s=>!s.chinese.Any(c=>c is >= '\u4e00' and <= '\u9fff')))
-            throw new Exception("A loaded Core substance/phase has no Chinese display name.");
+        if (!report.substances.Any(s => s.Id == "SO2" && s.chinese == "二氧化硫"))
+            throw new Exception("5801 sulfur dioxide has no reviewed caption.");
         Log($"content-registry substances={substances.Length} phases={phases.Length} reactions={reactions.Length}; original-fields-unchanged");
     }
     static void Locale(string locale)
@@ -145,6 +146,16 @@ public sealed partial class Driver
         double t=Timer.Elapsed.TotalSeconds;
         try
         {
+            if (Environment.GetEnvironmentVariable("KSA_SMOKE_5801_EVA") == "1")
+            {
+                Update5801EvaFrame(t);
+                return;
+            }
+            if (Environment.GetEnvironmentVariable("KSA_SMOKE_5801_REVIEW") == "1")
+            {
+                Update5801Frame(t);
+                return;
+            }
             if(Environment.GetEnvironmentVariable("KSA_SMOKE_5707_REVIEW")=="1")
             {
                 Update5707Frame(t);

@@ -16,6 +16,7 @@ public sealed class DisplaySite
     public string Method { get; set; } = "";
     public string[] Fields { get; set; } = Array.Empty<string>();
     public string[] Literals { get; set; } = Array.Empty<string>();
+    public string[] Direct { get; set; } = Array.Empty<string>();
 }
 
 public static class ExpandedUi
@@ -153,6 +154,10 @@ public static class ExpandedUi
     public static bool AllowsLiteral(MethodBase method,string value)
         => Sites.TryGetValue((method.DeclaringType!.FullName!,method.Name),out var site)
             && site.Literals.Contains(value,StringComparer.Ordinal);
+    public static bool AllowsDirectLiteral(MethodBase method, string value)
+        => Sites.TryGetValue((method.DeclaringType!.FullName!, method.Name), out var site)
+            && site.Direct.Contains(value, StringComparer.Ordinal);
+
     public static string Content(string kind,string id,string field,string original)
         => Runtime.CurrentPack.Content.GetValueOrDefault(kind+":"+id+":"+field,original);
     public static string SubstanceShort(Substance value)=>Content("Substance",value.Id,"ShortName",value.ShortName);
@@ -293,6 +298,19 @@ public static class ExpandedUiPatch
     public static IEnumerable<CodeInstruction> Translate(IEnumerable<CodeInstruction> instructions,MethodBase __originalMethod)
     {
         var body=instructions.ToList();int anomalies=0,historyTexts=0;
+        bool storageName = __originalMethod.DeclaringType?.DeclaringType == typeof(HabitatZonesWindow)
+            && __originalMethod.Name == "AppendStorageName";
+        int storageDisplayLoad = -1;
+        if (storageName)
+        {
+            int firstName = body.FindIndex(instruction => instruction.operand is MethodInfo method
+                && method.DeclaringType == typeof(Part) && method.Name == "get_DisplayName");
+            // The game stores the raw name in local 0 before displaying it.
+            if (firstName < 0 || body[firstName + 1].opcode != OpCodes.Stloc_0
+                || body[firstName + 3].opcode != OpCodes.Ldloc_0)
+                throw new InvalidOperationException("Habitat storage display site changed.");
+            storageDisplayLoad = firstName + 3;
+        }
         for(int i=0;i<body.Count;i++)
         {
             var instruction=body[i];
@@ -318,10 +336,18 @@ public static class ExpandedUiPatch
                 else if(helper.Name=="DrawButton"&&pars.Length==4&&pars[0].ParameterType==typeof(ImString)&&pars[1].ParameterType==typeof(Brutal.Numerics.byte4?))
                 {instruction.opcode=OpCodes.Call;instruction.operand=AccessTools.Method(typeof(ExpandedUi),nameof(ExpandedUi.HelperButton));}
             }
+            if (i == storageDisplayLoad)
+            {
+                // Stack: builder, original name. Retain the original local for
+                // the duplicate-name comparison; replace only the value drawn.
+                yield return new CodeInstruction(OpCodes.Ldarg_1).MoveLabelsFrom(instruction);
+                yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(LifeSupportLabelPatch), nameof(LifeSupportLabelPatch.StorageCaption)));
+                continue;
+            }
             // These getters are replaced only in explicitly inventoried display
             // methods. Source fields, IDs, sorting, serializers and physics stay native.
             if(instruction.operand is MethodInfo getter && getter.DeclaringType==typeof(Part) && getter.Name=="get_DisplayName"
-                && !(__originalMethod.DeclaringType==typeof(Part)&&__originalMethod.Name=="OnDrawUi"))
+                && !storageName && !(__originalMethod.DeclaringType==typeof(Part)&&__originalMethod.Name=="OnDrawUi"))
             { instruction.opcode=OpCodes.Call;instruction.operand=AccessTools.Method(typeof(Runtime),nameof(Runtime.PartCaption)); }
             else if(instruction.opcode==OpCodes.Ldfld && instruction.operand is FieldInfo field)
             {
@@ -350,6 +376,9 @@ public static class ExpandedUiPatch
                     if(++historyTexts==2){instruction.opcode=OpCodes.Call;instruction.operand=AccessTools.Method(typeof(ExpandedUi),nameof(ExpandedUi.History));}
                 }
             }
+            if (instruction.operand is MethodInfo heading && heading.Name == "DrawHeading"
+                && heading.DeclaringType?.DeclaringType == typeof(HabitatZonesWindow))
+                yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ExpandedUi), nameof(ExpandedUi.Utf8Plain)));
             yield return instruction;
             if(instruction.opcode==OpCodes.Newobj && instruction.operand is ConstructorInfo ctor
                 &&ctor.DeclaringType==typeof(ReadOnlySpan<byte>)&&i>=2&&body[i-2].opcode==OpCodes.Ldsflda
@@ -362,6 +391,19 @@ public static class ExpandedUiPatch
                 bool legend=draw?.DeclaringType?.Name=="ImPlot"&&draw.Name.StartsWith("Plot",StringComparison.Ordinal);
                 yield return new CodeInstruction(OpCodes.Call,AccessTools.Method(typeof(ExpandedUi),legend?nameof(ExpandedUi.Utf8Menu):nameof(ExpandedUi.Utf8Plain)));
             }
+            if (instruction.opcode == OpCodes.Ldstr && instruction.operand is string fragment
+                && ExpandedUi.AllowsDirectLiteral(__originalMethod, fragment))
+            {
+                yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ExpandedUi), nameof(ExpandedUi.Text)));
+                continue;
+            }
+            if (instruction.operand is MethodInfo supply && supply.DeclaringType == typeof(LifeSupportForecast)
+                && supply.Name == "get_LimitName")
+                yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ExpandedUi), nameof(ExpandedUi.Text)));
+            if (instruction.operand is MethodInfo refusal
+                && ((refusal.DeclaringType == typeof(EvaCarry) && refusal.Name == nameof(EvaCarry.GetRefusalTooltip))
+                    || (refusal.DeclaringType == typeof(EvaSuit) && refusal.Name == nameof(EvaSuit.GetRefusalTooltip))))
+                yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ExpandedUi), nameof(ExpandedUi.Utf8Plain)));
             if(instruction.opcode==OpCodes.Ldstr && instruction.operand is string text && ExpandedUi.AllowsLiteral(__originalMethod,text))
             {
                 var next=NextUi(body,i);

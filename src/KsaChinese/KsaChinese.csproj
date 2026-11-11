@@ -5,12 +5,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <AssemblyName>KsaChinese</AssemblyName>
-    <Version>0.1.7</Version>
+    <Version>0.1.8</Version>
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
     <KsaDir Condition="'$(KsaDir)' == ''">F:\系统应用\Kitten Space Agency</KsaDir>
-    <LoaderDir Condition="'$(LoaderDir)' == ''">$(MSBuildThisFileDirectory)..\..\.tools\StarMap-0.4.8</LoaderDir>
+    <LoaderDir Condition="'$(LoaderDir)' == ''">$(MSBuildThisFileDirectory)..\..\.tools\StarMap-0.5.4</LoaderDir>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="*.cs" />

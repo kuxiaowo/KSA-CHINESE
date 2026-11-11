@@ -1,0 +1,73 @@
+{
+  "game_version": "2026.11.10.5801",
+  "resolution": "1920x1080",
+  "starmap_version": "0.5.4",
+  "flight_run": {
+    "profile": "work/test-profile-5801-acceptance",
+    "exit_code": 0,
+    "stderr_empty": true,
+    "plugin_sha256": "7a22c09a8510c7e4d11cd2ee968c9f9d74cd2a9100eac3ce81c83aac4dbefcf1",
+    "version_check_http_502": true,
+    "screenshots": [
+      {
+        "label": "5801-habitat-zh",
+        "path": "work/test-profile-5801-acceptance/exports/screenshots/ksa_20261112_001539_1920x1080.png",
+        "sha256": "17bdc5294fbb0934bb34eb2c9af4c2a0b18ccfcb6f6a1aa2346ce8f65007e502"
+      },
+      {
+        "label": "5801-habitat-en",
+        "path": "work/test-profile-5801-acceptance/exports/screenshots/ksa_20261112_001545_1920x1080.png",
+        "sha256": "f41b445a773f9bab4c172c6edbbc1054ca3f5ec217e1d3ac0030c5d8049e6720"
+      },
+      {
+        "label": "5801-roster-zh",
+        "path": "work/test-profile-5801-acceptance/exports/screenshots/ksa_20261112_001552_1920x1080.png",
+        "sha256": "1ed5ef1f695f7090a2ed17416c5819094a9e632098af0eac4019a54a515250f4"
+      },
+      {
+        "label": "5801-display-zh",
+        "path": "work/test-profile-5801-acceptance/exports/screenshots/ksa_20261112_001559_1920x1080.png",
+        "sha256": "967e80ff25d1bc2e904109dbc2d27545d714a511afe894cf0b3feaecfa1c6293"
+      },
+      {
+        "label": "5801-history-zh",
+        "path": "work/test-profile-5801-acceptance/exports/screenshots/ksa_20261112_001606_1920x1080.png",
+        "sha256": "9dde792eaae7a71b92b7f7939be30362b1f2d260e54a138d7293a664a0b6f164"
+      }
+    ]
+  },
+  "eva_run": {
+    "profile": "work/test-profile-5801-eva-acceptance",
+    "exit_code": 0,
+    "stderr_empty": true,
+    "plugin_sha256": "7a22c09a8510c7e4d11cd2ee968c9f9d74cd2a9100eac3ce81c83aac4dbefcf1",
+    "version_check_http_502": true,
+    "screenshots": [
+      {
+        "label": "5801-eva-supplies-empty",
+        "path": "work/test-profile-5801-eva-acceptance/exports/screenshots/ksa_20261112_002308_1920x1080.png",
+        "sha256": "b4c7363e8c853c8ed0acfb33e33f8e893252cb2f063de189acb07f751f303325"
+      },
+      {
+        "label": "5801-eva-supplies-carried",
+        "path": "work/test-profile-5801-eva-acceptance/exports/screenshots/ksa_20261112_002311_1920x1080.png",
+        "sha256": "a3e64f05e7713342d880f6373c1d35970c31ffa1b50d08ccc3bac8392308f956"
+      }
+    ]
+  },
+  "save_reload_rules_disabled": true,
+  "variant_request": "CoreFuelTankA_Prefab_LF3W3HA",
+  "editor_undo": true,
+  "editor_redo": true,
+  "eva_reachable_storage": 1,
+  "eva_meals_taken": 1,
+  "eva_meals_stowed": 1,
+  "loaded_parts": 833,
+  "translated_parts": 832,
+  "input_actions": 109,
+  "substances": 87,
+  "phases": 126,
+  "reactions": 16,
+  "original_content_fields_unchanged": true,
+  "limits": "Isolated profiles, no editor screenshot produced by KSA; selected flight panels only. No exhaustive UI, all resolutions, long-run or HDR output validation."
+}

@@ -32,7 +32,7 @@ public static class StartupUiPatch
         => Regions.Contains(label.ToString()) ? Runtime.ImText(Runtime.StartupMenuText(label.ToString())) : label;
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    public static bool SystemCombo(ImString variable, ref SystemInfo value, List<SystemInfo> options, bool isChanged)
+    public static bool SystemCombo(ImString variable, ref SystemTemplate value, List<SystemTemplate> options, bool isChanged)
     {
         if (Runtime.StartupUiDepth <= 0 || isChanged) return ImGuiHelper.DrawCombo(variable, ref value, options, isChanged);
         // Reference-type generic bodies are shared by the runtime. Draw this one
@@ -67,7 +67,7 @@ public static class StartupUiPatch
         foreach (var instruction in instructions)
         {
             if (instruction.operand is MethodInfo combo && combo.DeclaringType == typeof(ImGuiHelper)
-                && combo.Name == "DrawCombo" && combo.IsGenericMethod && combo.GetGenericArguments()[0] == typeof(SystemInfo))
+                && combo.Name == "DrawCombo" && combo.IsGenericMethod && combo.GetGenericArguments()[0] == typeof(SystemTemplate))
             {
                 instruction.opcode = OpCodes.Call;
                 instruction.operand = AccessTools.Method(typeof(StartupUiPatch), nameof(SystemCombo));

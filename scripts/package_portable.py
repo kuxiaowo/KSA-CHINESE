@@ -18,8 +18,8 @@ for p in (root/'assets/KsaChinese').iterdir():
     copy(p,Path('Content/KsaChinese')/p.name)
 for name in ('KsaChineseLauncher.exe','KsaChineseLauncher.dll','KsaChineseLauncher.deps.json','KsaChineseLauncher.runtimeconfig.json'):
     copy(root/'work/build/Launcher'/name, Path('KsaChinese')/name)
-loader_names=('0Harmony.dll','StarMap.API.dll','StarMap.Core.dll','StarMap.deps.json','StarMap.dll','StarMap.exe','StarMap.runtimeconfig.json','StarMap.Types.dll')
-for name in loader_names: copy(root/'.tools/StarMap-0.4.8'/name,Path('KsaChinese/Loader')/name)
+loader_names=('0Harmony.dll','StarMap.API.dll','StarMap.Core.dll','StarMap.deps.json','StarMap.dll','StarMap.exe','StarMap.runtimeconfig.json','Microsoft.Extensions.DependencyInjection.dll','Microsoft.Extensions.DependencyInjection.Abstractions.dll')
+for name in loader_names: copy(root/'.tools/StarMap-0.5.4'/name,Path('KsaChinese/Loader')/name)
 copy(root/'LICENSES',Path('KsaChinese/LICENSES'))
 for name in ('README-便携Mod.md','README-生态安装.md','THIRD_PARTY.md','LICENSE'):
     copy(root/name,Path('KsaChinese')/name)

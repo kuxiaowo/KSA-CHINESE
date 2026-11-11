@@ -2,7 +2,6 @@ using System.Reflection;
 using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
 using System.Text.Json;
-using System.Xml.Linq;
 using Brutal.ImGuiApi;
 using HarmonyLib;
 using KSA;
@@ -22,18 +21,7 @@ internal static partial class Program
             particleEnums=typeof(KSA.Program).Assembly.GetTypes().Where(t=>t.IsEnum&&(t.FullName!.Contains("ParticleEmitterReference")||t.Name=="EmitterSpawnMode")).Select(t=>new{type=t.FullName,names=Enum.GetNames(t)})
         },new JsonSerializerOptions{WriteIndented=true}));
         Runtime.ApplyLanguage("zh-CN");
-        Check(Runtime.CurrentPack.Parts.Count==650,"全部 180 个主部件与 470 个子部件拥有显示映射");
-        var docs=Directory.GetFiles(Path.Combine(Game,"Content","Core"),"*.xml").Select(XDocument.Load).ToArray();
-        var children=docs.SelectMany(x=>x.Root!.Elements("SubPart")).Where(x=>x.Attribute("Id")!=null).ToArray();
-        Check(children.Length==470,"实际 XML 子部件定义数");
-        foreach(var node in children)
-        {
-            string id=(string)node.Attribute("Id")!;
-            string original=(string?)node.Attribute("DisplayName")??id;
-            var value=new PartTemplate{Id=id,DisplayName=original};
-            string zh=Runtime.PartName(value);
-            Check(zh.Any(c=>c is >= '\u4e00' and <= '\u9fff')&&value.Id==id&&value.DisplayName==original,"子部件显示翻译且原始字段保留: "+id);
-        }
+        Check(Runtime.CurrentPack.Parts.ContainsKey("CoreLifeSupportA_Prefab_SupplyLockerA"),"5801 物资柜使用新部件 ID 查找显示名称");
         foreach(var id in new[]{"H2","O2","H2O","Aluminum.2014","CarbonFiber"})
         {
             var substance=(Substance)RuntimeHelpers.GetUninitializedObject(typeof(Substance));

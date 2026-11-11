@@ -1,28 +1,29 @@
 {
   "schema": 1,
-  "ledger_rows": 5102,
+  "ledger_rows": 5834,
   "review_status_counts": {
-    "reviewed": 5051,
+    "reviewed": 5716,
     "defer": 49,
-    "contextual": 2
+    "contextual": 2,
+    "retired": 67
   },
   "active_translation_sections": {
-    "native": 220,
+    "native": 276,
     "literals": 86,
     "ui": 193,
     "tooltips": 171,
-    "editor": 167,
+    "editor": 169,
     "startup": 39,
-    "parts": 650,
-    "controls": 106,
+    "parts": 833,
+    "controls": 112,
     "hud": 43,
     "planning": 245,
-    "utility": 297,
+    "utility": 299,
     "gauges": 86,
     "scoped": 13,
-    "display": 2092,
-    "content": 259,
-    "history": 383
+    "display": 2258,
+    "content": 267,
+    "history": 625
   },
   "excluded_entries": [
     {
@@ -156,9 +157,344 @@
       "notes": "逐条对照所示按钮/区域/说明原文；未改变操作回调，状态提示和玩家内容分开。 当前源文未直接匹配且尚未核实动态生成路径，暂缓。"
     },
     {
+      "id": "5707-update-003",
+      "status": "retired",
+      "notes": "Replaced by distinct scene and UI brightness native keys in 5801."
+    },
+    {
       "id": "native:SettingsTabsId",
       "status": "defer",
       "notes": "已逐条对照5602文本ID、英文及中文；该设置只改显示名，不改设置键、值或取值范围。 含Id的Tabs定义不作为可见文案启用，避免把潜在控件ID译掉。"
+    },
+    {
+      "id": "parts:CoreCouplingA_Prefab_DockingPort1WA",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreCouplingA_Prefab_DockingPort1WB",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreCouplingA_Prefab_DockingPort1WC",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreElectricalA_Prefab_BayFuelcellSmall",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreElectricalA_Prefab_InlineBatteryBankA",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreElectricalA_Prefab_InlineBatteryBankB",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreElectricalA_Prefab_RadialBatteryA",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreElectricalA_Prefab_RadialBatteryB",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreElectricalA_Prefab_SolarPanelA",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreElectricalA_Prefab_SolarPanelB",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreFairingA_Prefab_AeroshroudAA",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreFairingA_Prefab_AeroshroudAB",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreFairingA_Prefab_AeroshroudBA",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreFairingA_Prefab_AeroshroudBB",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreFairingA_Prefab_AeroshroudCA",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreFairingA_Prefab_AeroshroudCB",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreFairingA_Prefab_AeroshroudCC",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreFairingA_Prefab_InterstageBridge2W1WB",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreFairingA_Prefab_InterstageBridge3W2WB",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreFairingA_Prefab_InterstageHalfW1HA1",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreFairingA_Prefab_NoseconeA",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreFairingA_Prefab_NoseconeB",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreFairingA_Prefab_NoseconeC",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreFairingA_Prefab_NoseconeD",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreFairingA_Prefab_NoseconeE",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreFairingA_Prefab_NoseconeF",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreFairingA_Prefab_NoseconeG",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreFairingA_Prefab_NoseconeH",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreFairingA_Prefab_SRBForwardSkirtA",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreFairingA_Prefab_SRBForwardSkirtB",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CorePassageA_Prefab_HatchAVariantA",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CorePassageA_Prefab_HatchAVariantB",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CorePassageA_Prefab_HatchAVariantC",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CorePassageA_Prefab_HatchAVariantD",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CorePropulsionB_Prefab_RCSALargeA",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CorePropulsionB_Prefab_RCSALargeB",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CorePropulsionB_Prefab_RCSALargeC",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CorePropulsionB_Prefab_RCSAMediumA",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CorePropulsionB_Prefab_RCSAMediumB",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CorePropulsionB_Prefab_RCSAMediumC",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CorePropulsionB_Prefab_RCSAMediumD",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CorePropulsionB_Prefab_RCSAMediumLowA",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CorePropulsionB_Prefab_RCSAMediumLowB",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CorePropulsionB_Prefab_RCSAMediumLowC",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CorePropulsionB_Prefab_RCSAMediumLowD",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CorePropulsionB_Prefab_RCSASmallA",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CorePropulsionB_Prefab_RCSASmallB",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CorePropulsionB_Prefab_RCSASmallC",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CorePropulsionB_Prefab_RCSASmallD",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CorePropulsionB_Prefab_RCSASmallE",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreServiceModuleA_Prefab_SetAHeightA",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreServiceModuleA_Prefab_SetAHeightB",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreServiceModuleA_Prefab_SetAHeightC",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreServiceModuleA_Prefab_SetAHeightD",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreStructuralA_Prefab_EnginePlateLowProfile2WA",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreStructuralA_Prefab_EnginePlateLowProfile2WB",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreStructuralA_Prefab_EnginePlateLowProfile3WA",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreStructuralA_Prefab_EnginePlateLowProfile3WB",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreStructuralA_Prefab_EnginePlateLowProfile3WC",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreStructuralA_Prefab_EnginePlateLowProfile3WD",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreStructuralA_Prefab_EnginePlateLowProfile3WE",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreStructuralA_Prefab_StrutA",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreStructuralA_Prefab_StrutB",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreStructuralA_Prefab_StrutC",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreStructuralA_Prefab_StrutD",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
+    },
+    {
+      "id": "parts:CoreUtilityA_Prefab_ParachuteBayB",
+      "status": "retired",
+      "notes": "ID absent from the loaded 5801 Core registry; original decision is preserved in the historical ledger."
     },
     {
       "id": "startup:Solar System (Dense)",

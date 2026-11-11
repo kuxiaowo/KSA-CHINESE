@@ -1,8 +1,8 @@
 {
-  "archive": "KsaChinese-0.1.7-5707-Portable.zip",
-  "sha256": "d80e0b5c9c901af3c1688a8f67a4b78e873c9232d422e228c9249f4af56d52ff",
-  "files": 35,
-  "bytes": 1591978,
+  "archive": "KsaChinese-0.1.8-5801-Portable.zip",
+  "sha256": "ecc8bdd609bd7bacf3f450771625f0b3d7bf5fd23d001e7822359496c1574e4e",
+  "files": 38,
+  "bytes": 1739002,
   "game_binaries_included": false,
   "player_data_included": false
 }

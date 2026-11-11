@@ -42,7 +42,7 @@ public sealed class LanguagePlugin
 {
     private Harmony? _patches;
     public static bool SupportsGameVersion(string? version)
-        => version is "2026.10.25.5707";
+        => version is "2026.11.10.5801";
 
     [StarMapBeforeMain]
     public void BeforeMain()
@@ -50,20 +50,20 @@ public sealed class LanguagePlugin
         var gameVersion = typeof(KSA.Program).Assembly.GetName().Version?.ToString();
         if (!SupportsGameVersion(gameVersion))
         {
-            Runtime.Log($"Chinese mod disabled: supported build is 2026.10.25.5707; found {gameVersion}.");
+            Runtime.Log($"Chinese mod disabled: supported build is 2026.11.10.5801; found {gameVersion}.");
             return;
         }
         try
         {
             Compatibility.Validate(Path.GetDirectoryName(typeof(KSA.Program).Assembly.Location)!, Path.Combine(Runtime.ModRoot,"compatibility.json"));
             Runtime.Initialize();
-            _patches = new Harmony("local.ksa.chinese.5707");
+            _patches = new Harmony("local.ksa.chinese.5801");
             _patches.PatchAll(typeof(LanguagePlugin).Assembly);
             Runtime.Log($"Initialized UI language mod for game {gameVersion}.");
         }
         catch (Exception error)
         {
-            _patches?.UnpatchAll("local.ksa.chinese.5707");
+            _patches?.UnpatchAll("local.ksa.chinese.5801");
             _patches = null;
             Runtime.RestoreProvider();
             Runtime.Log("Prototype disabled after initialization error: " + error);
@@ -83,7 +83,7 @@ public sealed class LanguagePlugin
     {
         if (_patches is null) return;
         Runtime.RestoreProvider();
-        _patches.UnpatchAll("local.ksa.chinese.5707");
+        _patches.UnpatchAll("local.ksa.chinese.5801");
     }
 }
 
@@ -554,7 +554,9 @@ public static class ButtonCaptionPatch
     public static void LocalizeCaption(ref ReadOnlySpan<char> label)
     {
         string original = label.ToString();
-        string translated = Runtime.Literal(original);
+        string translated = ExpandedUi.Context is { } method
+            && Runtime.CurrentPack.Display.TryGetValue(ExpandedUi.Identity(method) + "|" + original, out var scoped)
+            ? scoped : Runtime.Literal(original);
         if (translated == original) translated = ExpandedUi.Text(original);
         if (translated != original) label = translated.AsSpan();
     }
