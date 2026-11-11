@@ -1,5 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup><TargetFramework>net10.0</TargetFramework><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable><KsaDir>F:\系统应用\Kitten Space Agency</KsaDir><LoaderDir>$(MSBuildThisFileDirectory)..\..\.tools\StarMap-0.4.8</LoaderDir></PropertyGroup>
+  <PropertyGroup><TargetFramework>net10.0</TargetFramework><ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable><KsaDir>F:\系统应用\Kitten Space Agency</KsaDir><LoaderDir>$(MSBuildThisFileDirectory)..\..\.tools\StarMap-0.5.4</LoaderDir></PropertyGroup>
   <ItemGroup>
     <Reference Include="KSA"><HintPath>$(KsaDir)\KSA.dll</HintPath><Private>false</Private></Reference>
     <Reference Include="Brutal.ImGui"><HintPath>$(KsaDir)\Brutal.ImGui.dll</HintPath><Private>false</Private></Reference>

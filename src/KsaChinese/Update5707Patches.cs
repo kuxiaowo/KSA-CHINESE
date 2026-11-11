@@ -149,7 +149,7 @@ public static class Update5707FragmentPatch
             ("KSA.SpaceWeatherAlerts", "RaiseAlerts"),
             ("KSA.SpaceWeatherAlerts", "AppendSolarWind"),
             ("KSA.Vehicle", "CreditCrewStats"),
-            ("KSA.Vehicle", "KillLethallyDosedCrew"),
+            ("KSA.Vehicle", "KillDyingCrew"),
             ("KSA.OrbitHoverReadout", "DrawVehicleReadout"),
         })
         {

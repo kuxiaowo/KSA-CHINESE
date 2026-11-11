@@ -1,18 +1,20 @@
 {
   "schema": 1,
-  "version": "2026.10.25.5707",
+  "version": "2026.11.10.5801",
   "files": {
-    "KSA.dll": "a7acc114a016f0fb8c35a132be4ffdef61dcd69c8d0f7e132dd468b7532e006c",
-    "Brutal.ImGui.dll": "9fec93ddeda6b2127cd2bf1db115dbdef1e326b74c775e74917069c007b926f7",
-    "Brutal.Localization.dll": "2453ea06943926bb887628bfe061c2ddaa2b1360664281153121987b287a298b",
-    "Content/Core/Gauges.xml": "7a3b8a8ebc024eafc9d2744d5dfa00b93332cc9904057a17e6596f1f1b77bbc6",
-    "Brutal.Core.dll": "4344eb688bf6fdc2af04a8febae95b1ab43b68337d03e5db3f1264aefbfb66ba",
-    "Brutal.Numerics.dll": "36cc27c34d65b7b14fc8d0acab0c955c24f952b0f57b09673f11dbd9ecdd6c87",
-    "Brutal.ImGui.Abstractions.dll": "c0a06e0367938efb27e2b1e616b6488bd6acfa8053235d125d1ea365fe7c5bff",
-    "Brutal.ImGui.Extensions.dll": "30ea0fa51f2afeaf32cbfe26b17a422e085eb258cf3178d8547520b29a104e0a",
-    "Brutal.Strings.dll": "34464265bca57573d5a7d61586d4fd37583bb3ee0d35534563e02a29aacf68f0",
-    "imgui.dll": "f9ba4a3be42035dda61f0f3df3b97632fd69627bef5d267641cd7a4d189bc331"
+    "KSA.dll": "3a9b34894446a419193a1d9810a0902aa8eaa8b8ac910f04f687dc647818e586",
+    "Brutal.ImGui.dll": "a521637c1ca7481438f7887379642386835ada0e04409193ff34a12291dbd8c2",
+    "Brutal.Localization.dll": "79642c09c708aed82d1ede4b2692f4397c9565f7ad805726fa9c62d109d1522e",
+    "Content/Core/Gauges.xml": "9d72da547daefe79e7e1cb049514bb9223527cfe2ae10c9254aaa0eab5ed9fde",
+    "Brutal.Core.dll": "17d0dfb56e8fcbe98bf0946fe51199c4e2ba729bc4dea09007ea8879cef0fcb8",
+    "Brutal.Numerics.dll": "8d773b7cac9cdf836e7c7c7949e42034e3ef390027e19febe2592400c14d5822",
+    "Brutal.ImGui.Abstractions.dll": "86f69b3b1e7ec78cd59a6e212eb981a98fe3142495cdc9f0069f8b70d2654583",
+    "Brutal.ImGui.Extensions.dll": "dc33def95b5e31508cf60edeea1ad42a21b87f1b6b7c93ef5eb2439eb8ac231e",
+    "Brutal.Strings.dll": "a9186ffb3b83f5950af4059f226d65ebeb890c7a511e9dbb337186ca6ac342f1",
+    "imgui.dll": "ba38506e12c480e21d04b74c3432be1cda09ab7d53c1e7284f1b3beb83520c83",
+    "Brutal.Collections.dll": "624feb03f2f587d396b46bb3c0a026ed89111d80c690613382b3e78d0fdb992d",
+    "Content/Core/Languages/en-US.resx": "438dc68b6371a78476ac22c7f66593514d99e784a57a46855f6156cdc5699cd2"
   },
-  "loader": "StarMap 0.4.8",
+  "loader": "StarMap 0.5.4",
   "interpretation": "Exact inspected file identities. Target resolution, transformation matches, headless and GUI results are documented separately; hashes are not visual coverage."
 }

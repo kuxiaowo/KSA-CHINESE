@@ -10,7 +10,8 @@ internal static partial class Program
     {
         Runtime.ApplyLanguage("zh-CN");
         Check(KSA.LStrings.SettingsDisplayHdr.Localized == "HDR（实验性）"
-            && KSA.LStrings.SettingsDisplayHdrPaperWhite.Localized == "HDR 基准白亮度", "5707 HDR 原生资源与基准白语义");
+            && KSA.LStrings.SettingsDisplayHdrScenePaperWhite.Localized == "HDR 场景基准白亮度"
+            && KSA.LStrings.SettingsDisplayHdrUiBrightness.Localized == "HDR 界面亮度", "5707 HDR 原生资源与基准白语义");
         const string tooltip = "Radiation dose that heals over time, with a half-life of 30 days in flight and 7 days resting at home.\nAt 1 Sv a kitten has radiation sickness and is grounded until it heals below 1 Sv.\nAt 4 Sv it dies.";
         string translated = Update5707Text.Tooltip(tooltip);
         Check(translated.StartsWith("会随时间恢复") && translated.Contains("30 天") && translated.Contains("7 天")

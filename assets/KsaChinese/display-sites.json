@@ -879,9 +879,11 @@
       "Enabled",
       "Filter",
       "Game Type",
+      "Life Support",
       "Light System",
       "Location",
       "Parts",
+      "Radiation",
       "Select System",
       "Shadows",
       "Some systems may require more Video Memory (VRAM) than others due to texture size for color and heightmap data, and may not be available or crash the game if you do not have enough VRAM available.",
@@ -903,9 +905,11 @@
       "Enabled",
       "Filter",
       "Game Type",
+      "Life Support",
       "Light System",
       "Location",
       "Parts",
+      "Radiation",
       "Select System",
       "Shadows",
       "Some systems may require more Video Memory (VRAM) than others due to texture size for color and heightmap data, and may not be available or crash the game if you do not have enough VRAM available.",
@@ -940,6 +944,15 @@
       "Fill Seats",
       "No vehicle selected in the editor.",
       "This vehicle has no seats."
+    ]
+  },
+  {
+    "Type": "KSA.CrewPortraitPanel",
+    "Method": "AppendSuitSupply",
+    "Literals": [],
+    "Fields": [],
+    "Direct": [
+      "from external air"
     ]
   },
   {
@@ -988,6 +1001,18 @@
   },
   {
     "Type": "KSA.CrewPortraitPanel",
+    "Method": "DrawCondition",
+    "Fields": [
+      "Breathing External Air"
+    ],
+    "Literals": [],
+    "Direct": [
+      "Breathing External Air",
+      "Suit: "
+    ]
+  },
+  {
+    "Type": "KSA.CrewPortraitPanel",
     "Method": "DrawDoseLine",
     "Fields": [],
     "Literals": []
@@ -1006,6 +1031,28 @@
       "\nRising ",
       "Lifetime ",
       "Lifetime dose "
+    ]
+  },
+  {
+    "Type": "KSA.CrewPortraitPanel",
+    "Method": "DrawSuitTooltip",
+    "Fields": [
+      "\nCO₂ cartridge ",
+      "\nFood ",
+      "\nWater ",
+      " CO₂ canister",
+      " CO₂ canisters",
+      "Oxygen "
+    ],
+    "Literals": [],
+    "Direct": [
+      "\nCO₂ cartridge ",
+      "\nCarrying ",
+      "\nFood ",
+      "\nWater ",
+      " CO₂ canister",
+      " CO₂ canisters",
+      "Oxygen "
     ]
   },
   {
@@ -1486,6 +1533,85 @@
       "SAVE/LOAD",
       "SETTINGS",
       "SIMULATION PAUSED"
+    ]
+  },
+  {
+    "Type": "KSA.EvaCarryWindow+Window",
+    "Method": "AppendLoad",
+    "Fields": [
+      " canister",
+      " canisters",
+      " meal · ",
+      " meals · "
+    ],
+    "Literals": [],
+    "Direct": [
+      " canister",
+      " canisters",
+      " meal · ",
+      " meals · "
+    ]
+  },
+  {
+    "Type": "KSA.EvaCarryWindow+Window",
+    "Method": "AppendStorage",
+    "Fields": [
+      "Storage"
+    ],
+    "Literals": [
+      "Storage"
+    ]
+  },
+  {
+    "Type": "KSA.EvaCarryWindow+Window",
+    "Method": "DrawAmount",
+    "Fields": [
+      "CO₂ canisters",
+      "Meals"
+    ],
+    "Literals": [
+      "CO₂ canisters",
+      "Meals"
+    ],
+    "Direct": [
+      "None"
+    ]
+  },
+  {
+    "Type": "KSA.EvaCarryWindow+Window",
+    "Method": "DrawContent",
+    "Fields": [
+      "Carrying ",
+      "No supply storage within reach.",
+      "Storage",
+      "Stow",
+      "Take"
+    ],
+    "Literals": [
+      "No supply storage within reach.",
+      "Storage"
+    ],
+    "Direct": [
+      " of ",
+      "Carrying "
+    ]
+  },
+  {
+    "Type": "KSA.EvaCarryWindow+Window",
+    "Method": "DrawMoveButton",
+    "Fields": [
+      "Nothing here to carry",
+      "Stow",
+      "Take",
+      "This suit has no room to carry supplies",
+      "Too far away to reach",
+      "Too unwell to carry supplies"
+    ],
+    "Literals": [
+      "Nothing here to carry",
+      "This suit has no room to carry supplies",
+      "Too far away to reach",
+      "Too unwell to carry supplies"
     ]
   },
   {
@@ -2628,12 +2754,18 @@
       " TABS PENDING",
       "APPLY",
       "Brightest the display can show. Highlights roll off towards this, so set it to the display's rated peak.",
+      "Brightness of sunlit surfaces like clouds and terrain. Can sit above UI Brightness so the world stands out from the UI, highlights like the sun go brighter still.",
       "Brightness of white UI and of an exposed scene value of 1. Match it to the system's SDR content brightness so the game sits alongside other windows.",
+      "Brightness of white UI. Match it to the system's SDR content brightness so the game sits alongside other windows.",
       "CAMERA AND FRAME",
       "CLOSE",
       "DISCARD",
       "DISPLAY",
       "Global Scale of Hud elements",
+      "How HDR frames are sent to the screen. Auto uses HDR10 where the screen offers it, otherwise scRGB. A format the screen doesn't offer falls back to the other.",
+      "How HDR frames are sent to the screen. Auto uses HDR10 where the screen offers it, otherwise scRGB. A format the screen doesn't offer falls back to the other. This screen offers HDR10 only.",
+      "How HDR frames are sent to the screen. Auto uses HDR10 where the screen offers it, otherwise scRGB. A format the screen doesn't offer falls back to the other. This screen offers scRGB and HDR10.",
+      "How HDR frames are sent to the screen. Auto uses HDR10 where the screen offers it, otherwise scRGB. A format the screen doesn't offer falls back to the other. This screen offers scRGB only.",
       "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other.",
       "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers HDR10 only.",
       "How HDR frames are sent to the screen. Auto uses scRGB where the screen offers it, otherwise HDR10. A format the screen doesn't offer falls back to the other. This screen offers scRGB and HDR10.",
@@ -2658,6 +2790,13 @@
       "SETTINGS",
       "Settings",
       "Unlimited"
+    ],
+    "Direct": [
+      "Brightness of sunlit surfaces like clouds and terrain. Can sit above UI Brightness so the world stands out from the UI, highlights like the sun go brighter still.",
+      "Brightness of white UI. Match it to the system's SDR content brightness so the game sits alongside other windows.",
+      "How HDR frames are sent to the screen. Auto uses HDR10 where the screen offers it, otherwise scRGB. A format the screen doesn't offer falls back to the other. This screen offers HDR10 only.",
+      "How HDR frames are sent to the screen. Auto uses HDR10 where the screen offers it, otherwise scRGB. A format the screen doesn't offer falls back to the other. This screen offers scRGB and HDR10.",
+      "How HDR frames are sent to the screen. Auto uses HDR10 where the screen offers it, otherwise scRGB. A format the screen doesn't offer falls back to the other. This screen offers scRGB only."
     ]
   },
   {
@@ -3342,6 +3481,165 @@
     ]
   },
   {
+    "Type": "KSA.Habitat",
+    "Method": "DrawStateInfo",
+    "Fields": [
+      "CO₂ Canisters:",
+      "Habitable Volume:",
+      "Meals:"
+    ],
+    "Literals": [
+      "CO₂ Canisters:",
+      "Habitable Volume:",
+      "Meals:"
+    ]
+  },
+  {
+    "Type": "KSA.HabitatZonesWindow+Window",
+    "Method": "AppendStorageName",
+    "Fields": [],
+    "Literals": []
+  },
+  {
+    "Type": "KSA.HabitatZonesWindow+Window",
+    "Method": "DrawAmount",
+    "Fields": [
+      "CO₂ canisters",
+      "Meals",
+      "None to move"
+    ],
+    "Literals": [
+      "CO₂ canisters",
+      "Meals",
+      "None to move"
+    ]
+  },
+  {
+    "Type": "KSA.HabitatZonesWindow+Window",
+    "Method": "DrawBlockedTooltip",
+    "Fields": [
+      "Every kitten in this zone is incapacitated",
+      "No kitten in this zone to move supplies",
+      "Nothing stored here to move"
+    ],
+    "Literals": [
+      "Every kitten in this zone is incapacitated",
+      "No kitten in this zone to move supplies",
+      "Nothing stored here to move"
+    ]
+  },
+  {
+    "Type": "KSA.HabitatZonesWindow+Window",
+    "Method": "DrawContent",
+    "Fields": [
+      " CO₂ canisters",
+      " each",
+      " kitten",
+      " kittens",
+      " meal",
+      " meals",
+      " seats, none assigned",
+      "Carried",
+      "Crew",
+      "Habitable",
+      "Highlight all zones",
+      "Lasts",
+      "No vehicle.",
+      "Storage",
+      "Stored",
+      "This vehicle has no habitable parts.",
+      "Zone "
+    ],
+    "Literals": [
+      "Carried",
+      "Crew",
+      "Habitable",
+      "Highlight all zones",
+      "Lasts",
+      "No vehicle.",
+      "Storage",
+      "Stored",
+      "This vehicle has no habitable parts."
+    ],
+    "Direct": [
+      " CO₂ canisters",
+      " each",
+      " kitten",
+      " kittens",
+      " meal",
+      " meals",
+      " seats, none assigned",
+      "Zone "
+    ]
+  },
+  {
+    "Type": "KSA.HabitatZonesWindow+Window",
+    "Method": "DrawCrew",
+    "Fields": [
+      "Move"
+    ],
+    "Literals": []
+  },
+  {
+    "Type": "KSA.HabitatZonesWindow+Window",
+    "Method": "DrawShortfalls",
+    "Fields": [
+      "No CO₂ canisters stored in this zone",
+      "No meals stored in this zone",
+      "No storage: this crew has no food or CO₂ canisters"
+    ],
+    "Literals": [
+      "No CO₂ canisters stored in this zone",
+      "No meals stored in this zone",
+      "No storage: this crew has no food or CO₂ canisters"
+    ]
+  },
+  {
+    "Type": "KSA.HabitatZonesWindow+Window",
+    "Method": "DrawStorage",
+    "Fields": [
+      " canisters",
+      " meals · "
+    ],
+    "Literals": [],
+    "Direct": [
+      " canisters",
+      " meals · "
+    ]
+  },
+  {
+    "Type": "KSA.HabitatZonesWindow+Window",
+    "Method": "DrawToggle",
+    "Fields": [
+      "Highlight",
+      "Highlight lead"
+    ],
+    "Literals": [
+      "Highlight",
+      "Highlight lead"
+    ]
+  },
+  {
+    "Type": "KSA.HabitatZonesWindow+Window",
+    "Method": "DrawTransfer",
+    "Fields": [
+      " canisters",
+      " meals, ",
+      " · room for ",
+      "From ",
+      "To"
+    ],
+    "Literals": [
+      "To"
+    ],
+    "Direct": [
+      " canisters",
+      " meals, ",
+      " · room for ",
+      "From "
+    ]
+  },
+  {
     "Type": "KSA.HybridMultifractalModifierReference",
     "Method": "DrawParameters",
     "Fields": [
@@ -3550,6 +3848,104 @@
     ]
   },
   {
+    "Type": "KSA.KittenConditionUi",
+    "Method": "AppendTooltip",
+    "Fields": [
+      " again, recovered in ",
+      " for ",
+      ", degraded in ",
+      ", dies in ",
+      ", incapacitated in ",
+      "Has ",
+      "No "
+    ],
+    "Literals": [],
+    "Direct": [
+      " again, recovered in ",
+      " for ",
+      ", degraded in ",
+      ", dies in ",
+      ", incapacitated in ",
+      "Has ",
+      "No "
+    ]
+  },
+  {
+    "Type": "KSA.KittenConditionUi",
+    "Method": "Format",
+    "Fields": [
+      ": no "
+    ],
+    "Literals": [],
+    "Direct": [
+      ": no "
+    ]
+  },
+  {
+    "Type": "KSA.KittenConditionUi",
+    "Method": "GetNeedName",
+    "Fields": [
+      "High CO₂",
+      "Hungry",
+      "Short of air",
+      "Thirsty"
+    ],
+    "Literals": [],
+    "Direct": [
+      "High CO₂",
+      "Hungry",
+      "Short of air",
+      "Thirsty"
+    ]
+  },
+  {
+    "Type": "KSA.KittenDeathCauses",
+    "Method": "GetName",
+    "Fields": [
+      "Abandoned",
+      "Aerodynamic forces",
+      "Collision",
+      "Fall",
+      "G-force",
+      "Ground impact",
+      "Hydrodynamic forces",
+      "No CO₂ scrubber",
+      "No food",
+      "No oxygen",
+      "No water",
+      "Ocean impact",
+      "Radiation"
+    ],
+    "Literals": [],
+    "Direct": [
+      "Abandoned",
+      "Aerodynamic forces",
+      "Collision",
+      "Fall",
+      "G-force",
+      "Ground impact",
+      "Hydrodynamic forces",
+      "No CO₂ scrubber",
+      "No food",
+      "No oxygen",
+      "No water",
+      "Ocean impact",
+      "Radiation"
+    ]
+  },
+  {
+    "Type": "KSA.KittenEva",
+    "Method": "DrawLadderPrompt",
+    "Fields": [],
+    "Literals": [],
+    "Direct": [
+      "] Board",
+      "] Grab",
+      "] Let go",
+      "] Supplies"
+    ]
+  },
+  {
     "Type": "KSA.KittenRosterWindow+Window",
     "Method": "Draw",
     "Fields": [
@@ -3631,6 +4027,7 @@
     "Type": "KSA.KittenRosterWindow+Window",
     "Method": "DrawPastCrew",
     "Fields": [
+      "Cause of Death",
       "Distance Travelled",
       "Fastest Speed",
       "Lifetime Dose",
@@ -3642,6 +4039,7 @@
       "Total Mission Elapsed"
     ],
     "Literals": [
+      "Cause of Death",
       "Distance Travelled",
       "Fastest Speed",
       "Lifetime Dose",
@@ -3666,6 +4064,7 @@
     "Fields": [
       "Acute Dose",
       "Assigned Vehicle",
+      "Condition",
       "Current Mission Elapsed",
       "Distance Travelled",
       "Fastest Speed",
@@ -3681,6 +4080,7 @@
     "Literals": [
       "Acute Dose",
       "Assigned Vehicle",
+      "Condition",
       "Current Mission Elapsed",
       "Distance Travelled",
       "Fastest Speed",
@@ -4109,6 +4509,105 @@
     "Literals": [
       "Refresh",
       "Reload all layouts from the layouts folder"
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupport",
+    "Method": "DrawKittenNeed",
+    "Fields": [
+      "Dead",
+      "Healthy"
+    ],
+    "Literals": [],
+    "Direct": [
+      "Dead",
+      "Healthy"
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupport",
+    "Method": "DrawSecondsLeft",
+    "Fields": [
+      "Out"
+    ],
+    "Literals": [],
+    "Direct": [
+      "Out"
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupport",
+    "Method": "DrawStateInfo",
+    "Fields": [
+      "Air Left:",
+      "Breathing outside air",
+      "Food Left:",
+      "Habitat Zone:",
+      "Kittens In Zone:",
+      "Scrubbing Left:",
+      "This part",
+      "Water Left:",
+      "Zone Lead:"
+    ],
+    "Literals": [
+      "Air Left:",
+      "Breathing outside air",
+      "Food Left:",
+      "Habitat Zone:",
+      "Kittens In Zone:",
+      "Scrubbing Left:",
+      "Water Left:",
+      "Zone Lead:"
+    ],
+    "Direct": [
+      "This part"
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportForecast",
+    "Method": "AppendSummary",
+    "Fields": [
+      "Out"
+    ],
+    "Literals": [],
+    "Direct": [
+      "Out"
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportForecast",
+    "Method": "AppendZone",
+    "Fields": [],
+    "Literals": [],
+    "Direct": [
+      " · zone "
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportLadder",
+    "Method": "GetName",
+    "Fields": [
+      "CO₂ scrubber",
+      "Dead",
+      "Degraded",
+      "Healthy",
+      "Incapacitated",
+      "Warning",
+      "food",
+      "oxygen",
+      "water"
+    ],
+    "Literals": [],
+    "Direct": [
+      "CO₂ scrubber",
+      "Dead",
+      "Degraded",
+      "Healthy",
+      "Incapacitated",
+      "Warning",
+      "food",
+      "oxygen",
+      "water"
     ]
   },
   {
@@ -5783,12 +6282,14 @@
       "Gauge UI",
       "Ground Track",
       "HUD",
+      "Habitat Zones",
       "Hierarchy",
       "Hold alt to multiselect",
       "Inspector",
       "Kitten Roster",
       "Kitten Tuning",
       "Launch Existing Vehicle",
+      "Life Support",
       "Lighting",
       "Manifest",
       "Map Camera",
@@ -5801,6 +6302,7 @@
       "Parachute Tuning",
       "Planets",
       "Previous",
+      "Radiation",
       "Radiation dose rate averaged over the current orbit, unshielded, in millisieverts per hour.",
       "Radiation dose rate averaged over the current orbit, unshielded, in sieverts per hour.",
       "Radiation dose rate averaged over the orbit after this burn, unshielded, in millisieverts per hour.",
@@ -5809,6 +6311,7 @@
       "Radiation dose rate here, unshielded, in sieverts per hour.",
       "Reset",
       "Resources",
+      "Rules",
       "Save/Load",
       "Settings",
       "Show All",
@@ -5826,6 +6329,7 @@
       "Show Explosion Editor",
       "Show Flare Debug",
       "Show Flight Computer Debug",
+      "Show Habitat Lead Debug",
       "Show Light Debug",
       "Show Magnetosphere",
       "Show None",
@@ -5844,6 +6348,7 @@
       "Show Space Weather",
       "Show Terrain Debug",
       "Show Texture Streaming",
+      "Show Undo History Debug",
       "Show experimental particles",
       "Space Weather",
       "Speed",
@@ -5883,8 +6388,10 @@
       "Gauge UI",
       "Ground Track",
       "HUD",
+      "Habitat Zones",
       "Hold alt to multiselect",
       "Kitten Roster",
+      "Life Support",
       "Lighting",
       "Manifest",
       "Map Camera",
@@ -5896,8 +6403,10 @@
       "Orbit Lines",
       "Planets",
       "Previous",
+      "Radiation",
       "Reset",
       "Resources",
+      "Rules",
       "Save/Load",
       "Settings",
       "Show All",
@@ -5913,6 +6422,7 @@
       "Show Exhaust Debug",
       "Show Flare Debug",
       "Show Flight Computer Debug",
+      "Show Habitat Lead Debug",
       "Show Light Debug",
       "Show Magnetosphere",
       "Show None",
@@ -5930,6 +6440,7 @@
       "Show Space Weather",
       "Show Terrain Debug",
       "Show Texture Streaming",
+      "Show Undo History Debug",
       "Show experimental particles",
       "Speed",
       "Spherical Billboarding",
@@ -6826,9 +7337,32 @@
     "Type": "KSA.ResourcesPanel",
     "Method": "Draw",
     "Fields": [
-      "Electricity"
+      "Air",
+      "CO₂ Scrubber",
+      "Electricity",
+      "Food",
+      "LIFE SUPPORT",
+      "Water"
     ],
-    "Literals": []
+    "Literals": [],
+    "Direct": [
+      "Air",
+      "CO₂ Scrubber",
+      "Food",
+      "LIFE SUPPORT",
+      "Water"
+    ]
+  },
+  {
+    "Type": "KSA.ResourcesPanel",
+    "Method": "DrawLifeSupportRow",
+    "Fields": [
+      "Out"
+    ],
+    "Literals": [],
+    "Direct": [
+      "Out"
+    ]
   },
   {
     "Type": "KSA.RocketCoreConditions",
@@ -6896,6 +7430,25 @@
     ]
   },
   {
+    "Type": "KSA.SeatPicker",
+    "Method": "AppendSeatName",
+    "Fields": [],
+    "Literals": [],
+    "Direct": [
+      " · Seat "
+    ]
+  },
+  {
+    "Type": "KSA.SeatPicker",
+    "Method": "DrawButton",
+    "Fields": [
+      "No empty seat in this zone"
+    ],
+    "Literals": [
+      "No empty seat in this zone"
+    ]
+  },
+  {
     "Type": "KSA.SequenceList",
     "Method": "DrawActionTooltip",
     "Fields": [
@@ -6909,6 +7462,17 @@
       "Drag to fire in another sequence",
       "Inactive",
       "Right-click to expand"
+    ]
+  },
+  {
+    "Type": "KSA.SequenceList",
+    "Method": "DrawLifeSupportRow",
+    "Fields": [],
+    "Literals": [],
+    "Direct": [
+      "LIFE SUPPORT",
+      "LS",
+      "Out"
     ]
   },
   {
@@ -7846,6 +8410,19 @@
   },
   {
     "Type": "KSA.TransferPlanner",
+    "Method": "DrawLifeSupportShortfall",
+    "Fields": [
+      " SHORT",
+      "NOT ENOUGH LIFE SUPPORT: "
+    ],
+    "Literals": [],
+    "Direct": [
+      " SHORT",
+      "NOT ENOUGH LIFE SUPPORT: "
+    ]
+  },
+  {
+    "Type": "KSA.TransferPlanner",
     "Method": "DrawPlanWindow",
     "Fields": [
       "BEST TRANSFER",
@@ -8263,6 +8840,15 @@
     "Literals": []
   },
   {
+    "Type": "KSA.UniverseManifest+Window",
+    "Method": "GetColumnName",
+    "Fields": [],
+    "Literals": [],
+    "Direct": [
+      "Life Support"
+    ]
+  },
+  {
     "Type": "KSA.UpdateAvailablePopup",
     "Method": "OnDrawUi",
     "Fields": [
@@ -8276,6 +8862,34 @@
       "A new update for the game is available. Select an option below if you want to update the game, otherwise select cancel.",
       "AVAILABLE VERSION",
       "YOUR VERSION"
+    ]
+  },
+  {
+    "Type": "KSA.Vehicle",
+    "Method": "CreditCondition",
+    "Fields": [
+      " is ",
+      ": no ",
+      "degraded",
+      "incapacitated"
+    ],
+    "Literals": [],
+    "Direct": [
+      " is ",
+      ": no ",
+      "degraded",
+      "incapacitated"
+    ]
+  },
+  {
+    "Type": "KSA.Vehicle",
+    "Method": "CreditCrewStats",
+    "Fields": [
+      " is close to a lethal radiation dose!"
+    ],
+    "Literals": [],
+    "Direct": [
+      " is close to a lethal radiation dose!"
     ]
   },
   {
@@ -8619,6 +9233,25 @@
   },
   {
     "Type": "KSA.Vehicle",
+    "Method": "KillCrewOutOfLifeSupport",
+    "Fields": [],
+    "Literals": [],
+    "Direct": [
+      " died: no "
+    ]
+  },
+  {
+    "Type": "KSA.Vehicle",
+    "Method": "KillDyingCrew",
+    "Fields": [],
+    "Literals": [],
+    "Direct": [
+      " died on EVA: no ",
+      "Crew died of radiation sickness: "
+    ]
+  },
+  {
+    "Type": "KSA.Vehicle",
     "Method": "OnDrawStats",
     "Fields": [
       "Engine On/Off",
@@ -8641,6 +9274,27 @@
       "Throttle Up/Down",
       "Toggle SAS",
       "Translate"
+    ]
+  },
+  {
+    "Type": "KSA.Vehicle",
+    "Method": "RaiseLifeSupportAlert",
+    "Fields": [],
+    "Literals": [],
+    "Direct": [
+      " runs out in ",
+      " zone ",
+      "'s suit",
+      ": out of "
+    ]
+  },
+  {
+    "Type": "KSA.Vehicle",
+    "Method": "UpdateCrewIncapacitatedAndProbeCore",
+    "Fields": [],
+    "Literals": [],
+    "Direct": [
+      " is out of control: every kitten aboard is incapacitated."
     ]
   },
   {
@@ -8891,6 +9545,42 @@
   },
   {
     "Type": "KSA.VehicleEditor",
+    "Method": "DrawHabitatLoadout",
+    "Fields": [
+      "Habitat Storage"
+    ],
+    "Literals": [
+      "Habitat Storage"
+    ]
+  },
+  {
+    "Type": "KSA.VehicleEditor",
+    "Method": "DrawHistoryDebugWindow",
+    "Fields": [
+      " redo",
+      " undo / ",
+      "History memory (est.)",
+      "History steps",
+      "Parts reused (last restore)",
+      "Reuse unchanged parts",
+      "Sub-parts",
+      "Undo History Debug"
+    ],
+    "Literals": [
+      "History memory (est.)",
+      "History steps",
+      "Parts reused (last restore)",
+      "Reuse unchanged parts",
+      "Sub-parts",
+      "Undo History Debug"
+    ],
+    "Direct": [
+      " redo",
+      " undo / "
+    ]
+  },
+  {
+    "Type": "KSA.VehicleEditor",
     "Method": "DrawLaunchUi",
     "Fields": [
       "ASMB",
@@ -9096,6 +9786,7 @@
       "Highlight Symmetry",
       "INHERIT",
       "LOCAL",
+      "Life Support",
       "Make Vehicle Root",
       "NONE",
       "ORBIT",
@@ -9123,6 +9814,7 @@
       "Tank '",
       "Then click another part with a fuel port to run a line to it.\nClick empty space to cancel.",
       "Toggle Resource Display",
+      "Variant",
       "Visualize Fuel Flow",
       "When off, this decoupler will not fire and is hidden from the sequence window."
     ],
@@ -9150,6 +9842,7 @@
       "Hide Fuel Flow",
       "Highlight Parent",
       "Highlight Symmetry",
+      "Life Support",
       "Make Vehicle Root",
       "Propellant",
       "Refill",
@@ -9160,6 +9853,7 @@
       "Tank '",
       "Then click another part with a fuel port to run a line to it.\nClick empty space to cancel.",
       "Toggle Resource Display",
+      "Variant",
       "Visualize Fuel Flow",
       "When off, this decoupler will not fire and is hidden from the sequence window."
     ]
@@ -9452,8 +10146,17 @@
   {
     "Type": "KSA.VehicleEditor+PartWindow",
     "Method": "DrawPartTooltipCard",
-    "Fields": [],
-    "Literals": []
+    "Fields": [
+      " to change variant",
+      "< > or ",
+      "Variant"
+    ],
+    "Literals": [],
+    "Direct": [
+      " to change variant",
+      "< > or ",
+      "Variant"
+    ]
   },
   {
     "Type": "KSA.VehicleEditor+PartWindow",
@@ -9472,10 +10175,14 @@
     "Method": "OnDrawUi",
     "Fields": [
       "All",
-      "All Sizes"
+      "All Sizes",
+      "Life Support",
+      "Panels"
     ],
     "Literals": [
-      "All Sizes"
+      "All Sizes",
+      "Life Support",
+      "Panels"
     ]
   },
   {

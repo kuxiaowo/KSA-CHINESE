@@ -4,6 +4,7 @@ import hashlib,json
 from fontTools.ttLib import TTFont
 from fontTools.varLib.instancer import instantiateVariableFont
 from fontTools import subset
+from fontTools.pens.ttGlyphPen import TTGlyphPen
 
 root=Path(__file__).resolve().parents[1]
 source=root/'.tools/NotoSansSC-variable.ttf'
@@ -22,6 +23,23 @@ for p in (root/'assets/KsaChinese/Locales').glob('*.json'):
     for section in pack.values():
         if isinstance(section,dict): texts.extend(section.keys()); texts.extend(section.values())
 font=instantiateVariableFont(TTFont(source),{'wght':400},inplace=True)
+# The pinned SC source lacks U+2082 used by the new CO₂ labels.
+# Derive it from the same font's digit two and keep the original Unicode text.
+if 0x2082 not in font.getBestCmap():
+    order = list(font.getGlyphOrder())
+    two = font.getBestCmap()[ord("2")]
+    name = "uni2082"
+    pen = TTGlyphPen(font.getGlyphSet())
+    pen.addComponent(two, (0.65, 0, 0, 0.65, 0, -125))
+    font["glyf"][name] = pen.glyph()
+    font.setGlyphOrder([*order, name])
+    width, bearing = font["hmtx"][two]
+    font["hmtx"][name] = (round(width * 0.65), round(bearing * 0.65))
+    if "vmtx" in font:
+        font["vmtx"][name] = font["vmtx"][two]
+    for table in font["cmap"].tables:
+        if table.isUnicode() and table.format in (4, 12):
+            table.cmap[0x2082] = name
 available=set(font.getBestCmap())
 required={ord(c) for s in texts for c in s if ord(c)>=32}
 missing=required-available
