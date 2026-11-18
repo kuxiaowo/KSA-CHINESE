@@ -192,6 +192,43 @@
     ]
   },
   {
+    "Type": "KSA.Avionics",
+    "Method": "DrawPartInfo",
+    "Fields": [
+      "Radiation Tolerance"
+    ],
+    "Literals": [],
+    "Utf8": [
+      "Radiation Tolerance"
+    ]
+  },
+  {
+    "Type": "KSA.Avionics",
+    "Method": "DrawStateInfo",
+    "Fields": [
+      " of ",
+      "Failed",
+      "How long until the electronics reach their tolerance at the radiation they are taking now. Switched off or on standby they take half.",
+      "Over 100 years",
+      "Radiation Dose:",
+      "Radiation Life:",
+      "Total radiation dose the electronics have taken, in grays of silicon. The core fails for good at its tolerance.\n\nConverted from the sieverts a kitten would take here: the weighting for harm to living tissue is taken out (protons count half, cosmic rays 0.4, electrons in full), then scaled by 0.8 because silicon absorbs a little less energy than tissue."
+    ],
+    "Literals": [],
+    "Direct": [
+      " of ",
+      "Failed",
+      "Over 100 years",
+      "Radiation Dose:"
+    ],
+    "Utf8": [
+      "How long until the electronics reach their tolerance at the radiation they are taking now. Switched off or on standby they take half.",
+      "Radiation Dose:",
+      "Radiation Life:",
+      "Total radiation dose the electronics have taken, in grays of silicon. The core fails for good at its tolerance.\n\nConverted from the sieverts a kitten would take here: the weighting for harm to living tissue is taken out (protons count half, cosmic rays 0.4, electrons in full), then scaled by 0.8 because silicon absorbs a little less energy than tissue."
+    ]
+  },
+  {
     "Type": "KSA.Battery",
     "Method": "DrawStateInfo",
     "Fields": [
@@ -947,19 +984,176 @@
     ]
   },
   {
+    "Type": "KSA.CrewClock",
+    "Method": "AppendVesselName",
+    "Fields": [
+      " (EVA)"
+    ],
+    "Literals": [],
+    "Direct": [
+      " (EVA)"
+    ]
+  },
+  {
+    "Type": "KSA.CrewClock",
+    "Method": "DrawBackButton",
+    "Fields": [
+      "Back to "
+    ],
+    "Literals": [],
+    "Direct": [
+      "Back to "
+    ]
+  },
+  {
+    "Type": "KSA.CrewCountdown",
+    "Method": "AppendEvent",
+    "Fields": [
+      " gets radiation sickness in "
+    ],
+    "Literals": [],
+    "Direct": [
+      " gets radiation sickness in "
+    ]
+  },
+  {
+    "Type": "KSA.CrewCountdown",
+    "Method": "AppendFleetEvent",
+    "Fields": [
+      "EVA"
+    ],
+    "Literals": [],
+    "Direct": [
+      "EVA"
+    ]
+  },
+  {
+    "Type": "KSA.CrewCountdown",
+    "Method": "GetTitle",
+    "Fields": [
+      "Radiation"
+    ],
+    "Literals": [],
+    "Direct": [
+      "Radiation"
+    ]
+  },
+  {
+    "Type": "KSA.CrewCountdown",
+    "Method": "GetVerb",
+    "Fields": [
+      " dies in ",
+      " impaired in ",
+      " incapacitated in ",
+      " low in "
+    ],
+    "Literals": [],
+    "Direct": [
+      " dies in ",
+      " impaired in ",
+      " incapacitated in ",
+      " low in "
+    ]
+  },
+  {
+    "Type": "KSA.CrewPlan",
+    "Method": "AppendLegName",
+    "Fields": [
+      "Back",
+      "Mission",
+      "Out",
+      "Stay"
+    ],
+    "Literals": [],
+    "Direct": [
+      "Back",
+      "Mission",
+      "Out",
+      "Stay"
+    ]
+  },
+  {
+    "Type": "KSA.CrewPlan",
+    "Method": "Draw",
+    "Fields": [
+      "CREW PLAN"
+    ],
+    "Literals": [],
+    "Utf8": [
+      "CREW PLAN"
+    ]
+  },
+  {
+    "Type": "KSA.CrewPlan",
+    "Method": "DrawHeaderRow",
+    "Fields": [
+      "Kitten-days"
+    ],
+    "Literals": [],
+    "Utf8": [
+      "Kitten-days"
+    ]
+  },
+  {
+    "Type": "KSA.CrewPlan",
+    "Method": "DrawLegMoves",
+    "Fields": [
+      " by EVA",
+      " kitten moves ",
+      " kittens move ",
+      " through the hatch",
+      " through the hatches"
+    ],
+    "Literals": [],
+    "Direct": [
+      " by EVA",
+      " kitten moves ",
+      " kittens move ",
+      " through the hatch",
+      " through the hatches"
+    ]
+  },
+  {
+    "Type": "KSA.CrewPlan",
+    "Method": "DrawOverfull",
+    "Fields": [
+      " aboard",
+      " kittens planned, "
+    ],
+    "Literals": [],
+    "Direct": [
+      " aboard",
+      " kittens planned, "
+    ]
+  },
+  {
+    "Type": "KSA.CrewPortraitPanel",
+    "Method": "AppendSuitGas",
+    "Fields": [
+      " in reserve"
+    ],
+    "Literals": [],
+    "Direct": [
+      " in reserve"
+    ]
+  },
+  {
     "Type": "KSA.CrewPortraitPanel",
     "Method": "AppendSuitSupply",
     "Literals": [],
-    "Fields": [],
+    "Fields": [
+      "breathing outside air"
+    ],
     "Direct": [
-      "from external air"
+      "breathing outside air"
     ]
   },
   {
     "Type": "KSA.CrewPortraitPanel",
     "Method": "Draw",
     "Fields": [
-      "EVA"
+      "EVA",
+      "MOVE"
     ],
     "Literals": [
       "EVA"
@@ -1003,11 +1197,12 @@
     "Type": "KSA.CrewPortraitPanel",
     "Method": "DrawCondition",
     "Fields": [
-      "Breathing External Air"
+      "Breathing External Air",
+      "Breathing outside air"
     ],
     "Literals": [],
     "Direct": [
-      "Breathing External Air",
+      "Breathing outside air",
       "Suit: "
     ]
   },
@@ -1037,22 +1232,24 @@
     "Type": "KSA.CrewPortraitPanel",
     "Method": "DrawSuitTooltip",
     "Fields": [
+      "\nCO₂ Scrubber ",
       "\nCO₂ cartridge ",
       "\nFood ",
       "\nWater ",
       " CO₂ canister",
       " CO₂ canisters",
+      "Air ",
       "Oxygen "
     ],
     "Literals": [],
     "Direct": [
-      "\nCO₂ cartridge ",
+      "\nCO₂ Scrubber ",
       "\nCarrying ",
       "\nFood ",
       "\nWater ",
       " CO₂ canister",
       " CO₂ canisters",
-      "Oxygen "
+      "Air "
     ]
   },
   {
@@ -1223,11 +1420,14 @@
     "Fields": [
       "Distortion Amplitude",
       "Distortion Scale",
+      "Dune Color",
       "Falloff Power",
       "Lacunarity",
       "Octaves",
       "Persistence",
-      "Shear"
+      "Shear",
+      "Slope Color",
+      "Slope Strength"
     ],
     "Literals": [
       "Distortion Amplitude",
@@ -1237,6 +1437,11 @@
       "Octaves",
       "Persistence",
       "Shear"
+    ],
+    "Utf8": [
+      "Dune Color",
+      "Slope Color",
+      "Slope Strength"
     ]
   },
   {
@@ -1482,6 +1687,7 @@
     "Type": "KSA.ErosionModifierReference",
     "Method": "DrawParameters",
     "Fields": [
+      "Color Persistence",
       "Curvature",
       "Generate Color",
       "Gradient Falloff Power",
@@ -1502,6 +1708,9 @@
       "Persistence",
       "Ridge Color",
       "Valley Color"
+    ],
+    "Utf8": [
+      "Color Persistence"
     ]
   },
   {
@@ -1612,6 +1821,30 @@
       "This suit has no room to carry supplies",
       "Too far away to reach",
       "Too unwell to carry supplies"
+    ]
+  },
+  {
+    "Type": "KSA.EvaSuit",
+    "Method": "AppendLost",
+    "Fields": [
+      " of CO₂ scrubber",
+      " of air"
+    ],
+    "Literals": [],
+    "Direct": [
+      " of CO₂ scrubber",
+      " of air"
+    ]
+  },
+  {
+    "Type": "KSA.EvaSuit",
+    "Method": "GetRefusalTooltip",
+    "Fields": [
+      "No air or CO₂ canisters to fill the suit"
+    ],
+    "Literals": [],
+    "Utf8": [
+      "No air or CO₂ canisters to fill the suit"
     ]
   },
   {
@@ -3482,6 +3715,23 @@
   },
   {
     "Type": "KSA.Habitat",
+    "Method": "AppendStores",
+    "Fields": [
+      " canister",
+      " canisters",
+      " meal",
+      " meals"
+    ],
+    "Literals": [],
+    "Direct": [
+      " canister",
+      " canisters",
+      " meal",
+      " meals"
+    ]
+  },
+  {
+    "Type": "KSA.Habitat",
     "Method": "DrawStateInfo",
     "Fields": [
       "CO₂ Canisters:",
@@ -3495,148 +3745,14 @@
     ]
   },
   {
-    "Type": "KSA.HabitatZonesWindow+Window",
-    "Method": "AppendStorageName",
-    "Fields": [],
-    "Literals": []
-  },
-  {
-    "Type": "KSA.HabitatZonesWindow+Window",
-    "Method": "DrawAmount",
+    "Type": "KSA.HabitatZone",
+    "Method": "AppendName",
     "Fields": [
-      "CO₂ canisters",
-      "Meals",
-      "None to move"
-    ],
-    "Literals": [
-      "CO₂ canisters",
-      "Meals",
-      "None to move"
-    ]
-  },
-  {
-    "Type": "KSA.HabitatZonesWindow+Window",
-    "Method": "DrawBlockedTooltip",
-    "Fields": [
-      "Every kitten in this zone is incapacitated",
-      "No kitten in this zone to move supplies",
-      "Nothing stored here to move"
-    ],
-    "Literals": [
-      "Every kitten in this zone is incapacitated",
-      "No kitten in this zone to move supplies",
-      "Nothing stored here to move"
-    ]
-  },
-  {
-    "Type": "KSA.HabitatZonesWindow+Window",
-    "Method": "DrawContent",
-    "Fields": [
-      " CO₂ canisters",
-      " each",
-      " kitten",
-      " kittens",
-      " meal",
-      " meals",
-      " seats, none assigned",
-      "Carried",
-      "Crew",
-      "Habitable",
-      "Highlight all zones",
-      "Lasts",
-      "No vehicle.",
-      "Storage",
-      "Stored",
-      "This vehicle has no habitable parts.",
       "Zone "
-    ],
-    "Literals": [
-      "Carried",
-      "Crew",
-      "Habitable",
-      "Highlight all zones",
-      "Lasts",
-      "No vehicle.",
-      "Storage",
-      "Stored",
-      "This vehicle has no habitable parts."
-    ],
-    "Direct": [
-      " CO₂ canisters",
-      " each",
-      " kitten",
-      " kittens",
-      " meal",
-      " meals",
-      " seats, none assigned",
-      "Zone "
-    ]
-  },
-  {
-    "Type": "KSA.HabitatZonesWindow+Window",
-    "Method": "DrawCrew",
-    "Fields": [
-      "Move"
-    ],
-    "Literals": []
-  },
-  {
-    "Type": "KSA.HabitatZonesWindow+Window",
-    "Method": "DrawShortfalls",
-    "Fields": [
-      "No CO₂ canisters stored in this zone",
-      "No meals stored in this zone",
-      "No storage: this crew has no food or CO₂ canisters"
-    ],
-    "Literals": [
-      "No CO₂ canisters stored in this zone",
-      "No meals stored in this zone",
-      "No storage: this crew has no food or CO₂ canisters"
-    ]
-  },
-  {
-    "Type": "KSA.HabitatZonesWindow+Window",
-    "Method": "DrawStorage",
-    "Fields": [
-      " canisters",
-      " meals · "
     ],
     "Literals": [],
     "Direct": [
-      " canisters",
-      " meals · "
-    ]
-  },
-  {
-    "Type": "KSA.HabitatZonesWindow+Window",
-    "Method": "DrawToggle",
-    "Fields": [
-      "Highlight",
-      "Highlight lead"
-    ],
-    "Literals": [
-      "Highlight",
-      "Highlight lead"
-    ]
-  },
-  {
-    "Type": "KSA.HabitatZonesWindow+Window",
-    "Method": "DrawTransfer",
-    "Fields": [
-      " canisters",
-      " meals, ",
-      " · room for ",
-      "From ",
-      "To"
-    ],
-    "Literals": [
-      "To"
-    ],
-    "Direct": [
-      " canisters",
-      " meals, ",
-      " · room for ",
-      "From "
+      "Zone "
     ]
   },
   {
@@ -3855,6 +3971,7 @@
       " for ",
       ", degraded in ",
       ", dies in ",
+      ", impaired in ",
       ", incapacitated in ",
       "Has ",
       "No "
@@ -3863,8 +3980,8 @@
     "Direct": [
       " again, recovered in ",
       " for ",
-      ", degraded in ",
       ", dies in ",
+      ", impaired in ",
       ", incapacitated in ",
       "Has ",
       "No "
@@ -3927,7 +4044,6 @@
       "Hydrodynamic forces",
       "No CO₂ scrubber",
       "No food",
-      "No oxygen",
       "No water",
       "Ocean impact",
       "Radiation"
@@ -3938,12 +4054,7 @@
     "Method": "DrawLadderPrompt",
     "Fields": [],
     "Literals": [],
-    "Direct": [
-      "] Board",
-      "] Grab",
-      "] Let go",
-      "] Supplies"
-    ]
+    "Direct": []
   },
   {
     "Type": "KSA.KittenRosterWindow+Window",
@@ -4410,6 +4521,12 @@
     ]
   },
   {
+    "Type": "KSA.LaunchCheck",
+    "Method": "CheckSupplies",
+    "Fields": [],
+    "Literals": []
+  },
+  {
     "Type": "KSA.LayoutSave",
     "Method": "DrawDefaultCheckbox",
     "Fields": [],
@@ -4513,30 +4630,6 @@
   },
   {
     "Type": "KSA.LifeSupport",
-    "Method": "DrawKittenNeed",
-    "Fields": [
-      "Dead",
-      "Healthy"
-    ],
-    "Literals": [],
-    "Direct": [
-      "Dead",
-      "Healthy"
-    ]
-  },
-  {
-    "Type": "KSA.LifeSupport",
-    "Method": "DrawSecondsLeft",
-    "Fields": [
-      "Out"
-    ],
-    "Literals": [],
-    "Direct": [
-      "Out"
-    ]
-  },
-  {
-    "Type": "KSA.LifeSupport",
     "Method": "DrawStateInfo",
     "Fields": [
       "Air Left:",
@@ -4544,9 +4637,14 @@
       "Food Left:",
       "Habitat Zone:",
       "Kittens In Zone:",
+      "Lasts ",
+      "Life Support",
+      "No crew",
+      "Out · ",
       "Scrubbing Left:",
       "This part",
       "Water Left:",
+      "Zone ",
       "Zone Lead:"
     ],
     "Literals": [
@@ -4560,7 +4658,33 @@
       "Zone Lead:"
     ],
     "Direct": [
-      "This part"
+      "Lasts ",
+      "No crew",
+      "Out · ",
+      "This part",
+      "Zone "
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportAlert",
+    "Method": "Draw",
+    "Fields": [
+      "'s suit"
+    ],
+    "Literals": [],
+    "Direct": [
+      "'s suit"
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportAlert",
+    "Method": "DrawClickArea",
+    "Fields": [
+      "Open Life Support"
+    ],
+    "Literals": [],
+    "Direct": [
+      "Open Life Support"
     ]
   },
   {
@@ -4577,10 +4701,12 @@
   {
     "Type": "KSA.LifeSupportForecast",
     "Method": "AppendZone",
-    "Fields": [],
+    "Fields": [
+      " · Zone "
+    ],
     "Literals": [],
     "Direct": [
-      " · zone "
+      " · Zone "
     ]
   },
   {
@@ -4591,8 +4717,10 @@
       "Dead",
       "Degraded",
       "Healthy",
+      "Impaired",
       "Incapacitated",
       "Warning",
+      "air",
       "food",
       "oxygen",
       "water"
@@ -4601,13 +4729,490 @@
     "Direct": [
       "CO₂ scrubber",
       "Dead",
-      "Degraded",
       "Healthy",
+      "Impaired",
       "Incapacitated",
       "Warning",
+      "air",
       "food",
-      "oxygen",
       "water"
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportLadder",
+    "Method": "GetTitle",
+    "Fields": [
+      "Air",
+      "CO₂ Scrubber",
+      "Food",
+      "Water"
+    ],
+    "Literals": [],
+    "Direct": [
+      "Air",
+      "CO₂ Scrubber",
+      "Food",
+      "Water"
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportWindow+Window",
+    "Method": "AppendCrew",
+    "Fields": [
+      " assigned",
+      " kitten",
+      " kitten (every seat)",
+      " kittens",
+      " kittens (every seat)",
+      "Assuming "
+    ],
+    "Literals": [],
+    "Direct": [
+      " assigned",
+      " kitten",
+      " kitten (every seat)",
+      " kittens",
+      " kittens (every seat)",
+      "Assuming "
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportWindow+Window",
+    "Method": "AppendLasts",
+    "Fields": [
+      "Lasts ",
+      "Out"
+    ],
+    "Literals": [],
+    "Direct": [
+      "Lasts ",
+      "Out"
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportWindow+Window",
+    "Method": "AppendMissionTab",
+    "Fields": [
+      "enough",
+      "not used",
+      "short "
+    ],
+    "Literals": [],
+    "Direct": [
+      "enough",
+      "not used",
+      "short "
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportWindow+Window",
+    "Method": "AppendMissionVerdict",
+    "Fields": [
+      " · Enough for its legs",
+      " · Not used on this mission"
+    ],
+    "Literals": [],
+    "Direct": [
+      " · Enough for its legs",
+      " · Not used on this mission"
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportWindow+Window",
+    "Method": "AppendPlannedCrew",
+    "Fields": [
+      " kitten planned",
+      " kittens planned",
+      "No kittens planned"
+    ],
+    "Literals": [],
+    "Direct": [
+      " kitten planned",
+      " kittens planned",
+      "No kittens planned"
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportWindow+Window",
+    "Method": "AppendStorageName",
+    "Fields": [],
+    "Literals": []
+  },
+  {
+    "Type": "KSA.LifeSupportWindow+Window",
+    "Method": "AppendTooltip",
+    "Fields": [
+      " canisters",
+      " meals, ",
+      " · room for "
+    ],
+    "Literals": [],
+    "Direct": [
+      " canisters",
+      " meals, ",
+      " · room for "
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportWindow+Window",
+    "Method": "AppendVesselTab",
+    "Fields": [
+      " · no crew",
+      "Out"
+    ],
+    "Literals": [],
+    "Direct": [
+      " · no crew",
+      "Out"
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportWindow+Window",
+    "Method": "DrawAmount",
+    "Fields": [
+      "CO₂ canisters",
+      "Meals",
+      "None to move"
+    ],
+    "Literals": [
+      "CO₂ canisters",
+      "Meals",
+      "None to move"
+    ],
+    "Utf8": [
+      "None to move"
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportWindow+Window",
+    "Method": "DrawBlockedTooltip",
+    "Fields": [
+      "Every kitten in this zone is incapacitated",
+      "No kitten in this zone to move supplies",
+      "Nothing stored here to move"
+    ],
+    "Literals": [
+      "Every kitten in this zone is incapacitated",
+      "No kitten in this zone to move supplies",
+      "Nothing stored here to move"
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportWindow+Window",
+    "Method": "DrawCard",
+    "Fields": [
+      " each",
+      " · Storage ",
+      "Habitable ",
+      "Highlight lead"
+    ],
+    "Literals": [],
+    "Direct": [
+      " each",
+      " · Storage ",
+      "Habitable "
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportWindow+Window",
+    "Method": "DrawConnected",
+    "Fields": [
+      " · EVA only",
+      " · behind a closed hatch",
+      " · open hatch",
+      "CONNECTED",
+      "Close hatch",
+      "Docking hatch",
+      "Open hatch"
+    ],
+    "Literals": [],
+    "Direct": [
+      " · EVA only",
+      " · behind a closed hatch",
+      " · open hatch",
+      "Docking hatch"
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportWindow+Window",
+    "Method": "DrawContent",
+    "Fields": [
+      "No vehicle.",
+      "This vehicle has no habitable parts."
+    ],
+    "Literals": [],
+    "Utf8": [
+      "No vehicle.",
+      "This vehicle has no habitable parts."
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportWindow+Window",
+    "Method": "DrawCrew",
+    "Fields": [
+      "CREW",
+      "Dead",
+      "Healthy",
+      "Move"
+    ],
+    "Literals": [],
+    "Direct": [
+      "Dead",
+      "Healthy"
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportWindow+Window",
+    "Method": "DrawDestinations",
+    "Fields": [
+      " canisters",
+      " meals, ",
+      " · EVA only",
+      " · behind a closed hatch",
+      " · room for ",
+      "Open hatch"
+    ],
+    "Literals": [],
+    "Direct": [
+      " canisters",
+      " meals, ",
+      " · EVA only",
+      " · behind a closed hatch",
+      " · room for "
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportWindow+Window",
+    "Method": "DrawMissionSupplies",
+    "Fields": [
+      " runs out at ",
+      " runs out in ",
+      "Air",
+      "CO₂ Scrubber",
+      "Food",
+      "Water"
+    ],
+    "Literals": [],
+    "Direct": [
+      " runs out at ",
+      " runs out in ",
+      "Air",
+      "CO₂ Scrubber",
+      "Food",
+      "Water"
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportWindow+Window",
+    "Method": "DrawMissionTiming",
+    "Fields": [
+      " left",
+      "As planned",
+      "From flight plan",
+      "Mission over",
+      "Mission timing"
+    ],
+    "Literals": [],
+    "Utf8": [
+      "Mission timing"
+    ],
+    "Utf8Controls": [
+      "As planned",
+      "From flight plan"
+    ],
+    "Direct": [
+      " left",
+      "Mission over"
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportWindow+Window",
+    "Method": "DrawMissionWorstLine",
+    "Fields": [
+      " · Zone ",
+      "Enough for the mission"
+    ],
+    "Literals": [],
+    "Direct": [
+      " · Zone ",
+      "Enough for the mission"
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportWindow+Window",
+    "Method": "DrawOpenHatch",
+    "Fields": [
+      "Open hatch"
+    ],
+    "Literals": []
+  },
+  {
+    "Type": "KSA.LifeSupportWindow+Window",
+    "Method": "DrawRunsOut",
+    "Fields": [
+      " before ",
+      " ends"
+    ],
+    "Literals": [],
+    "Direct": [
+      " before ",
+      " ends"
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportWindow+Window",
+    "Method": "DrawSeatCombos",
+    "Fields": [
+      "CREW"
+    ],
+    "Literals": []
+  },
+  {
+    "Type": "KSA.LifeSupportWindow+Window",
+    "Method": "DrawShortfalls",
+    "Fields": [
+      "No CO₂ canisters stored in this zone",
+      "No meals stored in this zone",
+      "No storage: this crew has no food or CO₂ canisters"
+    ],
+    "Literals": [],
+    "Utf8": [
+      "No CO₂ canisters stored in this zone",
+      "No meals stored in this zone",
+      "No storage: this crew has no food or CO₂ canisters"
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportWindow+Window",
+    "Method": "DrawStock",
+    "Fields": [
+      " more storage",
+      "Needs ",
+      "Stock for mission"
+    ],
+    "Literals": [],
+    "Direct": [
+      " more storage",
+      "Needs "
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportWindow+Window",
+    "Method": "DrawStorage",
+    "Fields": [
+      " canisters",
+      " meals · ",
+      "HABITATS",
+      "Transfer"
+    ],
+    "Literals": [],
+    "Direct": [
+      " canisters",
+      " meals · "
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportWindow+Window",
+    "Method": "DrawStoresSliders",
+    "Fields": [
+      "%d canisters",
+      "%d meals"
+    ],
+    "Literals": [],
+    "Utf8": [
+      "%d canisters",
+      "%d meals"
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportWindow+Window",
+    "Method": "DrawToggle",
+    "Fields": [
+      "Highlight",
+      "Highlight lead"
+    ],
+    "Literals": [
+      "Highlight",
+      "Highlight lead"
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportWindow+Window",
+    "Method": "DrawTransfer",
+    "Fields": [
+      "Transfer"
+    ],
+    "Literals": []
+  },
+  {
+    "Type": "KSA.LifeSupportWindow+Window",
+    "Method": "DrawTransferContent",
+    "Fields": [
+      "CO₂ canisters",
+      "From ",
+      "Meals",
+      "Move supplies",
+      "Or click a green habitat on the vessel. Esc or right-click stops.",
+      "Pick on vessel",
+      "To"
+    ],
+    "Literals": [],
+    "Direct": [
+      "From "
+    ],
+    "Utf8": [
+      "Or click a green habitat on the vessel. Esc or right-click stops.",
+      "To"
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportWindow+Window",
+    "Method": "DrawTransferWindow",
+    "Fields": [
+      "TRANSFER SUPPLIES"
+    ],
+    "Literals": [],
+    "Direct": [
+      "TRANSFER SUPPLIES"
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportWindow+Window",
+    "Method": "DrawVesselName",
+    "Fields": [
+      "Switch to"
+    ],
+    "Literals": [],
+    "Utf8Controls": [
+      "Switch to"
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportWindow+Window",
+    "Method": "DrawWorstLine",
+    "Fields": [
+      " · Zone "
+    ],
+    "Literals": [],
+    "Direct": [
+      " · Zone "
+    ]
+  },
+  {
+    "Type": "KSA.LifeSupportWindow+Window",
+    "Method": "DrawZoneTabs",
+    "Fields": [
+      " kitten",
+      " kittens",
+      "Out",
+      "no crew"
+    ],
+    "Literals": [],
+    "Direct": [
+      " kitten",
+      " kittens",
+      "Out",
+      "no crew"
     ]
   },
   {
@@ -4756,6 +5361,227 @@
       "The fixed radius that 'part radius influence' lerps toward at 0. Unused at influence 1.",
       "Visualisation",
       "What the 'x radius' fractions above are fractions of. 1 = the part's own radius, so dents scale with whatever they land on. 0 = the fixed reference radius, so a given impact leaves the same size dent on a strut as on a tank. Between the two lerps."
+    ]
+  },
+  {
+    "Type": "KSA.MissionPicker",
+    "Method": "AppendDestination",
+    "Fields": [
+      "Low orbit",
+      "None"
+    ],
+    "Literals": [],
+    "Direct": [
+      "Low orbit",
+      "None"
+    ]
+  },
+  {
+    "Type": "KSA.MissionPicker",
+    "Method": "AppendPlan",
+    "Fields": [
+      "Flyby",
+      "Land",
+      "One way",
+      "Orbit",
+      "Return"
+    ],
+    "Literals": [],
+    "Direct": [
+      "Flyby",
+      "Land",
+      "One way",
+      "Orbit",
+      "Return"
+    ]
+  },
+  {
+    "Type": "KSA.MissionPicker",
+    "Method": "AppendSummary",
+    "Fields": [
+      "Custom · ",
+      "None"
+    ],
+    "Literals": [],
+    "Direct": [
+      "Custom · ",
+      "None"
+    ]
+  },
+  {
+    "Type": "KSA.MissionPicker",
+    "Method": "Draw",
+    "Fields": [
+      "Mission"
+    ],
+    "Literals": [],
+    "Direct": [
+      "Mission"
+    ]
+  },
+  {
+    "Type": "KSA.MissionPicker",
+    "Method": "DrawBreakdown",
+    "Fields": [
+      " can't come straight back. Pick Orbit, Land or One way.",
+      " isn't in this star system.",
+      "A flyby of ",
+      "Back ",
+      "Hohmann transfer times",
+      "No mission: supplies aren't checked against a length.",
+      "Out ",
+      "Stay ",
+      "Straight line at cruise speed",
+      "The stay waits for the next return window."
+    ],
+    "Literals": [],
+    "Utf8": [
+      "Hohmann transfer times",
+      "No mission: supplies aren't checked against a length.",
+      "Straight line at cruise speed",
+      "The stay waits for the next return window."
+    ],
+    "Direct": [
+      " can't come straight back. Pick Orbit, Land or One way.",
+      " isn't in this star system.",
+      "A flyby of ",
+      "Back ",
+      "Out ",
+      "Stay "
+    ]
+  },
+  {
+    "Type": "KSA.MissionPicker",
+    "Method": "DrawChoices",
+    "Fields": [
+      "Custom",
+      "Stay"
+    ],
+    "Literals": [],
+    "Utf8": [
+      "Stay"
+    ],
+    "Utf8Controls": [
+      "Custom"
+    ]
+  },
+  {
+    "Type": "KSA.MissionPicker",
+    "Method": "DrawCruiseSpeed",
+    "Fields": [
+      "Cruise"
+    ],
+    "Literals": [],
+    "Utf8": [
+      "Cruise"
+    ]
+  },
+  {
+    "Type": "KSA.MissionPicker",
+    "Method": "DrawCustomLength",
+    "Fields": [
+      "For trips the picker can't describe.",
+      "Length"
+    ],
+    "Literals": [],
+    "Utf8": [
+      "For trips the picker can't describe.",
+      "Length"
+    ]
+  },
+  {
+    "Type": "KSA.MissionPicker",
+    "Method": "DrawDestinationOptions",
+    "Fields": [
+      "Low orbit",
+      "None"
+    ],
+    "Literals": [],
+    "Utf8Controls": [
+      "Low orbit",
+      "None"
+    ]
+  },
+  {
+    "Type": "KSA.MissionPicker",
+    "Method": "DrawStockAll",
+    "Fields": [
+      "Air",
+      "Fill air and water",
+      "Stock all",
+      "Water"
+    ],
+    "Literals": [],
+    "Direct": [
+      "Air",
+      "Water"
+    ]
+  },
+  {
+    "Type": "KSA.MissionPicker",
+    "Method": "DrawTankSupply",
+    "Fields": [
+      " more ",
+      " · mission needs ",
+      " · tanks fit ",
+      ": add a tank and set its Role Affinity to ",
+      ": holds ",
+      "Needs ",
+      "air",
+      "water"
+    ],
+    "Literals": [],
+    "Direct": [
+      " more ",
+      " · mission needs ",
+      " · tanks fit ",
+      ": add a tank and set its Role Affinity to ",
+      ": holds ",
+      "Needs ",
+      "air",
+      "water"
+    ]
+  },
+  {
+    "Type": "KSA.MissionTransfer",
+    "Method": "AppendComparison",
+    "Fields": [
+      ", ARRIVE DAY ",
+      ", DAY ",
+      ". THIS TRANSFER: ",
+      "MISSION: "
+    ],
+    "Literals": [],
+    "Direct": [
+      ", ARRIVE DAY ",
+      ", DAY ",
+      ". THIS TRANSFER: ",
+      "MISSION: "
+    ]
+  },
+  {
+    "Type": "KSA.MissionTransfer",
+    "Method": "DrawElsewhere",
+    "Fields": [
+      "UPDATE MISSION"
+    ],
+    "Literals": []
+  },
+  {
+    "Type": "KSA.MissionTransfer",
+    "Method": "DrawSupplies",
+    "Fields": [
+      " SHORT BY ",
+      " · ZONE ",
+      "ENOUGH",
+      "MISSION "
+    ],
+    "Literals": [],
+    "Direct": [
+      " SHORT BY ",
+      " · ZONE ",
+      "ENOUGH",
+      "MISSION "
     ]
   },
   {
@@ -5118,6 +5944,17 @@
     ],
     "Literals": [
       "Control From Here###controlfromhere{part.InstanceId}"
+    ]
+  },
+  {
+    "Type": "KSA.PartArchetypes",
+    "Method": "AppendRadiationTolerance",
+    "Fields": [
+      "\nRadiation Tolerance: "
+    ],
+    "Literals": [],
+    "Direct": [
+      "\nRadiation Tolerance: "
     ]
   },
   {
@@ -5812,12 +6649,41 @@
   },
   {
     "Type": "KSA.PowerConsumer",
+    "Method": "DrawPowerLeft",
+    "Fields": [
+      "Charging",
+      "No battery",
+      "Not draining",
+      "Out of power",
+      "Power Left:"
+    ],
+    "Literals": [],
+    "Direct": [
+      "Charging",
+      "No battery",
+      "Not draining",
+      "Out of power"
+    ],
+    "Utf8": [
+      "Power Left:"
+    ]
+  },
+  {
+    "Type": "KSA.PowerConsumer",
     "Method": "DrawStateInfo",
     "Fields": [
       "Consuming:",
+      "Failed",
       "Light Switch",
       "No",
+      "No power",
+      "Off",
+      "On",
       "Power Consumption Active:",
+      "Power:",
+      "Rebooting",
+      "Standby",
+      "Storm standby",
       "Yes"
     ],
     "Literals": [
@@ -5826,6 +6692,37 @@
       "No",
       "Power Consumption Active:",
       "Yes"
+    ],
+    "Utf8": [
+      "Consuming:",
+      "Power Consumption Active:",
+      "Power:"
+    ],
+    "Direct": [
+      "Failed",
+      "No",
+      "No power",
+      "Off",
+      "On",
+      "Rebooting",
+      "Standby",
+      "Storm standby",
+      "Yes"
+    ]
+  },
+  {
+    "Type": "KSA.PowerConsumer",
+    "Method": "DrawSwitchControls",
+    "Fields": [
+      "Auto stands by, drawing no power, while a crewed pod or another probe core flies the vessel, and takes over when nothing else can.",
+      "Power Switch",
+      "Standby In Storms",
+      "Stands by, drawing no power, while a radiation storm of S1 or worse is under way at the vessel, as the Space Weather window shows it. On standby the core takes no upsets and half the dose, but cannot fly the vessel unless something else can."
+    ],
+    "Literals": [],
+    "Utf8": [
+      "Auto stands by, drawing no power, while a crewed pod or another probe core flies the vessel, and takes over when nothing else can.",
+      "Stands by, drawing no power, while a radiation storm of S1 or worse is under way at the vessel, as the Space Weather window shows it. On standby the core takes no upsets and half the dose, but cannot fly the vessel unless something else can."
     ]
   },
   {
@@ -6266,9 +7163,12 @@
       "Comets",
       "Context Assignments",
       "Crew Assignment",
+      "Crew Clock",
       "Debug",
       "Debug Mode",
+      "Draw Aerodynamics",
       "Draw Part Axes",
+      "EVA Supplies",
       "Editor",
       "Editor Toggle",
       "Exit Editor",
@@ -6350,6 +7250,7 @@
       "Show Texture Streaming",
       "Show Undo History Debug",
       "Show experimental particles",
+      "Show kFS Debug",
       "Space Weather",
       "Speed",
       "Spherical Billboarding",
@@ -6362,6 +7263,7 @@
       "Universe",
       "Vehicle Save/Load",
       "Version History",
+      "Vessel Ambient Lighting",
       "Vessels",
       "View",
       "Wireframe"
@@ -6455,6 +7357,10 @@
       "Vessels",
       "View",
       "Wireframe"
+    ],
+    "Utf8Controls": [
+      "Crew Clock",
+      "EVA Supplies"
     ]
   },
   {
@@ -7345,12 +8251,28 @@
       "Water"
     ],
     "Literals": [],
+    "Direct": []
+  },
+  {
+    "Type": "KSA.ResourcesPanel",
+    "Method": "DrawCollapseButton",
+    "Fields": [
+      "Collapse",
+      "Expand"
+    ],
+    "Literals": [],
+    "Utf8": [
+      "Collapse",
+      "Expand"
+    ]
+  },
+  {
+    "Type": "KSA.ResourcesPanel",
+    "Method": "DrawEditor",
+    "Fields": [],
+    "Literals": [],
     "Direct": [
-      "Air",
-      "CO₂ Scrubber",
-      "Food",
-      "LIFE SUPPORT",
-      "Water"
+      "RESOURCES"
     ]
   },
   {
@@ -7362,6 +8284,25 @@
     "Literals": [],
     "Direct": [
       "Out"
+    ]
+  },
+  {
+    "Type": "KSA.ResourcesPanel",
+    "Method": "DrawRows",
+    "Fields": [
+      " · ZONE ",
+      "Open Life Support"
+    ],
+    "Literals": [],
+    "Direct": [
+      " · ZONE ",
+      "Air",
+      "CO₂ Scrubber",
+      "Electricity",
+      "Food",
+      "LIFE SUPPORT",
+      "Open Life Support",
+      "Water"
     ]
   },
   {
@@ -7432,7 +8373,9 @@
   {
     "Type": "KSA.SeatPicker",
     "Method": "AppendSeatName",
-    "Fields": [],
+    "Fields": [
+      " · Seat "
+    ],
     "Literals": [],
     "Direct": [
       " · Seat "
@@ -7462,17 +8405,6 @@
       "Drag to fire in another sequence",
       "Inactive",
       "Right-click to expand"
-    ]
-  },
-  {
-    "Type": "KSA.SequenceList",
-    "Method": "DrawLifeSupportRow",
-    "Fields": [],
-    "Literals": [],
-    "Direct": [
-      "LIFE SUPPORT",
-      "LS",
-      "Out"
     ]
   },
   {
@@ -7610,11 +8542,15 @@
     "Fields": [
       "Crater Shape Curve",
       "Crater Shape Curve##",
+      "Ground Color Curve",
       "X = Radius from Center, Y = Crater Depth"
     ],
     "Literals": [
       "Crater Shape Curve##",
       "X = Radius from Center, Y = Crater Depth"
+    ],
+    "Utf8": [
+      "Ground Color Curve"
     ]
   },
   {
@@ -7623,10 +8559,13 @@
     "Fields": [
       "Crater Radius Scale",
       "Crater Size Variation",
+      "Ground Color",
       "Radius Noise Amplitude",
       "Radius Noise Frequency",
       "Radius Noise Octaves",
-      "Radius Noise Persistence"
+      "Radius Noise Persistence",
+      "Slope Color",
+      "Slope Strength"
     ],
     "Literals": [
       "Crater Radius Scale",
@@ -7635,6 +8574,11 @@
       "Radius Noise Frequency",
       "Radius Noise Octaves",
       "Radius Noise Persistence"
+    ],
+    "Utf8": [
+      "Ground Color",
+      "Slope Color",
+      "Slope Strength"
     ]
   },
   {
@@ -7994,6 +8938,92 @@
     ]
   },
   {
+    "Type": "KSA.SupplyBars",
+    "Method": "Draw",
+    "Fields": [
+      "Air",
+      "CO₂ Scrubber",
+      "Food",
+      "Water"
+    ],
+    "Literals": [],
+    "Utf8": [
+      "CO₂ Scrubber"
+    ],
+    "Direct": [
+      "Air",
+      "CO₂ Scrubber",
+      "Food",
+      "Water"
+    ]
+  },
+  {
+    "Type": "KSA.SupplyBars",
+    "Method": "DrawBar",
+    "Fields": [
+      "Out"
+    ],
+    "Literals": [],
+    "Direct": [
+      "Out"
+    ]
+  },
+  {
+    "Type": "KSA.SupplyBars",
+    "Method": "DrawLegLabels",
+    "Fields": [
+      " kitten",
+      " kittens"
+    ],
+    "Literals": [],
+    "Direct": [
+      " kitten",
+      " kittens"
+    ]
+  },
+  {
+    "Type": "KSA.SupplyBars",
+    "Method": "DrawMission",
+    "Fields": [
+      "Air",
+      "CO₂ Scrubber",
+      "Food",
+      "Water"
+    ],
+    "Literals": [],
+    "Utf8": [
+      "CO₂ Scrubber"
+    ],
+    "Direct": [
+      "Air",
+      "CO₂ Scrubber",
+      "Food",
+      "Water"
+    ]
+  },
+  {
+    "Type": "KSA.SupplyBars",
+    "Method": "DrawMissionLine",
+    "Fields": [
+      "last leg ends "
+    ],
+    "Literals": [],
+    "Direct": [
+      "last leg ends "
+    ]
+  },
+  {
+    "Type": "KSA.SupplyBars",
+    "Method": "DrawRowLabel",
+    "Fields": [
+      "Breathing outside air"
+    ],
+    "Literals": [],
+    "Direct": [
+      "Breathing outside air"
+    ]
+  },
+  {
     "Type": "KSA.Tank",
     "Method": "DrawStateInfo",
     "Fields": [
@@ -8155,6 +9185,19 @@
     ],
     "Literals": [
       "Reset"
+    ]
+  },
+  {
+    "Type": "KSA.TilingColorModifierReference",
+    "Method": "DrawParameters",
+    "Fields": [
+      "Frequency",
+      "Order"
+    ],
+    "Literals": [],
+    "Utf8": [
+      "Frequency",
+      "Order"
     ]
   },
   {
@@ -8866,6 +9909,21 @@
   },
   {
     "Type": "KSA.Vehicle",
+    "Method": "CreditAvionics",
+    "Fields": [
+      " of its tolerance.",
+      ": a probe core has failed from radiation.",
+      ": a probe core is wearing out from radiation, "
+    ],
+    "Literals": [],
+    "Direct": [
+      " of its tolerance.",
+      ": a probe core has failed from radiation.",
+      ": a probe core is wearing out from radiation, "
+    ]
+  },
+  {
+    "Type": "KSA.Vehicle",
     "Method": "CreditCondition",
     "Fields": [
       " is ",
@@ -8877,7 +9935,7 @@
     "Direct": [
       " is ",
       ": no ",
-      "degraded",
+      "impaired",
       "incapacitated"
     ]
   },
@@ -8887,6 +9945,13 @@
     "Fields": [
       " is close to a lethal radiation dose!"
     ],
+    "Literals": [],
+    "Direct": []
+  },
+  {
+    "Type": "KSA.Vehicle",
+    "Method": "CreditDose",
+    "Fields": [],
     "Literals": [],
     "Direct": [
       " is close to a lethal radiation dose!"
@@ -9246,8 +10311,7 @@
     "Fields": [],
     "Literals": [],
     "Direct": [
-      " died on EVA: no ",
-      "Crew died of radiation sickness: "
+      " died on EVA: no "
     ]
   },
   {
@@ -9290,11 +10354,54 @@
   },
   {
     "Type": "KSA.Vehicle",
-    "Method": "UpdateCrewIncapacitatedAndProbeCore",
-    "Fields": [],
+    "Method": "RollUpset",
+    "Fields": [
+      ": probe core rebooting after a radiation upset."
+    ],
     "Literals": [],
     "Direct": [
-      " is out of control: every kitten aboard is incapacitated."
+      ": probe core rebooting after a radiation upset."
+    ]
+  },
+  {
+    "Type": "KSA.Vehicle",
+    "Method": "UpdateControl",
+    "Fields": [
+      " is out of control: every kitten in the command pod is incapacitated.",
+      " is out of control: its probe core has failed.",
+      " is out of control: its probe core is out of power."
+    ],
+    "Literals": [],
+    "Direct": [
+      " is out of control: every kitten in the command pod is incapacitated.",
+      " is out of control: its probe core has failed.",
+      " is out of control: its probe core is out of power."
+    ]
+  },
+  {
+    "Type": "KSA.Vehicle",
+    "Method": "UpdateProbePowerWarning",
+    "Fields": [
+      ": probe core power runs out in "
+    ],
+    "Literals": [],
+    "Direct": [
+      ": probe core power runs out in "
+    ]
+  },
+  {
+    "Type": "KSA.Vehicle",
+    "Method": "UpdateStormStandbyAlert",
+    "Fields": [
+      " radiation storm passes.",
+      ": probe core standing by until the S",
+      ": the radiation storm has passed, probe core back on."
+    ],
+    "Literals": [],
+    "Direct": [
+      " radiation storm passes.",
+      ": probe core standing by until the S",
+      ": the radiation storm has passed, probe core back on."
     ]
   },
   {
@@ -9793,6 +10900,7 @@
       "ORTHO",
       "PERSP",
       "PLACE",
+      "Power Switch",
       "Propellant",
       "ROTATE",
       "Refill",
@@ -10211,6 +11319,26 @@
       "Location",
       "Vehicle Name",
       "Vehicle Save"
+    ]
+  },
+  {
+    "Type": "KSA.VehicleLaunchMenu",
+    "Method": "DrawMissionStatus",
+    "Fields": [
+      "Enough for the mission",
+      "Mission",
+      "No mission: supplies aren't checked.",
+      "OPEN IN EDITOR",
+      "STOCK ALL"
+    ],
+    "Literals": [],
+    "Utf8": [
+      "Mission",
+      "No mission: supplies aren't checked."
+    ],
+    "Direct": [
+      "Enough for the mission",
+      "Mission"
     ]
   },
   {
@@ -10685,6 +11813,34 @@
       "[Selected]",
       "ms | Max: ",
       "ms | Total GC: "
+    ]
+  },
+  {
+    "Type": "KSA.ZoneMission",
+    "Method": "AppendShortBy",
+    "Fields": [
+      " short by "
+    ],
+    "Literals": [],
+    "Direct": [
+      " short by "
+    ]
+  },
+  {
+    "Type": "KSA.ZoneMission",
+    "Method": "get_FirstName",
+    "Fields": [
+      "Air",
+      "CO₂ Scrubber",
+      "Food",
+      "Water"
+    ],
+    "Literals": [],
+    "Direct": [
+      "Air",
+      "CO₂ Scrubber",
+      "Food",
+      "Water"
     ]
   }
 ]

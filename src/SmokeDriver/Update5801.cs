@@ -16,7 +16,7 @@ public sealed partial class Driver
             _lifeSupport = Universe.Rules.LifeSupport;
             Universe.Rules.LifeSupport = true;
             ContentSnapshot();
-            HabitatZonesWindow.Toggle();
+            LifeSupportWindow.Toggle();
             Stage++;
         }
         else if (Stage == 1 && elapsed > 6)
@@ -37,7 +37,7 @@ public sealed partial class Driver
         else if (Stage == 4 && elapsed > 15)
         {
             Locale("zh-CN");
-            HabitatZonesWindow.Toggle();
+            LifeSupportWindow.Toggle();
             KittenRosterWindow.Toggle();
             Stage++;
         }

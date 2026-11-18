@@ -16,6 +16,8 @@ public sealed class DisplaySite
     public string Method { get; set; } = "";
     public string[] Fields { get; set; } = Array.Empty<string>();
     public string[] Literals { get; set; } = Array.Empty<string>();
+    public string[] Utf8 { get; set; } = [];
+    public string[] Utf8Controls { get; set; } = [];
     public string[] Direct { get; set; } = Array.Empty<string>();
 }
 
@@ -158,6 +160,20 @@ public static class ExpandedUi
         => Sites.TryGetValue((method.DeclaringType!.FullName!, method.Name), out var site)
             && site.Direct.Contains(value, StringComparer.Ordinal);
 
+    // Decode only compiler-emitted static data while constructing the patch.
+    // Each reviewed control keeps the original ImGui ID behind its visible label.
+    public static MethodInfo? ReviewedUtf8Adapter(MethodBase owner, FieldInfo data, int length)
+    {
+        if (!Sites.TryGetValue((owner.DeclaringType!.FullName!, owner.Name), out var site)
+            || (site.Utf8.Length == 0 && site.Utf8Controls.Length == 0) || length <= 0)
+            return null;
+        var bytes = new byte[length];
+        System.Runtime.CompilerServices.RuntimeHelpers.InitializeArray(bytes, data.FieldHandle);
+        string literal = Encoding.UTF8.GetString(bytes);
+        if (site.Utf8Controls.Contains(literal)) return AccessTools.Method(typeof(ExpandedUi), nameof(Utf8Menu));
+        return site.Utf8.Contains(literal) ? AccessTools.Method(typeof(ExpandedUi), nameof(Utf8Plain)) : null;
+    }
+
     public static string Content(string kind,string id,string field,string original)
         => Runtime.CurrentPack.Content.GetValueOrDefault(kind+":"+id+":"+field,original);
     public static string SubstanceShort(Substance value)=>Content("Substance",value.Id,"ShortName",value.ShortName);
@@ -298,7 +314,7 @@ public static class ExpandedUiPatch
     public static IEnumerable<CodeInstruction> Translate(IEnumerable<CodeInstruction> instructions,MethodBase __originalMethod)
     {
         var body=instructions.ToList();int anomalies=0,historyTexts=0;
-        bool storageName = __originalMethod.DeclaringType?.DeclaringType == typeof(HabitatZonesWindow)
+        bool storageName = __originalMethod.DeclaringType?.DeclaringType == typeof(LifeSupportWindow)
             && __originalMethod.Name == "AppendStorageName";
         int storageDisplayLoad = -1;
         if (storageName)
@@ -335,6 +351,12 @@ public static class ExpandedUiPatch
                 {instruction.opcode=OpCodes.Call;instruction.operand=AccessTools.Method(typeof(ExpandedUi),pars[1].ParameterType==typeof(bool)?nameof(ExpandedUi.HelperMenuValue):nameof(ExpandedUi.HelperMenuToggle));}
                 else if(helper.Name=="DrawButton"&&pars.Length==4&&pars[0].ParameterType==typeof(ImString)&&pars[1].ParameterType==typeof(Brutal.Numerics.byte4?))
                 {instruction.opcode=OpCodes.Call;instruction.operand=AccessTools.Method(typeof(ExpandedUi),nameof(ExpandedUi.HelperButton));}
+            }
+            if (instruction.operand is MethodInfo shortfall && shortfall.DeclaringType == typeof(ZoneMission)
+                && shortfall.Name == nameof(ZoneMission.AppendShortBy))
+            {
+                instruction.opcode = OpCodes.Call;
+                instruction.operand = AccessTools.Method(typeof(LifeSupportLabelPatch), nameof(LifeSupportLabelPatch.AppendShortfall));
             }
             if (i == storageDisplayLoad)
             {
@@ -377,9 +399,20 @@ public static class ExpandedUiPatch
                 }
             }
             if (instruction.operand is MethodInfo heading && heading.Name == "DrawHeading"
-                && heading.DeclaringType?.DeclaringType == typeof(HabitatZonesWindow))
+                && heading.DeclaringType?.DeclaringType == typeof(LifeSupportWindow))
                 yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ExpandedUi), nameof(ExpandedUi.Utf8Plain)));
             yield return instruction;
+            if (instruction.opcode == OpCodes.Newobj && instruction.operand is ConstructorInfo span
+                && span.DeclaringType == typeof(ReadOnlySpan<byte>) && i >= 2
+                && body[i - 2].opcode == OpCodes.Ldsflda && body[i - 2].operand is FieldInfo bytes
+                && bytes.DeclaringType?.Name == "<PrivateImplementationDetails>"
+                && body[i - 1].opcode.Value >= OpCodes.Ldc_I4_0.Value && body[i - 1].opcode.Value <= OpCodes.Ldc_I4.Value)
+            {
+                var size = body[i - 1];
+                int length = size.operand == null ? size.opcode.Value - OpCodes.Ldc_I4_0.Value : Convert.ToInt32(size.operand);
+                var adapter = ExpandedUi.ReviewedUtf8Adapter(__originalMethod, bytes, length);
+                if (adapter != null) yield return new CodeInstruction(OpCodes.Call, adapter);
+            }
             if(instruction.opcode==OpCodes.Newobj && instruction.operand is ConstructorInfo ctor
                 &&ctor.DeclaringType==typeof(ReadOnlySpan<byte>)&&i>=2&&body[i-2].opcode==OpCodes.Ldsflda
                 &&body[i-2].operand is FieldInfo utf8 &&utf8.DeclaringType?.Name=="<PrivateImplementationDetails>"
@@ -397,6 +430,9 @@ public static class ExpandedUiPatch
                 yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ExpandedUi), nameof(ExpandedUi.Text)));
                 continue;
             }
+            if (instruction.operand is MethodInfo firstSupply && firstSupply.DeclaringType == typeof(ZoneMission)
+                && firstSupply.Name == "get_FirstName")
+                yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ExpandedUi), nameof(ExpandedUi.Text)));
             if (instruction.operand is MethodInfo supply && supply.DeclaringType == typeof(LifeSupportForecast)
                 && supply.Name == "get_LimitName")
                 yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ExpandedUi), nameof(ExpandedUi.Text)));

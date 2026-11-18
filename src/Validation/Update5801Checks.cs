@@ -27,7 +27,7 @@ internal static partial class Program
                 .Where(instruction => instruction.opcode == OpCodes.Ldstr)
                 .Select(instruction => (string)instruction.operand).ToHashSet(StringComparer.Ordinal);
             var missing = site.Direct.Where(source => !constants.Contains(source)).ToArray();
-            Check(missing.Length == 0, "5801 显示常量匹配 " + identity + " " + string.Join(", ", missing));
+            Check(missing.Length == 0, "当前游戏 IL 显示常量匹配 " + identity + " " + string.Join(", ", missing));
         }
 
         var captions = new[] { "Life Support", "Habitat Zones", "Rules", "Cause of Death", "Meals##take", "Highlight all zones" };
