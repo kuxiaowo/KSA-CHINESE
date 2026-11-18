@@ -149,35 +149,20 @@ public static class CrewPortraitBoneCaptionPatch
 /// Changes only the action words in the EVA ladder prompt. The bracketed
 /// Input.GetAssignmentString value continues to come from the game's binding.
 /// </summary>
-[HarmonyPatch]
+[HarmonyPatch(typeof(KittenEva), "DrawKeyPrompt")]
 public static class KittenEvaActionCaptionPatch
 {
-    private static readonly HashSet<string> ActionSuffixes = new(StringComparer.Ordinal)
+    [HarmonyPrefix]
+    public static void Localize(ref ReadOnlySpan<char> label)
     {
-        "] Let go", "] Grab", "] Board"
-    };
-
-    public static MethodBase TargetMethod()
-        => AccessTools.Method(typeof(KittenEva), "DrawLadderPrompt", new[] { typeof(IViewport) })
-            ?? throw new MissingMethodException(typeof(KittenEva).FullName, "DrawLadderPrompt(IViewport)");
-
-    [HarmonyTranspiler]
-    public static IEnumerable<CodeInstruction> Translate(IEnumerable<CodeInstruction> instructions)
-    {
-        var lookup = AccessTools.Method(typeof(Runtime), nameof(Runtime.UtilityText), new[] { typeof(string) })!;
-        int sites = 0;
-        foreach (var instruction in instructions)
+        string original = label.ToString();
+        if (original == "Supplies")
         {
-            yield return instruction;
-            if (instruction.opcode == OpCodes.Ldstr && instruction.operand is string suffix
-                && ActionSuffixes.Contains(suffix))
-            {
-                yield return new CodeInstruction(OpCodes.Call, lookup);
-                sites++;
-            }
+            label = Runtime.UtilityText(original);
+            return;
         }
-        if (sites != ActionSuffixes.Count)
-            throw new InvalidOperationException($"EVA action prompt sites changed: expected {ActionSuffixes.Count}, found {sites}.");
+        string caption = Runtime.UtilityText("] " + original);
+        if (caption.StartsWith(']')) label = caption.AsSpan(1).TrimStart();
     }
 }
 

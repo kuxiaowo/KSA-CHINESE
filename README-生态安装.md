@@ -1,8 +1,8 @@
 # StarMap / Borea 安装与迁移
 
-公开发行版 0.1.7 对应 5707。以下 5801 安装说明适用于从本源码构建的 0.1.8。
+已发布的 0.1.8 对应 5801。以下 5901 安装说明适用于从本源码构建的 0.1.9。
 
-标准模组包为 **KsaChinese-0.1.8.zip**，只适配 Windows x64 的 KSA **2026.11.10.5801**，需要 .NET 10 x64 Runtime 和 **StarMap 0.5.4**。包不附带加载器、启动器或游戏文件。代码和译文为 MIT；Noto Sans SC 字体子集为 OFL-1.1，来源见包内 THIRD_PARTY.md 和许可文件。
+标准模组包为 **KsaChinese-0.1.9.zip**，只适配 Windows x64 的 KSA **2026.11.16.5901**，需要 .NET 10 x64 Runtime 和 **StarMap 0.5.4**。包不附带加载器、启动器或游戏文件。代码和译文为 MIT；Noto Sans SC 字体子集为 OFL-1.1，来源见包内 THIRD_PARTY.md 和许可文件。
 
 ## Borea
 

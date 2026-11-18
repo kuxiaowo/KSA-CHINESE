@@ -1,0 +1,77 @@
+{
+  "game": "2026.11.16.5901",
+  "product_commit": "c24f6a3bf9827bdb4dac48a643aec14534539930",
+  "game_dll_sha256": "170c28aa34845026195c89a23c0f3c241db00ea4a8b86ef60ec097c32a7f8a39",
+  "loader": "StarMap 0.5.4",
+  "loader_zip_sha256": "bcf14ac68dfb6558152586fd98776fc5013006a0406c37792f5f6afcf0561366",
+  "exit_code": 0,
+  "profile": "work/test-profile-5901-final",
+  "game_version_lookup_http_502": true,
+  "plugin_sha256": "ce8ce7adaa037b518edca5d5aeb77562a3583d789120618eff227ec68f31dd68",
+  "archives": {
+    "KsaChinese-0.1.9.zip": {
+      "sha256": "b85d1b43350e9e1923497e26e4c19b0a9e6d5047ab7c0eeb5875f07d3f3e7326",
+      "entries": 19,
+      "hashed_entries": 18
+    },
+    "KsaChinese-0.1.9-5901-Portable.zip": {
+      "sha256": "d3ebaef076985f24c6146e68cc1c197e187dc91c92ae007dc98ab560f3a782c2",
+      "entries": 38,
+      "hashed_entries": 37
+    }
+  },
+  "portable_launcher_check": {
+    "known_game_exit": 0,
+    "missing_game_exit": 1
+  },
+  "borea": {
+    "version": "0.6.27",
+    "windows_cli_zip_sha256": "96c0f01b8dcadf745dc361ef0e90faefb358b6f4a3fe3a55414bfe6586dbb306",
+    "mode": "Official release assemblies, CLI command handlers with isolated Borea root and shared-profile path; create instance, unpack local candidate, scan and verify files. No public-catalog candidate installation.",
+    "scan": "foreignFolders",
+    "matched_archive_files": 18
+  },
+  "screenshots": [
+    {
+      "scene": "5901-life-support-zh",
+      "file": "ksa_20261118_080641_1920x1080.png",
+      "sha256": "ce6edeb62d40977874128f435201c135d4a8fabcfba2c3f6d1020885de26af3f"
+    },
+    {
+      "scene": "5901-life-support-en",
+      "file": "ksa_20261118_080649_1920x1080.png",
+      "sha256": "131ae94b3649fd4027ae850867d45341c0ce4f69c8ec6c5747d53de2da18b42b"
+    },
+    {
+      "scene": "5901-transfer",
+      "file": "ksa_20261118_080701_1920x1080.png",
+      "sha256": "1bedfb1ce998b2f4c62a8388e4cb091f94ea76054441aaebb814d88ff4889be8"
+    },
+    {
+      "scene": "editor-mission",
+      "file": "editor-mission.png",
+      "sha256": "8fc133992e7cbf72c5f2603d36cb3e6942e89ec55f36682dcf4d263b87290da6",
+      "capture": "Windows test window"
+    },
+    {
+      "scene": "launch-warning",
+      "file": "launch-warning.png",
+      "sha256": "4013bb37c94f32349a126c920d584ba2eab208b54c8c48b9cdd3ff275867ec83",
+      "capture": "Windows test window"
+    }
+  ],
+  "observations": [
+    "part-registry=857 translated=856",
+    "input-actions=110 translated=110",
+    "content-registry substances=87 phases=126 reactions=16; original-fields-unchanged",
+    "5901-flight=Rocket",
+    "5901-switch-target=Gemini7",
+    "5901-switched=Gemini7",
+    "5901-transfer-open=True",
+    "screenshot-request=5901-transfer",
+    "5901-editor-zones=1",
+    "5901-before-stock=Short",
+    "5901-launch-popup=True",
+    "5901-after-stock=Short"
+  ]
+}

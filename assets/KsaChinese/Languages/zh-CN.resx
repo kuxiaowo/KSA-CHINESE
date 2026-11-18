@@ -196,7 +196,316 @@
     <value>HDR 场景基准白亮度</value>
   </data>
   <data name="FlightComputerTooltipCrewIncapacitated" xml:space="preserve">
-    <value>机上所有喵航员均已失能，且载具没有探测器核心。</value>
+    <value>指令舱内的所有喵航员均已丧失行动能力。</value>
+  </data>
+  <data name="AlertLifeSupportOut" xml:space="preserve">
+    <value>生命保障物资耗尽</value>
+  </data>
+  <data name="AlertVehicleDroppedConnectors" xml:space="preserve">
+    <value>{Vehicle} 的部分部件在存档后发生了变化。请检查各部件是否仍连接在正确的位置。</value>
+  </data>
+  <data name="CrewClockTooltip" xml:space="preserve">
+    <value>若现状持续，显示喵航员接下来会遇到的情况：物资告急，物资耗尽后行动受限、丧失行动能力或死亡，或因累积辐射剂量患病或死亡。一天内的事件优先显示最严重的，其余优先显示最早的。单击可切换至相应载具；若已在操控该载具，则打开生命保障窗口。在“视图”菜单中可显示或隐藏乘员倒计时（{Key}）。</value>
+  </data>
+  <data name="CrewClockTooltipCollapse" xml:space="preserve">
+    <value>仅显示最紧急的事件</value>
+  </data>
+  <data name="CrewClockTooltipExpand" xml:space="preserve">
+    <value>显示每艘载具的下一项事件</value>
+  </data>
+  <data name="CrewClockTooltipBack" xml:space="preserve">
+    <value>切回先前操控的载具</value>
+  </data>
+  <data name="LifeSupportTooltipSwitchTo" xml:space="preserve">
+    <value>切换至此载具</value>
+  </data>
+  <data name="LifeSupportTooltipVessel" xml:space="preserve">
+    <value>显示载有喵航员的载具，以及其中物资最紧张的居住区还能维持多久。选择标签页可查看该载具，同时继续操控当前载具。</value>
+  </data>
+  <data name="LifeSupportTooltipBackLeg" xml:space="preserve">
+    <value>返程航段：从离开目的地直到返回出发地。</value>
+  </data>
+  <data name="LifeSupportTooltipCrewMoves" xml:space="preserve">
+    <value>喵航员可在航段之间更换居住区。经舱口通行需要打开舱门，也可通过舱外活动转移。</value>
+  </data>
+  <data name="LifeSupportTooltipCrewPlan" xml:space="preserve">
+    <value>规划每个航段各居住区的乘员数。餐食和 CO₂ 吸收罐留在各自居住区，请据此安排乘员。</value>
+  </data>
+  <data name="LifeSupportTooltipCustomLeg" xml:space="preserve">
+    <value>整个自定义任务。</value>
+  </data>
+  <data name="LifeSupportTooltipFewerKittens" xml:space="preserve">
+    <value>此航段在该居住区少安排一名喵航员。</value>
+  </data>
+  <data name="LifeSupportTooltipKittenDays" xml:space="preserve">
+    <value>将各航段的天数乘以对应的乘员数，再相加得到乘员人天数。每名喵航员每天吃 {Meals} 份餐食，每个 CO₂ 吸收罐可供使用 {KittenDays} 人天。</value>
+  </data>
+  <data name="LifeSupportTooltipMoreKittens" xml:space="preserve">
+    <value>此航段在该居住区多安排一名喵航员。</value>
+  </data>
+  <data name="LifeSupportTooltipNoKittensToSpare" xml:space="preserve">
+    <value>此航段已安排全部在船乘员。若要增加计划人数，请先为更多喵航员分配座位。</value>
+  </data>
+  <data name="LifeSupportTooltipOutLeg" xml:space="preserve">
+    <value>去程航段：从发射直到抵达目的地。</value>
+  </data>
+  <data name="LifeSupportTooltipOverfull" xml:space="preserve">
+    <value>此航段的计划人数超过实际就座人数。请增加就座乘员，或减少计划人数。</value>
+  </data>
+  <data name="LifeSupportTooltipSeatsFull" xml:space="preserve">
+    <value>计划已占用该居住区的全部座位。</value>
+  </data>
+  <data name="LifeSupportTooltipStayLeg" xml:space="preserve">
+    <value>停留航段：在目的地度过的时间，包括等待返程转移窗口的时间。</value>
+  </data>
+  <data name="EditorHistoryMission" xml:space="preserve">
+    <value>任务</value>
+  </data>
+  <data name="EditorSettingPowerSwitch" xml:space="preserve">
+    <value>电源开关</value>
+  </data>
+  <data name="EditorSettingStandbyInStorms" xml:space="preserve">
+    <value>辐射风暴期间待机</value>
+  </data>
+  <data name="SettingsGraphicsVolumetricsCloudAmbientLight" xml:space="preserve">
+    <value>云层环境光</value>
+  </data>
+  <data name="SettingsGraphicsDebugPipelineCache" xml:space="preserve">
+    <value>图形管线缓存</value>
+  </data>
+  <data name="SettingsSimulationLifeSupportRegion" xml:space="preserve">
+    <value>生命保障</value>
+  </data>
+  <data name="SettingsSimulationStockMargin" xml:space="preserve">
+    <value>任务物资余量</value>
+  </data>
+  <data name="SettingsSimulationStockMarginTooltip" xml:space="preserve">
+    <value>按任务备货时，在任务所需餐食和 CO₂ 吸收罐的基础上额外装载的比例。转移耗时是估算值，留出余量可应对延误。</value>
+  </data>
+  <data name="LaunchCheckSuppliesShortTitle" xml:space="preserve">
+    <value>物资不足</value>
+  </data>
+  <data name="LaunchCheckSuppliesShort" xml:space="preserve">
+    <value>{Zone} 的{Supply}不足：仅能维持 {Lasts}，该区最后一个任务航段将在 {MissionEnd} 结束。仍要发射吗？</value>
+  </data>
+  <data name="LifeSupportTooltipPickDestination" xml:space="preserve">
+    <value>单击可将物资转移至此处。</value>
+  </data>
+  <data name="LifeSupportTooltipPickChosen" xml:space="preserve">
+    <value>物资将转移至此处。</value>
+  </data>
+  <data name="LifeSupportTooltipPickOpenHatch" xml:space="preserve">
+    <value>请先打开舱门。可在“转移物资”窗口的“转入”一栏找到该舱门。</value>
+  </data>
+  <data name="LifeSupportTooltipStockZone" xml:space="preserve">
+    <value>按该区的乘员计划装载餐食和 CO₂ 吸收罐，并预留 {Margin}% 的余量，最多装至储存空间上限。多余物资柜会清空。余量可在“设置”的“模拟”中调整。</value>
+  </data>
+  <data name="LifeSupportTooltipStorageShort" xml:space="preserve">
+    <value>该区还有 {Meals} 份餐食和 {Canisters} 个 CO₂ 吸收罐放不下。请增加居住舱或货舱，或减少该区计划的乘员人天数。</value>
+  </data>
+  <data name="LifeSupportTooltipCloseHatch" xml:space="preserve">
+    <value>关闭舱门。两侧将分成独立的居住区，各自保留本侧储存的物资。</value>
+  </data>
+  <data name="LifeSupportTooltipClosedHatch" xml:space="preserve">
+    <value>一道关闭的对接舱门将两个居住区隔开。</value>
+  </data>
+  <data name="LifeSupportTooltipConnected" xml:space="preserve">
+    <value>此载具上的其他居住区。打开舱门可合并两区，让乘员和物资通行。</value>
+  </data>
+  <data name="LifeSupportTooltipCrewSeats" xml:space="preserve">
+    <value>显示该区各座位的喵航员，与部件窗口中的乘员选择一致。如果没有分配乘员，规划时按全部座位计算。</value>
+  </data>
+  <data name="LifeSupportTooltipCrew" xml:space="preserve">
+    <value>显示该居住区的喵航员、所在座位和身体状况。</value>
+  </data>
+  <data name="LifeSupportTooltipCrewAssigned" xml:space="preserve">
+    <value>分配至该居住区座位的喵航员。</value>
+  </data>
+  <data name="LifeSupportTooltipCrewEverySeat" xml:space="preserve">
+    <value>尚未分配乘员，因此按全部座位计算。可分配乘员，或选择任务并规划各航段的实际人数。</value>
+  </data>
+  <data name="LifeSupportTooltipCrewFlight" xml:space="preserve">
+    <value>显示该区的喵航员，以及距离第一种物资耗尽还有多久。</value>
+  </data>
+  <data name="LifeSupportTooltipCrewIncapacitated" xml:space="preserve">
+    <value>该居住区的所有喵航员均已丧失行动能力</value>
+  </data>
+  <data name="LifeSupportTooltipCrewPlanned" xml:space="preserve">
+    <value>人数来自上方的乘员计划。显示范围表示各航段的人数不同。</value>
+  </data>
+  <data name="LifeSupportTooltipEvaCarry" xml:space="preserve">
+    <value>通过舱外活动搬运：靠近后按 {Key}</value>
+  </data>
+  <data name="LifeSupportTooltipEvaOnly" xml:space="preserve">
+    <value>没有对接舱门通往此处。乘员和物资须通过舱外活动转移。</value>
+  </data>
+  <data name="LifeSupportTooltipHabitats" xml:space="preserve">
+    <value>该区内储存餐食和 CO₂ 吸收罐的部件。乘员只能使用本区储存的餐食和吸收罐。</value>
+  </data>
+  <data name="LifeSupportTooltipTimingAsPlanned" xml:space="preserve">
+    <value>按编辑器中的计划计算各航段时间，从发射时开始计时。</value>
+  </data>
+  <data name="LifeSupportTooltipTimingFlightPlan" xml:space="preserve">
+    <value>以飞行计划抵达任务目的地的时间为基准，再加上计划停留和返程时间。载具实际抵达或离开后，改用实际时间。</value>
+  </data>
+  <data name="LifeSupportTooltipTimingNoDestination" xml:space="preserve">
+    <value>该任务未指定目的天体，只能按原计划计时。</value>
+  </data>
+  <data name="LifeSupportTooltipTimingNoEncounter" xml:space="preserve">
+    <value>飞行计划尚未抵达任务目的地。规划一条通往目的地的转移轨道后，即可据此计时。</value>
+  </data>
+  <data name="LifeSupportTooltipTimingLeft" xml:space="preserve">
+    <value>距离任务最后一个航段结束的时间。各区条形图上的虚线标记该区最后一个航段的结束时间。</value>
+  </data>
+  <data name="LifeSupportTooltipMissionEnough" xml:space="preserve">
+    <value>每个居住区的物资都能维持到该区最后一个载人航段结束。</value>
+  </data>
+  <data name="LifeSupportTooltipMissionShort" xml:space="preserve">
+    <value>显示物资缺口最大的居住区、该区最先耗尽的物资，以及物资会比该区最后一个航段结束早多久耗尽。</value>
+  </data>
+  <data name="LifeSupportTooltipNoCrewToCarry" xml:space="preserve">
+    <value>该区没有可搬运物资的喵航员</value>
+  </data>
+  <data name="LifeSupportTooltipNothingToMove" xml:space="preserve">
+    <value>此处没有可转移的物资</value>
+  </data>
+  <data name="LifeSupportTooltipOpenHatch" xml:space="preserve">
+    <value>打开舱门将两个居住区连为一体，使乘员和物资可以通行。</value>
+  </data>
+  <data name="LifeSupportTooltipOpenHatchRow" xml:space="preserve">
+    <value>这道对接舱门已打开，两侧属于同一居住区。</value>
+  </data>
+  <data name="LifeSupportTooltipShortfall" xml:space="preserve">
+    <value>空气和水来自载具上的储罐，但餐食和 CO₂ 吸收罐必须存放在乘员所在的居住区。</value>
+  </data>
+  <data name="LifeSupportTooltipStores" xml:space="preserve">
+    <value>{Meals} 份餐食可供一名喵航员食用 {Days}。{Canisters} 个 CO₂ 吸收罐可供使用 {KittenDays} 人天。</value>
+  </data>
+  <data name="LifeSupportTooltipTransfer" xml:space="preserve">
+    <value>将餐食和 CO₂ 吸收罐转移到同一居住区的另一个舱段，由该区的一名喵航员搬运。</value>
+  </data>
+  <data name="LifeSupportTooltipVolumes" xml:space="preserve">
+    <value>宜居容积是乘员生活的加压空间，同时显示人均容积。储存容积用于存放餐食和 CO₂ 吸收罐。</value>
+  </data>
+  <data name="LifeSupportTooltipWorst" xml:space="preserve">
+    <value>按当前乘员分布，显示载具上最先耗尽的物资及其所在居住区。</value>
+  </data>
+  <data name="LifeSupportTooltipZone" xml:space="preserve">
+    <value>居住区由无需舱外活动即可往来的宜居舱段组成。餐食和 CO₂ 吸收罐留在各自区内，空气和水由整艘载具共享。</value>
+  </data>
+  <data name="LifeSupportTooltipStockAll" xml:space="preserve">
+    <value>按各载人居住区的乘员计划装载餐食和 CO₂ 吸收罐，并预留 {Margin}% 的余量，最多装至各区储存空间上限。空气和水储罐也按此原则补充。余量可在“设置”的“模拟”中调整。</value>
+  </data>
+  <data name="LifeSupportTooltipFillTanks" xml:space="preserve">
+    <value>按乘员计划补充空气和水，并预留 {Margin}% 的余量；若容量不足则加至满罐。现有储量只增不减。</value>
+  </data>
+  <data name="LifeSupportTooltipTankSupply" xml:space="preserve">
+    <value>整艘载具共享空气和水储罐。这里列出当前储量、满罐容量和含余量的任务需求。仅计入用途设为空气或水的储罐。</value>
+  </data>
+  <data name="LifeSupportTooltipTankMissing" xml:space="preserve">
+    <value>即使装满，现有储罐也无法满足含余量的任务需求。请添加储罐，并在部件窗口将其用途设为所缺物资。</value>
+  </data>
+  <data name="LifeSupportTooltipCustom" xml:space="preserve">
+    <value>当目的地选择器无法描述行程时，可自行输入任务时长。</value>
+  </data>
+  <data name="LifeSupportTooltipCustomLength" xml:space="preserve">
+    <value>从发射至任务结束的总时长。</value>
+  </data>
+  <data name="LifeSupportTooltipHohmann" xml:space="preserve">
+    <value>去程和返程采用圆轨道间最省燃料的转移方式。更快的转移能缩短航程，但会消耗更多燃料。</value>
+  </data>
+  <data name="LifeSupportTooltipCruise" xml:space="preserve">
+    <value>以光速的比例表示恒星之间的巡航速度。</value>
+  </data>
+  <data name="LifeSupportTooltipInterstellarLegs" xml:space="preserve">
+    <value>去程和返程按巡航速度跨越恒星间距。估算未计入加速和减速，实际航程会稍长。若目的地是行星，还会加上从其恒星到行星的转移时间。</value>
+  </data>
+  <data name="LifeSupportTooltipMission" xml:space="preserve">
+    <value>规划行程。计划会随载具一同保存。</value>
+  </data>
+  <data name="LifeSupportTooltipPlan" xml:space="preserve">
+    <value>飞掠只经过天体。环绕和着陆会按设定的时间停留。单程任务不安排返程。</value>
+  </data>
+  <data name="LifeSupportTooltipStay" xml:space="preserve">
+    <value>在目的地停留的天数。往返任务可能需要延长停留，以等待下一个返程转移窗口。</value>
+  </data>
+  <data name="EditorHistoryStockForMission" xml:space="preserve">
+    <value>按任务备货</value>
+  </data>
+  <data name="EditorHistoryFillTanks" xml:space="preserve">
+    <value>补充空气和水</value>
+  </data>
+  <data name="TransferPlannerMissionEnough" xml:space="preserve">
+    <value>采用此转移时，各区物资均可维持至任务结束，包括去程、停留和返程。</value>
+  </data>
+  <data name="TransferPlannerMissionShort" xml:space="preserve">
+    <value>采用此转移时，物资缺口最大的居住区将在其最后一个任务航段结束前耗尽这项物资。</value>
+  </data>
+  <data name="TransferPlannerMissionLate" xml:space="preserve">
+    <value>此转移的抵达时间晚于任务计划。上方物资估算已按此次抵达时间计算。</value>
+  </data>
+  <data name="TransferPlannerMissionElsewhere" xml:space="preserve">
+    <value>此转移前往的地点与载具的任务目的地不同。</value>
+  </data>
+  <data name="TransferPlannerUpdateMission" xml:space="preserve">
+    <value>将此次转移的目的地设为任务目的地，保留原有任务方式、停留时间和返程安排。</value>
+  </data>
+  <data name="LifeSupportTooltipSeatIncapacitated" xml:space="preserve">
+    <value>已丧失行动能力</value>
+  </data>
+  <data name="LifeSupportTooltipSeatMove" xml:space="preserve">
+    <value>将这名喵航员移至同一居住区的空座位。</value>
+  </data>
+  <data name="LifeSupportTooltipSeatNoEmpty" xml:space="preserve">
+    <value>该居住区没有空座位</value>
+  </data>
+  <data name="LifeSupportTooltipAir" xml:space="preserve">
+    <value>空气来自全体乘员共享的空气储罐。每名喵航员每天呼吸消耗 {Mass} kg 空气。</value>
+  </data>
+  <data name="LifeSupportTooltipFood" xml:space="preserve">
+    <value>食物来自本区舱段内储存的餐食。每名喵航员每天吃 {Meals} 份。</value>
+  </data>
+  <data name="LifeSupportTooltipScrubber" xml:space="preserve">
+    <value>CO₂ 吸收罐储存在本区舱段内，每罐可供使用 {KittenDays} 人天。</value>
+  </data>
+  <data name="LifeSupportTooltipWater" xml:space="preserve">
+    <value>水来自全体乘员共享的水储罐。每名喵航员每天饮用 {Mass} kg 水。</value>
+  </data>
+  <data name="FlightComputerTooltipProbeCoreFailed" xml:space="preserve">
+    <value>探测器核心已因辐射损伤而失效。</value>
+  </data>
+  <data name="FlightComputerTooltipProbeCoreStormStandby" xml:space="preserve">
+    <value>探测器核心正在待机，等待辐射风暴过去。</value>
+  </data>
+  <data name="FlightComputerTooltipProbeCoreRebooting" xml:space="preserve">
+    <value>探测器核心受辐射扰动影响，正在重启。</value>
+  </data>
+  <data name="FlightComputerTooltipNoCrew" xml:space="preserve">
+    <value>指令舱内没有可操控载具的喵航员。</value>
+  </data>
+  <data name="FlightComputerTooltipProbeCoreUnpowered" xml:space="preserve">
+    <value>探测器核心供电不足。</value>
+  </data>
+  <data name="FlightComputerTooltipProbeCoreOff" xml:space="preserve">
+    <value>探测器核心的电源已关闭。</value>
+  </data>
+  <data name="LaunchMenuTooltipMission" xml:space="preserve">
+    <value>此任务随载具设计保存。可在载具编辑器的“生命保障”窗口修改。</value>
+  </data>
+  <data name="LaunchMenuTooltipShortStores" xml:space="preserve">
+    <value>显示物资缺口最大的居住区及最先耗尽的物资。“全部备货”可为本次发射补充餐食和 CO₂ 吸收罐。若储存空间已满，请在编辑器中增设储存部件。</value>
+  </data>
+  <data name="LaunchMenuTooltipShortTanks" xml:space="preserve">
+    <value>空气和水由载具储罐提供。“全部备货”最多补充至满罐；若要增加容量，请在载具编辑器中修改。</value>
+  </data>
+  <data name="LaunchMenuTooltipStockAll" xml:space="preserve">
+    <value>按各载人居住区的乘员计划装载餐食和 CO₂ 吸收罐，并加上设置中的 {Margin}% 余量，最多装至储存空间上限。空气和水储罐也按此原则补充。这仅影响本次发射，已保存的载具设计保持原样。</value>
+  </data>
+  <data name="LaunchMenuTooltipNoMission" xml:space="preserve">
+    <value>在载具编辑器的“生命保障”窗口选择任务并保存载具，即可在发射前按任务检查物资。</value>
+  </data>
+  <data name="LaunchMenuTooltipOpenInEditor" xml:space="preserve">
+    <value>在载具编辑器中打开已保存的载具，修改其储罐、储存空间、任务或乘员计划。在此菜单中选择的乘员和装载量不会带入编辑器。</value>
   </data>
   <data name="SettingsWindowTitle" xml:space="preserve">
     <value>设置</value>
@@ -359,9 +668,6 @@
   </data>
   <data name="SettingsGraphicsMilkyWayQuality" xml:space="preserve">
     <value>银河画质</value>
-  </data>
-  <data name="SettingsGraphicsVesselAmbientLighting" xml:space="preserve">
-    <value>飞船环境光</value>
   </data>
   <data name="SettingsGraphicsAmbientOcclusion" xml:space="preserve">
     <value>环境光遮蔽（AO）</value>

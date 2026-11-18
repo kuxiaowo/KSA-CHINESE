@@ -148,7 +148,7 @@ public static class Update5707FragmentPatch
             ("KSA.KittenComboOption", "DrawTooltip"),
             ("KSA.SpaceWeatherAlerts", "RaiseAlerts"),
             ("KSA.SpaceWeatherAlerts", "AppendSolarWind"),
-            ("KSA.Vehicle", "CreditCrewStats"),
+            ("KSA.Vehicle", "CreditDose"),
             ("KSA.Vehicle", "KillDyingCrew"),
             ("KSA.OrbitHoverReadout", "DrawVehicleReadout"),
         })

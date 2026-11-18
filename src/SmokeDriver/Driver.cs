@@ -146,6 +146,11 @@ public sealed partial class Driver
         double t=Timer.Elapsed.TotalSeconds;
         try
         {
+            if (Environment.GetEnvironmentVariable("KSA_SMOKE_5901") == "1")
+            {
+                Update5901Frame(t);
+                return;
+            }
             if (Environment.GetEnvironmentVariable("KSA_SMOKE_5801_EVA") == "1")
             {
                 Update5801EvaFrame(t);

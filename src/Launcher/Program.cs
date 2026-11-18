@@ -20,7 +20,10 @@ internal static class Program
             // Probes exercise exactly the same guard without starting KSA.
             if (args.Length == 2 && args[0] == "--check")
             {
-                ValidateGame(Path.GetFullPath(args[1]), Path.Combine(Root, "compatibility.json"));
+                var probeManifest = Path.Combine(Root, "compatibility.json");
+                if (!File.Exists(probeManifest))
+                    probeManifest = Path.Combine(Root, "..", "Content", "KsaChinese", "compatibility.json");
+                ValidateGame(Path.GetFullPath(args[1]), probeManifest);
                 return 0;
             }
             string game = Directory.GetParent(Root)?.FullName ?? throw new IOException("请把 KsaChinese 文件夹放在游戏目录内。");
