@@ -47,7 +47,7 @@ internal static class Program
             string loader = Path.Combine(Root, "Loader");
             string executable = Path.Combine(loader, "StarMap.exe");
             if (!File.Exists(executable)) throw new FileNotFoundException("缺少随包 StarMap 加载器，请完整解压。", executable);
-            File.WriteAllText(Path.Combine(loader, "StarMapConfig.json"), JsonSerializer.Serialize(new { GameLocation = Path.Combine(game,"KSA.dll"), RepositoryLocation = "", GameArguments = args }), new UTF8Encoding(false));
+            File.WriteAllText(Path.Combine(loader, "StarMapConfig.json"), JsonSerializer.Serialize(new { GameLocation = Path.Combine(game,"KSA.dll"), RepositoryLocation = "", GameArguments = Array.Empty<string>() }), new UTF8Encoding(false));
             Directory.CreateDirectory(LogRoot);
             string tag = DateTime.Now.ToString("yyyyMMdd-HHmmss-fff");
             var start = new ProcessStartInfo(executable)
@@ -56,6 +56,8 @@ internal static class Program
                 RedirectStandardOutput = true, RedirectStandardError = true,
                 StandardOutputEncoding = Encoding.UTF8, StandardErrorEncoding = Encoding.UTF8
             };
+            // The restart path replaces -load in the process arguments.
+            foreach (string argument in args) start.ArgumentList.Add(argument);
             // Survives a loader restart; does not alter the machine's environment.
             start.Environment["STARMAP_INSTANCE_PATH"] = profile;
             using var child = Process.Start(start) ?? throw new IOException("未能创建游戏进程。");

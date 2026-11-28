@@ -33,6 +33,9 @@ public sealed partial class Driver
         if(!path.Contains("KSA-CHINESE",StringComparison.OrdinalIgnoreCase) || !path.Contains("test-profile",StringComparison.OrdinalIgnoreCase))
             throw new InvalidOperationException("Smoke driver is restricted to workspace test-profile.");
         var patch=new Harmony("local.ksa.chinese.smoke");
+        if (Environment.GetEnvironmentVariable("KSA_SMOKE_5949") is "review" or "visual")
+            patch.Patch(AccessTools.Method(typeof(DestinationRegistryWindow), nameof(DestinationRegistryWindow.Draw)),
+                transpiler: new HarmonyMethod(typeof(Driver), nameof(FixtureTabRenderer)));
         patch.Patch(AccessTools.Constructor(typeof(ConfigOnStartPopup)),postfix:new HarmonyMethod(typeof(Driver),nameof(SkipConfig)));
         patch.Patch(AccessTools.Constructor(typeof(WelcomePopup)),postfix:new HarmonyMethod(typeof(Driver),nameof(SkipWelcome)));
         patch.Patch(AccessTools.Constructor(typeof(UpdateAvailablePopup)),postfix:new HarmonyMethod(typeof(Driver),nameof(SkipUpdate)));
@@ -146,6 +149,11 @@ public sealed partial class Driver
         double t=Timer.Elapsed.TotalSeconds;
         try
         {
+            if (Environment.GetEnvironmentVariable("KSA_SMOKE_5949") is { Length: > 0 } mode5949)
+            {
+                Update5949Frame(mode5949, t);
+                return;
+            }
             if (Environment.GetEnvironmentVariable("KSA_SMOKE_5901") == "1")
             {
                 Update5901Frame(t);

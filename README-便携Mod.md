@@ -1,8 +1,8 @@
-# 5901 简体中文便携 Mod
+# 5949 简体中文便携 Mod
 
-已发布的 0.1.8 对应 5801。以下 5901 安装说明适用于从本源码构建的 0.1.9。
+公开发行版 0.1.9 对应 5901。以下说明适用于从本源码构建的 0.1.10（5949）。
 
-当前包为 `KsaChinese-0.1.9-5901-Portable.zip`，对应 0.1.9 开发版本。已有 StarMap/Borea 时优先选择独立的标准模组包，见 [生态安装与迁移](README-生态安装.md)；不要把整个便携包导入 Borea。完整解压便携包 **到含 `KSA.exe` 的游戏目录**。最终位置应为：
+当前包为 `KsaChinese-0.1.10-5949-Portable.zip`，对应 0.1.10 开发版本。已有 StarMap/Borea 时优先选择独立的标准模组包，见 [生态安装与迁移](README-生态安装.md)；不要把整个便携包导入 Borea。完整解压便携包 **到含 `KSA.exe` 的游戏目录**。最终位置应为：
 
 ```text
 Kitten Space Agency/
@@ -20,7 +20,7 @@ Kitten Space Agency/
 
 默认将档案保存在 `KsaChinese/Profile`，原来的个人存档不搬动。`launcher-settings.json` 可指定已有档案路径，例如 `{"profile":"D:/KSA-Profile"}`；只在关闭游戏后修改，且已有清单需要启用 Core 和 KsaChinese。本机从旧汉化升级时继续指定旧档案，避免产生另一个新档案。语言可在游戏菜单切换，日常只需一个入口。
 
-启动失败会显示错误，并记录在 `KsaChinese/logs`。加载器的 stdout/stderr 分开保存。仅支持 `2026.11.16.5901` 和适配清单里的精确哈希；更新游戏后文件不符时停止加载，等待新版适配。Mod 文件是否在更新后保留取决于游戏更新器；建议先备份 `Profile` 和 `launcher-settings.json`，不要依赖更新器保留额外目录。
+启动失败会显示错误，并记录在 `KsaChinese/logs`。加载器的 stdout/stderr 分开保存。仅支持 `2026.11.25.5949` 和适配清单里的精确哈希；更新游戏后文件不符时停止加载，等待新版适配。Mod 文件是否在更新后保留取决于游戏更新器；建议先备份 `Profile` 和 `launcher-settings.json`，不要依赖更新器保留额外目录。
 
 卸载：关闭游戏，先备份需要的档案，将 `Content/KsaChinese` 移出 `Content`，将桌面快捷方式改回原 `KSA.exe`。需要保留存档时保留 `KsaChinese/Profile`；不要把它连同加载器一起删掉。若指定了旧汉化档案，该档案仍位于旧位置。
 

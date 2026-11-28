@@ -42,7 +42,7 @@ public static class EditorSegmentsPatch
 {
     private static readonly HashSet<string> Ids = new(StringComparer.Ordinal)
     {
-        "GizmoTool", "GizmoFrame", "SymmetryCycle", "InheritToggle", "SnapToggle", "CameraMode", "Projection", "AutoResourceGroups"
+        "GizmoTool", "GizmoFrame", "SymmetryCycle", "InheritToggle", "SnapToggle", "CameraMode", "Projection", "CenterOfMassToggle", "AutoResourceGroups"
     };
 
     [HarmonyPrefix]
@@ -238,7 +238,7 @@ public static class EditorLiteralPatch
         yield return AccessTools.Method(typeof(VehicleLaunchMenu), nameof(VehicleLaunchMenu.DrawLaunchUi));
         yield return AccessTools.Method(typeof(VehicleEditor).GetNestedType("PartWindow", BindingFlags.Public | BindingFlags.NonPublic), "OnDrawUi");
         foreach (var method in typeof(PartArchetypes).GetMethods(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static | BindingFlags.Instance))
-            if (method.Name.StartsWith("Append", StringComparison.Ordinal)) yield return method;
+            if (!method.ContainsGenericParameters && method.Name.StartsWith("Append", StringComparison.Ordinal)) yield return method;
     }
 
     [HarmonyTranspiler]
