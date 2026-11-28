@@ -910,6 +910,7 @@
       " / ~",
       " Reported usage and budget: ~",
       "CONFIGURATION",
+      "Cascade Count",
       "Cascaded Shadows",
       "Casters",
       "Enable Shadows",
@@ -959,7 +960,8 @@
       "Type",
       "Vehicle",
       "Vessels"
-    ]
+    ],
+    "Utf8Controls": []
   },
   {
     "Type": "KSA.CrewAssignmentWindow",
@@ -1297,6 +1299,106 @@
     ]
   },
   {
+    "Type": "KSA.DestinationRegistryWindow",
+    "Method": "Draw",
+    "Fields": [],
+    "Literals": [],
+    "Utf8Controls": [
+      "Destinations",
+      "Registry",
+      "Visits"
+    ]
+  },
+  {
+    "Type": "KSA.DestinationRegistryWindow",
+    "Method": "DrawDestinationVisits",
+    "Fields": [],
+    "Literals": [],
+    "Utf8": [
+      "By",
+      "Count",
+      "Crew",
+      "Destination",
+      "First",
+      "Last",
+      "Situations"
+    ]
+  },
+  {
+    "Type": "KSA.DestinationRegistryWindow",
+    "Method": "DrawKittenFirsts",
+    "Fields": [],
+    "Literals": [],
+    "Utf8": [
+      "Destination",
+      "Kitten",
+      "Time",
+      "Vehicle"
+    ]
+  },
+  {
+    "Type": "KSA.DestinationRegistryWindow",
+    "Method": "DrawRegistry",
+    "Fields": [],
+    "Literals": [],
+    "Utf8Controls": [
+      "Filter"
+    ],
+    "Direct": [
+      " destinations",
+      " of "
+    ]
+  },
+  {
+    "Type": "KSA.DestinationRegistryWindow",
+    "Method": "DrawTable",
+    "Fields": [],
+    "Literals": [],
+    "Utf8": [
+      "Id",
+      "Shape",
+      "Situations",
+      "Source",
+      "Where",
+      "Within"
+    ]
+  },
+  {
+    "Type": "KSA.DestinationRegistryWindow",
+    "Method": "DrawVesselsAt",
+    "Fields": [],
+    "Literals": [],
+    "Utf8": [
+      "At",
+      "Vehicle"
+    ]
+  },
+  {
+    "Type": "KSA.DestinationRegistryWindow",
+    "Method": "DrawVisits",
+    "Fields": [],
+    "Literals": [],
+    "Utf8Controls": [
+      "Destinations",
+      "Kitten firsts",
+      "Vessels at destinations"
+    ],
+    "Direct": [
+      " destinations visited, ",
+      " vessels tracked"
+    ]
+  },
+  {
+    "Type": "KSA.DestinationRegistryWindow",
+    "Method": "DrawWhere",
+    "Fields": [],
+    "Literals": [],
+    "Direct": [
+      " points",
+      "whole body"
+    ]
+  },
+  {
     "Type": "KSA.DistantGlintEditor+DebugWindow",
     "Method": "DrawContent",
     "Fields": [
@@ -1468,6 +1570,15 @@
   },
   {
     "Type": "KSA.EngineDesigner",
+    "Method": "DrawBoostPressureRise",
+    "Fields": [],
+    "Literals": [],
+    "Direct": [
+      " Boost Pump Pressure Rise"
+    ]
+  },
+  {
+    "Type": "KSA.EngineDesigner",
     "Method": "DrawEngineDesignDebugWindow",
     "Fields": [
       " -> Flow separation severity",
@@ -1498,6 +1609,7 @@
       "Exit Pressure",
       "Exit Temperature",
       "Expansion Efficiency:",
+      "Feed Pressure Drop:",
       "Flow Efficiency:",
       "Flow separation occurs when exhaust pressure is significantly lower than ambient pressure. While separated, turbulence and shock waves form in the nozzle which can cause severe damage.",
       "HINT: CTRL+LeftClick a slider to type in a precise value.",
@@ -1510,6 +1622,7 @@
       "Molar Mass",
       "Nozzle",
       "Nozzle Area Ratio:",
+      "Nozzle Count:",
       "Nozzle Exit Diameter:",
       "Optimum Expansion",
       "Optimum Expansion Pressure",
@@ -1530,6 +1643,7 @@
       "Specific impulse metric in a pure vacuum. Specific impulse is a measure of propellant efficiency; higher is better.",
       "Storage Density",
       "Storage Temperature",
+      "Tank Pressure Max:",
       "Temperature at which the combustion products exit the combustor. Specific impulse is very strongly affected by this temperature; higher is better.",
       "Temperature at which the propellants are burned.",
       "The actual velocity of the gas exiting the nozzle. Not to be confused with effective exhaust velocity, which is specific impulse times standard gravity.",
@@ -1549,6 +1663,9 @@
       "Thrust (Optimum Expansion)",
       "Thrust (Sea Level)",
       "Thrust (Vacuum)",
+      "Turbine Exhaust Nozzle Count:",
+      "Turbine Inlet Temperature:",
+      "Turbomachinery Efficiency:",
       "XML Tree",
       "part",
       "parts"
@@ -1636,6 +1753,56 @@
       "XML Tree",
       "part",
       "parts"
+    ],
+    "Utf8": [
+      "A small secondary rocket engine drives high-power propellant pumps with its exhaust gas. This gas is dumped overboard at the cost of some specific impulse.",
+      "Detailed options for the propellant feed system.",
+      "Engine Cycle",
+      "Gas Generator",
+      "Injector Feed Pressure",
+      "Method by which propellant(s) are delivered to the engine.",
+      "Mixture Ratio",
+      "Nozzle(s)",
+      "Pump",
+      "Pump Discharge Pressure",
+      "Pump Power",
+      "The engine is fed by high pressure in the propellant tanks, which are very simple but can become very heavy.",
+      "The feed system is not modeled.",
+      "Thrust Chamber",
+      "Turbine power shortfall"
+    ],
+    "Direct": [
+      "How far above chamber pressure the propellant must be delivered to ensure stable flow, as a fraction of chamber pressure. Realistic values: 40-80%.",
+      "Pump efficiency multiplied by turbine efficiency. Lower values make the gas generator burn more propellant to drive the pumps. Realistic values: 20% to 60%.",
+      "Temperature limit of the turbine blades. Hotter turbine gas is more efficient, but requires more advanced materials. Realistic values: 850-1120 K."
+    ],
+    "Utf8Controls": [
+      "Feed System (Advanced)"
+    ]
+  },
+  {
+    "Type": "KSA.EngineDesigner",
+    "Method": "DrawGasGeneratorData",
+    "Fields": [],
+    "Literals": [],
+    "Utf8": [
+      "Mixture Ratio",
+      "Nozzle(s)",
+      "Turbine Inlet Temperature",
+      "Turbine Outlet Pressure",
+      "Turbine Outlet Temperature"
+    ]
+  },
+  {
+    "Type": "KSA.EngineDesigner",
+    "Method": "DrawMinimumTankPressure",
+    "Fields": [],
+    "Literals": [],
+    "Direct": [
+      " Tank Pressure"
+    ],
+    "Utf8": [
+      "The propellant tank must be kept at this pressure or above to feed propellant into the engine at full throttle."
     ]
   },
   {
@@ -11237,6 +11404,10 @@
       "These vehicles have unsaved changes and will be lost when you exit the editor unless you save them:",
       "These vehicles have unsaved changes and will be lost when you start a new vehicle unless you save them:",
       "UNSAVED VEHICLES"
+    ],
+    "Direct": [
+      "Center of Mass: Hidden (grey: dry, blue: wet)",
+      "Center of Mass: Shown (grey: dry, blue: wet)"
     ]
   },
   {

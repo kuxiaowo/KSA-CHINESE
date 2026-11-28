@@ -1,29 +1,29 @@
 {
   "schema": 1,
-  "ledger_rows": 6449,
+  "ledger_rows": 6713,
   "review_status_counts": {
-    "reviewed": 6330,
+    "reviewed": 6594,
     "defer": 49,
     "contextual": 2,
     "retired": 68
   },
   "active_translation_sections": {
-    "native": 378,
+    "native": 388,
     "literals": 86,
     "ui": 193,
     "tooltips": 171,
-    "editor": 169,
+    "editor": 171,
     "startup": 39,
-    "parts": 857,
+    "parts": 894,
     "controls": 114,
     "hud": 43,
     "planning": 245,
-    "utility": 300,
+    "utility": 301,
     "gauges": 86,
     "scoped": 13,
-    "display": 2434,
-    "content": 267,
-    "history": 934
+    "display": 2528,
+    "content": 268,
+    "history": 1053
   },
   "excluded_entries": [
     {

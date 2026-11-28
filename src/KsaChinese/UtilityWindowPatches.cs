@@ -18,7 +18,7 @@ public static class UtilityWindowPatches
     private static readonly HashSet<string> MenuLabels = new(StringComparer.Ordinal)
     {
         "Refresh", "New", "Load", "Delete", "Overwrite", "Filter", "Columns", "Unfiltered",
-        "Show All", "Show None", "Clear Debris", "Name", "Size", "Version", "Date", "Id",
+        "Show All", "Show None", "Clear Debris", "Name", "Size", "Version", "Date", "System", "Id",
         "Type", "SOI", "Apoapsis", "Periapsis", "Velocity", "Distance", "Vehicles", "KittenEva",
         "Debris", "MinorBodies", "Planets", "Asteroids", "Comets", "PeriodicComets",
         "InterstellarComets", "StellarBody"

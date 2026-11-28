@@ -42,11 +42,7 @@ public sealed class LanguagePlugin
 {
     private Harmony? _patches;
     public static bool SupportsGameVersion(string? version)
-        => version is "2026.11.16.5901" or "2026.11.25.5949";
-
-    // 5901 的哈希清单只用于该版本；5949 属新版本移植，跳过指纹校验
-    private static bool NeedsFingerprintCheck(string? version)
-        => version is "2026.11.16.5901";
+        => version is "2026.11.25.5949";
 
     [StarMapBeforeMain]
     public void BeforeMain()
@@ -54,45 +50,20 @@ public sealed class LanguagePlugin
         var gameVersion = typeof(KSA.Program).Assembly.GetName().Version?.ToString();
         if (!SupportsGameVersion(gameVersion))
         {
-            Runtime.Log($"Chinese mod disabled: supported build is 2026.11.16.5901; found {gameVersion}.");
+            Runtime.Log($"Chinese mod disabled: supported build is 2026.11.25.5949; found {gameVersion}.");
             return;
         }
         try
         {
-            if (NeedsFingerprintCheck(gameVersion))
-            {
-                Compatibility.Validate(Path.GetDirectoryName(typeof(KSA.Program).Assembly.Location)!, Path.Combine(Runtime.ModRoot,"compatibility.json"));
-            }
-            else
-            {
-                Runtime.Log($"Skipping 5901 fingerprint check for {gameVersion}; loading as 5949 port.");
-            }
+            Compatibility.Validate(Path.GetDirectoryName(typeof(KSA.Program).Assembly.Location)!, Path.Combine(Runtime.ModRoot,"compatibility.json"));
             Runtime.Initialize();
-            _patches = new Harmony("local.ksa.chinese.5901");
-            // 5949 移植：逐个补丁类施加，单个类失败不再拖垮整个模组
-            int patched = 0;
-            var skipped = new List<string>();
-            foreach (var type in typeof(LanguagePlugin).Assembly.GetTypes())
-            {
-                if (type.GetCustomAttribute<HarmonyPatch>() is null) continue;
-                try
-                {
-                    _patches.CreateClassProcessor(type).Patch();
-                    patched++;
-                }
-                catch (Exception patchError)
-                {
-                    skipped.Add(type.Name);
-                    Runtime.Log($"Patch class skipped: {type.Name} -> {patchError.GetType().Name}: {patchError.Message}");
-                }
-            }
-            Runtime.Log($"Harmony patches applied: {patched}, skipped: {skipped.Count}" +
-                (skipped.Count > 0 ? " [" + string.Join(", ", skipped) + "]" : ""));
+            _patches = new Harmony("local.ksa.chinese.5949");
+            _patches.PatchAll(typeof(LanguagePlugin).Assembly);
             Runtime.Log($"Initialized UI language mod for game {gameVersion}.");
         }
         catch (Exception error)
         {
-            _patches?.UnpatchAll("local.ksa.chinese.5901");
+            _patches?.UnpatchAll("local.ksa.chinese.5949");
             _patches = null;
             Runtime.RestoreProvider();
             Runtime.Log("Prototype disabled after initialization error: " + error);
@@ -112,7 +83,7 @@ public sealed class LanguagePlugin
     {
         if (_patches is null) return;
         Runtime.RestoreProvider();
-        _patches.UnpatchAll("local.ksa.chinese.5901");
+        _patches.UnpatchAll("local.ksa.chinese.5949");
     }
 }
 
@@ -173,25 +144,25 @@ public static class Runtime
             LString? original=field?.GetValue(null) as LString;
             if(original is null) NativeStrings.TryGet(LStringId.From(entry.Key),out original);
             if (original is null)
-            {
-                Log($"Native key no longer exists in this build, skipped: {entry.Key}");
-                continue;
-            }
+                throw new InvalidDataException($"Unknown native resource ID: {entry.Key}");
             if (!Tokens(original.Template).SequenceEqual(Tokens(entry.Value)))
-            {
-                Log($"Native placeholder changed, kept English: {entry.Key}");
-                continue;
-            }
+                throw new InvalidDataException($"Placeholder mismatch: {entry.Key}");
             next.Add(original.Id, entry.Value);
         }
-        // 5949 移植：占位符对不上的词条直接丢弃并记日志，不让整包失效
-        foreach(var section in new[]{pack.Literals,pack.Ui,pack.Tooltips,pack.Editor,pack.Startup,pack.Controls,pack.Hud,pack.Planning,pack.Utility,pack.Gauges,pack.Display,pack.Content,pack.History,pack.Parts,pack.Scoped})
-            foreach(var key in section.Keys.ToList())
-                if(!Tokens(key).SequenceEqual(Tokens(section[key])))
-                {
-                    Log($"Placeholder mismatch dropped: {key}");
-                    section.Remove(key);
-                }
+        foreach(var section in new[]{pack.Literals,pack.Ui,pack.Tooltips,pack.Editor,pack.Startup,pack.Controls,pack.Hud,pack.Planning,pack.Utility,pack.Gauges})
+            foreach(var entry in section)
+                if(!Tokens(entry.Key).SequenceEqual(Tokens(entry.Value)))
+                    throw new InvalidDataException($"Translation placeholder mismatch: {entry.Key}");
+        foreach (var entry in pack.Editor)
+            if (!Tokens(entry.Key).SequenceEqual(Tokens(entry.Value)))
+                throw new InvalidDataException($"Editor placeholder mismatch: {entry.Key}");
+        foreach (var entry in pack.Hud)
+            if (!Tokens(entry.Key).SequenceEqual(Tokens(entry.Value)))
+                throw new InvalidDataException($"HUD placeholder mismatch: {entry.Key}");
+        foreach (var section in new[] { pack.Planning, pack.Utility })
+            foreach (var entry in section)
+                if (!Tokens(entry.Key).SequenceEqual(Tokens(entry.Value)))
+                    throw new InvalidDataException($"Window placeholder mismatch: {entry.Key}");
         CurrentPack = pack;
         SelectedLocale = locale;
         InvalidateFontCache();
@@ -322,8 +293,13 @@ public static class Runtime
             return EditorText("Orbit around {0}").Replace("{0}", EditorText(original[orbitPrefix.Length..]), StringComparison.Ordinal);
         int on = original.LastIndexOf(" On ", StringComparison.Ordinal);
         if (original.StartsWith("At ", StringComparison.Ordinal) && on > 3)
-            return EditorText("At {0} On {1}").Replace("{0}", original[3..on], StringComparison.Ordinal)
-                .Replace("{1}", EditorText(original[(on + 4)..]), StringComparison.Ordinal);
+        {
+            string site = original[3..on];
+            string body = original[(on + 4)..];
+            string label = ExpandedUi.Content("LaunchSite", body + "/" + site, "Name", site);
+            return EditorText("At {0} On {1}").Replace("{0}", label, StringComparison.Ordinal)
+                .Replace("{1}", EditorText(body), StringComparison.Ordinal);
+        }
         return original == "None" ? EditorText(original) : original;
     }
 

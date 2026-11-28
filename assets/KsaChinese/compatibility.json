@@ -1,20 +1,20 @@
 {
   "schema": 1,
-  "version": "2026.11.16.5901",
+  "version": "2026.11.25.5949",
   "files": {
-    "KSA.dll": "170c28aa34845026195c89a23c0f3c241db00ea4a8b86ef60ec097c32a7f8a39",
-    "Brutal.ImGui.dll": "5ee33306e359e120d5be6caba6c835e2e38bb8dec9c300a82a5d71bb351ce42f",
-    "Brutal.Localization.dll": "7c5982607c73fbd0eade2a9327e9743c7a0dd240f44fda7c509e04105654711f",
+    "KSA.dll": "fa741419e287fb7f673fba3212be622b5fc27db91fa4a6632828fb9da7b15c7e",
+    "Brutal.ImGui.dll": "8856589afa785ce3995b6fc30dc3310cd4f77a5bc236c67611755a6fca5b111d",
+    "Brutal.Localization.dll": "97871f3603892b7d972f7713c387e4728a63a67c64c9b2bd22c6fa33337944ee",
     "Content/Core/Gauges.xml": "9d72da547daefe79e7e1cb049514bb9223527cfe2ae10c9254aaa0eab5ed9fde",
-    "Brutal.Core.dll": "73c3aa705ffb33525cb2c009c7c0be4e2f2091e970841c266074dedd94e021c1",
-    "Brutal.Numerics.dll": "b6baa9c4ab27c51f862b1ae1bb0d6b5a6c0dcb6422dae00c4f8b66924585ba1a",
-    "Brutal.ImGui.Abstractions.dll": "2c419b71a92127d07755853eb6fd264a4f12f20c02468f9c343cab4d825c84b9",
-    "Brutal.ImGui.Extensions.dll": "fd35b3286a1ef54e20e3a3d30353e0cdfc0189233e78cb80018d3036bea250fd",
-    "Brutal.Strings.dll": "4052e7f3590b7cef6cbb034b7e90f14dcac44ce936a5b0beb5db8f7f57fe1a73",
+    "Brutal.Core.dll": "91218ecd3abb0b08a329f57e2fb95cd5d7daa054e5d4fd6b471a5ee14a962f01",
+    "Brutal.Numerics.dll": "da6d16743bf37cce1c8bc7fca8a9615ac2bee6e6c3270faf03af2f743a34b0ce",
+    "Brutal.ImGui.Abstractions.dll": "1baf304aa3c51a8a48ab656c75d16e11c8d88d75958f8eafea0587673cf231b3",
+    "Brutal.ImGui.Extensions.dll": "0255f1a125245fb0d4cac61e1e02e3848453b43021cf083b769dd25a1ebc7d47",
+    "Brutal.Strings.dll": "1f14d2014f70558abff67e2a856684ef63f271af4556a00a6a2e5f46d82437d2",
     "imgui.dll": "ba38506e12c480e21d04b74c3432be1cda09ab7d53c1e7284f1b3beb83520c83",
-    "Brutal.Collections.dll": "882cfdb2a99c2b9d327533234807aae6b6559265ce9ceafbc936c18bcde07625",
-    "Content/Core/Languages/en-US.resx": "630cf0070696a3d27d5b3d8ebbd576578c6383586563dc575653101a02f2c0c3",
-    "Planet.Render.Core.dll": "63cf2005df643eb621e7f8c6d551a03bbead575ecc6e33d2e1b99101c43228f7"
+    "Brutal.Collections.dll": "33a4e916c4a63c96482ce6015620344a7ce621a63a94765e8220e93d239b4373",
+    "Content/Core/Languages/en-US.resx": "5519d8c1494bc9235f5917e7a045c517839777d19f6c6765f640cc4544deeeff",
+    "Planet.Render.Core.dll": "83d3c2c77c1741b1019de2e076bdce467eedcd2806f526fdaacbc7e3240a6821"
   },
   "loader": "StarMap 0.5.4",
   "interpretation": "Exact inspected file identities. Target resolution, transformation matches, headless and GUI results are documented separately; hashes are not visual coverage."

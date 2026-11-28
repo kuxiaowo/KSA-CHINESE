@@ -343,10 +343,10 @@
     <value>该区内储存餐食和 CO₂ 吸收罐的部件。乘员只能使用本区储存的餐食和吸收罐。</value>
   </data>
   <data name="LifeSupportTooltipTimingAsPlanned" xml:space="preserve">
-    <value>按编辑器中的计划计算各航段时间，从发射时开始计时。</value>
+    <value>从发射起按编辑器中的计划计算各航段。载具实际抵达、离开或返航后，改用相应的实际时间。</value>
   </data>
   <data name="LifeSupportTooltipTimingFlightPlan" xml:space="preserve">
-    <value>以飞行计划抵达任务目的地的时间为基准，再加上计划停留和返程时间。载具实际抵达或离开后，改用实际时间。</value>
+    <value>以飞行计划抵达任务目的地的时间为基准，再加上计划停留和返程时间。载具实际抵达、离开或返航后，改用相应的实际时间。</value>
   </data>
   <data name="LifeSupportTooltipTimingNoDestination" xml:space="preserve">
     <value>该任务未指定目的天体，只能按原计划计时。</value>
@@ -506,6 +506,36 @@
   </data>
   <data name="LaunchMenuTooltipOpenInEditor" xml:space="preserve">
     <value>在载具编辑器中打开已保存的载具，修改其储罐、储存空间、任务或乘员计划。在此菜单中选择的乘员和装载量不会带入编辑器。</value>
+  </data>
+  <data name="AlertBodyKnowledgeTierMissing" xml:space="preserve">
+    <value>此前对 {Body} 的认知资料来自当前未加载的模组，现已调整为最接近的已知等级。</value>
+  </data>
+  <data name="AlertSaveSystemNotInstalled" xml:space="preserve">
+    <value>存档 {Save} 创建于尚未安装的星系 {SaveSystem}。</value>
+  </data>
+  <data name="AlertJoinSystemNotInstalled" xml:space="preserve">
+    <value>主机正在尚未安装的星系 {HostSystem} 中游玩。</value>
+  </data>
+  <data name="AlertJoinNotEnoughVram" xml:space="preserve">
+    <value>显存不足，无法在运行中切换到 {HostSystem}。请在该星系中重新启动游戏后加入。</value>
+  </data>
+  <data name="SaveTooltipOtherSystem" xml:space="preserve">
+    <value>创建于 {SaveSystem}。载入时游戏会切换到该星系。</value>
+  </data>
+  <data name="SaveTooltipLoadsIntoRunning" xml:space="preserve">
+    <value>创建于 {SaveSystem}。当前星系包含该存档使用的所有天体，可以直接载入。</value>
+  </data>
+  <data name="SaveTooltipSystemNotInstalled" xml:space="preserve">
+    <value>创建于尚未安装的星系 {SaveSystem}。</value>
+  </data>
+  <data name="AlertRestartedForVram" xml:space="preserve">
+    <value>游戏已重启以载入 {Save}，因为运行中切换星系会耗尽显存。</value>
+  </data>
+  <data name="AlertRestartSaveMissing" xml:space="preserve">
+    <value>游戏已重启以载入 {Save}，但该存档已不存在。</value>
+  </data>
+  <data name="AlertRestartSystemMissing" xml:space="preserve">
+    <value>游戏已重启以载入 {Save}，但该存档所在星系尚未安装。</value>
   </data>
   <data name="SettingsWindowTitle" xml:space="preserve">
     <value>设置</value>

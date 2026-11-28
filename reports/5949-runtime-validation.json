@@ -1,0 +1,68 @@
+{
+  "game_version": "2026.11.25.5949",
+  "game_product_commit": "64c3726bd24373931e550030e4ba49c83fb46ed8",
+  "changelog_sha256": "15a837854ac8d1323719f09f4c21072d12b4f91067181c89e9dc9a611d258c81",
+  "loader": "StarMap 0.5.4",
+  "fixture": {
+    "start_system": "SolLite",
+    "saved_system": "Sol",
+    "loaded_system": "Sol",
+    "controlled_vehicle": "Rocket",
+    "exit_code": 0,
+    "destinations": 95,
+    "visited_destinations": 2,
+    "kitten_first_visit_records": 8,
+    "visits_tab_rendered": true,
+    "core_parts": 894,
+    "translated_part_names": 893,
+    "input_captions": 110,
+    "locales_applied": [
+      "zh-CN"
+    ],
+    "game_capture_resolution": "1920x1080",
+    "update_server_http_502_observed": true
+  },
+  "screenshots": [
+    {
+      "name": "ksa_20261128_165112_1920x1080.png",
+      "scope": "save list zh-CN",
+      "sha256": "d65edf9c1dc9e8740bb425af61fb43d1c8652653ac6c9c6ec04ccf4802288bed"
+    },
+    {
+      "name": "ksa_20261128_165120_1920x1080.png",
+      "scope": "destination registry zh-CN",
+      "sha256": "5ba82cd5a114fcf8d9f9b68da3baf5d86bcc3cc91140bf4725890f010b324d0c"
+    },
+    {
+      "name": "ksa_20261128_165128_1920x1080.png",
+      "scope": "visit log zh-CN",
+      "sha256": "ac81a57ea5fe34d4ca47792a5af568e9dcc311147e4df340537b964f87c355dc"
+    },
+    {
+      "name": "ksa_20261128_165136_1920x1080.png",
+      "scope": "visit log zh-CN repeat",
+      "sha256": "7efaa26b5d004012fd24b0e51f640da8cf9b5446012ce03b1f6557bba916c0c3"
+    },
+    {
+      "name": "ksa_20261128_165157_1920x1080.png",
+      "scope": "after cross-system load",
+      "sha256": "689fcf0dfabd40f96ea97bf77032bb28ade111f82db0e10f92a1945f95571a8e"
+    }
+  ],
+  "candidate_archive_sha256": {
+    "KsaChinese-0.1.10.zip": "8d41d4894ebf82407c27d982be0ebfe2027d68044c59e6951bfc7c87f5f094eb",
+    "KsaChinese-0.1.10-5949-Portable.zip": "13d944e840997c94efd8607dfd8aaa538a190cb06bcbdf3182b08f7f515695cb"
+  },
+  "portable_restart": {
+    "method": "Measured VRAM estimate overridden in an isolated profile to exercise the native restart",
+    "initial_load_argument": "5949 Missing Bootstrap Fixture",
+    "restart_load_argument": "5949 Cross System Fixture",
+    "same_isolated_profile": true,
+    "outcome": "mod initialized in both processes; Sol save loaded after restart",
+    "screenshot": {
+      "name": "ksa_20261128_164759_1920x1080.png",
+      "scope": "localized restart alert",
+      "sha256": "5bfaf6cc2ee9b1b90fd6ffd12a30153a981a1245fc575fe2976c075abd62f97b"
+    }
+  }
+}

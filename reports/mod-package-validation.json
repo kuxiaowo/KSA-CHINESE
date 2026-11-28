@@ -1,8 +1,8 @@
 {
-  "archive": "KsaChinese-0.1.9.zip",
-  "sha256": "b85d1b43350e9e1923497e26e4c19b0a9e6d5047ab7c0eeb5875f07d3f3e7326",
+  "archive": "KsaChinese-0.1.10.zip",
+  "sha256": "8d41d4894ebf82407c27d982be0ebfe2027d68044c59e6951bfc7c87f5f094eb",
   "files": 19,
-  "bytes": 716381,
+  "bytes": 737304,
   "install_root": "KsaChinese",
   "loader_bundled": false,
   "game_binaries_included": false,
