@@ -42,6 +42,10 @@ public sealed class LanguagePlugin
 {
     private Harmony? _patches;
     public static bool SupportsGameVersion(string? version)
+        => version is "2026.11.16.5901" or "2026.11.25.5949";
+
+    // 5901 的哈希清单只用于该版本；5949 属新版本移植，跳过指纹校验
+    private static bool NeedsFingerprintCheck(string? version)
         => version is "2026.11.16.5901";
 
     [StarMapBeforeMain]
@@ -55,10 +59,35 @@ public sealed class LanguagePlugin
         }
         try
         {
-            Compatibility.Validate(Path.GetDirectoryName(typeof(KSA.Program).Assembly.Location)!, Path.Combine(Runtime.ModRoot,"compatibility.json"));
+            if (NeedsFingerprintCheck(gameVersion))
+            {
+                Compatibility.Validate(Path.GetDirectoryName(typeof(KSA.Program).Assembly.Location)!, Path.Combine(Runtime.ModRoot,"compatibility.json"));
+            }
+            else
+            {
+                Runtime.Log($"Skipping 5901 fingerprint check for {gameVersion}; loading as 5949 port.");
+            }
             Runtime.Initialize();
             _patches = new Harmony("local.ksa.chinese.5901");
-            _patches.PatchAll(typeof(LanguagePlugin).Assembly);
+            // 5949 移植：逐个补丁类施加，单个类失败不再拖垮整个模组
+            int patched = 0;
+            var skipped = new List<string>();
+            foreach (var type in typeof(LanguagePlugin).Assembly.GetTypes())
+            {
+                if (type.GetCustomAttribute<HarmonyPatch>() is null) continue;
+                try
+                {
+                    _patches.CreateClassProcessor(type).Patch();
+                    patched++;
+                }
+                catch (Exception patchError)
+                {
+                    skipped.Add(type.Name);
+                    Runtime.Log($"Patch class skipped: {type.Name} -> {patchError.GetType().Name}: {patchError.Message}");
+                }
+            }
+            Runtime.Log($"Harmony patches applied: {patched}, skipped: {skipped.Count}" +
+                (skipped.Count > 0 ? " [" + string.Join(", ", skipped) + "]" : ""));
             Runtime.Log($"Initialized UI language mod for game {gameVersion}.");
         }
         catch (Exception error)
@@ -144,25 +173,25 @@ public static class Runtime
             LString? original=field?.GetValue(null) as LString;
             if(original is null) NativeStrings.TryGet(LStringId.From(entry.Key),out original);
             if (original is null)
-                throw new InvalidDataException($"Unknown native resource ID: {entry.Key}");
+            {
+                Log($"Native key no longer exists in this build, skipped: {entry.Key}");
+                continue;
+            }
             if (!Tokens(original.Template).SequenceEqual(Tokens(entry.Value)))
-                throw new InvalidDataException($"Placeholder mismatch: {entry.Key}");
+            {
+                Log($"Native placeholder changed, kept English: {entry.Key}");
+                continue;
+            }
             next.Add(original.Id, entry.Value);
         }
-        foreach(var section in new[]{pack.Literals,pack.Ui,pack.Tooltips,pack.Editor,pack.Startup,pack.Controls,pack.Hud,pack.Planning,pack.Utility,pack.Gauges})
-            foreach(var entry in section)
-                if(!Tokens(entry.Key).SequenceEqual(Tokens(entry.Value)))
-                    throw new InvalidDataException($"Translation placeholder mismatch: {entry.Key}");
-        foreach (var entry in pack.Editor)
-            if (!Tokens(entry.Key).SequenceEqual(Tokens(entry.Value)))
-                throw new InvalidDataException($"Editor placeholder mismatch: {entry.Key}");
-        foreach (var entry in pack.Hud)
-            if (!Tokens(entry.Key).SequenceEqual(Tokens(entry.Value)))
-                throw new InvalidDataException($"HUD placeholder mismatch: {entry.Key}");
-        foreach (var section in new[] { pack.Planning, pack.Utility })
-            foreach (var entry in section)
-                if (!Tokens(entry.Key).SequenceEqual(Tokens(entry.Value)))
-                    throw new InvalidDataException($"Window placeholder mismatch: {entry.Key}");
+        // 5949 移植：占位符对不上的词条直接丢弃并记日志，不让整包失效
+        foreach(var section in new[]{pack.Literals,pack.Ui,pack.Tooltips,pack.Editor,pack.Startup,pack.Controls,pack.Hud,pack.Planning,pack.Utility,pack.Gauges,pack.Display,pack.Content,pack.History,pack.Parts,pack.Scoped})
+            foreach(var key in section.Keys.ToList())
+                if(!Tokens(key).SequenceEqual(Tokens(section[key])))
+                {
+                    Log($"Placeholder mismatch dropped: {key}");
+                    section.Remove(key);
+                }
         CurrentPack = pack;
         SelectedLocale = locale;
         InvalidateFontCache();

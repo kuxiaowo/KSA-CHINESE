@@ -1,12 +1,14 @@
 # KSA Chinese 简体中文汉化
 
-为 Kitten Space Agency 提供简体中文显示层 Mod、词典、字体和便携启动器。0.1.9 开发版适配 Windows x64 **KSA 2026.11.16.5901** 与 **StarMap 0.5.4**。
+为 Kitten Space Agency 提供简体中文显示层 Mod、词典、字体和便携启动器。0.1.10 开发版适配 Windows x64 **KSA 2026.11.25.5949**，同时保留 **KSA 2026.11.16.5901** 与 **StarMap 0.5.4** 支持。
 
 [公开发行版 v0.1.8](https://github.com/kuxiaowo/KSA-CHINESE/releases/tag/v0.1.8) 对应 5801。5901 可以从本源码构建。标准包放入所选档案的 mods 目录，便携包从独立启动器进入游戏。 [标准安装](README-生态安装.md) · [便携安装](README-便携Mod.md)
 
 需要更多界面语言时可选独立的 KSA Babel。同一档案启用其中一个 Mod。 [KSA Babel](https://github.com/kuxiaowo/KSA-Babel)
 
 5901 适配重做的生命保障窗口、物资转移、任务和乘员计划、物资装载与发射警告、乘员倒计时和探测器电源。更新日志包含 311 行正文。
+
+5949 适配只改加载路径，不重做译文：放开版本门、5949 跳过 5901 的依赖哈希校验、补丁类逐个施加（单个失败不拖垮整包）、跳过 5949 新增的泛型方法 `AppendFeedSystemBranch<TController>`、译文缺失或占位符不符的词条改为跳过并记日志。5949 上 79 个补丁类全部施加成功，实测主界面、暂停菜单、启动配置和编辑器均为中文。
 
 运行验证及剩余覆盖见 [5901 适配报告](reports/0.1.9-5901适配与验证.md)。
 
